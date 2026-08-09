@@ -1,0 +1,2905 @@
+{
+  "id_video": "video034",
+  "model": "google/gemma-3n-E4B-it",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 8,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 12,
+  "numero_errori": 0,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestiti rosa e bianchi"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "colorata",
+            "con scritte"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rossa"
+          ],
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "verde e marrone"
+          ],
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rossa"
+          ],
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "blu e bianca"
+          ],
+          "start_time": 2.25,
+          "end_time": 2.75,
+          "evidence_frames": [
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "blu e bianca"
+          ],
+          "start_time": 0.0,
+          "end_time": 0.5,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "blu e bianca"
+          ],
+          "start_time": 3.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [
+            "capelli corti",
+            "indossa una maglietta rosa"
+          ],
+          "start_time": 2.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e10",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rossa"
+          ],
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e11",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "verde e marrone"
+          ],
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e12",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "blu e bianca"
+          ],
+          "start_time": 3.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "vestito rosa e viola"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "colorata",
+            "con scritte"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rossa"
+          ],
+          "start_time": 4.5,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "palla da basket",
+          "role": "oggetto",
+          "attributes": [
+            "blu e arancione"
+          ],
+          "start_time": 5.25,
+          "end_time": 5.75,
+          "evidence_frames": [
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "vestito rosa e viola"
+          ],
+          "start_time": 5.75,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "vestito rosa e viola"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tiene in mano una palla",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 3.5,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tiene in mano una palla",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 5.25,
+          "end_time": 5.75,
+          "evidence_frames": [
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tiene in mano una palla",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che tiene una palla",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 3.0,
+          "end_time": 3.5,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 4.5,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e4",
+          "start_time": 5.25,
+          "end_time": 5.75,
+          "evidence_frames": [
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e5",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa",
+            "pantaloncini rosa"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa",
+            "pantaloncini rosa"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "colorata"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "palla da calcio",
+          "role": "oggetto",
+          "attributes": [
+            "colorata"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "scala",
+          "role": "struttura",
+          "attributes": [
+            "metallica"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "muro",
+          "role": "struttura",
+          "attributes": [
+            "mattoni rossi"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "giardino",
+          "role": "ambiente",
+          "attributes": [
+            "erba sintetica"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "bicicletta",
+          "role": "oggetto",
+          "attributes": [
+            "bianca"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "bambina tiene una palla",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 6.5,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina tiene una palla",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 6.5,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina tiene una palla da calcio",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 7.0,
+          "end_time": 7.5,
+          "evidence_frames": [
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina tiene una palla da calcio",
+          "actor": "e2",
+          "object": "e4",
+          "start_time": 7.0,
+          "end_time": 7.5,
+          "evidence_frames": [
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina lancia una palla",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 8.25,
+          "end_time": 8.75,
+          "evidence_frames": [
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina lancia una palla",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 8.25,
+          "end_time": 8.75,
+          "evidence_frames": [
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina lancia una palla da calcio",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina lancia una palla da calcio",
+          "actor": "e2",
+          "object": "e4",
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "bicicletta",
+          "role": "oggetto",
+          "attributes": [
+            "bianca",
+            "con ruote nere"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "morbida",
+            "a righe blu e bianche"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "scala",
+          "role": "struttura",
+          "attributes": [
+            "in metallo",
+            "con gradini in cemento"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "muro",
+          "role": "struttura",
+          "attributes": [
+            "in mattoni rossi"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "prato",
+          "role": "superficie",
+          "attributes": [
+            "verde"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "portico",
+          "role": "struttura",
+          "attributes": [
+            "in cemento",
+            "beige"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "cancello",
+          "role": "struttura",
+          "attributes": [
+            "verde",
+            "in metallo"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e10",
+          "label": "bicicletta",
+          "role": "oggetto",
+          "attributes": [
+            "bianca",
+            "con sella rossa"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e11",
+          "label": "albero",
+          "role": "oggetto",
+          "attributes": [
+            "con foglie"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "presente",
+          "attributes": [
+            "capelli lunghi",
+            "vestito casual"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bicicletta",
+          "role": "sfondo",
+          "attributes": [
+            "bianca",
+            "con portapacchi"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "giocattolo",
+          "role": "sfondo",
+          "attributes": [
+            "con personaggi"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "albero",
+          "role": "sfondo",
+          "attributes": [
+            "con foglie"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "scala",
+          "role": "sfondo",
+          "attributes": [
+            "in cemento",
+            "con ringhiera"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "portafoglio",
+          "role": "sfondo",
+          "attributes": [
+            "colorato"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "da calcio",
+            "colorata"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "parla",
+          "actor": "e1",
+          "object": null,
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "lancia la palla",
+          "actor": "e1",
+          "object": "e7",
+          "start_time": 15.25,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "persona che parla",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e5",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestiti rosa e neri"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestiti rosa e neri"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla",
+          "role": "palla da calcio",
+          "attributes": [
+            "colorata"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "bicicletta",
+          "role": "bicicletta",
+          "attributes": [
+            "bianca e rosa"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "scala",
+          "role": "scala esterna",
+          "attributes": [
+            "metallica"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "portico",
+          "role": "portico",
+          "attributes": [
+            "beige"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "cielo",
+          "role": "cielo",
+          "attributes": [
+            "azzurro"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "bambina lancia la palla",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 15.5,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "bambina riceve la palla",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 17.25,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "bambina lancia la palla",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 18.25,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "gioco con la palla",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e5",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e5",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "giocatrice",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa",
+            "pantaloncini rosa"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "giocatrice",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa",
+            "pantaloncini rosa"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "colorata",
+            "sfera"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "bicicletta",
+          "role": "oggetto",
+          "attributes": [
+            "rosa",
+            "bianca",
+            "due ruote"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "giardino",
+          "role": "ambiente",
+          "attributes": [
+            "erba verde"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "scala",
+          "role": "struttura",
+          "attributes": [
+            "in cemento",
+            "con ringhiera"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "giocare con la palla",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra due bambine",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e6",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa",
+            "scarpe bianche"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa",
+            "scarpe bianche"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla",
+          "role": "palla da calcio",
+          "attributes": [
+            "colorata",
+            "con disegno"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "bici",
+          "role": "bici da bambino",
+          "attributes": [
+            "rosa",
+            "con ruote piccole"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "scala",
+          "role": "scala esterna",
+          "attributes": [
+            "metallica",
+            "con gradini"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "muro",
+          "role": "muro esterno",
+          "attributes": [
+            "beige",
+            "alto"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "portico",
+          "role": "portico esterno",
+          "attributes": [
+            "con pavimentazione in mattoni"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "albero",
+          "role": "albero",
+          "attributes": [
+            "con foglie"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "bambina lancia la palla",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina e bambina giocano con la palla",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa e viola"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa e viola"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "rosa e bianca"
+          ],
+          "start_time": 25.5,
+          "end_time": 26.25,
+          "evidence_frames": [
+            "dense_0102_t0025.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "rosa e bianca"
+          ],
+          "start_time": 27.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0109_t0027.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rossa"
+          ],
+          "start_time": 27.75,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "bambina",
+          "role": "persona",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa e viola"
+          ],
+          "start_time": 27.75,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "corre",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 25.5,
+          "end_time": 26.25,
+          "evidence_frames": [
+            "dense_0102_t0025.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "corre",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 25.5,
+          "end_time": 26.25,
+          "evidence_frames": [
+            "dense_0102_t0025.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "lancia",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 27.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0109_t0027.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "corre",
+          "actor": "e6",
+          "object": "e5",
+          "start_time": 27.75,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambine che giocano con una palla",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "corre",
+          "relation": "after",
+          "second_event": "corre",
+          "evidence_frames": [
+            "dense_0102_t0025.500.jpg",
+            "dense_0102_t0025.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 24.0,
+          "end_time": 27.75
+        },
+        {
+          "first_event": "lancia",
+          "relation": "after",
+          "second_event": "corre",
+          "evidence_frames": [
+            "dense_0109_t0027.250.jpg",
+            "dense_0109_t0027.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 24.0,
+          "end_time": 27.75
+        },
+        {
+          "first_event": "corre",
+          "relation": "after",
+          "second_event": "lancia",
+          "evidence_frames": [
+            "dense_0111_t0027.750.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 24.0,
+          "end_time": 27.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0009",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "input_frames": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0119_t0029.750.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0123_t0030.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli lunghi",
+            "vestiti rosa"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "colorata"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "bambina",
+          "role": "osservatore",
+          "attributes": [
+            "capelli lunghi",
+            "vestiti rosa"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "bicicletta",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rosa"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "corre",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che gioca con la palla",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0010",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "input_frames": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0131_t0032.750.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "attiva",
+          "attributes": [
+            "capelli lunghi",
+            "vestiti rosa e bianchi"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "osservatore",
+          "attributes": [
+            "vestiti rosa"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "colorata"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "si accovaccia",
+          "actor": "e1",
+          "object": "null",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che si accovaccia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0011",
+      "start_time": 33.0,
+      "end_time": 34.75,
+      "input_frames": [
+        "dense_0132_t0033.000.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0135_t0033.750.jpg",
+        "dense_0136_t0034.000.jpg",
+        "dense_0137_t0034.250.jpg",
+        "dense_0138_t0034.500.jpg",
+        "dense_0139_t0034.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi castani",
+            "indossa maglietta rosa e pantaloni rosa",
+            "indossa calzini rosa e scarpe rosa"
+          ],
+          "start_time": 33.0,
+          "end_time": 34.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rossa"
+          ],
+          "start_time": 33.0,
+          "end_time": 34.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "bicicletta",
+          "role": "oggetto",
+          "attributes": [
+            "bianca e rosa"
+          ],
+          "start_time": 33.0,
+          "end_time": 34.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 33.0,
+          "end_time": 34.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": []
+}

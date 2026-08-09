@@ -1,0 +1,1791 @@
+{
+  "id_video": "video019",
+  "model": "google/gemma-3n-E4B-it",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 8,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 8,
+  "numero_errori": 0,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tocca il petto",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 0.5,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tocca il petto",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 2.25,
+          "end_time": 2.75,
+          "evidence_frames": [
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tocca il petto",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra uomo e bambina",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambino",
+          "attributes": [],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tocca",
+          "actor": "e1",
+          "object": "e1",
+          "start_time": 3.0,
+          "end_time": 3.5,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tocca",
+          "actor": "e1",
+          "object": "e1",
+          "start_time": 4.0,
+          "end_time": 4.5,
+          "evidence_frames": [
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tocca",
+          "actor": "e1",
+          "object": "e1",
+          "start_time": 5.25,
+          "end_time": 5.75,
+          "evidence_frames": [
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tocca",
+          "actor": "e1",
+          "object": "e1",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "persona",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "capelli scuri",
+            "indossa una maglietta nera",
+            "indossa un orologio"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi castani",
+            "indossa una maglietta chiara",
+            "indossa una gonna rossa"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "televisore",
+          "role": "sfondo",
+          "attributes": [],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "tavolino",
+          "label": "tavolino",
+          "role": "sfondo",
+          "attributes": [],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "altoparlante",
+          "label": "altoparlante",
+          "role": "sfondo",
+          "attributes": [],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "l'uomo mostra qualcosa alla bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "capelli castani",
+            "orecchini"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "si china verso la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 9.5,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "parla con la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 10.0,
+          "end_time": 10.5,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "si china verso la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 11.25,
+          "end_time": 11.75,
+          "evidence_frames": [
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "parla con la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 12.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra adulto e bambina",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [
+            "capelli castani",
+            "indossa una camicia nera",
+            "indossa pantaloni verdi",
+            "indossa un orologio"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "capelli castani lunghi",
+            "indossa una maglietta rosa",
+            "indossa jeans neri",
+            "indossa delle clip per capelli"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tavolo",
+          "role": "tavolo",
+          "attributes": [],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "libro",
+          "role": "libro",
+          "attributes": [
+            "copertina scura",
+            "testo bianco"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "cuscino",
+          "role": "cuscino",
+          "attributes": [
+            "rosso"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "cuscino",
+          "role": "cuscino",
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "lampada",
+          "role": "lampada",
+          "attributes": [
+            "bianca"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "tavolo",
+          "role": "tavolo",
+          "attributes": [
+            "con riviste"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "l'uomo si china verso la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 12.5,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "l'uomo guarda il libro",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 12.5,
+          "end_time": 13.0,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "l'uomo si alza",
+          "actor": "e1",
+          "object": null,
+          "start_time": 13.0,
+          "end_time": 13.5,
+          "evidence_frames": [
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "l'uomo parla con la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 13.5,
+          "end_time": 14.25,
+          "evidence_frames": [
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "l'uomo si china di nuovo verso la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 14.25,
+          "end_time": 14.75,
+          "evidence_frames": [
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "l'uomo guarda il libro",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 14.75,
+          "end_time": 15.25,
+          "evidence_frames": [
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "l'uomo si alza",
+          "actor": "e1",
+          "object": null,
+          "start_time": 15.25,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra uomo e bambina",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "seduta su",
+          "object": "e6",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "fiocco nei capelli"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "si china verso la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 15.5,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mostra qualcosa nella mano",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 16.0,
+          "end_time": 16.5,
+          "evidence_frames": [
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mostra qualcosa nella mano",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 17.25,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mostra qualcosa nella mano",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 18.25,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra adulto e bambina",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [
+            "capelli scuri",
+            "occhiali",
+            "orologio"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi castani",
+            "fiore nei capelli",
+            "maglione rosa",
+            "pantaloni scuri"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "libro",
+          "role": "oggetto",
+          "attributes": [
+            "aperto"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "divano",
+          "role": "arredamento",
+          "attributes": [],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "cuscini",
+          "role": "arredamento",
+          "attributes": [
+            "giallo",
+            "rosso",
+            "verde",
+            "patternato"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "tavolino",
+          "role": "arredamento",
+          "attributes": [],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "televisore",
+          "role": "elettrodomestico",
+          "attributes": [],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "lampada",
+          "role": "arredamento",
+          "attributes": [
+            "bianca"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "altoparlante",
+          "role": "elettrodomestico",
+          "attributes": [
+            "nero"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "persona mostra qualcosa alla bambina",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra persona e bambina",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "accanto a",
+          "object": "e4",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "tra",
+          "object": "e1",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 23.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg",
+        "dense_0089_t0022.250.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0092_t0023.000.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0095_t0023.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambino",
+          "attributes": [
+            "capelli lunghi",
+            "indossa maglione rosa",
+            "indossa pantaloni scuri"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [
+            "capelli scuri",
+            "indossa maglietta nera",
+            "indossa pantaloni kaki"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "libro",
+          "role": "oggetto",
+          "attributes": [
+            "aperto"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "divano",
+          "role": "arredamento",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "tavolino",
+          "role": "arredamento",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "lampada",
+          "role": "arredamento",
+          "attributes": [
+            "tonda",
+            "bianca"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "televisore",
+          "role": "arredamento",
+          "attributes": [
+            "schermo nero"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "scatola",
+          "role": "oggetto",
+          "attributes": [
+            "rossa"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "altoparlante",
+          "role": "oggetto",
+          "attributes": [
+            "nero"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "il bambino legge un libro",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "l'adulto si china verso il bambino",
+          "actor": "e2",
+          "object": "e1",
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "il bambino legge",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "seduto su",
+          "object": "e4",
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "seduto vicino a",
+          "object": "e1",
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "seduto",
+          "after": "seduto",
+          "start_time": 21.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": []
+}

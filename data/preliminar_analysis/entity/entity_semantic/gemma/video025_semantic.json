@@ -1,0 +1,2685 @@
+{
+  "id_video": "video025",
+  "model": "google/gemma-3n-E4B-it",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 8,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 15,
+  "numero_errori": 0,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "indossa un costume da bagno blu",
+            "è bagnata"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "gioca nella sabbia",
+          "actor": "e1",
+          "object": "sabbia",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "scava una buca nella sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "buco nella sabbia",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "asciutta",
+          "after": "bagnata",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "indossa un costume da bagno blu",
+            "gioca nella sabbia"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "sabbia",
+          "role": "ambiente",
+          "attributes": [
+            "fine",
+            "beige"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "acqua",
+          "role": "ambiente",
+          "attributes": [
+            "azzurra",
+            "in movimento"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "gioca nella sabbia",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che costruisce un castello di sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "asciutta",
+          "after": "bagnata",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli scuri",
+            "indossa un costume da bagno blu",
+            "gioca nella sabbia"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "sabbia",
+          "role": "ambiente",
+          "attributes": [
+            "fine",
+            "chiara"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "paiolo",
+          "role": "oggetto",
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 7.5,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "gioca nella sabbia",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "usa un paiolo",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 7.5,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che gioca nella sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "indossa un costume da bagno turchese",
+            "indossa un cappello di paglia bianco"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "palla",
+          "role": "oggetto",
+          "attributes": [
+            "gialla"
+          ],
+          "start_time": 11.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "non protagonista",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        }
+      ],
+      "actions": [
+        {
+          "description": "gioca con la sabbia",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 11.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che gioca nella sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "e3",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "indossa un costume da bagno blu e rosa",
+            "indossa un cappello bianco"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "indossa un costume da bagno blu",
+            "indossa un cappello bianco"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "non protagonista",
+          "attributes": [],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "entity_id": "e4",
+          "label": "pala",
+          "role": "oggetto",
+          "attributes": [
+            "gialla"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "gioca nella sabbia",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "costruzione di un castello di sabbia",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "gioca con la pala",
+          "after": "scava nella sabbia",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "indossa un costume da bagno blu",
+            "gioca nella sabbia"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "sabbia",
+          "role": "ambiente",
+          "attributes": [
+            "fine",
+            "beige"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "mare",
+          "role": "ambiente",
+          "attributes": [
+            "azzurro",
+            "con onde"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "gioca nella sabbia",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "scava una buca",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che gioca nella sabbia",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro a",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani lunghi",
+            "indossa un costume da bagno blu",
+            "indossa una fascia verde",
+            "gioca nella sabbia"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "sabbia",
+          "role": "ambiente",
+          "attributes": [
+            "fine",
+            "chiara"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "mare",
+          "role": "ambiente",
+          "attributes": [
+            "azzurro",
+            "con onde"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "scava",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "gioca nella sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "indossa un costume da bagno blu e verde",
+            "indossa un braccialetto"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [
+            "indossa un costume da bagno a righe rosa e verde"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "acqua",
+          "role": "mare",
+          "attributes": [
+            "trasparente",
+            "azzurro"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "sabbia",
+          "role": "spiaggia",
+          "attributes": [
+            "chiara"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "si alza",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 21.5,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "si china",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 22.0,
+          "end_time": 22.5,
+          "evidence_frames": [
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "si alza",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 23.25,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "si china",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 24.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "persona in acqua",
+          "participants": [
+            "e2",
+            "e3"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "su",
+          "object": "e5",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi",
+          "after": "seduta",
+          "start_time": 22.0,
+          "end_time": 22.5,
+          "evidence_frames": [
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli lunghi neri",
+            "costume da bagno turchese",
+            "legata",
+            "seduta",
+            "in piedi"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "acqua",
+          "role": "sfondo",
+          "attributes": [
+            "turchese",
+            "trasparente",
+            "con onde"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "sabbia",
+          "role": "superficie",
+          "attributes": [
+            "chiara",
+            "asciutta",
+            "con impronte"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "osservatore",
+          "attributes": [
+            "parzialmente visibile",
+            "seduta",
+            "in costume da bagno"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "osservatore",
+          "attributes": [
+            "parzialmente visibile",
+            "seduta",
+            "in costume da bagno",
+            "con cappello"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "entity_id": "e6",
+          "label": "persona",
+          "role": "osservatore",
+          "attributes": [
+            "parzialmente visibile",
+            "seduta",
+            "in costume da bagno"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "entity_id": "e7",
+          "label": "persona",
+          "role": "osservatore",
+          "attributes": [
+            "parzialmente visibile",
+            "seduta",
+            "in costume da bagno"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "entity_id": "e8",
+          "label": "persona",
+          "role": "osservatore",
+          "attributes": [
+            "parzialmente visibile",
+            "seduta",
+            "in costume da bagno"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        }
+      ],
+      "actions": [
+        {
+          "description": "seduta",
+          "actor": "e1",
+          "object": null,
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "in piedi",
+          "actor": "e1",
+          "object": null,
+          "start_time": 26.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "camminare",
+          "actor": "e1",
+          "object": null,
+          "start_time": 27.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina seduta sulla sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 24.0,
+          "end_time": 26.25,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina in piedi sulla sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 26.25,
+          "end_time": 27.25,
+          "evidence_frames": [
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "bambina camminare sulla sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 27.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "su",
+          "object": "e3",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0009",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "input_frames": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0119_t0029.750.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0123_t0030.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "costume da bagno blu e rosa",
+            "capelli neri lunghi",
+            "indossa un cappello bianco"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "costume da bagno blu",
+            "capelli neri lunghi",
+            "indossa un costume da bagno blu e giallo"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "spettatore",
+          "attributes": [
+            "indossa un costume da bagno verde"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "spettatore",
+          "attributes": [],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "corre",
+          "actor": "e1",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "gioca con la sabbia",
+          "actor": "e2",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "presenza di persone in spiaggia",
+          "participants": [
+            "e1",
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0010",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "input_frames": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0131_t0032.750.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "costume da bagno",
+            "capelli lunghi",
+            "leggera carnagione"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "buco",
+          "role": "buco nella sabbia",
+          "attributes": [
+            "profondo",
+            "circolare",
+            "contenente acqua"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "sabbia",
+          "role": "superficie",
+          "attributes": [
+            "fine",
+            "chiara"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "camminare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "sedersi",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 33.25,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "creazione di un buco nella sabbia",
+          "participants": [
+            "e1",
+            "e3"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "su",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "dentro",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "camminando",
+          "after": "seduta",
+          "start_time": 33.25,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0011",
+      "start_time": 33.0,
+      "end_time": 36.75,
+      "input_frames": [
+        "dense_0132_t0033.000.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0136_t0034.000.jpg",
+        "dense_0138_t0034.500.jpg",
+        "dense_0141_t0035.250.jpg",
+        "dense_0143_t0035.750.jpg",
+        "dense_0145_t0036.250.jpg",
+        "dense_0147_t0036.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "indossa un costume da bagno blu e nero",
+            "indossa una fascia verde",
+            "indossa una cavigliera dorata"
+          ],
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "scava",
+          "actor": "e1",
+          "object": "terreno",
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "inserisce la mano nel buco",
+          "actor": "e1",
+          "object": "buco",
+          "start_time": 35.25,
+          "end_time": 35.75,
+          "evidence_frames": [
+            "dense_0141_t0035.250.jpg",
+            "dense_0143_t0035.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tocca il fondo del buco",
+          "actor": "e1",
+          "object": "fondo del buco",
+          "start_time": 36.25,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0145_t0036.250.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "scavo di un buco nella sabbia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "buco",
+          "start_time": 35.25,
+          "end_time": 35.75,
+          "evidence_frames": [
+            "dense_0141_t0035.250.jpg",
+            "dense_0143_t0035.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0012",
+      "start_time": 36.0,
+      "end_time": 39.75,
+      "input_frames": [
+        "dense_0144_t0036.000.jpg",
+        "dense_0146_t0036.500.jpg",
+        "dense_0148_t0037.000.jpg",
+        "dense_0150_t0037.500.jpg",
+        "dense_0153_t0038.250.jpg",
+        "dense_0155_t0038.750.jpg",
+        "dense_0157_t0039.250.jpg",
+        "dense_0159_t0039.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "abbigliamento blu",
+            "capelli scuri"
+          ],
+          "start_time": 36.0,
+          "end_time": 39.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "piscina",
+          "role": "piscina di sabbia",
+          "attributes": [
+            "sabbia",
+            "acqua"
+          ],
+          "start_time": 36.0,
+          "end_time": 39.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "camminare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 36.0,
+          "end_time": 39.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che cammina nella piscina di sabbia",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 36.0,
+          "end_time": 39.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "e2",
+          "start_time": 36.0,
+          "end_time": 39.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0013",
+      "start_time": 39.0,
+      "end_time": 42.5,
+      "input_frames": [
+        "dense_0156_t0039.000.jpg",
+        "dense_0158_t0039.500.jpg",
+        "dense_0160_t0040.000.jpg",
+        "dense_0162_t0040.500.jpg",
+        "dense_0164_t0041.000.jpg",
+        "dense_0166_t0041.500.jpg",
+        "dense_0168_t0042.000.jpg",
+        "dense_0170_t0042.500.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "protagonista",
+          "attributes": [
+            "costume da bagno blu e turchese",
+            "capelli castani lunghi",
+            "scarpe da ginnastica",
+            "braccialetto"
+          ],
+          "start_time": 39.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0156_t0039.000.jpg",
+            "dense_0158_t0039.500.jpg",
+            "dense_0160_t0040.000.jpg",
+            "dense_0162_t0040.500.jpg",
+            "dense_0164_t0041.000.jpg",
+            "dense_0166_t0041.500.jpg",
+            "dense_0168_t0042.000.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "cammina",
+          "actor": "e1",
+          "object": null,
+          "start_time": 39.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0156_t0039.000.jpg",
+            "dense_0158_t0039.500.jpg",
+            "dense_0160_t0040.000.jpg",
+            "dense_0162_t0040.500.jpg",
+            "dense_0164_t0041.000.jpg",
+            "dense_0166_t0041.500.jpg",
+            "dense_0168_t0042.000.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "entra in un buco nel terreno",
+          "actor": "e1",
+          "object": "buco nel terreno",
+          "start_time": 41.5,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0166_t0041.500.jpg",
+            "dense_0168_t0042.000.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che cammina sulla spiaggia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 39.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0156_t0039.000.jpg",
+            "dense_0158_t0039.500.jpg",
+            "dense_0160_t0040.000.jpg",
+            "dense_0162_t0040.500.jpg",
+            "dense_0164_t0041.000.jpg",
+            "dense_0166_t0041.500.jpg",
+            "dense_0168_t0042.000.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "buco nel terreno",
+          "start_time": 41.5,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0166_t0041.500.jpg",
+            "dense_0168_t0042.000.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "camminando",
+          "after": "dentro il buco",
+          "start_time": 41.5,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0166_t0041.500.jpg",
+            "dense_0168_t0042.000.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0014",
+      "start_time": 42.0,
+      "end_time": 42.5,
+      "input_frames": [
+        "dense_0168_t0042.000.jpg",
+        "dense_0169_t0042.250.jpg",
+        "dense_0170_t0042.500.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "persona",
+          "attributes": [
+            "capelli castani",
+            "indossa un bikini blu",
+            "è seduta in una buca nella sabbia"
+          ],
+          "start_time": 42.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0168_t0042.000.jpg",
+            "dense_0169_t0042.250.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "buca",
+          "role": "ambiente",
+          "attributes": [
+            "nella sabbia"
+          ],
+          "start_time": 42.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0168_t0042.000.jpg",
+            "dense_0169_t0042.250.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "sabbia",
+          "role": "ambiente",
+          "attributes": [
+            "chiara"
+          ],
+          "start_time": 42.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0168_t0042.000.jpg",
+            "dense_0169_t0042.250.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "ombra",
+          "role": "oggetto",
+          "attributes": [
+            "della bambina"
+          ],
+          "start_time": 42.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0168_t0042.000.jpg",
+            "dense_0169_t0042.250.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "e2",
+          "start_time": 42.0,
+          "end_time": 42.5,
+          "evidence_frames": [
+            "dense_0168_t0042.000.jpg",
+            "dense_0169_t0042.250.jpg",
+            "dense_0170_t0042.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,2290 @@
+{
+  "id_video": "video013",
+  "model": "google/gemma-3n-E4B-it",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 8,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 12,
+  "numero_errori": 0,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "manipolatore",
+          "attributes": [],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "uovo",
+          "role": "oggetto",
+          "attributes": [],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "ciotola",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "acqua",
+          "role": "contenuto",
+          "attributes": [],
+          "start_time": 2.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "bicchiere",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 2.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "aggiungere uovo",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 0.5,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere uova",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 1.0,
+          "end_time": 1.5,
+          "evidence_frames": [
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere uova",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 2.25,
+          "end_time": 2.75,
+          "evidence_frames": [
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere acqua",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 2.75,
+          "end_time": 3.25,
+          "evidence_frames": [
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere acqua",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "versare uova nella ciotola",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e3",
+          "before": "vuota",
+          "after": "con uova e acqua",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "uovo",
+          "role": "ingrediente",
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "acqua",
+          "role": "ingrediente",
+          "attributes": [
+            "liquido"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "zucchero",
+          "role": "ingrediente",
+          "attributes": [
+            "bianco"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "operatore",
+          "attributes": [],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "cucchiaio",
+          "role": "utensile",
+          "attributes": [
+            "metallico"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "ciotola",
+          "role": "contenitore",
+          "attributes": [
+            "bianca",
+            "plastica"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "bicchiere",
+          "role": "contenitore",
+          "attributes": [
+            "vetro",
+            "vuoto"
+          ],
+          "start_time": 3.5,
+          "end_time": 4.0,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "bicchiere",
+          "role": "contenitore",
+          "attributes": [
+            "vetro",
+            "con liquido"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "contenitore",
+          "role": "contenitore",
+          "attributes": [
+            "bianco",
+            "con coperchio"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "aggiungere acqua",
+          "actor": "e4",
+          "object": "e6",
+          "start_time": 3.5,
+          "end_time": 4.0,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere zucchero",
+          "actor": "e4",
+          "object": "e6",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "preparazione di un impasto",
+          "participants": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5",
+            "e6"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro a",
+          "object": "e6",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e7",
+          "relation": "dentro a",
+          "object": "e6",
+          "start_time": 3.5,
+          "end_time": 4.0,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e8",
+          "relation": "dentro a",
+          "object": "e6",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e6",
+          "before": "vuoto",
+          "after": "con uova e acqua",
+          "start_time": 3.0,
+          "end_time": 3.5,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e6",
+          "before": "con uova e acqua",
+          "after": "con uova, acqua e zucchero",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "manipolatore",
+          "attributes": [],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "uovo",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "latte",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 7.5,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "zucchero",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 6.5,
+          "end_time": 7.0,
+          "evidence_frames": [
+            "dense_0026_t0006.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "zucchero",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 8.25,
+          "end_time": 8.75,
+          "evidence_frames": [
+            "dense_0033_t0008.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "zucchero",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0037_t0009.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "aggiungere latte",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 7.5,
+          "end_time": 7.5,
+          "evidence_frames": [
+            "dense_0030_t0007.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere zucchero",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 6.5,
+          "end_time": 7.0,
+          "evidence_frames": [
+            "dense_0026_t0006.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere zucchero",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 8.25,
+          "end_time": 8.75,
+          "evidence_frames": [
+            "dense_0033_t0008.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere zucchero",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0037_t0009.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "preparazione di una miscela",
+          "participants": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5",
+            "e6"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "manipolatore",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "uovo",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "zucchero",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "ciotola",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "frusta",
+          "role": "strumento",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "contenitore zucchero",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "versare zucchero",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 9.5,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "versare zucchero",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 10.0,
+          "end_time": 10.5,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mescolare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 11.25,
+          "end_time": 11.75,
+          "evidence_frames": [
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mescolare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 12.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "aggiunta di uova",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 9.0,
+          "end_time": 9.5,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiunta di zucchero",
+          "participants": [
+            "e1",
+            "e3"
+          ],
+          "start_time": 10.0,
+          "end_time": 10.5,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mescolamento degli ingredienti",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 11.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra a",
+          "object": "e4",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "dentro a",
+          "object": "e4",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "dentro a",
+          "object": "e4",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "sopra a",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e6",
+          "relation": "dentro a",
+          "object": "e4",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "frullatore",
+          "role": "attrezzo",
+          "attributes": [],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "zucchero",
+          "role": "ingrediente",
+          "attributes": [
+            "bianco"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "ciotola",
+          "role": "contenitore",
+          "attributes": [
+            "bianca",
+            "plastica"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "frullare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "miscelazione",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "dentro",
+          "object": "e3",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "solido",
+          "after": "liquido",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "manipolatore",
+          "attributes": [],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "vaso",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "zucchero",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "mescolare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "preparazione",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e3",
+          "before": "intero",
+          "after": "mescolato",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bicchiere",
+          "role": "oggetto",
+          "attributes": [],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "panna",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "farina",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 21.75,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "persona",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bicchiere",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "farina",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "barilla",
+          "role": "brand",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "farina",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bicchiere",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "mano",
+          "role": "manipolatore",
+          "attributes": [],
+          "start_time": 26.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "vaso",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "panno",
+          "role": "superficie",
+          "attributes": [],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "aggiunta di farina",
+          "actor": "e3",
+          "object": "e2",
+          "start_time": 26.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "aggiunta di farina al bicchiere",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dentro a",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "sulla",
+          "object": "e2",
+          "start_time": 26.25,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "vuoto",
+          "after": "contenuto",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0009",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "input_frames": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0119_t0029.750.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0123_t0030.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "vaso",
+          "role": "contenitore",
+          "attributes": [],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "farina",
+          "role": "ingrediente",
+          "attributes": [
+            "bianca",
+            "polverosa"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "frusta",
+          "role": "strumento",
+          "attributes": [
+            "metallica"
+          ],
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "ciotola",
+          "role": "contenitore",
+          "attributes": [
+            "bianca",
+            "ovale"
+          ],
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "panno",
+          "role": "materiale",
+          "attributes": [
+            "bianco",
+            "in plastica"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "aggiunta di farina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mescolamento con frusta",
+          "actor": "e3",
+          "object": "e2",
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "aggiunta di farina al vaso",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mescolamento della farina",
+          "participants": [
+            "e2",
+            "e3",
+            "e4"
+          ],
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "dentro a",
+          "object": "e1",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sotto",
+          "object": "e1",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "vuoto",
+          "after": "contenente farina",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0010",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "input_frames": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0131_t0032.750.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "frusta",
+          "role": "strumento",
+          "attributes": [],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "impasto",
+          "role": "ingrediente",
+          "attributes": [
+            "giallo",
+            "cremoso"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "farina",
+          "role": "ingrediente",
+          "attributes": [
+            "bianca",
+            "polverosa"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "liquido",
+          "role": "ingrediente",
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "mescolare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "aggiungere farina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 32.25,
+          "end_time": 33.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "impasto in fase di mescolamento",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0011",
+      "start_time": 33.0,
+      "end_time": 35.0,
+      "input_frames": [
+        "dense_0132_t0033.000.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0135_t0033.750.jpg",
+        "dense_0137_t0034.250.jpg",
+        "dense_0138_t0034.500.jpg",
+        "dense_0139_t0034.750.jpg",
+        "dense_0140_t0035.000.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "manipolatore",
+          "attributes": [],
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "vaso",
+          "role": "contenitore",
+          "attributes": [
+            "bianco",
+            "a forma di fiore"
+          ],
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "impasto",
+          "role": "sostanza",
+          "attributes": [
+            "giallo chiaro",
+            "cremoso"
+          ],
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "farina",
+          "role": "ingrediente",
+          "attributes": [
+            "bianca",
+            "polverosa"
+          ],
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "aggiunta di farina all'impasto",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "mescolamento dell'impasto",
+          "participants": [
+            "e1",
+            "e3"
+          ],
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e2",
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e3",
+          "before": "impasto liquido",
+          "after": "impasto più denso",
+          "start_time": 33.0,
+          "end_time": 35.0,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": []
+}

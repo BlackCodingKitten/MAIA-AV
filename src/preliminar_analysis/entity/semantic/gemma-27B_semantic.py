@@ -1,15 +1,26 @@
 from __future__ import annotations
 
 import os
+import time
 
 # ==============================================================================
-# FORZATURA GPU: Isola le GPU fisiche 4, 5, 6 e 7 PRIMA di importare torch.
-# PyTorch le mapperà come cuda:0, cuda:1, cuda:2, cuda:3 logiche.
+# FORZATURA GPU: Isola le GPU fisiche 1, 2, 4, 5, 6 e 7 (6 GPU totali).
+# Fissa anche i thread CPU a 1 per evitare contesa e zittire i warning.
 # ==============================================================================
-os.environ["CUDA_VISIBLE_DEVICES"] = "4,5,6,7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1,2,4,5,6,7"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
 
 import argparse
 from pathlib import Path
+from PIL import Image
+
+try:
+    from vllm import LLM, SamplingParams
+except ImportError as error:
+    raise RuntimeError(
+        "Manca la libreria vLLM. Installala con: pip install vllm"
+    ) from error
 
 from semantic_common import (
     discover_video_directories,
@@ -20,99 +31,63 @@ from semantic_common import (
 DEFAULT_MODEL = "google/gemma-3-27b-it"
 
 
-class Gemma27Inferencer:
-    def __init__(
-        self,
-        model_id: str,
-        max_new_tokens: int,
-    ) -> None:
-        try:
-            import torch
-            from PIL import Image
-            from transformers import (
-                AutoProcessor,
-                Gemma3ForConditionalGeneration,
-            )
-        except ImportError as error:
-            raise RuntimeError(
-                "Dipendenze mancanti. Installa transformers, accelerate e Pillow."
-            ) from error
+class Gemma27VLLMInferencer:
+    def __init__(self, model_id: str, max_new_tokens: int, max_frames: int = 8) -> None:
+        print("\n" + "=" * 80, flush=True)
+        print(" [1/2] Inizializzazione Gemma 3 27B su 6 GPU (1, 2, 4, 5, 6, 7)...", flush=True)
+        print(" Configurazione: Tensor Parallelism (TP=2) x Pipeline Parallelism (PP=3)", flush=True)
+        print(" Caricamento pesi e allocazione VRAM in corso...", flush=True)
+        print("=" * 80 + "\n", flush=True)
 
-        self.torch = torch
-        self.Image = Image
         self.max_new_tokens = max_new_tokens
+        self.window_counter = 0
 
-        if not torch.cuda.is_available():
-            raise RuntimeError("CUDA non disponibile.")
-
-        gpu_count = torch.cuda.device_count()
-        print(f"Caricamento di {model_id} in BF16 (device_map='auto')...")
-        print(f"GPU visibili a PyTorch: {gpu_count} (Corrispondenti a GPU fisiche 4, 5, 6, 7)")
-
-        # Caricamento con ripartizione automatica dei layer sulle GPU visibili
-        self.model = (
-            Gemma3ForConditionalGeneration.from_pretrained(
-                model_id,
-                torch_dtype=torch.bfloat16,
-                device_map="auto",
-                low_cpu_mem_usage=True,
-            )
-            .eval()
+        start_load = time.time()
+        
+        # TP=2 e PP=3 distribuiscono il carico esattamente su 6 GPU (2 * 3 = 6)
+        self.llm = LLM(
+            model=model_id,
+            tensor_parallel_size=2,
+            pipeline_parallel_size=3,
+            dtype="bfloat16",
+            trust_remote_code=True,
+            gpu_memory_utilization=0.90,
+            max_model_len=8192,
+            limit_mm_per_prompt={"image": max_frames},
         )
 
-        self.processor = AutoProcessor.from_pretrained(model_id)
+        load_duration = time.time() - start_load
+        print(f"\n [2/2] Modello caricato con successo in {load_duration:.2f}s!\n", flush=True)
 
-        # Il device primario (dove risiede il primo layer per gli input)
-        try:
-            self.input_device = self.model.device
-        except AttributeError:
-            self.input_device = torch.device("cuda:0")
+        self.sampling_params = SamplingParams(
+            temperature=0.0,  # Deterministico per output JSON
+            max_tokens=self.max_new_tokens,
+        )
 
-        print("\nDevice map del modello Gemma-27B:")
-        if hasattr(self.model, "hf_device_map"):
-            for module_name, device in self.model.hf_device_map.items():
-                print(f"  {module_name or '<root>'}: {device}")
-        print()
+    def __call__(self, frame_paths: tuple[Path, ...], prompt: str) -> str:
+        self.window_counter += 1
+        current_window = self.window_counter
 
-    def __call__(
-        self,
-        frame_paths: tuple[Path, ...],
-        prompt: str,
-    ) -> str:
-        images = [
-            self.Image.open(path).convert("RGB")
-            for path in frame_paths
-        ]
+        print(
+            f"   --> [Finestra #{current_window}] Caricamento {len(frame_paths)} frame...",
+            flush=True,
+        )
+        
+        start_time = time.time()
+        images = [Image.open(path).convert("RGB") for path in frame_paths]
 
         try:
-            content = [
-                {
-                    "type": "image",
-                    "image": image,
-                }
-                for image in images
-            ]
-
-            content.append(
-                {
-                    "type": "text",
-                    "text": prompt,
-                }
-            )
+            content = [{"type": "image", "image": image} for image in images]
+            content.append({"type": "text", "text": prompt})
 
             messages = [
                 {
                     "role": "system",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": (
-                                "Sei un annotatore scientifico di video. "
-                                "Restituisci esclusivamente JSON valido, "
-                                "conciso e verificabile."
-                            ),
-                        }
-                    ],
+                    "content": (
+                        "Sei un annotatore scientifico di video. "
+                        "Restituisci esclusivamente JSON valido, "
+                        "conciso e verificabile."
+                    ),
                 },
                 {
                     "role": "user",
@@ -120,46 +95,24 @@ class Gemma27Inferencer:
                 },
             ]
 
-            inputs = self.processor.apply_chat_template(
-                messages,
-                add_generation_prompt=True,
-                tokenize=True,
-                return_dict=True,
-                return_tensors="pt",
+            print(
+                f"   --> [Finestra #{current_window}] Generazione risposta su vLLM...",
+                flush=True,
             )
 
-            # Spostamento degli input sul device primario del modello
-            inputs = {
-                key: (
-                    value.to(self.input_device)
-                    if hasattr(value, "to")
-                    else value
-                )
-                for key, value in inputs.items()
-            }
+            outputs = self.llm.chat(
+                messages,
+                sampling_params=self.sampling_params,
+                use_tqdm=False,
+            )
 
-            if "pixel_values" in inputs:
-                inputs["pixel_values"] = (
-                    inputs["pixel_values"].to(dtype=self.torch.bfloat16)
-                )
+            elapsed = time.time() - start_time
+            print(
+                f"   <-- [Finestra #{current_window}] Completata in {elapsed:.2f}s.",
+                flush=True,
+            )
 
-            input_length = inputs["input_ids"].shape[-1]
-
-            with self.torch.inference_mode():
-                generation = self.model.generate(
-                    **inputs,
-                    max_new_tokens=self.max_new_tokens,
-                    do_sample=False,
-                )
-
-            generation = generation[0, input_length:]
-
-            text = self.processor.decode(
-                generation,
-                skip_special_tokens=True,
-            ).strip()
-
-            return text
+            return outputs[0].outputs[0].text.strip()
 
         finally:
             for image in images:
@@ -169,8 +122,8 @@ class Gemma27Inferencer:
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Estrae entità, azioni, eventi e relazioni "
-            "con Gemma-3-27B in locale sulle GPU 4, 5, 6 e 7."
+            "Analisi semantica con Gemma-3-27B in parallelo "
+            "su 6 GPU (1, 2, 4, 5, 6, 7)."
         )
     )
 
@@ -188,51 +141,21 @@ def main() -> None:
         type=Path,
     )
 
-    parser.add_argument(
-        "--model",
-        default=DEFAULT_MODEL,
-    )
-
-    parser.add_argument(
-        "--window-seconds",
-        type=float,
-        default=4.0,
-    )
-
-    parser.add_argument(
-        "--stride-seconds",
-        type=float,
-        default=3.0,
-    )
-
-    parser.add_argument(
-        "--max-frames",
-        type=int,
-        default=8,
-    )
-
-    parser.add_argument(
-        "--max-new-tokens",
-        type=int,
-        default=8192,
-    )
+    parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument("--window-seconds", type=float, default=4.0)
+    parser.add_argument("--stride-seconds", type=float, default=3.0)
+    parser.add_argument("--max-frames", type=int, default=8)
+    parser.add_argument("--max-new-tokens", type=int, default=3000)
 
     parser.add_argument(
         "--limit-videos",
         type=int,
         default=0,
-        help="Numero massimo di video da analizzare; 0 = tutti.",
+        help="Numero massimo di video; 0 = tutti.",
     )
 
-    parser.add_argument(
-        "--overwrite",
-        action="store_true",
-    )
-
-    parser.add_argument(
-        "--keep-raw",
-        action="store_true",
-    )
+    parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument("--keep-raw", action="store_true")
 
     args = parser.parse_args()
 
@@ -246,24 +169,34 @@ def main() -> None:
     if not video_directories:
         parser.error("Non sono state trovate cartelle dense_frames.")
 
-    args.output_directory.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
+    args.output_directory.mkdir(parents=True, exist_ok=True)
 
-    inferencer = Gemma27Inferencer(
+    inferencer = Gemma27VLLMInferencer(
         model_id=args.model,
         max_new_tokens=args.max_new_tokens,
+        max_frames=args.max_frames,
     )
 
     rows = []
+    total_videos = len(video_directories)
+
+    print(f"\nInizio elaborazione di {total_videos} video...", flush=True)
 
     for index, video_directory in enumerate(video_directories, start=1):
         print(
-            f"[{index}/{len(video_directories)}] "
-            f"Analisi Gemma-3-27B di {video_directory.name}",
+            f"\n========================================================",
             flush=True,
         )
+        print(
+            f"[{index}/{total_videos}] Inizio analisi video: {video_directory.name}",
+            flush=True,
+        )
+        print(
+            f"========================================================",
+            flush=True,
+        )
+
+        video_start_time = time.time()
 
         try:
             row = process_video_with_inferencer(
@@ -278,10 +211,16 @@ def main() -> None:
                 keep_raw=args.keep_raw,
             )
             rows.append(row)
+            
+            video_elapsed = time.time() - video_start_time
+            print(
+                f"SUCCESS: Video '{video_directory.name}' elaborato in {video_elapsed:.2f}s",
+                flush=True,
+            )
 
         except Exception as error:
             print(
-                f"Errore durante {video_directory.name}: "
+                f"ERRORE durante {video_directory.name}: "
                 f"{type(error).__name__}: {error}",
                 flush=True,
             )
@@ -301,7 +240,7 @@ def main() -> None:
         rows,
     )
 
-    print(f"Risultati salvati in: {args.output_directory}")
+    print(f"\nCOMPLETATO TOTALE! Risultati salvati in: {args.output_directory}", flush=True)
 
 
 if __name__ == "__main__":

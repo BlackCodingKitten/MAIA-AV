@@ -1,0 +1,2530 @@
+{
+  "id_video": "video032",
+  "model": "google/gemma-3n-E4B-it",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 8,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 9,
+  "numero_errori": 0,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "persona",
+          "attributes": [
+            "capelli castani lunghi",
+            "maglietta rosa",
+            "forchetta"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "piatto",
+          "role": "oggetto",
+          "attributes": [
+            "bianco",
+            "contenente pasta"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "forchetta",
+          "role": "oggetto",
+          "attributes": [
+            "metallica"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "cibo",
+          "role": "oggetto",
+          "attributes": [
+            "pasta",
+            "ragù"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "mangiare",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che mangia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "studente",
+          "attributes": [
+            "capelli castani",
+            "maglietta bianca con dettagli rossi",
+            "penna in mano"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "foglio",
+          "role": "compito",
+          "attributes": [
+            "testo scritto",
+            "diagrammi",
+            "domande"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tazza",
+          "role": "contenitore",
+          "attributes": [
+            "bianca",
+            "con contenuto"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "persona seduta",
+          "attributes": [
+            "mani che tengono una forchetta"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "scrive",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mangia",
+          "actor": "e4",
+          "object": "e3",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "studio",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mangiare",
+          "participants": [
+            "e4"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "seduto a",
+          "object": "e2",
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "seduta",
+          "after": "seduta",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "persona",
+          "attributes": [
+            "capelli castani lunghi",
+            "maglietta rosa con scritta dorata",
+            "sedia"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "piatto",
+          "role": "cibo",
+          "attributes": [
+            "bianco",
+            "contenente pasta al sugo"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "forchetta",
+          "role": "utensile",
+          "attributes": [
+            "metallica"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "scuro"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "frigorifero",
+          "role": "mobile",
+          "attributes": [
+            "acciaio inox",
+            "con adesivi"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "cucina",
+          "role": "ambiente",
+          "attributes": [
+            "pareti gialle"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "mangiare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che mangia pasta al sugo",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "seduta su",
+          "object": "e4",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sul",
+          "object": "e4",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli castani lunghi",
+            "maglietta bianca con maniche rosse",
+            "collana"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "libro",
+          "role": "oggetto",
+          "attributes": [
+            "testo",
+            "illustrazioni",
+            "titolo 'Predicato verbale'"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "morbido",
+            "scuro"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "forchetta",
+          "role": "oggetto",
+          "attributes": [
+            "metallo",
+            "argento"
+          ],
+          "start_time": 12.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "cucina giocattolo",
+          "role": "oggetto",
+          "attributes": [
+            "blu",
+            "bianco",
+            "verde",
+            "con accessori"
+          ],
+          "start_time": 12.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "guarda il libro",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tiene la forchetta",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 12.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina seduta a un tavolo",
+          "participants": [
+            "e1",
+            "e3"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "seduta su",
+          "object": "e3",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "su",
+          "object": "e3",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "vestito a righe",
+            "giubbotto rosso"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "ospite",
+          "attributes": [
+            "capelli lunghi",
+            "vestito rosa e bianco"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "morbido",
+            "scuro"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "pasto",
+          "role": "cibo",
+          "attributes": [
+            "pasta",
+            "salsa"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "forchetta",
+          "role": "utensile",
+          "attributes": [
+            "metallica"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "piatto",
+          "role": "contenitore",
+          "attributes": [
+            "bianco"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "frigorifero",
+          "role": "elettrodomestico",
+          "attributes": [
+            "argento"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "cucina",
+          "role": "stanza",
+          "attributes": [
+            "pareti gialle"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "lavello",
+          "role": "elettrodomestico",
+          "attributes": [
+            "bianco"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "entity_id": "e10",
+          "label": "giocattolo cucina",
+          "role": "oggetto",
+          "attributes": [
+            "blu e giallo"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "mangiare",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tenere una forchetta",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambina che mangia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "accanto a",
+          "object": "e3",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "maglietta rosa",
+            "pantaloncini rosa e bianchi"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "maglietta rossa e bianca",
+            "pantaloncini bianchi"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "piatto",
+          "role": "contenitore",
+          "attributes": [
+            "bianco",
+            "contenente pasta"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "forchetta",
+          "role": "utensile",
+          "attributes": [
+            "argento"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "cucina",
+          "role": "ambiente",
+          "attributes": [],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "frigorifero",
+          "role": "elettrodomestico",
+          "attributes": [
+            "argento",
+            "con adesivi"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "tavolo",
+          "role": "mobile",
+          "attributes": [
+            "morbido",
+            "marrone"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "cassetto",
+          "role": "mobile",
+          "attributes": [
+            "blu",
+            "con maniglie bianche"
+          ],
+          "start_time": 17.25,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "lavello",
+          "role": "mobile",
+          "attributes": [
+            "bianco",
+            "in acciaio"
+          ],
+          "start_time": 17.25,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e10",
+          "label": "caffettiera",
+          "role": "elettrodomestico",
+          "attributes": [
+            "verde",
+            "bianca"
+          ],
+          "start_time": 17.25,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "mangiare",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "mangiare",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "afferrare la forchetta",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 17.25,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "afferrare la forchetta",
+          "actor": "e2",
+          "object": "e4",
+          "start_time": 17.25,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambine che mangiano",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "a destra di",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "su",
+          "object": "e7",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "vicino a",
+          "object": "e6",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e9",
+          "relation": "vicino a",
+          "object": "e10",
+          "start_time": 17.25,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e9",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 17.25,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambino",
+          "attributes": [
+            "capelli lunghi",
+            "maglietta rossa e bianca",
+            "pantaloncini chiari"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "scuro",
+            "in legno"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "piatto",
+          "role": "contenitore",
+          "attributes": [
+            "bianco",
+            "con cibo"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "cibo",
+          "role": "contenuto",
+          "attributes": [
+            "pasta",
+            "sugo rosso"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "sedia",
+          "role": "seduta",
+          "attributes": [
+            "nera",
+            "con listelli"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "frigorifero",
+          "role": "mobile",
+          "attributes": [
+            "argento",
+            "con adesivi"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "mobile",
+          "role": "contenitore",
+          "attributes": [
+            "marrone",
+            "con maniglie"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "mangiare",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambino seduto a tavola",
+          "participants": [
+            "e1",
+            "e5"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "seduto su",
+          "object": "e5",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "su",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e6",
+          "relation": "vicino a",
+          "object": "e7",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "seduto",
+          "after": "mangia",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "capelli lunghi",
+            "indossa una maglietta bianca e rossa",
+            "indossa pantaloncini bianchi"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "in legno scuro"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "piatto",
+          "role": "contenitore",
+          "attributes": [
+            "bianco",
+            "con cibo"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "cibo",
+          "role": "contenuto",
+          "attributes": [
+            "arancione",
+            "a pezzi"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "forchetta",
+          "role": "utensile",
+          "attributes": [
+            "in metallo"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "frigorifero",
+          "role": "elettrodomestico",
+          "attributes": [
+            "in acciaio inossidabile",
+            "con adesivi"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "cucina",
+          "role": "ambiente",
+          "attributes": [
+            "con mobili in legno scuro",
+            "pavimento chiaro"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "sedia",
+          "role": "arredamento",
+          "attributes": [
+            "in legno scuro",
+            "con schienale a listelli"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "la bambina si pettina i capelli",
+          "actor": "e1",
+          "object": "e1",
+          "start_time": 21.0,
+          "end_time": 22.0,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "la bambina mangia",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 22.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "la bambina scrive",
+          "actor": "e1",
+          "object": "e7",
+          "start_time": 24.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "la bambina si pettina i capelli",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 21.0,
+          "end_time": 22.0,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "la bambina mangia",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 22.0,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "la bambina scrive",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 24.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "su",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "su",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "su",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e6",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e8",
+          "relation": "su",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "studente",
+          "attributes": [
+            "capelli castani lunghi",
+            "indossa una maglietta rossa e bianca"
+          ],
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "libro",
+          "role": "materiale scolastico",
+          "attributes": [
+            "aperto",
+            "con testo e disegni"
+          ],
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "penna",
+          "role": "strumento di scrittura",
+          "attributes": [
+            "blu"
+          ],
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "tavolo",
+          "role": "superficie di appoggio",
+          "attributes": [
+            "marrone"
+          ],
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "scrive",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "studio",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "seduta su",
+          "object": "e4",
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sul",
+          "object": "e4",
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "seduta",
+          "after": "seduta",
+          "start_time": 24.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": []
+}
