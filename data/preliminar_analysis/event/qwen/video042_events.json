@@ -1,0 +1,90 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "persona e1 appare in una serie di immagini dense_0024_t0006.000.jpg, dense_0026_t0006.500.jpg, dense_0028_t0007.000.jpg, dense_0030_t0007.500.jpg, dense_0033_t0008.250.jpg, dense_0035_t0008.750.jpg, dense_0037_t0009.250.jpg, dense_0039_t0009.750.jpg",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "persona e1 appare in una serie di immagini dense_0049_t0012.250.jpg",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0049_t0012.250.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "persona e1 appare in una serie di immagini dense_0073_t0018.250.jpg, dense_0075_t0018.750.jpg",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0073_t0018.250.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "persona e1 appare in una serie di immagini dense_0109_t0027.250.jpg, dense_0111_t0027.750.jpg",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0109_t0027.250.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before|after|overlaps|during|simultaneous",
+      "second_event": "E0002",
+      "confidence": 0.0,
+      "start_time": 6.0,
+      "end_time": 9.75
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before|after|overlaps|during|simultaneous",
+      "second_event": "E0003",
+      "confidence": 0.0,
+      "start_time": 9.0,
+      "end_time": 12.75
+    }
+  ],
+  "id_video": "video042",
+  "model": "Qwen/Qwen2.5-Omni-3B",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen/video042_semantic.json"
+}

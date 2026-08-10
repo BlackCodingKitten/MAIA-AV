@@ -11,7 +11,7 @@ import torch
 from transformers import AutoProcessor, Gemma3nForConditionalGeneration
 
 MODEL_ID = "google/gemma-3n-E4B-it"
-SEMANTIC_DIR = Path("data/preliminar_analysis/entity/entity_semantic/gemma")
+SEMANTIC_DIR = Path("data/preliminar_analysis/entity/gemma")
 OUTPUT_DIR = Path("data/preliminar_analysis/event/gemma")
 
 def read_json(path):
