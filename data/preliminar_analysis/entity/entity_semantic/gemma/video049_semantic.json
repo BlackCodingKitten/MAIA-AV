@@ -1,5 +1,5 @@
 {
-  "id_video": "video038",
+  "id_video": "video049",
   "model": "google/gemma-3n-E4B-it",
   "configuration": {
     "window_seconds": 4.0,
@@ -28,79 +28,10 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "lavoratore",
           "attributes": [
-            "capelli scuri",
-            "occhiali",
-            "giacca blu e nera"
-          ],
-          "start_time": 0.0,
-          "end_time": 3.75,
-          "evidence_frames": [
-            "dense_0000_t0000.000.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e nero"
-          ],
-          "start_time": 0.0,
-          "end_time": 3.75,
-          "evidence_frames": [
-            "dense_0000_t0000.000.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
-          "attributes": [
-            "pelo marrone",
-            "collare rosso"
-          ],
-          "start_time": 0.0,
-          "end_time": 3.75,
-          "evidence_frames": [
-            "dense_0000_t0000.000.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e4",
-          "label": "cane",
-          "role": "animale",
-          "attributes": [
-            "pelo marrone",
-            "collare verde"
+            "casco giallo e celeste",
+            "maglietta gialla"
           ],
           "start_time": 0.0,
           "end_time": 3.75,
@@ -120,9 +51,9 @@
       ],
       "actions": [
         {
-          "description": "gesto con le mani",
+          "description": "stuccare",
           "actor": "e1",
-          "object": "e2, e3, e4",
+          "object": "muro",
           "start_time": 0.0,
           "end_time": 3.75,
           "evidence_frames": [
@@ -139,9 +70,70 @@
           "confidence": 1.0
         }
       ],
-      "events": [],
-      "spatial_relations": [],
-      "state_changes": [],
+      "events": [
+        {
+          "description": "lavorazione muraria",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "muro",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "muro",
+          "before": "muro con crepe",
+          "after": "muro stuccato",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "temporal_relations": [],
       "causal_hypotheses": []
     },
@@ -163,12 +155,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "operatore",
           "attributes": [
-            "capelli neri ricci",
-            "occhiali",
-            "indossa una felpa blu e bianca",
-            "indossa pantaloni blu"
+            "guanti neri",
+            "maglietta nera",
+            "jeans"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
@@ -187,10 +178,11 @@
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "tavolo",
+          "role": "oggetto",
           "attributes": [
-            "pelo bianco e nero"
+            "bianco",
+            "con granelli"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
@@ -209,11 +201,54 @@
         },
         {
           "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
+          "label": "utensile",
+          "role": "strumento",
           "attributes": [
-            "pelo marrone e bianco",
-            "indossa un collare rosso"
+            "rosso e nero"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "metro a nastro",
+          "role": "strumento",
+          "attributes": [
+            "rosso e nero"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "pezzo di materiale",
+          "role": "oggetto",
+          "attributes": [
+            "bianco con granelli"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
@@ -233,37 +268,90 @@
       ],
       "actions": [
         {
-          "description": "offre cibo",
+          "description": "misurare",
           "actor": "e1",
-          "object": "e2",
+          "object": "e5",
           "start_time": 3.0,
-          "end_time": 6.75,
+          "end_time": 3.5,
           "evidence_frames": [
             "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
+            "dense_0014_t0003.500.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
-          "description": "offre cibo",
+          "description": "tagliare",
           "actor": "e1",
-          "object": "e3",
-          "start_time": 3.0,
+          "object": "e5",
+          "start_time": 3.5,
+          "end_time": 4.0,
+          "evidence_frames": [
+            "dense_0014_t0003.500.jpg",
+            "dense_0016_t0004.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "misurare",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 4.0,
+          "end_time": 4.5,
+          "evidence_frames": [
+            "dense_0016_t0004.000.jpg",
+            "dense_0018_t0004.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 4.5,
+          "end_time": 5.25,
+          "evidence_frames": [
+            "dense_0018_t0004.500.jpg",
+            "dense_0021_t0005.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 5.25,
+          "end_time": 5.75,
+          "evidence_frames": [
+            "dense_0021_t0005.250.jpg",
+            "dense_0023_t0005.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 5.75,
+          "end_time": 6.25,
+          "evidence_frames": [
+            "dense_0023_t0005.750.jpg",
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 6.25,
           "end_time": 6.75,
           "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
             "dense_0025_t0006.250.jpg",
             "dense_0027_t0006.750.jpg"
           ],
@@ -273,31 +361,13 @@
       ],
       "events": [
         {
-          "description": "interazione tra persona e vitello",
+          "description": "lavorazione del materiale",
           "participants": [
             "e1",
-            "e2"
-          ],
-          "start_time": 3.0,
-          "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e cane",
-          "participants": [
-            "e1",
-            "e3"
+            "e2",
+            "e5",
+            "e3",
+            "e4"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
@@ -318,7 +388,7 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
+          "relation": "davanti a",
           "object": "e2",
           "start_time": 3.0,
           "end_time": 6.75,
@@ -336,9 +406,9 @@
           "confidence": 1.0
         },
         {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e3",
+          "subject": "e5",
+          "relation": "su",
+          "object": "e2",
           "start_time": 3.0,
           "end_time": 6.75,
           "evidence_frames": [
@@ -377,55 +447,10 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "operatore",
           "attributes": [
-            "capelli scuri",
-            "occhiali",
-            "abbigliamento sportivo"
-          ],
-          "start_time": 6.0,
-          "end_time": 9.75,
-          "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0039_t0009.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e nero"
-          ],
-          "start_time": 6.0,
-          "end_time": 9.75,
-          "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0039_t0009.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e3",
-          "label": "cucciolo",
-          "role": "animale",
-          "attributes": [
-            "pelo marrone e bianco"
+            "guanti neri",
+            "jeans blu"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -445,18 +470,38 @@
       ],
       "actions": [
         {
-          "description": "offre cibo",
+          "description": "tagliare",
           "actor": "e1",
-          "object": "e2",
+          "object": "pannello",
           "start_time": 6.0,
-          "end_time": 9.75,
+          "end_time": 6.5,
           "evidence_frames": [
             "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
+            "dense_0026_t0006.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "pannello",
+          "start_time": 7.5,
+          "end_time": 8.25,
+          "evidence_frames": [
             "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0035_t0008.750.jpg",
+            "dense_0033_t0008.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "pannello",
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
             "dense_0037_t0009.250.jpg",
             "dense_0039_t0009.750.jpg"
           ],
@@ -464,20 +509,14 @@
           "confidence": 1.0
         },
         {
-          "description": "offre cibo",
+          "description": "posizionare",
           "actor": "e1",
-          "object": "e3",
-          "start_time": 6.0,
-          "end_time": 9.75,
+          "object": "pannello",
+          "start_time": 8.75,
+          "end_time": 9.25,
           "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
             "dense_0035_t0008.750.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0039_t0009.750.jpg"
+            "dense_0037_t0009.250.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -485,31 +524,10 @@
       ],
       "events": [
         {
-          "description": "interazione tra persona e vitello",
+          "description": "taglio di un pannello",
           "participants": [
             "e1",
-            "e2"
-          ],
-          "start_time": 6.0,
-          "end_time": 9.75,
-          "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0039_t0009.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e cucciolo",
-          "participants": [
-            "e1",
-            "e3"
+            "pannello"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -530,36 +548,37 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
+          "relation": "davanti a",
+          "object": "pannello",
           "start_time": 6.0,
-          "end_time": 9.75,
+          "end_time": 6.5,
           "evidence_frames": [
             "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0039_t0009.750.jpg"
+            "dense_0026_t0006.500.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
           "subject": "e1",
-          "relation": "vicino a",
-          "object": "e3",
-          "start_time": 6.0,
+          "relation": "davanti a",
+          "object": "pannello",
+          "start_time": 7.5,
+          "end_time": 8.25,
+          "evidence_frames": [
+            "dense_0030_t0007.500.jpg",
+            "dense_0033_t0008.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "pannello",
+          "start_time": 9.25,
           "end_time": 9.75,
           "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0035_t0008.750.jpg",
             "dense_0037_t0009.250.jpg",
             "dense_0039_t0009.750.jpg"
           ],
@@ -589,11 +608,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "lavoratore",
           "attributes": [
-            "capelli ricci",
-            "occhiali",
-            "abbigliamento sportivo"
+            "maschera",
+            "guanti",
+            "cappello"
           ],
           "start_time": 9.0,
           "end_time": 12.75,
@@ -612,10 +631,11 @@
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "luce",
+          "role": "illuminazione",
           "attributes": [
-            "pelo bianco e nero"
+            "quadrata",
+            "a LED"
           ],
           "start_time": 9.0,
           "end_time": 12.75,
@@ -634,11 +654,11 @@
         },
         {
           "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
+          "label": "pannello",
+          "role": "soffitto",
           "attributes": [
-            "pelo marrone e bianco",
-            "collare"
+            "bianco",
+            "a pannelli"
           ],
           "start_time": 9.0,
           "end_time": 12.75,
@@ -650,6 +670,125 @@
             "dense_0045_t0011.250.jpg",
             "dense_0047_t0011.750.jpg",
             "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "scatola",
+          "role": "contenitore",
+          "attributes": [
+            "metallica",
+            "nera"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "muro",
+          "role": "superficie",
+          "attributes": [
+            "bianco",
+            "liscia"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "metro",
+          "role": "strumento",
+          "attributes": [
+            "metallico",
+            "estensibile"
+          ],
+          "start_time": 11.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "panno",
+          "role": "accessorio",
+          "attributes": [
+            "giallo",
+            "per pulire"
+          ],
+          "start_time": 11.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "scatola",
+          "role": "contenitore",
+          "attributes": [
+            "gialla",
+            "con scritta"
+          ],
+          "start_time": 11.25,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "muro",
+          "role": "superficie",
+          "attributes": [
+            "giallo",
+            "liscia"
+          ],
+          "start_time": 12.75,
+          "end_time": 12.75,
+          "evidence_frames": [
             "dense_0051_t0012.750.jpg"
           ],
           "evidence_type": "observed",
@@ -658,16 +797,38 @@
       ],
       "actions": [
         {
-          "description": "offre cibo al vitello",
+          "description": "sollevare la luce",
           "actor": "e1",
           "object": "e2",
           "start_time": 9.0,
-          "end_time": 12.75,
+          "end_time": 9.5,
           "evidence_frames": [
             "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
+            "dense_0038_t0009.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "posizionare la luce",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 10.0,
+          "end_time": 10.5,
+          "evidence_frames": [
             "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
+            "dense_0042_t0010.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "abbassare la luce",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 11.25,
+          "end_time": 12.75,
+          "evidence_frames": [
             "dense_0045_t0011.250.jpg",
             "dense_0047_t0011.750.jpg",
             "dense_0049_t0012.250.jpg",
@@ -677,19 +838,12 @@
           "confidence": 1.0
         },
         {
-          "description": "offre cibo al cane",
+          "description": "pulire il muro",
           "actor": "e1",
-          "object": "e3",
-          "start_time": 9.0,
+          "object": "e7",
+          "start_time": 12.75,
           "end_time": 12.75,
           "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
             "dense_0051_t0012.750.jpg"
           ],
           "evidence_type": "observed",
@@ -698,31 +852,12 @@
       ],
       "events": [
         {
-          "description": "interazione tra persona e vitello",
+          "description": "installazione di una luce",
           "participants": [
             "e1",
-            "e2"
-          ],
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e cane",
-          "participants": [
-            "e1",
-            "e3"
+            "e2",
+            "e3",
+            "e4"
           ],
           "start_time": 9.0,
           "end_time": 12.75,
@@ -743,7 +878,7 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
+          "relation": "davanti a",
           "object": "e2",
           "start_time": 9.0,
           "end_time": 12.75,
@@ -761,9 +896,47 @@
           "confidence": 1.0
         },
         {
-          "subject": "e1",
-          "relation": "vicino a",
+          "subject": "e2",
+          "relation": "sopra",
           "object": "e3",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "sopra",
+          "object": "e4",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sopra",
+          "object": "e5",
           "start_time": 9.0,
           "end_time": 12.75,
           "evidence_frames": [
@@ -780,7 +953,33 @@
           "confidence": 1.0
         }
       ],
-      "state_changes": [],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "spento",
+          "after": "acceso",
+          "start_time": 9.0,
+          "end_time": 9.5,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0038_t0009.500.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        },
+        {
+          "entity": "e2",
+          "before": "acceso",
+          "after": "spento",
+          "start_time": 12.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ],
       "temporal_relations": [],
       "causal_hypotheses": []
     },
@@ -802,13 +1001,12 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "operatore",
           "attributes": [
-            "capelli neri ricci",
-            "indossa una felpa blu e bianca",
-            "indossa pantaloni blu",
-            "indossa calzini bianchi",
-            "indossa scarpe scure"
+            "maglietta gialla",
+            "pantaloni scuri con pois bianchi",
+            "casco giallo",
+            "mascherina bianca"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -827,11 +1025,12 @@
         },
         {
           "entity_id": "e2",
-          "label": "cane",
-          "role": "animale",
+          "label": "carrello",
+          "role": "oggetto",
           "attributes": [
-            "pelo marrone e nero",
-            "indossa un collare verde"
+            "giallo",
+            "con ruote",
+            "con maniglie nere"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -850,10 +1049,55 @@
         },
         {
           "entity_id": "e3",
-          "label": "vitello",
-          "role": "animale",
+          "label": "scatola",
+          "role": "oggetto",
           "attributes": [
-            "pelo bianco e nero"
+            "gialla",
+            "con nastro blu e rosso"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "parete",
+          "role": "sfondo",
+          "attributes": [
+            "gialla"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "finestra",
+          "role": "sfondo",
+          "attributes": [
+            "con tende bianche"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -873,28 +1117,9 @@
       ],
       "actions": [
         {
-          "description": "offre cibo",
+          "description": "spostamento del carrello",
           "actor": "e1",
           "object": "e2",
-          "start_time": 12.0,
-          "end_time": 15.75,
-          "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0063_t0015.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "offre cibo",
-          "actor": "e1",
-          "object": "e3",
           "start_time": 12.0,
           "end_time": 15.75,
           "evidence_frames": [
@@ -913,30 +1138,10 @@
       ],
       "events": [
         {
-          "description": "interazione tra persona e cane",
+          "description": "pittura della parete",
           "participants": [
             "e1",
-            "e2"
-          ],
-          "start_time": 12.0,
-          "end_time": 15.75,
-          "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0063_t0015.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e vitello",
-          "participants": [
-            "e1",
+            "e4",
             "e3"
           ],
           "start_time": 12.0,
@@ -958,8 +1163,8 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
+          "relation": "davanti a",
+          "object": "e4",
           "start_time": 12.0,
           "end_time": 15.75,
           "evidence_frames": [
@@ -973,29 +1178,30 @@
             "dense_0063_t0015.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e3",
-          "start_time": 12.0,
-          "end_time": 15.75,
-          "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0063_t0015.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
-      "state_changes": [],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi",
+          "after": "in piedi",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "temporal_relations": [],
       "causal_hypotheses": []
     },
@@ -1017,12 +1223,10 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "lavoratore",
           "attributes": [
-            "capelli scuri",
-            "occhiali",
-            "giacca blu e bianca",
-            "jeans neri"
+            "cappello giallo",
+            "maglietta gialla"
           ],
           "start_time": 15.0,
           "end_time": 18.75,
@@ -1041,11 +1245,10 @@
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "muro",
+          "role": "superficie da dipingere",
           "attributes": [
-            "pelo bianco e marrone",
-            "orecchie lunghe"
+            "giallo"
           ],
           "start_time": 15.0,
           "end_time": 18.75,
@@ -1064,11 +1267,124 @@
         },
         {
           "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
+          "label": "vaso",
+          "role": "contenitore di vernice",
           "attributes": [
-            "pelo marrone e nero",
-            "collare verde"
+            "giallo",
+            "a righe blu"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "pennello",
+          "role": "strumento di pittura",
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "cappello giallo",
+            "maglietta gialla",
+            "guanti grigi"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "guanti",
+          "role": "accessorio",
+          "attributes": [
+            "grigi"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "vaso di vernice",
+          "role": "contenitore di vernice",
+          "attributes": [
+            "giallo",
+            "a righe blu"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "pennello",
+          "role": "strumento di pittura",
+          "attributes": [
+            "giallo"
           ],
           "start_time": 15.0,
           "end_time": 18.75,
@@ -1088,52 +1404,9 @@
       ],
       "actions": [
         {
-          "description": "tocca il vitello",
+          "description": "pittura",
           "actor": "e1",
           "object": "e2",
-          "start_time": 15.0,
-          "end_time": 15.5,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "tocca il vitello",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 17.25,
-          "end_time": 17.75,
-          "evidence_frames": [
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "tocca il vitello",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 18.25,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "events": [
-        {
-          "description": "interazione tra persona e vitello",
-          "participants": [
-            "e1",
-            "e2"
-          ],
           "start_time": 15.0,
           "end_time": 18.75,
           "evidence_frames": [
@@ -1148,12 +1421,13 @@
           ],
           "evidence_type": "observed",
           "confidence": 1.0
-        },
+        }
+      ],
+      "events": [
         {
-          "description": "interazione tra persona e cane",
+          "description": "lavoratore che dipinge un muro",
           "participants": [
-            "e1",
-            "e3"
+            "e1"
           ],
           "start_time": 15.0,
           "end_time": 18.75,
@@ -1174,27 +1448,8 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
+          "relation": "davanti a",
           "object": "e2",
-          "start_time": 15.0,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0064_t0016.000.jpg",
-            "dense_0066_t0016.500.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e3",
           "start_time": 15.0,
           "end_time": 18.75,
           "evidence_frames": [
@@ -1211,7 +1466,27 @@
           "confidence": 1.0
         }
       ],
-      "state_changes": [],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "non dipinto",
+          "after": "parzialmente dipinto",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "temporal_relations": [],
       "causal_hypotheses": []
     },
@@ -1233,35 +1508,10 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "lavoratore",
           "attributes": [
-            "capelli castani",
-            "occhiali",
-            "maglietta blu e nera",
-            "jeans neri"
-          ],
-          "start_time": 18.0,
-          "end_time": 21.75,
-          "evidence_frames": [
-            "dense_0072_t0018.000.jpg",
-            "dense_0074_t0018.500.jpg",
-            "dense_0076_t0019.000.jpg",
-            "dense_0078_t0019.500.jpg",
-            "dense_0081_t0020.250.jpg",
-            "dense_0083_t0020.750.jpg",
-            "dense_0085_t0021.250.jpg",
-            "dense_0087_t0021.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e nero",
-            "piccole dimensioni"
+            "maglia gialla",
+            "casco giallo"
           ],
           "start_time": 18.0,
           "end_time": 21.75,
@@ -1281,25 +1531,18 @@
       ],
       "actions": [
         {
-          "description": "tocco",
+          "description": "pittura",
           "actor": "e1",
-          "object": "e2",
+          "object": "muro",
           "start_time": 18.0,
-          "end_time": 18.5,
-          "evidence_frames": [
-            "dense_0072_t0018.000.jpg",
-            "dense_0074_t0018.500.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "tocco",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 21.25,
           "end_time": 21.75,
           "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
             "dense_0085_t0021.250.jpg",
             "dense_0087_t0021.750.jpg"
           ],
@@ -1309,10 +1552,9 @@
       ],
       "events": [
         {
-          "description": "interazione tra persona e vitello",
+          "description": "applicazione di pittura su muro",
           "participants": [
-            "e1",
-            "e2"
+            "e1"
           ],
           "start_time": 18.0,
           "end_time": 21.75,
@@ -1333,8 +1575,8 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
+          "relation": "davanti a",
+          "object": "muro",
           "start_time": 18.0,
           "end_time": 21.75,
           "evidence_frames": [
@@ -1351,7 +1593,27 @@
           "confidence": 1.0
         }
       ],
-      "state_changes": [],
+      "state_changes": [
+        {
+          "entity": "muro",
+          "before": "muro non dipinto",
+          "after": "muro parzialmente dipinto",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "temporal_relations": [],
       "causal_hypotheses": []
     },
@@ -1373,34 +1635,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "lavoratore edile",
           "attributes": [
-            "capelli castani",
-            "occhiali",
-            "giacca mimetica",
-            "jeans"
-          ],
-          "start_time": 21.0,
-          "end_time": 24.75,
-          "evidence_frames": [
-            "dense_0084_t0021.000.jpg",
-            "dense_0086_t0021.500.jpg",
-            "dense_0088_t0022.000.jpg",
-            "dense_0090_t0022.500.jpg",
-            "dense_0093_t0023.250.jpg",
-            "dense_0095_t0023.750.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0099_t0024.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e nero"
+            "casco giallo",
+            "maglietta gialla",
+            "pantaloni a pois neri e bianchi"
           ],
           "start_time": 21.0,
           "end_time": 24.75,
@@ -1420,9 +1659,9 @@
       ],
       "actions": [
         {
-          "description": "tocca il vitello",
+          "description": "stuccatura",
           "actor": "e1",
-          "object": "e2",
+          "object": "muro",
           "start_time": 21.0,
           "end_time": 24.75,
           "evidence_frames": [
@@ -1439,12 +1678,33 @@
           "confidence": 1.0
         }
       ],
-      "events": [],
+      "events": [
+        {
+          "description": "lavori di ristrutturazione",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
+          "relation": "davanti a",
+          "object": "muro",
           "start_time": 21.0,
           "end_time": 24.75,
           "evidence_frames": [
@@ -1461,7 +1721,27 @@
           "confidence": 1.0
         }
       ],
-      "state_changes": [],
+      "state_changes": [
+        {
+          "entity": "muro",
+          "before": "muro non stuccato",
+          "after": "muro stuccato",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "temporal_relations": [],
       "causal_hypotheses": []
     },
@@ -1483,34 +1763,12 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "bambino",
           "attributes": [
-            "capelli scuri",
-            "occhiali",
-            "sorridente"
-          ],
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e nero",
-            "piccolo"
+            "casco giallo",
+            "maglietta gialla",
+            "pantaloni a pois neri e bianchi",
+            "scarpe grigie"
           ],
           "start_time": 24.0,
           "end_time": 27.75,
@@ -1530,9 +1788,9 @@
       ],
       "actions": [
         {
-          "description": "tocca il vitello",
+          "description": "lavorare",
           "actor": "e1",
-          "object": "e2",
+          "object": "pavimento",
           "start_time": 24.0,
           "end_time": 27.75,
           "evidence_frames": [
@@ -1549,12 +1807,33 @@
           "confidence": 1.0
         }
       ],
-      "events": [],
+      "events": [
+        {
+          "description": "lavorazione del pavimento",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
+          "relation": "davanti a",
+          "object": "muro",
           "start_time": 24.0,
           "end_time": 27.75,
           "evidence_frames": [
@@ -1593,12 +1872,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "lavoratore",
           "attributes": [
-            "capelli castani",
-            "occhiali",
-            "indossa una felpa blu e nera",
-            "indossa pantaloni scuri"
+            "maglietta bianca",
+            "pantaloni neri",
+            "casco giallo"
           ],
           "start_time": 27.0,
           "end_time": 30.75,
@@ -1617,10 +1895,11 @@
         },
         {
           "entity_id": "e2",
-          "label": "animale",
-          "role": "cane",
+          "label": "radiatore",
+          "role": "oggetto",
           "attributes": [
-            "mantello nero e bianco"
+            "bianco",
+            "metallico"
           ],
           "start_time": 27.0,
           "end_time": 30.75,
@@ -1633,6 +1912,59 @@
             "dense_0119_t0029.750.jpg",
             "dense_0121_t0030.250.jpg",
             "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "muro",
+          "role": "sfondo",
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "porta",
+          "role": "oggetto",
+          "attributes": [
+            "bianca",
+            "con griglia"
+          ],
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0121_t0030.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglietta gialla"
+          ],
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0121_t0030.250.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -1640,9 +1972,81 @@
       ],
       "actions": [
         {
-          "description": "interazione con l'animale",
+          "description": "lavoratore avvita qualcosa al radiatore",
           "actor": "e1",
           "object": "e2",
+          "start_time": 27.0,
+          "end_time": 28.5,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "lavoratore si china per lavorare vicino al muro",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 28.5,
+          "end_time": 29.25,
+          "evidence_frames": [
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "lavoratore si china per lavorare vicino al muro",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 29.25,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "lavoratore si china per lavorare vicino al muro",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 29.75,
+          "end_time": 30.25,
+          "evidence_frames": [
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "lavoratore si china per lavorare vicino alla porta",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "lavori di ristrutturazione",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
           "start_time": 27.0,
           "end_time": 30.75,
           "evidence_frames": [
@@ -1659,21 +2063,43 @@
           "confidence": 1.0
         }
       ],
-      "events": [],
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
+          "relation": "davanti a",
           "object": "e2",
           "start_time": 27.0,
-          "end_time": 30.75,
+          "end_time": 28.5,
           "evidence_frames": [
             "dense_0108_t0027.000.jpg",
             "dense_0110_t0027.500.jpg",
             "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 28.5,
+          "end_time": 29.75,
+          "evidence_frames": [
             "dense_0114_t0028.500.jpg",
             "dense_0117_t0029.250.jpg",
-            "dense_0119_t0029.750.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e4",
+          "start_time": 30.25,
+          "end_time": 30.75,
+          "evidence_frames": [
             "dense_0121_t0030.250.jpg",
             "dense_0123_t0030.750.jpg"
           ],
@@ -1688,37 +2114,357 @@
     {
       "segment_id": "segment_0010",
       "start_time": 30.0,
-      "end_time": 33.0,
+      "end_time": 33.75,
       "input_frames": [
         "dense_0120_t0030.000.jpg",
         "dense_0122_t0030.500.jpg",
-        "dense_0123_t0030.750.jpg",
-        "dense_0125_t0031.250.jpg",
-        "dense_0127_t0031.750.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0126_t0031.500.jpg",
         "dense_0129_t0032.250.jpg",
-        "dense_0130_t0032.500.jpg",
-        "dense_0132_t0033.000.jpg"
+        "dense_0131_t0032.750.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0135_t0033.750.jpg"
       ],
       "entities": [
         {
           "entity_id": "e1",
-          "label": "cane",
-          "role": "principale",
+          "label": "persona",
+          "role": "lavoratore",
           "attributes": [
-            "nero",
-            "marrone",
-            "piccolo"
+            "maglia gialla"
           ],
           "start_time": 30.0,
-          "end_time": 33.0,
-          "evidence_frames": [],
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "scatola",
+          "role": "oggetto",
+          "attributes": [
+            "coperta di plastica"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e8",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e9",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e10",
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [
+            "maglia gialla"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e11",
+          "label": "scatola",
+          "role": "oggetto",
+          "attributes": [
+            "coperta di plastica"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e12",
+          "label": "scatola",
+          "role": "oggetto",
+          "attributes": [
+            "coperta di plastica"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
           "evidence_type": "observed",
           "confidence": 1.0
         }
       ],
-      "actions": [],
-      "events": [],
-      "spatial_relations": [],
+      "actions": [
+        {
+          "description": "trasportare scatola",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "trasporto di scatole",
+          "participants": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5",
+            "e6",
+            "e7",
+            "e8",
+            "e9",
+            "e10",
+            "e11"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "state_changes": [],
       "temporal_relations": [],
       "causal_hypotheses": []
@@ -1726,58 +2472,124 @@
     {
       "segment_id": "segment_0011",
       "start_time": 33.0,
-      "end_time": 33.0,
+      "end_time": 34.75,
       "input_frames": [
-        "dense_0132_t0033.000.jpg"
+        "dense_0132_t0033.000.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0135_t0033.750.jpg",
+        "dense_0136_t0034.000.jpg",
+        "dense_0137_t0034.250.jpg",
+        "dense_0138_t0034.500.jpg",
+        "dense_0139_t0034.750.jpg"
       ],
       "entities": [
         {
           "entity_id": "e1",
-          "label": "cane",
-          "attributes": [
-            "nero e marrone",
-            "collare bianco"
-          ],
+          "label": "persona",
+          "role": "lavoratore",
+          "attributes": [],
           "start_time": 33.0,
-          "end_time": 33.0,
+          "end_time": 34.75,
           "evidence_frames": [
-            "dense_0132_t0033.000.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "erba",
-          "attributes": [
-            "secca"
-          ],
-          "start_time": 33.0,
-          "end_time": 33.0,
-          "evidence_frames": [
-            "dense_0132_t0033.000.jpg"
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         }
       ],
-      "actions": [],
-      "events": [],
+      "actions": [
+        {
+          "description": "pittura",
+          "actor": "e1",
+          "object": "muro",
+          "start_time": 33.0,
+          "end_time": 34.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "lavori di ristrutturazione",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 33.0,
+          "end_time": 34.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "su",
-          "object": "e2",
+          "relation": "vicino a",
+          "object": "muro",
           "start_time": 33.0,
-          "end_time": 33.0,
+          "end_time": 34.75,
           "evidence_frames": [
-            "dense_0132_t0033.000.jpg"
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         }
       ],
-      "state_changes": [],
+      "state_changes": [
+        {
+          "entity": "muro",
+          "before": "non dipinto",
+          "after": "dipinto",
+          "start_time": 33.0,
+          "end_time": 34.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "temporal_relations": [],
       "causal_hypotheses": []
     }

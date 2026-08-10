@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from typing import Any
 
-from semantic_common import (
+from utils import (
     discover_video_directories,
     process_video_with_inferencer,
     write_csv,

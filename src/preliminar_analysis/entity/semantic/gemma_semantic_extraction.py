@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from typing import Any
 
-from semantic_common import (
+from utils import (
     discover_video_directories,
     process_video_with_inferencer,
     write_csv,
@@ -126,7 +126,7 @@ def main() -> None:
         type=Path,
     )
     parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--device", default="0")
+    parser.add_argument("--device", default="1")
     parser.add_argument(
         "--dtype",
         choices=["bfloat16", "float16", "float32"],
@@ -135,11 +135,11 @@ def main() -> None:
     parser.add_argument("--window-seconds", type=float, default=4.0)
     parser.add_argument("--stride-seconds", type=float, default=3.0)
     parser.add_argument("--max-frames", type=int, default=8)
-    parser.add_argument("--max-new-tokens", type=int, default=1400)
+    parser.add_argument("--max-new-tokens", type=int, default=10000)
     parser.add_argument(
         "--limit-videos",
         type=int,
-        default=5,
+        default=0,
         help="Numero massimo di video per il pilot; 0 significa tutti.",
     )
     parser.add_argument("--overwrite", action="store_true")
@@ -164,6 +164,9 @@ def main() -> None:
 
     rows = []
     for index, video_directory in enumerate(video_directories, start=1):
+        if index < 37:
+            continue
+               
         print(
             f"[{index}/{len(video_directories)}] "
             f"Analisi Gemma di {video_directory.name}"

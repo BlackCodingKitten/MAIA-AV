@@ -1,5 +1,5 @@
 {
-  "id_video": "video038",
+  "id_video": "video044",
   "model": "google/gemma-3n-E4B-it",
   "configuration": {
     "window_seconds": 4.0,
@@ -7,7 +7,7 @@
     "max_frames_per_window": 8,
     "input_type": "ordered_dense_frames"
   },
-  "numero_segmenti": 12,
+  "numero_segmenti": 11,
   "numero_errori": 0,
   "segments": [
     {
@@ -28,11 +28,12 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "protagonista",
           "attributes": [
-            "capelli scuri",
-            "occhiali",
-            "giacca blu e nera"
+            "giacca rosa",
+            "pantalone corto",
+            "scarpe con tacco",
+            "capelli lunghi"
           ],
           "start_time": 0.0,
           "end_time": 3.75,
@@ -51,15 +52,16 @@
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "persona",
+          "role": "antagonista",
           "attributes": [
-            "pelo bianco e nero"
+            "giacca blu",
+            "jeans",
+            "capelli corti"
           ],
-          "start_time": 0.0,
+          "start_time": 0.5,
           "end_time": 3.75,
           "evidence_frames": [
-            "dense_0000_t0000.000.jpg",
             "dense_0002_t0000.500.jpg",
             "dense_0004_t0001.000.jpg",
             "dense_0006_t0001.500.jpg",
@@ -73,34 +75,10 @@
         },
         {
           "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
+          "label": "auto",
+          "role": "oggetto",
           "attributes": [
-            "pelo marrone",
-            "collare rosso"
-          ],
-          "start_time": 0.0,
-          "end_time": 3.75,
-          "evidence_frames": [
-            "dense_0000_t0000.000.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e4",
-          "label": "cane",
-          "role": "animale",
-          "attributes": [
-            "pelo marrone",
-            "collare verde"
+            "bianca"
           ],
           "start_time": 0.0,
           "end_time": 3.75,
@@ -120,9 +98,84 @@
       ],
       "actions": [
         {
-          "description": "gesto con le mani",
+          "description": "persona corre",
           "actor": "e1",
-          "object": "e2, e3, e4",
+          "object": "e3",
+          "start_time": 0.5,
+          "end_time": 1.0,
+          "evidence_frames": [
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "description": "persona corre",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 1.0,
+          "end_time": 1.5,
+          "evidence_frames": [
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "description": "persona corre",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 2.25,
+          "end_time": 2.75,
+          "evidence_frames": [
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "description": "persona corre",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 3.25,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        }
+      ],
+      "events": [
+        {
+          "description": "persona corre",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 0.5,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0002_t0000.500.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
           "start_time": 0.0,
           "end_time": 3.75,
           "evidence_frames": [
@@ -139,8 +192,6 @@
           "confidence": 1.0
         }
       ],
-      "events": [],
-      "spatial_relations": [],
       "state_changes": [],
       "temporal_relations": [],
       "causal_hypotheses": []
@@ -163,198 +214,60 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "protagonista",
           "attributes": [
-            "capelli neri ricci",
-            "occhiali",
-            "indossa una felpa blu e bianca",
-            "indossa pantaloni blu"
+            "capelli castani",
+            "giacca rosa"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
+          "evidence_frames": [],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "persona",
+          "role": "co-protagonista",
           "attributes": [
-            "pelo bianco e nero"
+            "capelli castani",
+            "felpa rossa"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
+          "evidence_frames": [],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
           "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
+          "label": "persona",
+          "role": "personaggio secondario",
           "attributes": [
-            "pelo marrone e bianco",
-            "indossa un collare rosso"
+            "capelli castani",
+            "berretto"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "actions": [
-        {
-          "description": "offre cibo",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 3.0,
-          "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
+          "evidence_frames": [],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
-          "description": "offre cibo",
-          "actor": "e1",
-          "object": "e3",
-          "start_time": 3.0,
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "personaggio secondario",
+          "attributes": [],
+          "start_time": 6.25,
           "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
+          "evidence_frames": [],
           "evidence_type": "observed",
           "confidence": 1.0
         }
       ],
-      "events": [
-        {
-          "description": "interazione tra persona e vitello",
-          "participants": [
-            "e1",
-            "e2"
-          ],
-          "start_time": 3.0,
-          "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e cane",
-          "participants": [
-            "e1",
-            "e3"
-          ],
-          "start_time": 3.0,
-          "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
-          "start_time": 3.0,
-          "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e3",
-          "start_time": 3.0,
-          "end_time": 6.75,
-          "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0021_t0005.250.jpg",
-            "dense_0023_t0005.750.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0027_t0006.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [],
       "state_changes": [],
       "temporal_relations": [],
       "causal_hypotheses": []
@@ -377,11 +290,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "protagonista",
           "attributes": [
+            "maschile",
             "capelli scuri",
-            "occhiali",
-            "abbigliamento sportivo"
+            "indossa una giacca rossa e nera"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -400,10 +313,12 @@
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "persona",
+          "role": "interagente",
           "attributes": [
-            "pelo bianco e nero"
+            "maschile",
+            "capelli scuri",
+            "indossa una felpa nera"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -422,10 +337,12 @@
         },
         {
           "entity_id": "e3",
-          "label": "cucciolo",
-          "role": "animale",
+          "label": "persona",
+          "role": "interagente",
           "attributes": [
-            "pelo marrone e bianco"
+            "femminile",
+            "capelli lunghi",
+            "indossa una giacca rosa"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -445,7 +362,7 @@
       ],
       "actions": [
         {
-          "description": "offre cibo",
+          "description": "interazione fisica",
           "actor": "e1",
           "object": "e2",
           "start_time": 6.0,
@@ -464,8 +381,8 @@
           "confidence": 1.0
         },
         {
-          "description": "offre cibo",
-          "actor": "e1",
+          "description": "interazione fisica",
+          "actor": "e2",
           "object": "e3",
           "start_time": 6.0,
           "end_time": 9.75,
@@ -485,30 +402,10 @@
       ],
       "events": [
         {
-          "description": "interazione tra persona e vitello",
+          "description": "interazione tra le persone",
           "participants": [
             "e1",
-            "e2"
-          ],
-          "start_time": 6.0,
-          "end_time": 9.75,
-          "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0039_t0009.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e cucciolo",
-          "participants": [
-            "e1",
+            "e2",
             "e3"
           ],
           "start_time": 6.0,
@@ -545,12 +442,12 @@
             "dense_0039_t0009.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.8
         },
         {
-          "subject": "e1",
+          "subject": "e3",
           "relation": "vicino a",
-          "object": "e3",
+          "object": "e2",
           "start_time": 6.0,
           "end_time": 9.75,
           "evidence_frames": [
@@ -564,7 +461,7 @@
             "dense_0039_t0009.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.8
         }
       ],
       "state_changes": [],
@@ -589,12 +486,8 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
-          "attributes": [
-            "capelli ricci",
-            "occhiali",
-            "abbigliamento sportivo"
-          ],
+          "role": "protagonista",
+          "attributes": [],
           "start_time": 9.0,
           "end_time": 12.75,
           "evidence_frames": [
@@ -612,11 +505,9 @@
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e nero"
-          ],
+          "label": "persona",
+          "role": "coprotagonista",
+          "attributes": [],
           "start_time": 9.0,
           "end_time": 12.75,
           "evidence_frames": [
@@ -634,152 +525,47 @@
         },
         {
           "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
-          "attributes": [
-            "pelo marrone e bianco",
-            "collare"
-          ],
-          "start_time": 9.0,
+          "label": "persona",
+          "role": "personaggio secondario",
+          "attributes": [],
+          "start_time": 11.75,
           "end_time": 12.75,
           "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0051_t0012.750.jpg"
+            "dense_0047_t0011.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
-        }
-      ],
-      "actions": [
+        },
         {
-          "description": "offre cibo al vitello",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 9.0,
+          "entity_id": "e4",
+          "label": "auto",
+          "role": "veicolo",
+          "attributes": [],
+          "start_time": 12.75,
           "end_time": 12.75,
           "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
             "dense_0051_t0012.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
-          "description": "offre cibo al cane",
-          "actor": "e1",
-          "object": "e3",
-          "start_time": 9.0,
+          "entity_id": "e5",
+          "label": "auto",
+          "role": "veicolo",
+          "attributes": [],
+          "start_time": 12.75,
           "end_time": 12.75,
           "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
             "dense_0051_t0012.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         }
       ],
-      "events": [
-        {
-          "description": "interazione tra persona e vitello",
-          "participants": [
-            "e1",
-            "e2"
-          ],
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e cane",
-          "participants": [
-            "e1",
-            "e3"
-          ],
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e3",
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [],
       "state_changes": [],
       "temporal_relations": [],
       "causal_hypotheses": []
@@ -802,13 +588,12 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "uomo",
           "attributes": [
-            "capelli neri ricci",
-            "indossa una felpa blu e bianca",
-            "indossa pantaloni blu",
-            "indossa calzini bianchi",
-            "indossa scarpe scure"
+            "capelli scuri",
+            "barba",
+            "maglietta a quadri",
+            "pantaloni chiari"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -827,11 +612,11 @@
         },
         {
           "entity_id": "e2",
-          "label": "cane",
-          "role": "animale",
+          "label": "auto",
+          "role": "veicolo",
           "attributes": [
-            "pelo marrone e nero",
-            "indossa un collare verde"
+            "bianca",
+            "berlina"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -850,18 +635,62 @@
         },
         {
           "entity_id": "e3",
-          "label": "vitello",
-          "role": "animale",
+          "label": "persona",
+          "role": "donna",
           "attributes": [
-            "pelo bianco e nero"
+            "capelli castani",
+            "maglietta rosa",
+            "pantalone grigio"
           ],
-          "start_time": 12.0,
+          "start_time": 12.5,
           "end_time": 15.75,
           "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
             "dense_0050_t0012.500.jpg",
             "dense_0052_t0013.000.jpg",
             "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "donna",
+          "attributes": [
+            "capelli castani",
+            "maglietta rosa",
+            "pantalone grigio"
+          ],
+          "start_time": 12.5,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "capelli scuri",
+            "maglietta rossa",
+            "pantaloni scuri"
+          ],
+          "start_time": 14.25,
+          "end_time": 15.75,
+          "evidence_frames": [
             "dense_0057_t0014.250.jpg",
             "dense_0059_t0014.750.jpg",
             "dense_0061_t0015.250.jpg",
@@ -873,71 +702,88 @@
       ],
       "actions": [
         {
-          "description": "offre cibo",
+          "description": "uomo che esce da un tombino",
           "actor": "e1",
-          "object": "e2",
+          "object": "tombino",
           "start_time": 12.0,
-          "end_time": 15.75,
+          "end_time": 12.5,
           "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0063_t0015.750.jpg"
+            "dense_0048_t0012.000.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.9
         },
         {
-          "description": "offre cibo",
-          "actor": "e1",
+          "description": "persona che cammina",
+          "actor": "e3",
+          "object": null,
+          "start_time": 12.5,
+          "end_time": 13.5,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "description": "persona che cammina",
+          "actor": "e3",
+          "object": null,
+          "start_time": 13.5,
+          "end_time": 14.25,
+          "evidence_frames": [
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "description": "uomo che interagisce con la donna",
+          "actor": "e5",
           "object": "e3",
-          "start_time": 12.0,
+          "start_time": 14.25,
+          "end_time": 15.25,
+          "evidence_frames": [
+            "dense_0057_t0014.250.jpg",
+            "dense_0059_t0014.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.7
+        },
+        {
+          "description": "uomo che interagisce con la donna",
+          "actor": "e5",
+          "object": "e3",
+          "start_time": 15.25,
           "end_time": 15.75,
           "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0059_t0014.750.jpg",
             "dense_0061_t0015.250.jpg",
             "dense_0063_t0015.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.7
         }
       ],
       "events": [
         {
-          "description": "interazione tra persona e cane",
+          "description": "presenza di un uomo che esce da un tombino",
           "participants": [
-            "e1",
-            "e2"
+            "e1"
           ],
           "start_time": 12.0,
-          "end_time": 15.75,
+          "end_time": 12.5,
           "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0063_t0015.750.jpg"
+            "dense_0048_t0012.000.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.9
         },
         {
-          "description": "interazione tra persona e vitello",
+          "description": "presenza di un'auto bianca",
           "participants": [
-            "e1",
-            "e3"
+            "e2"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -958,41 +804,56 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
+          "relation": "dentro",
+          "object": "tombino",
           "start_time": 12.0,
-          "end_time": 15.75,
+          "end_time": 12.5,
           "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0063_t0015.750.jpg"
+            "dense_0048_t0012.000.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 0.9
         },
         {
-          "subject": "e1",
+          "subject": "e3",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 12.5,
+          "end_time": 13.5,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0052_t0013.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "subject": "e3",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 13.5,
+          "end_time": 14.25,
+          "evidence_frames": [
+            "dense_0054_t0013.500.jpg",
+            "dense_0057_t0014.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "subject": "e5",
           "relation": "vicino a",
           "object": "e3",
-          "start_time": 12.0,
+          "start_time": 14.25,
           "end_time": 15.75,
           "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0054_t0013.500.jpg",
             "dense_0057_t0014.250.jpg",
             "dense_0059_t0014.750.jpg",
             "dense_0061_t0015.250.jpg",
             "dense_0063_t0015.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 0.7
         }
       ],
       "state_changes": [],
@@ -1017,59 +878,8 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
-          "attributes": [
-            "capelli scuri",
-            "occhiali",
-            "giacca blu e bianca",
-            "jeans neri"
-          ],
-          "start_time": 15.0,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0064_t0016.000.jpg",
-            "dense_0066_t0016.500.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e marrone",
-            "orecchie lunghe"
-          ],
-          "start_time": 15.0,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0064_t0016.000.jpg",
-            "dense_0066_t0016.500.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e3",
-          "label": "cane",
-          "role": "animale",
-          "attributes": [
-            "pelo marrone e nero",
-            "collare verde"
-          ],
+          "role": "danza",
+          "attributes": [],
           "start_time": 15.0,
           "end_time": 18.75,
           "evidence_frames": [
@@ -1086,74 +896,12 @@
           "confidence": 1.0
         }
       ],
-      "actions": [
-        {
-          "description": "tocca il vitello",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 15.0,
-          "end_time": 15.5,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "tocca il vitello",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 17.25,
-          "end_time": 17.75,
-          "evidence_frames": [
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "tocca il vitello",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 18.25,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "actions": [],
       "events": [
         {
-          "description": "interazione tra persona e vitello",
+          "description": "danza",
           "participants": [
-            "e1",
-            "e2"
-          ],
-          "start_time": 15.0,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0064_t0016.000.jpg",
-            "dense_0066_t0016.500.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "interazione tra persona e cane",
-          "participants": [
-            "e1",
-            "e3"
+            "e1"
           ],
           "start_time": 15.0,
           "end_time": 18.75,
@@ -1171,46 +919,7 @@
           "confidence": 1.0
         }
       ],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
-          "start_time": 15.0,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0064_t0016.000.jpg",
-            "dense_0066_t0016.500.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e3",
-          "start_time": 15.0,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0064_t0016.000.jpg",
-            "dense_0066_t0016.500.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "spatial_relations": [],
       "state_changes": [],
       "temporal_relations": [],
       "causal_hypotheses": []
@@ -1233,12 +942,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "attaccante",
           "attributes": [
-            "capelli castani",
-            "occhiali",
-            "maglietta blu e nera",
-            "jeans neri"
+            "giacca rosa",
+            "pantaloncini corti",
+            "capelli lunghi"
           ],
           "start_time": 18.0,
           "end_time": 21.75,
@@ -1253,15 +961,14 @@
             "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.95
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "persona",
+          "role": "vittima",
           "attributes": [
-            "pelo bianco e nero",
-            "piccole dimensioni"
+            "indossa una felpa scura"
           ],
           "start_time": 18.0,
           "end_time": 21.75,
@@ -1276,40 +983,75 @@
             "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.9
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": "oggetto",
+          "attributes": [
+            "SUV bianco"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e4",
+          "label": "strada",
+          "role": "ambiente",
+          "attributes": [],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
         }
       ],
       "actions": [
         {
-          "description": "tocco",
+          "description": "attacco",
           "actor": "e1",
           "object": "e2",
           "start_time": 18.0,
-          "end_time": 18.5,
-          "evidence_frames": [
-            "dense_0072_t0018.000.jpg",
-            "dense_0074_t0018.500.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "tocco",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 21.25,
           "end_time": 21.75,
           "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
             "dense_0085_t0021.250.jpg",
             "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.95
         }
       ],
       "events": [
         {
-          "description": "interazione tra persona e vitello",
+          "description": "aggressione",
           "participants": [
             "e1",
             "e2"
@@ -1327,12 +1069,31 @@
             "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.95
         }
       ],
       "spatial_relations": [
         {
           "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "subject": "e3",
           "relation": "vicino a",
           "object": "e2",
           "start_time": 18.0,
@@ -1348,7 +1109,7 @@
             "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.9
         }
       ],
       "state_changes": [],
@@ -1373,12 +1134,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "protagonista",
           "attributes": [
-            "capelli castani",
-            "occhiali",
-            "giacca mimetica",
-            "jeans"
+            "giacca rosa",
+            "pantaloncini",
+            "capelli castani"
           ],
           "start_time": 21.0,
           "end_time": 24.75,
@@ -1397,10 +1157,10 @@
         },
         {
           "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
+          "label": "auto",
+          "role": "sfondo",
           "attributes": [
-            "pelo bianco e nero"
+            "bianca"
           ],
           "start_time": 21.0,
           "end_time": 24.75,
@@ -1416,13 +1176,33 @@
           ],
           "evidence_type": "observed",
           "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "sfondo",
+          "attributes": [],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
         }
       ],
       "actions": [
         {
-          "description": "tocca il vitello",
+          "description": "camminare",
           "actor": "e1",
-          "object": "e2",
+          "object": null,
           "start_time": 21.0,
           "end_time": 24.75,
           "evidence_frames": [
@@ -1439,7 +1219,23 @@
           "confidence": 1.0
         }
       ],
-      "events": [],
+      "events": [
+        {
+          "description": "interazione con un'altra persona",
+          "participants": [
+            "e1",
+            "e3"
+          ],
+          "start_time": 23.25,
+          "end_time": 23.75,
+          "evidence_frames": [
+            "dense_0093_t0023.250.jpg",
+            "dense_0095_t0023.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        }
+      ],
       "spatial_relations": [
         {
           "subject": "e1",
@@ -1483,34 +1279,11 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
+          "role": "protagonista",
           "attributes": [
-            "capelli scuri",
-            "occhiali",
-            "sorridente"
-          ],
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "vitello",
-          "role": "animale",
-          "attributes": [
-            "pelo bianco e nero",
-            "piccolo"
+            "uomo",
+            "barba",
+            "capelli scuri"
           ],
           "start_time": 24.0,
           "end_time": 27.75,
@@ -1528,49 +1301,9 @@
           "confidence": 1.0
         }
       ],
-      "actions": [
-        {
-          "description": "tocca il vitello",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "actions": [],
       "events": [],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "spatial_relations": [],
       "state_changes": [],
       "temporal_relations": [],
       "causal_hypotheses": []
@@ -1593,13 +1326,8 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "adulto",
-          "attributes": [
-            "capelli castani",
-            "occhiali",
-            "indossa una felpa blu e nera",
-            "indossa pantaloni scuri"
-          ],
+          "role": "in movimento",
+          "attributes": [],
           "start_time": 27.0,
           "end_time": 30.75,
           "evidence_frames": [
@@ -1613,15 +1341,13 @@
             "dense_0123_t0030.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.95
         },
         {
           "entity_id": "e2",
-          "label": "animale",
-          "role": "cane",
-          "attributes": [
-            "mantello nero e bianco"
-          ],
+          "label": "auto",
+          "role": "ferma",
+          "attributes": [],
           "start_time": 27.0,
           "end_time": 30.75,
           "evidence_frames": [
@@ -1635,14 +1361,34 @@
             "dense_0123_t0030.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": "ferma",
+          "attributes": [],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
         }
       ],
       "actions": [
         {
-          "description": "interazione con l'animale",
+          "description": "persona in movimento",
           "actor": "e1",
-          "object": "e2",
+          "object": "null",
           "start_time": 27.0,
           "end_time": 30.75,
           "evidence_frames": [
@@ -1656,67 +1402,9 @@
             "dense_0123_t0030.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.95
         }
       ],
-      "events": [],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "vicino a",
-          "object": "e2",
-          "start_time": 27.0,
-          "end_time": 30.75,
-          "evidence_frames": [
-            "dense_0108_t0027.000.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0112_t0028.000.jpg",
-            "dense_0114_t0028.500.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0119_t0029.750.jpg",
-            "dense_0121_t0030.250.jpg",
-            "dense_0123_t0030.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "state_changes": [],
-      "temporal_relations": [],
-      "causal_hypotheses": []
-    },
-    {
-      "segment_id": "segment_0010",
-      "start_time": 30.0,
-      "end_time": 33.0,
-      "input_frames": [
-        "dense_0120_t0030.000.jpg",
-        "dense_0122_t0030.500.jpg",
-        "dense_0123_t0030.750.jpg",
-        "dense_0125_t0031.250.jpg",
-        "dense_0127_t0031.750.jpg",
-        "dense_0129_t0032.250.jpg",
-        "dense_0130_t0032.500.jpg",
-        "dense_0132_t0033.000.jpg"
-      ],
-      "entities": [
-        {
-          "entity_id": "e1",
-          "label": "cane",
-          "role": "principale",
-          "attributes": [
-            "nero",
-            "marrone",
-            "piccolo"
-          ],
-          "start_time": 30.0,
-          "end_time": 33.0,
-          "evidence_frames": [],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "actions": [],
       "events": [],
       "spatial_relations": [],
       "state_changes": [],
@@ -1724,57 +1412,140 @@
       "causal_hypotheses": []
     },
     {
-      "segment_id": "segment_0011",
-      "start_time": 33.0,
-      "end_time": 33.0,
+      "segment_id": "segment_0010",
+      "start_time": 30.0,
+      "end_time": 32.75,
       "input_frames": [
-        "dense_0132_t0033.000.jpg"
+        "dense_0120_t0030.000.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg",
+        "dense_0125_t0031.250.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0128_t0032.000.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0131_t0032.750.jpg"
       ],
       "entities": [
         {
           "entity_id": "e1",
-          "label": "cane",
-          "attributes": [
-            "nero e marrone",
-            "collare bianco"
-          ],
-          "start_time": 33.0,
-          "end_time": 33.0,
-          "evidence_frames": [
-            "dense_0132_t0033.000.jpg"
-          ],
+          "label": "persona",
+          "role": "in movimento",
+          "attributes": [],
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.8
         },
         {
           "entity_id": "e2",
-          "label": "erba",
-          "attributes": [
-            "secca"
-          ],
-          "start_time": 33.0,
-          "end_time": 33.0,
-          "evidence_frames": [
-            "dense_0132_t0033.000.jpg"
-          ],
+          "label": "auto",
+          "role": "parcheggiata",
+          "attributes": [],
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.9
+        },
+        {
+          "entity_id": "e3",
+          "label": "strada",
+          "role": "superficie",
+          "attributes": [],
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "entity_id": "e4",
+          "label": "albero",
+          "role": "sfondo",
+          "attributes": [],
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 0.7
+        },
+        {
+          "entity_id": "e5",
+          "label": "muro",
+          "role": "sfondo",
+          "attributes": [],
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        },
+        {
+          "entity_id": "e6",
+          "label": "lampione",
+          "role": "illuminazione",
+          "attributes": [],
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 0.7
         }
       ],
-      "actions": [],
+      "actions": [
+        {
+          "description": "persona in movimento",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
       "events": [],
       "spatial_relations": [
         {
           "subject": "e1",
           "relation": "su",
-          "object": "e2",
-          "start_time": 33.0,
-          "end_time": 33.0,
-          "evidence_frames": [
-            "dense_0132_t0033.000.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        },
+        {
+          "subject": "e4",
+          "relation": "dietro a",
+          "object": "e5",
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "inferred",
+          "confidence": 0.7
+        },
+        {
+          "subject": "e6",
+          "relation": "vicino a",
+          "object": "e5",
+          "start_time": 30.0,
+          "end_time": 32.75,
+          "evidence_frames": [],
+          "evidence_type": "inferred",
+          "confidence": 0.7
         }
       ],
       "state_changes": [],

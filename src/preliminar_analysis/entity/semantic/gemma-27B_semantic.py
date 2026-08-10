@@ -4,10 +4,19 @@ import os
 import time
 
 # ==============================================================================
-# FORZATURA GPU: Isola le GPU fisiche 1, 2, 4, 5, 6 e 7 (6 GPU totali).
+# FORZATURA GPU: Isola le GPU fisiche da 2 a 5 (2, 3, 4, 5 -> 4 GPU totali).
 # Fissa anche i thread CPU a 1 per evitare contesa e zittire i warning.
 # ==============================================================================
-os.environ["CUDA_VISIBLE_DEVICES"] = "1,2,4,5,6,7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,4,5"
+
+# Risoluzione Timeout e Deadlock
+os.environ["NCCL_P2P_DISABLE"] = "1"
+os.environ["NCCL_IB_DISABLE"] = "1"
+os.environ["VLLM_CUSTOM_ALL_REDUCE"] = "0" 
+os.environ["NCCL_SOCKET_IFNAME"] = "lo"
+os.environ["VLLM_HOST_IP"] = "127.0.0.1"
+os.environ["VLLM_RPC_TIMEOUT"] = "300"
+
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
 
@@ -34,8 +43,8 @@ DEFAULT_MODEL = "google/gemma-3-27b-it"
 class Gemma27VLLMInferencer:
     def __init__(self, model_id: str, max_new_tokens: int, max_frames: int = 8) -> None:
         print("\n" + "=" * 80, flush=True)
-        print(" [1/2] Inizializzazione Gemma 3 27B su 6 GPU (1, 2, 4, 5, 6, 7)...", flush=True)
-        print(" Configurazione: Tensor Parallelism (TP=2) x Pipeline Parallelism (PP=3)", flush=True)
+        print(" [1/2] Inizializzazione Gemma 3 27B su 4 GPU (2, 3, 4, 5 -> 4 GPU totali)...", flush=True)
+        print(" Configurazione: Tensor Parallelism (TP=2) x Pipeline Parallelism (PP=4)", flush=True)
         print(" Caricamento pesi e allocazione VRAM in corso...", flush=True)
         print("=" * 80 + "\n", flush=True)
 
@@ -44,18 +53,18 @@ class Gemma27VLLMInferencer:
 
         start_load = time.time()
         
-        # TP=2 e PP=3 distribuiscono il carico esattamente su 6 GPU (2 * 3 = 6)
+        # TP=2 e PP=2 distribuiscono il carico su 4 GPU
+        # distributed_executor_backend="mp" velocizza l'avvio su macchine a singolo nodo
         self.llm = LLM(
             model=model_id,
-            tensor_parallel_size=2,
-            pipeline_parallel_size=3,
+            tensor_parallel_size=4,   # <-- Spalma ogni livello su tutte e 4 le GPU
+            pipeline_parallel_size=1, # <-- Rimuove l'effetto "catena di montaggio" sequenziale
             dtype="bfloat16",
             trust_remote_code=True,
-            gpu_memory_utilization=0.90,
+            gpu_memory_utilization=0.85,
             max_model_len=8192,
             limit_mm_per_prompt={"image": max_frames},
         )
-
         load_duration = time.time() - start_load
         print(f"\n [2/2] Modello caricato con successo in {load_duration:.2f}s!\n", flush=True)
 
@@ -123,7 +132,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
             "Analisi semantica con Gemma-3-27B in parallelo "
-            "su 6 GPU (1, 2, 4, 5, 6, 7)."
+            "su 4 GPU (2, 3, 4, 5)."
         )
     )
 
@@ -144,8 +153,8 @@ def main() -> None:
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--window-seconds", type=float, default=4.0)
     parser.add_argument("--stride-seconds", type=float, default=3.0)
-    parser.add_argument("--max-frames", type=int, default=8)
-    parser.add_argument("--max-new-tokens", type=int, default=3000)
+    parser.add_argument("--max-frames", type=int, default=32)
+    parser.add_argument("--max-new-tokens", type=int, default=10000)
 
     parser.add_argument(
         "--limit-videos",
@@ -183,6 +192,14 @@ def main() -> None:
     print(f"\nInizio elaborazione di {total_videos} video...", flush=True)
 
     for index, video_directory in enumerate(video_directories, start=1):
+        
+        # --- CONTROLLO FILE GIA' ESISTENTE ---
+        file_output = args.output_directory / f"{video_directory.name}_semantic.json"
+        if file_output.exists() and not args.overwrite:
+            print(f"\n[{index}/{total_videos}] SALTO: File {file_output.name} già presente.", flush=True)
+            continue
+        # -------------------------------------
+
         print(
             f"\n========================================================",
             flush=True,
@@ -235,6 +252,7 @@ def main() -> None:
                 }
             )
 
+    # Scrive il CSV con i risultati della sessione corrente
     write_csv(
         args.output_directory / "riepilogo_video.csv",
         rows,
