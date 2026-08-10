@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "Persona visibile in un'area specifica",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "during",
+      "second_event": "evento temporalmente esteso",
+      "confidence": 0.0,
+      "start_time": 12.0,
+      "end_time": 15.75
+    }
+  ],
+  "id_video": "video088",
+  "model": "Qwen/Qwen2.5-Omni-3B",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen/video088_semantic.json"
+}

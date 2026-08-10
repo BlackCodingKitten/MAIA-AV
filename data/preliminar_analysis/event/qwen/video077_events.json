@@ -1,0 +1,76 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "persona e1 appare per la prima volta",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "persona e1 appare per la seconda volta",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "persona e1 appare per la terza volta",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 0.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 0.0
+    }
+  ],
+  "id_video": "video077",
+  "model": "Qwen/Qwen2.5-Omni-3B",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen/video077_semantic.json"
+}

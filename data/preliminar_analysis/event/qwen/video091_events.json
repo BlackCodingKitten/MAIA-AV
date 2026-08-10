@@ -1,0 +1,99 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "persona e1 appare per la prima volta",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0037_t0009.250.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "persona e1 appare per la seconda volta",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0049_t0012.250.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "persona e1 appare per la terza volta",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "persona e1 appare per la quarta volta",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0119_t0029.750.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0123_t0030.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 0.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 0.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 0.0
+    }
+  ],
+  "id_video": "video091",
+  "model": "Qwen/Qwen2.5-Omni-3B",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen/video091_semantic.json"
+}
