@@ -1,37 +1,59 @@
 from __future__ import annotations
 
-import os
+
+
+import sys
+import argparse
 import time
+from pathlib import Path
+from PIL import Image
+import os
+
+# Disabilita FlashInfer sia per il sampling che per l'attention
+os.environ["VLLM_USE_FLASHINFER_SAMPLING"] = "0"
+
 
 # ==============================================================================
-# FORZATURA GPU: Isola le GPU fisiche da 2 a 5 (2, 3, 4, 5 -> 4 GPU totali).
-# Fissa anche i thread CPU a 1 per evitare contesa e zittire i warning.
+# DISABILITA FLASHINFER PER EVITARE L'ERRORE DI COMPILAZIONE CUDA CUB
 # ==============================================================================
+os.environ["VLLM_USE_FLASHINFER"] = "0"
+os.environ["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+    
+# Isola le 4 GPU desiderate (2, 3, 4, 5)
 os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,4,5"
 
-# Risoluzione Timeout e Deadlock
+# Prevenzione Deadlock NCCL, Timeouts e stalli di Shared Memory
 os.environ["NCCL_P2P_DISABLE"] = "1"
 os.environ["NCCL_IB_DISABLE"] = "1"
-os.environ["VLLM_CUSTOM_ALL_REDUCE"] = "0" 
+os.environ["VLLM_CUSTOM_ALL_REDUCE"] = "0"
 os.environ["NCCL_SOCKET_IFNAME"] = "lo"
 os.environ["VLLM_HOST_IP"] = "127.0.0.1"
 os.environ["VLLM_RPC_TIMEOUT"] = "300"
 
+# Limitazione Threading CPU per evitare contesa
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
 
-import argparse
-from pathlib import Path
-from PIL import Image
 
+
+# Importa VllmModel dal modulo in src/vllm.py
 try:
-    from vllm import LLM, SamplingParams
-except ImportError as error:
-    raise RuntimeError(
-        "Manca la libreria vLLM. Installala con: pip install vllm"
-    ) from error
+    from src.vllm import VllmModel
+except ImportError:
+    try:
+        from vllm import VllmModel
+    except ImportError as error:
+        raise RuntimeError(
+            "Impossibile importare VllmModel. Assicurati che 'src/vllm.py' sia presente nel progetto."
+        ) from error
 
-from semantic_common import (
+from utils import (
     discover_video_directories,
     process_video_with_inferencer,
     write_csv,
@@ -40,38 +62,38 @@ from semantic_common import (
 DEFAULT_MODEL = "google/gemma-3-27b-it"
 
 
-class Gemma27VLLMInferencer:
-    def __init__(self, model_id: str, max_new_tokens: int, max_frames: int = 8) -> None:
+class GemmaVLLMInferencer:
+    """
+    Adapter per l'inferenza di Gemma che sfrutta il wrapper VllmModel (src/vllm.py).
+    """
+
+    def __init__(
+        self,
+        model_id: str,
+        max_new_tokens: int = 10000,
+        gpu_memory_utilization: float = 0.85,
+    ) -> None:
         print("\n" + "=" * 80, flush=True)
-        print(" [1/2] Inizializzazione Gemma 3 27B su 4 GPU (2, 3, 4, 5 -> 4 GPU totali)...", flush=True)
-        print(" Configurazione: Tensor Parallelism (TP=2) x Pipeline Parallelism (PP=4)", flush=True)
-        print(" Caricamento pesi e allocazione VRAM in corso...", flush=True)
+        print(f" [1/2] Inizializzazione {model_id} tramite VllmModel...", flush=True)
+        print(" Configurazione: Tensor Parallelism automatico sulle GPU visibili (TP=4)", flush=True)
         print("=" * 80 + "\n", flush=True)
 
         self.max_new_tokens = max_new_tokens
         self.window_counter = 0
 
         start_load = time.time()
-        
-        # TP=2 e PP=2 distribuiscono il carico su 4 GPU
-        # distributed_executor_backend="mp" velocizza l'avvio su macchine a singolo nodo
-        self.llm = LLM(
-            model=model_id,
-            tensor_parallel_size=4,   # <-- Spalma ogni livello su tutte e 4 le GPU
-            pipeline_parallel_size=1, # <-- Rimuove l'effetto "catena di montaggio" sequenziale
-            dtype="bfloat16",
-            trust_remote_code=True,
-            gpu_memory_utilization=0.85,
-            max_model_len=8192,
-            limit_mm_per_prompt={"image": max_frames},
+
+        # VllmModel calcola automaticamente tensor_parallel_size in base alle GPU visibili
+        self.vllm_model = VllmModel(
+            model_id=model_id,
+            gpu_memory_utilization=gpu_memory_utilization,
+            max_tokens=self.max_new_tokens,
+            temperature=0.0,  # Deterministico per JSON
+            verbose=True,
         )
+
         load_duration = time.time() - start_load
         print(f"\n [2/2] Modello caricato con successo in {load_duration:.2f}s!\n", flush=True)
-
-        self.sampling_params = SamplingParams(
-            temperature=0.0,  # Deterministico per output JSON
-            max_tokens=self.max_new_tokens,
-        )
 
     def __call__(self, frame_paths: tuple[Path, ...], prompt: str) -> str:
         self.window_counter += 1
@@ -81,38 +103,22 @@ class Gemma27VLLMInferencer:
             f"   --> [Finestra #{current_window}] Caricamento {len(frame_paths)} frame...",
             flush=True,
         )
-        
+
         start_time = time.time()
         images = [Image.open(path).convert("RGB") for path in frame_paths]
 
         try:
-            content = [{"type": "image", "image": image} for image in images]
-            content.append({"type": "text", "text": prompt})
-
-            messages = [
-                {
-                    "role": "system",
-                    "content": (
-                        "Sei un annotatore scientifico di video. "
-                        "Restituisci esclusivamente JSON valido, "
-                        "conciso e verificabile."
-                    ),
-                },
-                {
-                    "role": "user",
-                    "content": content,
-                },
-            ]
-
             print(
                 f"   --> [Finestra #{current_window}] Generazione risposta su vLLM...",
                 flush=True,
             )
 
-            outputs = self.llm.chat(
-                messages,
-                sampling_params=self.sampling_params,
-                use_tqdm=False,
+            # Invocazione via VllmModel.generate_continuation
+            results = self.vllm_model.generate_continuation(
+                prompts=[prompt],
+                images=[images],
+                max_tokens=self.max_new_tokens,
+                temperature=0.0,
             )
 
             elapsed = time.time() - start_time
@@ -121,7 +127,8 @@ class Gemma27VLLMInferencer:
                 flush=True,
             )
 
-            return outputs[0].outputs[0].text.strip()
+            output_text = results[0] if results else ""
+            return output_text.strip()
 
         finally:
             for image in images:
@@ -130,10 +137,7 @@ class Gemma27VLLMInferencer:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description=(
-            "Analisi semantica con Gemma-3-27B in parallelo "
-            "su 4 GPU (2, 3, 4, 5)."
-        )
+        description="Analisi semantica video con Gemma tramite VllmModel su 4 GPU."
     )
 
     parser.add_argument(
@@ -155,12 +159,13 @@ def main() -> None:
     parser.add_argument("--stride-seconds", type=float, default=3.0)
     parser.add_argument("--max-frames", type=int, default=32)
     parser.add_argument("--max-new-tokens", type=int, default=10000)
+    parser.add_argument("--gpu-utilization", type=float, default=0.85)
 
     parser.add_argument(
         "--limit-videos",
         type=int,
         default=0,
-        help="Numero massimo di video; 0 = tutti.",
+        help="Numero massimo di video da elaborare (0 = tutti).",
     )
 
     parser.add_argument("--overwrite", action="store_true")
@@ -168,9 +173,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    video_directories = discover_video_directories(
-        args.preprocessing_directory
-    )
+    video_directories = discover_video_directories(args.preprocessing_directory)
 
     if args.limit_videos > 0:
         video_directories = video_directories[: args.limit_videos]
@@ -180,10 +183,10 @@ def main() -> None:
 
     args.output_directory.mkdir(parents=True, exist_ok=True)
 
-    inferencer = Gemma27VLLMInferencer(
+    inferencer = GemmaVLLMInferencer(
         model_id=args.model,
         max_new_tokens=args.max_new_tokens,
-        max_frames=args.max_frames,
+        gpu_memory_utilization=args.gpu_utilization,
     )
 
     rows = []
@@ -192,26 +195,14 @@ def main() -> None:
     print(f"\nInizio elaborazione di {total_videos} video...", flush=True)
 
     for index, video_directory in enumerate(video_directories, start=1):
-        
-        # --- CONTROLLO FILE GIA' ESISTENTE ---
         file_output = args.output_directory / f"{video_directory.name}_semantic.json"
         if file_output.exists() and not args.overwrite:
             print(f"\n[{index}/{total_videos}] SALTO: File {file_output.name} già presente.", flush=True)
             continue
-        # -------------------------------------
 
-        print(
-            f"\n========================================================",
-            flush=True,
-        )
-        print(
-            f"[{index}/{total_videos}] Inizio analisi video: {video_directory.name}",
-            flush=True,
-        )
-        print(
-            f"========================================================",
-            flush=True,
-        )
+        print(f"\n========================================================", flush=True)
+        print(f"[{index}/{total_videos}] Inizio analisi video: {video_directory.name}", flush=True)
+        print(f"========================================================", flush=True)
 
         video_start_time = time.time()
 
@@ -228,7 +219,7 @@ def main() -> None:
                 keep_raw=args.keep_raw,
             )
             rows.append(row)
-            
+
             video_elapsed = time.time() - video_start_time
             print(
                 f"SUCCESS: Video '{video_directory.name}' elaborato in {video_elapsed:.2f}s",
@@ -237,8 +228,7 @@ def main() -> None:
 
         except Exception as error:
             print(
-                f"ERRORE durante {video_directory.name}: "
-                f"{type(error).__name__}: {error}",
+                f"ERRORE durante {video_directory.name}: {type(error).__name__}: {error}",
                 flush=True,
             )
             rows.append(
@@ -252,12 +242,7 @@ def main() -> None:
                 }
             )
 
-    # Scrive il CSV con i risultati della sessione corrente
-    write_csv(
-        args.output_directory / "riepilogo_video.csv",
-        rows,
-    )
-
+    write_csv(args.output_directory / "riepilogo_video.csv", rows)
     print(f"\nCOMPLETATO TOTALE! Risultati salvati in: {args.output_directory}", flush=True)
 
 

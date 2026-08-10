@@ -56,13 +56,13 @@ def _get_vllm_engine(
     # Model-specific overrides
     if "gemma" in model_id_lower:
         specific_kwargs = dict(
-            max_model_len=65536,
+            max_model_len=8192,
             max_num_seqs=2,
             mm_processor_kwargs={"do_pan_and_scan": False},
         )
     elif "qwen" in model_id_lower and "2.5" in model_id_lower:
         specific_kwargs = dict(
-            max_model_len=65536,
+            max_model_len=8192,
             max_num_seqs=5,
             mm_processor_kwargs={
                 "min_pixels": 28 * 28,
@@ -171,7 +171,7 @@ class VllmModel:
             max_tokens=kwargs.pop("max_tokens", 512),
             min_tokens=kwargs.pop("min_tokens", 1),
             n=kwargs.pop("num_return_sequences", 1),
-            best_of=kwargs.pop("num_return_sequences", 1),
+            # #best_of=kwargs.pop("num_return_sequences", 1),
             temperature=kwargs.pop("temperature", 0.8),
             top_p=kwargs.pop("top_p", 0.95),
             top_k=kwargs.pop("top_k", 50),
@@ -304,7 +304,7 @@ class VllmModel:
             top_p=kwargs.get("top_p", self.sampling_params.top_p),
             top_k=kwargs.get("top_k", self.sampling_params.top_k),
             n=kwargs.get("num_return_sequences", self.sampling_params.n),
-            best_of=kwargs.get("num_return_sequences", self.sampling_params.best_of),
+            #best_of=kwargs.get("num_return_sequences", self.sampling_params.#best_of),
             stop_token_ids=stop_ids,
         )
 

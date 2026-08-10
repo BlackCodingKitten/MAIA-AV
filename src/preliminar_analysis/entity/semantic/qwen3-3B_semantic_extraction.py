@@ -1,25 +1,36 @@
 from __future__ import annotations
 
 import os
+import sys
+from pathlib import Path
+# ==============================================================================
+# DISABILITA FLASHINFER PER EVITARE CRASH DI COMPILAZIONE E IMPORTAZIONE
+# Deve essere fatto PRIMA di importare vLLM o Torch.
+# ==============================================================================
+os.environ["VLLM_USE_FLASHINFER"] = "0"
+os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parents[4]
 
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 # ==============================================================================
 # FORZATURA GPU: Isola le GPU fisiche 5 e 6.
 # vLLM le legherà insieme in Tensor Parallelism (TP=2).
 # ==============================================================================
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3,4,5,6,7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "6,7"
 
 import argparse
-from pathlib import Path
 from PIL import Image
 
 try:
-    from vllm import LLM, SamplingParams
+    from src.vllm import LLM, SamplingParams
 except ImportError as error:
     raise RuntimeError(
         "Manca la libreria vLLM. Installala con: pip install vllm"
     ) from error
 
-from semantic_common import (
+from utils import (
     discover_video_directories,
     process_video_with_inferencer,
     write_csv,
@@ -54,7 +65,7 @@ class Qwen30VLLMInferencer:
         )
 
         self.sampling_params = SamplingParams(
-            temperature=0.0,  # Determinostico per output JSON
+            temperature=0.0,  # Deterministico per output JSON
             max_tokens=self.max_new_tokens,
         )
 
@@ -120,7 +131,7 @@ def main() -> None:
     parser.add_argument("--window-seconds", type=float, default=4.0)
     parser.add_argument("--stride-seconds", type=float, default=3.0)
     parser.add_argument("--max-frames", type=int, default=8)
-    parser.add_argument("--max-new-tokens", type=int, default=3000)
+    parser.add_argument("--max-new-tokens", type=int, default=10000)
 
     parser.add_argument(
         "--limit-videos",
