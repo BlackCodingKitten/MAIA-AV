@@ -1,162 +1,54 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 
 import argparse
 import json
-import shutil
 import subprocess
 import tempfile
 import wave
 from pathlib import Path
 
-import cv2
-import numpy as np
-
+import torch
+from transformers import AutoProcessor, Gemma3nForConditionalGeneration
 
 MODEL_ID = "google/gemma-3n-E4B-it"
-MODEL_NAME = "Gemma-3n-E4B-it"
-GPU_FISICA = 0
-OUTPUT_FILE = "eventi_gemma_av.json"
+SEMANTIC_DIR = Path("data/preliminar_analysis/entity/entity_semantic/gemma")
+PREPROCESSING_DIR = Path("data/preliminar_analysis/preprocessing")
+VIDEO_DIR = Path("data/video")
+OUTPUT_DIR = Path("data/preliminar_analysis/event_analysis/gemma")
 VIDEO_EXTENSIONS = {".mp4", ".mov", ".mkv", ".avi", ".webm", ".m4v"}
-ENTITY_FIELDS = ("agente", "oggetto", "strumento", "origine", "destinazione", "luogo")
-EVENT_TYPES = {
-    "azione",
-    "movimento",
-    "manipolazione",
-    "interazione",
-    "comunicazione",
-    "evento_sonoro",
-    "comparsa",
-    "scomparsa",
-    "cambiamento_di_stato",
-}
 
 
-def read_json(path):
+def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def write_json(path, data):
+def write_json(path: Path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def extract_json(text):
+def extract_json(text: str):
     text = text.replace("```json", "").replace("```", "").strip()
     return json.loads(text[text.find("{"):text.rfind("}") + 1])
 
 
-def find_video(directory, video_id):
-    return next(
-        (
-            path
-            for path in directory.rglob("*")
-            if path.is_file()
-            and path.suffix.lower() in VIDEO_EXTENSIONS
-            and path.stem == video_id
-        ),
-        None,
-    )
+def find_video(directory: Path, video_id: str):
+    return next((p for p in directory.rglob("*") if p.is_file() and p.suffix.lower() in VIDEO_EXTENSIONS and p.stem == video_id), None)
 
 
-def frame_path(frame, preprocessing_directory, video_id, segment_id):
-    path = Path(frame["file"])
-    return path if path.exists() else (
-        preprocessing_directory
-        / video_id
-        / "segment_frames"
-        / segment_id
-        / path.name
-    )
+def extract_audio(source: Path, start: float, end: float, output: Path) -> bool:
+    result = subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-t", str(max(0.1, end - start)),
+        "-i", str(source), "-vn", "-ac", "1", "-ar", "16000", "-c:a", "pcm_s16le", str(output)
+    ])
+    return result.returncode == 0 and output.exists() and output.stat().st_size > 44
 
 
-def select_frames(frames, number):
-    return [
-        frames[index]
-        for index in np.linspace(
-            0,
-            len(frames) - 1,
-            min(number, len(frames)),
-            dtype=int,
-        )
-    ]
-
-
-def annotate_frames(
-    frames,
-    entities,
-    preprocessing_directory,
-    video_id,
-    segment_id,
-    output_directory,
-):
-    annotated = []
-
-    for index, frame in enumerate(frames, 1):
-        image = cv2.imread(
-            str(frame_path(frame, preprocessing_directory, video_id, segment_id))
-        )
-
-        if image is None:
-            continue
-
-        frame_id = f"frame_{index:02d}"
-        timestamp = float(frame["timestamp"])
-        cv2.putText(
-            image,
-            f"{frame_id} | {timestamp:.3f} s",
-            (15, 30),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            0.75,
-            (0, 255, 255),
-            2,
-        )
-
-        for entity in entities:
-            observation = min(
-                entity.get("osservazioni", []),
-                key=lambda item: abs(item["timestamp"] - timestamp),
-                default=None,
-            )
-
-            if not observation or abs(observation["timestamp"] - timestamp) > 0.30:
-                continue
-
-            x1, y1, x2, y2 = map(int, observation["riquadro_xyxy"])
-            label = f'{entity["id_entita"]}: {entity["classe_detector"]}'
-            cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-            cv2.putText(
-                image,
-                label,
-                (x1, max(55, y1 - 8)),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                0.55,
-                (0, 255, 0),
-                2,
-            )
-
-        path = output_directory / f"{frame_id}.jpg"
-        cv2.imwrite(str(path), image)
-        annotated.append({
-            "id_frame": frame_id,
-            "timestamp": timestamp,
-            "path": str(path),
-        })
-
-    return annotated
-
-
-def run(command):
-    return subprocess.run(
-        command,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.PIPE,
-        text=True,
-    )
-
-
-def create_silent_audio(path, duration):
+def silent_audio(path: Path, duration: float):
     with wave.open(str(path), "wb") as audio:
         audio.setnchannels(1)
         audio.setsampwidth(2)
@@ -164,402 +56,137 @@ def create_silent_audio(path, duration):
         audio.writeframes(b"\x00\x00" * max(1, int(duration * 16000)))
 
 
-def prepare_media(
-    source_video,
-    segment,
-    manifest_segment,
-    preprocessing_directory,
-    video_id,
-    output_directory,
-    number_of_frames,
-):
-    duration = max(0.1, segment["fine"] - segment["inizio"])
-    frames = annotate_frames(
-        select_frames(manifest_segment["frames"], number_of_frames),
-        segment["entita_visibili"],
-        preprocessing_directory,
-        video_id,
-        segment["id_segmento"],
-        output_directory,
-    )
+def build_prompt(segment: dict) -> str:
+    semantic = {k: segment.get(k, []) for k in (
+        "entities", "actions", "events", "spatial_relations",
+        "state_changes", "temporal_relations", "causal_hypotheses"
+    )}
+    return f"""Analizza congiuntamente i frame e l'audio del segmento usando come contesto l'analisi semantica prodotta precedentemente dallo stesso modello.
 
-    if not frames:
-        raise RuntimeError("Nessun frame del segmento è stato letto.")
+Segmento: {segment["segment_id"]}
+Intervallo: {segment["start_time"]:.3f}-{segment["end_time"]:.3f} secondi
+Analisi semantica precedente:
+{json.dumps(semantic, ensure_ascii=False)}
 
-    silent_video = output_directory / "video_senza_audio.mp4"
-    audiovisual_video = output_directory / "segmento_audiovisivo.mp4"
-    audio_path = output_directory / "segmento_audio.wav"
-    fps = len(frames) / duration
+Estrai soltanto eventi osservabili o udibili. Non inventare intenzioni, emozioni, cause invisibili o conseguenze future.
+Usa gli entity_id già presenti quando disponibili. Restituisci esclusivamente JSON valido:
 
-    run([
-        "ffmpeg", "-y", "-loglevel", "error",
-        "-framerate", str(fps),
-        "-start_number", "1",
-        "-i", str(output_directory / "frame_%02d.jpg"),
-        "-c:v", "libx264",
-        "-pix_fmt", "yuv420p",
-        "-r", str(fps),
-        str(silent_video),
-    ]).check_returncode()
-
-    audio_result = run([
-        "ffmpeg", "-y", "-loglevel", "error",
-        "-ss", str(segment["inizio"]),
-        "-t", str(duration),
-        "-i", str(source_video),
-        "-vn",
-        "-ac", "1",
-        "-ar", "16000",
-        "-c:a", "pcm_f32le",
-        str(audio_path),
-    ])
-    audio_present = audio_result.returncode == 0 and audio_path.exists()
-
-    if not audio_present:
-        create_silent_audio(audio_path, duration)
-
-    mux_result = run([
-        "ffmpeg", "-y", "-loglevel", "error",
-        "-i", str(silent_video),
-        "-ss", str(segment["inizio"]),
-        "-t", str(duration),
-        "-i", str(source_video),
-        "-map", "0:v:0",
-        "-map", "1:a:0?",
-        "-c:v", "copy",
-        "-c:a", "aac",
-        "-ac", "1",
-        "-ar", "16000",
-        "-shortest",
-        str(audiovisual_video),
-    ])
-
-    if mux_result.returncode != 0:
-        shutil.copy2(silent_video, audiovisual_video)
-
-    return frames, audiovisual_video, audio_path, audio_present
-
-
-def build_prompt(segment, frames):
-    entities = "\n".join(
-        f'- {entity["id_entita"]}: {entity["classe_detector"]}'
-        for entity in segment["entita_visibili"]
-    ) or "- nessuna entità tracciata"
-    frame_list = "\n".join(
-        f'- {frame["id_frame"]}: {frame["timestamp"]:.3f} secondi'
-        for frame in frames
-    )
-
-    return f"""
-Analizza congiuntamente la sequenza video e il suo audio.
-
-Segmento: {segment["id_segmento"]}
-Intervallo originale: {segment["inizio"]:.3f}-{segment["fine"]:.3f} secondi
-
-Frame annotati:
-{frame_list}
-
-Entità tracciate:
-{entities}
-
-Estrai soltanto eventi direttamente osservabili o udibili. Non inferire
-intenzioni, emozioni, cause invisibili o conseguenze future. Usa esclusivamente
-gli ID elencati per le entità tracciate. Gli oggetti visibili ma non tracciati
-devono essere descritti in "entita_non_tracciate". Usa verbi all'infinito.
-
-Per un evento visivo indica almeno un frame di supporto. Un evento esclusivamente
-sonoro può avere "frame_di_supporto": [] e deve contenere "audio" in
-"modalita_evidenza".
-
-Restituisci esclusivamente questo JSON:
 {{
-  "eventi": [
+  "events": [
     {{
-      "predicato": "verbo all'infinito",
-      "tipo_evento": "azione|movimento|manipolazione|interazione|comunicazione|evento_sonoro|comparsa|scomparsa|cambiamento_di_stato",
-      "descrizione": "descrizione breve in italiano",
-      "agente": [],
-      "oggetto": [],
-      "strumento": [],
-      "origine": [],
-      "destinazione": [],
-      "luogo": [],
-      "entita_non_tracciate": [],
-      "modalita_evidenza": ["video", "audio"],
-      "frame_di_supporto": [],
-      "evidenza_audio": "",
-      "stato_precedente": "",
-      "stato_successivo": "",
-      "confidenza": 0.0
+      "event_id": "E1",
+      "description": "descrizione breve in italiano",
+      "participants": ["e1"],
+      "start_time": 0.0,
+      "end_time": 0.0,
+      "modalities": ["video", "audio"],
+      "evidence_frames": [],
+      "confidence": 0.0
     }}
+  ],
+  "temporal_relations": [
+    {{"first_event": "E1", "relation": "before|after|overlaps|during|simultaneous", "second_event": "E2"}}
   ]
-}}
-""".strip()
+}}"""
 
 
-def normalize_events(data, segment, frames):
-    entity_ids = {
-        entity["id_entita"]
-        for entity in segment["entita_visibili"]
-    }
-    frame_times = {
-        frame["id_frame"]: frame["timestamp"]
-        for frame in frames
-    }
-    events = []
-
-    for index, event in enumerate(data.get("eventi", []), 1):
-        modalities = [
-            modality
-            for modality in event.get("modalita_evidenza", [])
-            if modality in {"video", "audio"}
-        ]
-        support = [
-            frame_id
-            for frame_id in event.get("frame_di_supporto", [])
-            if frame_id in frame_times
-        ]
-
-        if not support and "audio" not in modalities:
-            continue
-
-        try:
-            confidence = float(event.get("confidenza", 0))
-        except (TypeError, ValueError):
-            confidence = 0.0
-
-        normalized = {
-            "id_evento": f'{segment["id_segmento"]}_evento_{index:03d}',
-            "predicato": str(event.get("predicato", "")).strip().lower(),
-            "tipo_evento": event.get("tipo_evento", "azione"),
-            "descrizione": str(event.get("descrizione", "")).strip(),
-            **{
-                field: [
-                    entity_id
-                    for entity_id in event.get(field, [])
-                    if entity_id in entity_ids
-                ]
-                for field in ENTITY_FIELDS
-            },
-            "entita_non_tracciate": list(event.get("entita_non_tracciate", [])),
-            "modalita_evidenza": modalities,
-            "frame_di_supporto": support,
-            "evidenza_audio": str(event.get("evidenza_audio", "")).strip(),
-            "inizio": (
-                min(frame_times[frame_id] for frame_id in support)
-                if support
-                else segment["inizio"]
-            ),
-            "fine": (
-                max(frame_times[frame_id] for frame_id in support)
-                if support
-                else segment["fine"]
-            ),
-            "stato_precedente": str(event.get("stato_precedente", "")).strip(),
-            "stato_successivo": str(event.get("stato_successivo", "")).strip(),
-            "confidenza": min(1.0, max(0.0, confidence)),
-        }
-        normalized["tipo_evento"] = (
-            normalized["tipo_evento"]
-            if normalized["tipo_evento"] in EVENT_TYPES
-            else "azione"
-        )
-        events.append(normalized)
-
-    return events
-
-
-import torch
-from transformers import AutoProcessor, Gemma3nForConditionalGeneration
-
-
-def load_model(args):
+def load_model(model_id: str):
     model = Gemma3nForConditionalGeneration.from_pretrained(
-        args.model,
-        torch_dtype=torch.bfloat16,
-        device_map={"": 0},
-        low_cpu_mem_usage=True,
+        model_id, torch_dtype=torch.bfloat16, device_map={"": 0}, low_cpu_mem_usage=True
     ).eval()
-    return model, AutoProcessor.from_pretrained(args.model)
+    return model, AutoProcessor.from_pretrained(model_id)
 
 
-def run_model(
-    model_data,
-    video_path,
-    audio_path,
-    audio_present,
-    frames,
-    prompt,
-    max_new_tokens,
-):
+def infer(model_data, frame_paths: list[Path], audio_path: Path, prompt: str, max_new_tokens: int):
     model, processor = model_data
-    content = []
-
-    for frame in frames:
-        content += [
-            {
-                "type": "text",
-                "text": (
-                    f'{frame["id_frame"]}, '
-                    f'{frame["timestamp"]:.3f} secondi'
-                ),
-            },
-            {"type": "image", "url": frame["path"]},
-        ]
-
-    content += [
-        {"type": "audio", "audio": str(audio_path)},
-        {"type": "text", "text": prompt},
-    ]
-    messages = [{
-        "role": "user",
-        "content": content,
-    }]
+    content = [{"type": "image", "url": str(path)} for path in frame_paths]
+    content += [{"type": "audio", "audio": str(audio_path)}, {"type": "text", "text": prompt}]
+    messages = [{"role": "user", "content": content}]
     inputs = processor.apply_chat_template(
-        messages,
-        add_generation_prompt=True,
-        tokenize=True,
-        return_dict=True,
-        return_tensors="pt",
+        messages, add_generation_prompt=True, tokenize=True, return_dict=True, return_tensors="pt"
     )
-    inputs = {
-        key: (
-            value.to(model.device, dtype=model.dtype)
-            if value.is_floating_point()
-            else value.to(model.device)
-        )
-        for key, value in inputs.items()
-    }
+    inputs = {k: v.to(model.device, dtype=model.dtype) if v.is_floating_point() else v.to(model.device) for k, v in inputs.items()}
 
     with torch.inference_mode():
-        generated = model.generate(
-            **inputs,
-            do_sample=False,
-            max_new_tokens=max_new_tokens,
-        )
+        generated = model.generate(**inputs, do_sample=False, max_new_tokens=max_new_tokens)
 
     generated = generated[:, inputs["input_ids"].shape[1]:]
-
-    return (
-        processor.batch_decode(
-            generated,
-            skip_special_tokens=True,
-        )[0],
-        {
-            "integrazione_modalita": (
-                "sequenza di frame video e audio nello stesso prompt"
-            )
-        },
-    )
+    return processor.batch_decode(generated, skip_special_tokens=True)[0]
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description=f"Estrae eventi audiovisivi con {MODEL_NAME}."
-    )
-    parser.add_argument("entita_segmenti_json", type=Path)
-    parser.add_argument("preprocessing_directory", type=Path)
-    parser.add_argument("video_directory", type=Path)
-    parser.add_argument("output_directory", type=Path)
+    parser = argparse.ArgumentParser(description="Event extraction audiovisiva Gemma-3n dai segmenti semantici.")
+    parser.add_argument("semantic_directory", nargs="?", type=Path, default=SEMANTIC_DIR)
+    parser.add_argument("preprocessing_directory", nargs="?", type=Path, default=PREPROCESSING_DIR)
+    parser.add_argument("video_directory", nargs="?", type=Path, default=VIDEO_DIR)
+    parser.add_argument("output_directory", nargs="?", type=Path, default=OUTPUT_DIR)
     parser.add_argument("--model", default=MODEL_ID)
-    parser.add_argument("--frames", type=int, default=8)
-    parser.add_argument("--max-new-tokens", type=int, default=1000)
-
+    parser.add_argument("--max-new-tokens", type=int, default=8000)
+    parser.add_argument("--limit-videos", type=int, default=0)
+    parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
 
+    files = sorted(args.semantic_directory.glob("*_semantic.json"))
+    if args.limit_videos:
+        files = files[:args.limit_videos]
+    if not files:
+        parser.error(f"Nessun *_semantic.json trovato in {args.semantic_directory}")
+
     args.output_directory.mkdir(parents=True, exist_ok=True)
-    output_path = args.output_directory / OUTPUT_FILE
-    source = read_json(args.entita_segmenti_json)
-    output = read_json(output_path) if output_path.exists() else {
-        "modello": args.model,
-        "gpu_fisica": f"CUDA:{GPU_FISICA}",
-        "video": [],
-    }
-    processed = {
-        (video["id_video"], segment["id_segmento"])
-        for video in output["video"]
-        for segment in video["segmenti"]
-    }
-    model_data = load_model(args)
+    model_data = load_model(args.model)
 
-    for video_index, video in enumerate(source["video"], 1):
-        video_id = video["id_video"]
-        source_video = find_video(args.video_directory, video_id)
+    for i, semantic_path in enumerate(files, 1):
+        payload = read_json(semantic_path)
+        video_id = payload.get("id_video") or semantic_path.stem.removesuffix("_semantic")
+        output_path = args.output_directory / f"{video_id}_events.json"
 
-        if source_video is None:
-            print(f"Video originale non trovato: {video_id}")
+        if output_path.exists() and not args.overwrite:
+            print(f"[{i}/{len(files)}] SKIP {video_id}")
             continue
 
-        manifest = {
-            segment["segment_id"]: segment
-            for segment in read_json(
-                args.preprocessing_directory / video_id / "segments.json"
-            )["segments"]
-        }
-        video_output = next(
-            (item for item in output["video"] if item["id_video"] == video_id),
-            None,
-        )
+        source_video = find_video(args.video_directory, video_id)
+        if source_video is None:
+            print(f"[{i}/{len(files)}] Video non trovato: {video_id}")
+            continue
 
-        if video_output is None:
-            video_output = {"id_video": video_id, "segmenti": []}
-            output["video"].append(video_output)
+        result = {"id_video": video_id, "model": args.model, "source_semantic_file": str(semantic_path), "segments": []}
 
-        for segment_index, segment in enumerate(video["segmenti"], 1):
-            key = video_id, segment["id_segmento"]
-
-            if key in processed:
-                continue
-
-            print(
-                f'[{video_index}/{len(source["video"])}] {video_id} - '
-                f'[{segment_index}/{len(video["segmenti"])}] '
-                f'{segment["id_segmento"]} su CUDA:{GPU_FISICA}'
-            )
-            result = {
-                "id_segmento": segment["id_segmento"],
-                "inizio": segment["inizio"],
-                "fine": segment["fine"],
-                "eventi": [],
+        for j, segment in enumerate(payload.get("segments", []), 1):
+            print(f"[{i}/{len(files)}] {video_id} - [{j}/{len(payload.get('segments', []))}] {segment['segment_id']} su CUDA:0")
+            item = {
+                "segment_id": segment["segment_id"],
+                "start_time": segment["start_time"],
+                "end_time": segment["end_time"],
+                "events": [],
+                "temporal_relations": [],
             }
-
             try:
-                with tempfile.TemporaryDirectory() as temporary_directory:
-                    frames, video_path, audio_path, audio_present = prepare_media(
-                        source_video,
-                        segment,
-                        manifest[segment["id_segmento"]],
-                        args.preprocessing_directory,
-                        video_id,
-                        Path(temporary_directory),
-                        args.frames,
-                    )
-                    response, details = run_model(
-                        model_data,
-                        video_path,
-                        audio_path,
-                        audio_present,
-                        frames,
-                        build_prompt(segment, frames),
-                        args.max_new_tokens,
-                    )
+                frame_paths = [
+                    args.preprocessing_directory / video_id / "dense_frames" / name
+                    for name in segment.get("input_frames", [])
+                ]
+                frame_paths = [p for p in frame_paths if p.exists()]
+                if not frame_paths:
+                    raise FileNotFoundError("Nessun frame semantico trovato.")
 
-                result["audio_originale_presente"] = audio_present
-                result.update(details)
-                result["risposta_grezza"] = response
-                result["eventi"] = normalize_events(
-                    extract_json(response),
-                    segment,
-                    frames,
-                )
+                with tempfile.TemporaryDirectory() as tmp:
+                    audio_path = Path(tmp) / "segment.wav"
+                    audio_present = extract_audio(source_video, segment["start_time"], segment["end_time"], audio_path)
+                    if not audio_present:
+                        silent_audio(audio_path, segment["end_time"] - segment["start_time"])
+                    raw = infer(model_data, frame_paths, audio_path, build_prompt(segment), args.max_new_tokens)
 
+                data = extract_json(raw)
+                item["events"] = data.get("events", [])
+                item["temporal_relations"] = data.get("temporal_relations", [])
+                item["audio_originale_presente"] = audio_present
             except Exception as error:
-                result["errore"] = str(error)
+                item["error"] = f"{type(error).__name__}: {error}"
 
-            video_output["segmenti"].append(result)
-            write_json(output_path, output)
+            result["segments"].append(item)
+            write_json(output_path, result)
 
-    print(f"Creato: {output_path}")
+    print(f"Creato output in: {args.output_directory}")
 
 
 if __name__ == "__main__":

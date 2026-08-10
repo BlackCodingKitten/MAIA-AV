@@ -1,0 +1,69 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "l'azione osservata di persona e1 davanti a e2",
+      "start_time": 27.0,
+      "end_time": 27.25,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "l'azione osservata di persona e1 davanti a e2",
+      "start_time": 27.0,
+      "end_time": 27.25,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "l'azione osservata di persona e1 davanti a e2",
+      "start_time": 27.0,
+      "end_time": 27.25,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video014",
+  "model": "Qwen/Qwen2.5-Omni-3B",
+  "source_semantic_file": "data/preliminar_analysis/entity/entity_semantic/qwen/video014_semantic.json"
+}
