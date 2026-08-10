@@ -320,10 +320,7 @@ def main() -> None:
     parser.add_argument(
         "output_directory",
         nargs="?",
-        default=(
-            "data/preliminar_analysis/"
-            "entity/entity_semantic/gemma-27B"
-        ),
+        default=("data/preliminar_analysis/entity/gemma-27B"),
         type=Path,
     )
 

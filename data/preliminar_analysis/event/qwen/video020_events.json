@@ -1,0 +1,30 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "l'azione osservata di persona e1 davanti a e2",
+      "start_time": 42.0,
+      "end_time": 42.0,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "dense_0168_t0042.000.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "during",
+      "second_event": "evento temporalmente esteso",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video020",
+  "model": "Qwen/Qwen2.5-Omni-3B",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen/video020_semantic.json"
+}

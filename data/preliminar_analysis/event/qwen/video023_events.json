@@ -31,20 +31,6 @@
     {
       "event_id": "E0003",
       "description": "string",
-      "start_time": 6.0,
-      "end_time": 9.75,
-      "participants": [
-        "string"
-      ],
-      "evidence_segments": [
-        "segment_0002"
-      ],
-      "evidence_type": "observed",
-      "confidence": 0.0
-    },
-    {
-      "event_id": "E0004",
-      "description": "string",
       "start_time": 9.0,
       "end_time": 12.75,
       "participants": [
@@ -57,7 +43,7 @@
       "confidence": 0.0
     },
     {
-      "event_id": "E0005",
+      "event_id": "E0004",
       "description": "string",
       "start_time": 12.0,
       "end_time": 15.75,
@@ -71,7 +57,7 @@
       "confidence": 0.0
     },
     {
-      "event_id": "E0006",
+      "event_id": "E0005",
       "description": "string",
       "start_time": 15.0,
       "end_time": 18.75,
@@ -85,7 +71,7 @@
       "confidence": 0.0
     },
     {
-      "event_id": "E0007",
+      "event_id": "E0006",
       "description": "string",
       "start_time": 18.0,
       "end_time": 21.75,
@@ -99,7 +85,7 @@
       "confidence": 0.0
     },
     {
-      "event_id": "E0008",
+      "event_id": "E0007",
       "description": "string",
       "start_time": 21.0,
       "end_time": 24.75,
@@ -113,7 +99,7 @@
       "confidence": 0.0
     },
     {
-      "event_id": "E0009",
+      "event_id": "E0008",
       "description": "string",
       "start_time": 24.0,
       "end_time": 27.75,
@@ -127,7 +113,7 @@
       "confidence": 0.0
     },
     {
-      "event_id": "E0010",
+      "event_id": "E0009",
       "description": "string",
       "start_time": 27.0,
       "end_time": 30.75,
@@ -141,7 +127,7 @@
       "confidence": 0.0
     },
     {
-      "event_id": "E0011",
+      "event_id": "E0010",
       "description": "string",
       "start_time": 30.0,
       "end_time": 33.75,
@@ -153,9 +139,31 @@
       ],
       "evidence_type": "observed",
       "confidence": 0.0
+    },
+    {
+      "event_id": "E0011",
+      "description": "string",
+      "start_time": 33.0,
+      "end_time": 34.75,
+      "participants": [
+        "string"
+      ],
+      "evidence_segments": [
+        "segment_0011"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.0
     }
   ],
-  "id_video": "video002",
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 0.0
+    }
+  ],
+  "id_video": "video023",
   "model": "Qwen/Qwen2.5-Omni-3B",
-  "source_semantic_file": "data/preliminar_analysis/entity/entity_semantic/qwen/video002_semantic.json"
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen/video023_semantic.json"
 }

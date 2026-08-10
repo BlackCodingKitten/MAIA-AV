@@ -1,23 +1,27 @@
-#!/usr/bin/env python3
-#!/usr/bin/env python3
 from __future__ import annotations
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 
 import argparse
 import json
 from pathlib import Path
 
 import torch
-from transformers import AutoProcessor, Gemma3nForConditionalGeneration
+from transformers import Qwen2_5OmniForConditionalGeneration, Qwen2_5OmniProcessor
 
-MODEL_ID = "google/gemma-3n-E4B-it"
-SEMANTIC_DIR = Path("data/preliminar_analysis/entity/entity_semantic/gemma")
-OUTPUT_DIR = Path("data/preliminar_analysis/event/gemma")
+MODEL_ID = "Qwen/Qwen2.5-Omni-3B"
+SEMANTIC_DIR = Path("data/preliminar_analysis/entity/qwen")
+OUTPUT_DIR = Path("data/preliminar_analysis/event/qwen")
+
 
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def parse_json(text):
@@ -25,26 +29,29 @@ def parse_json(text):
     start, end = text.find("{"), text.rfind("}")
     if start < 0 or end < start:
         raise ValueError("La risposta non contiene un oggetto JSON.")
+
     candidate = text[start:end + 1]
     try:
         return json.loads(candidate)
     except json.JSONDecodeError:
-        from json_repair import repair_json
-        return json.loads(repair_json(candidate))
+        try:
+            from json_repair import repair_json
+            return json.loads(repair_json(candidate))
+        except Exception as error:
+            raise ValueError("La risposta contiene JSON non valido.") from error
 
-
-def write_json(path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 def compact(payload):
     keys = (
         "segment_id", "start_time", "end_time", "entities", "actions", "events",
-        "spatial_relations", "state_changes", "temporal_relations", "causal_hypotheses"
+        "spatial_relations", "state_changes", "temporal_relations", "causal_hypotheses",
     )
     return {
         "id_video": payload.get("id_video"),
-        "segments": [{key: segment.get(key, []) for key in keys} for segment in payload.get("segments", [])],
+        "segments": [
+            {key: segment.get(key, []) for key in keys}
+            for segment in payload.get("segments", [])
+        ],
     }
 
 
@@ -59,7 +66,8 @@ Regole:
 - non inventare intenzioni, cause, emozioni o azioni mancanti;
 - usa evidence_type="inferred" soltanto se l'input contiene esplicitamente un'inferenza;
 - assegna gli ID E0001, E0002, ... in ordine temporale;
-- restituisci esclusivamente JSON valido.
+- restituisci ESCLUSIVAMENTE un oggetto JSON valido;
+- il primo carattere della risposta deve essere {{ e l'ultimo deve essere }}.
 
 Schema:
 {{
@@ -92,37 +100,62 @@ INPUT:
 class Inferencer:
     def __init__(self, model_id, max_new_tokens):
         self.max_new_tokens = max_new_tokens
-        self.model = Gemma3nForConditionalGeneration.from_pretrained(
+        self.model = Qwen2_5OmniForConditionalGeneration.from_pretrained(
             model_id,
             torch_dtype=torch.bfloat16,
             device_map={"": 0},
             low_cpu_mem_usage=True,
+            attn_implementation="sdpa",
         ).eval()
-        self.processor = AutoProcessor.from_pretrained(model_id)
+        self.model.disable_talker()
+        self.processor = Qwen2_5OmniProcessor.from_pretrained(model_id)
 
     def __call__(self, prompt):
         messages = [{"role": "user", "content": [{"type": "text", "text": prompt}]}]
-        inputs = self.processor.apply_chat_template(
+        text = self.processor.apply_chat_template(
             messages,
             add_generation_prompt=True,
-            tokenize=True,
-            return_dict=True,
-            return_tensors="pt",
+            tokenize=False,
         )
-        inputs = {
-            key: value.to(self.model.device, dtype=self.model.dtype) if value.is_floating_point() else value.to(self.model.device)
-            for key, value in inputs.items()
-        }
+        inputs = self.processor(text=text, return_tensors="pt").to(self.model.device)
 
         with torch.inference_mode():
-            generated = self.model.generate(**inputs, do_sample=False, max_new_tokens=self.max_new_tokens)
+            generated = self.model.generate(
+                **inputs,
+                do_sample=False,
+                max_new_tokens=self.max_new_tokens,
+                return_audio=False,
+            )
 
         generated = generated[:, inputs["input_ids"].shape[1]:]
-        return self.processor.batch_decode(generated, skip_special_tokens=True)[0].strip()
+        return self.processor.batch_decode(
+            generated,
+            skip_special_tokens=True,
+            clean_up_tokenization_spaces=False,
+        )[0].strip()
+
+
+def infer_json(inferencer, prompt, attempts=2):
+    raw = ""
+    error = None
+
+    for attempt in range(attempts):
+        raw = inferencer(
+            prompt if attempt == 0 else
+            prompt + "\n\nLa risposta precedente non era JSON valido. Rispondi soltanto con l'oggetto JSON richiesto."
+        )
+        try:
+            return parse_json(raw), raw
+        except Exception as current_error:
+            error = current_error
+
+    raise ValueError(f"JSON non ottenuto dopo {attempts} tentativi. Ultima risposta: {raw[:500]!r}") from error
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Event extraction Gemma-3n-E4B dalla propria analisi semantica.")
+    parser = argparse.ArgumentParser(
+        description="Event extraction Qwen2.5-Omni-3B dalla propria analisi semantica."
+    )
     parser.add_argument("semantic_directory", nargs="?", type=Path, default=SEMANTIC_DIR)
     parser.add_argument("output_directory", nargs="?", type=Path, default=OUTPUT_DIR)
     parser.add_argument("--model", default=MODEL_ID)
@@ -138,7 +171,7 @@ def main():
         parser.error(f"Nessun *_semantic.json trovato in {args.semantic_directory}")
 
     args.output_directory.mkdir(parents=True, exist_ok=True)
-    infer = Inferencer(args.model, args.max_new_tokens)
+    inferencer = Inferencer(args.model, args.max_new_tokens)
 
     for index, path in enumerate(files, 1):
         payload = read_json(path)
@@ -149,10 +182,26 @@ def main():
             print(f"[{index}/{len(files)}] SKIP {video_id}")
             continue
 
-        print(f"[{index}/{len(files)}] {video_id} su CUDA:0")
-        raw = infer(build_prompt(compact(payload)))
-        result = parse_json(raw)
-        result.update({"id_video": video_id, "model": args.model, "source_semantic_file": str(path)})
+        print(f"[{index}/{len(files)}] {video_id} su CUDA:6")
+
+        try:
+            result, raw = infer_json(inferencer, build_prompt(compact(payload)))
+            result.update({
+                "id_video": video_id,
+                "model": args.model,
+                "source_semantic_file": str(path),
+            })
+        except Exception as error:
+            print(f"ERRORE {video_id}: {type(error).__name__}: {error}")
+            result = {
+                "id_video": video_id,
+                "model": args.model,
+                "source_semantic_file": str(path),
+                "events": [],
+                "temporal_relations": [],
+                "error": f"{type(error).__name__}: {error}",
+            }
+
         write_json(output_path, result)
 
     print(f"Creato output in: {args.output_directory}")
