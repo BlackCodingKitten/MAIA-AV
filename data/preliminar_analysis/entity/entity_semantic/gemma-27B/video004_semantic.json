@@ -1,5 +1,5 @@
 {
-  "id_video": "video001",
+  "id_video": "video004",
   "model": "google/gemma-3-27b-it",
   "configuration": {
     "window_seconds": 4.0,
@@ -7,7 +7,7 @@
     "max_frames_per_window": 32,
     "input_type": "ordered_dense_frames"
   },
-  "numero_segmenti": 10,
+  "numero_segmenti": 7,
   "numero_errori": 0,
   "segments": [
     {
@@ -35,44 +35,17 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
+          "label": "cane",
+          "role": null,
           "attributes": [
-            "indossa camice bianco"
+            "marrone",
+            "bianco",
+            "grigio"
           ],
           "start_time": 0.0,
           "end_time": 3.75,
           "evidence_frames": [
             "dense_0000_t0000.000.jpg",
-            "dense_0001_t0000.250.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0003_t0000.750.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0005_t0001.250.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0010_t0002.500.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
-          "attributes": [
-            "indossa giacca scura"
-          ],
-          "start_time": 0.25,
-          "end_time": 3.75,
-          "evidence_frames": [
             "dense_0001_t0000.250.jpg",
             "dense_0002_t0000.500.jpg",
             "dense_0003_t0000.750.jpg",
@@ -95,48 +68,38 @@
       ],
       "actions": [
         {
-          "description": "consegna",
+          "description": "corre",
           "actor": "e1",
-          "object": "farmaco",
-          "start_time": 0.5,
-          "end_time": 2.0,
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 3.75,
           "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
             "dense_0002_t0000.500.jpg",
             "dense_0003_t0000.750.jpg",
             "dense_0004_t0001.000.jpg",
             "dense_0005_t0001.250.jpg",
             "dense_0006_t0001.500.jpg",
             "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg"
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "riceve",
-          "actor": "e2",
-          "object": "farmaco",
-          "start_time": 0.5,
-          "end_time": 2.0,
-          "evidence_frames": [
-            "dense_0002_t0000.500.jpg",
-            "dense_0003_t0000.750.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0005_t0001.250.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
       "events": [
         {
-          "description": "transazione in farmacia",
+          "description": "movimento",
           "participants": [
-            "e1",
-            "e2"
+            "e1"
           ],
           "start_time": 0.0,
           "end_time": 3.75,
@@ -162,61 +125,7 @@
           "confidence": 1.0
         }
       ],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "dietro a",
-          "object": "scaffali",
-          "start_time": 0.0,
-          "end_time": 3.75,
-          "evidence_frames": [
-            "dense_0000_t0000.000.jpg",
-            "dense_0001_t0000.250.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0003_t0000.750.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0005_t0001.250.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0010_t0002.500.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "subject": "e2",
-          "relation": "davanti a",
-          "object": "e1",
-          "start_time": 0.25,
-          "end_time": 3.75,
-          "evidence_frames": [
-            "dense_0001_t0000.250.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0003_t0000.750.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0005_t0001.250.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0010_t0002.500.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "spatial_relations": [],
       "state_changes": [],
       "temporal_relations": [],
       "causal_hypotheses": []
@@ -246,12 +155,11 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "persona",
-          "role": "cliente",
+          "label": "cane",
+          "role": "soggetto",
           "attributes": [
-            "occhiali",
-            "giacca",
-            "camicia"
+            "tricolore",
+            "a pelo lungo"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
@@ -266,32 +174,33 @@
             "dense_0019_t0004.750.jpg",
             "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
           "entity_id": "e2",
-          "label": "persona",
-          "role": "farmacista",
+          "label": "mano",
+          "role": "persona",
           "attributes": [
-            "camicia bianca"
+            "umana"
           ],
-          "start_time": 3.0,
+          "start_time": 5.25,
           "end_time": 6.75,
           "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0017_t0004.250.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0019_t0004.750.jpg",
-            "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -299,52 +208,44 @@
       ],
       "actions": [
         {
-          "description": "parla",
+          "description": "guarda",
           "actor": "e1",
           "object": "e2",
-          "start_time": 3.0,
+          "start_time": 5.25,
           "end_time": 6.75,
           "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0017_t0004.250.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0019_t0004.750.jpg",
-            "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
       "events": [
         {
-          "description": "conversazione",
+          "description": "il cane guarda la mano",
           "participants": [
             "e1",
             "e2"
           ],
-          "start_time": 3.0,
+          "start_time": 5.25,
           "end_time": 6.75,
           "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0017_t0004.250.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0019_t0004.750.jpg",
-            "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
       "spatial_relations": [
@@ -352,23 +253,19 @@
           "subject": "e1",
           "relation": "davanti a",
           "object": "e2",
-          "start_time": 3.0,
+          "start_time": 5.25,
           "end_time": 6.75,
           "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0017_t0004.250.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0019_t0004.750.jpg",
-            "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
       "state_changes": [],
@@ -401,10 +298,9 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "cliente",
+          "role": "interagente",
           "attributes": [
-            "indossa giacca",
-            "indossa occhiali"
+            "mano"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -431,10 +327,12 @@
         },
         {
           "entity_id": "e2",
-          "label": "persona",
-          "role": "farmacista",
+          "label": "cane",
+          "role": "soggetto",
           "attributes": [
-            "indossa camice"
+            "marrone",
+            "bianco",
+            "grigio"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -462,7 +360,7 @@
       ],
       "actions": [
         {
-          "description": "parla",
+          "description": "puntare",
           "actor": "e1",
           "object": "e2",
           "start_time": 6.0,
@@ -486,34 +384,7 @@
             "dense_0039_t0009.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "ascolta",
-          "actor": "e2",
-          "object": "e1",
-          "start_time": 6.0,
-          "end_time": 9.75,
-          "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0027_t0006.750.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0029_t0007.250.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0031_t0007.750.jpg",
-            "dense_0032_t0008.000.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0034_t0008.500.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
       "events": [],
@@ -575,10 +446,12 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
+          "label": "cane",
+          "role": null,
           "attributes": [
-            "indossa camice bianco"
+            "marrone",
+            "bianco",
+            "grigio"
           ],
           "start_time": 9.0,
           "end_time": 12.75,
@@ -605,11 +478,10 @@
         },
         {
           "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
+          "label": "erba",
+          "role": null,
           "attributes": [
-            "indossa giacca scura",
-            "indossa occhiali"
+            "verde"
           ],
           "start_time": 9.0,
           "end_time": 12.75,
@@ -637,9 +509,9 @@
       ],
       "actions": [
         {
-          "description": "parla",
+          "description": "corre",
           "actor": "e1",
-          "object": "e2",
+          "object": null,
           "start_time": 9.0,
           "end_time": 12.75,
           "evidence_frames": [
@@ -661,42 +533,14 @@
             "dense_0051_t0012.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "guarda",
-          "actor": "e2",
-          "object": "e1",
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0041_t0010.250.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0043_t0010.750.jpg",
-            "dense_0044_t0011.000.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0046_t0011.500.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0048_t0012.000.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.8
+          "confidence": 1.0
         }
       ],
       "events": [
         {
-          "description": "interazione al banco",
+          "description": "movimento",
           "participants": [
-            "e1",
-            "e2"
+            "e1"
           ],
           "start_time": 9.0,
           "end_time": 12.75,
@@ -724,9 +568,9 @@
       ],
       "spatial_relations": [
         {
-          "subject": "e2",
-          "relation": "davanti a",
-          "object": "e1",
+          "subject": "e1",
+          "relation": "su",
+          "object": "e2",
           "start_time": 9.0,
           "end_time": 12.75,
           "evidence_frames": [
@@ -780,10 +624,12 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
+          "label": "cane",
+          "role": "soggetto",
           "attributes": [
-            "indossa camice bianco"
+            "marrone",
+            "bianco",
+            "grigio"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -810,11 +656,10 @@
         },
         {
           "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
+          "label": "erba",
+          "role": "sfondo",
           "attributes": [
-            "indossa cappotto nero",
-            "porta occhiali"
+            "verde"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -842,9 +687,9 @@
       ],
       "actions": [
         {
-          "description": "parla",
-          "actor": "e2",
-          "object": "e1",
+          "description": "rotola",
+          "actor": "e1",
+          "object": null,
           "start_time": 12.0,
           "end_time": 15.75,
           "evidence_frames": [
@@ -866,42 +711,44 @@
             "dense_0063_t0015.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "tocca",
-          "actor": "e2",
-          "object": "bancone",
-          "start_time": 12.0,
-          "end_time": 15.75,
-          "evidence_frames": [
-            "dense_0048_t0012.000.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0051_t0012.750.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0053_t0013.250.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0055_t0013.750.jpg",
-            "dense_0056_t0014.000.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0058_t0014.500.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0060_t0015.000.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0063_t0015.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.8
+          "confidence": 1.0
         }
       ],
-      "events": [],
+      "events": [
+        {
+          "description": "rotolamento",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
       "spatial_relations": [
         {
-          "subject": "e2",
-          "relation": "davanti a",
-          "object": "e1",
+          "subject": "e1",
+          "relation": "su",
+          "object": "e2",
           "start_time": 12.0,
           "end_time": 15.75,
           "evidence_frames": [
@@ -955,11 +802,12 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "persona",
-          "role": "farmacista",
+          "label": "cane",
+          "role": null,
           "attributes": [
-            "occhiali",
-            "giacca scura"
+            "marrone",
+            "bianco",
+            "grigio"
           ],
           "start_time": 15.0,
           "end_time": 18.75,
@@ -987,14 +835,48 @@
         {
           "entity_id": "e2",
           "label": "persona",
-          "role": "aggressore",
+          "role": null,
           "attributes": [
-            "abbigliamento scuro",
-            "maschera"
+            "visibile solo parte inferiore"
           ],
-          "start_time": 16.5,
+          "start_time": 15.0,
           "end_time": 18.75,
           "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        }
+      ],
+      "actions": [
+        {
+          "description": "saltare",
+          "actor": "e1",
+          "object": null,
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
             "dense_0066_t0016.500.jpg",
             "dense_0067_t0016.750.jpg",
             "dense_0068_t0017.000.jpg",
@@ -1010,32 +892,14 @@
           "confidence": 1.0
         }
       ],
-      "actions": [
+      "events": [
         {
-          "description": "colpire",
-          "actor": "e2",
-          "object": "e1",
-          "start_time": 17.0,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0068_t0017.000.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0070_t0017.500.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0072_t0018.000.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0074_t0018.500.jpg",
-            "dense_0075_t0018.750.jpg"
+          "description": "salto del cane",
+          "participants": [
+            "e1"
           ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "scrivere",
-          "actor": "e1",
-          "object": null,
           "start_time": 15.0,
-          "end_time": 16.5,
+          "end_time": 18.75,
           "evidence_frames": [
             "dense_0060_t0015.000.jpg",
             "dense_0061_t0015.250.jpg",
@@ -1043,22 +907,6 @@
             "dense_0063_t0015.750.jpg",
             "dense_0064_t0016.000.jpg",
             "dense_0065_t0016.250.jpg",
-            "dense_0066_t0016.500.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.8
-        }
-      ],
-      "events": [
-        {
-          "description": "aggressione in farmacia",
-          "participants": [
-            "e1",
-            "e2"
-          ],
-          "start_time": 16.5,
-          "end_time": 18.75,
-          "evidence_frames": [
             "dense_0066_t0016.500.jpg",
             "dense_0067_t0016.750.jpg",
             "dense_0068_t0017.000.jpg",
@@ -1078,7 +926,7 @@
         {
           "subject": "e1",
           "relation": "davanti a",
-          "object": "scaffali",
+          "object": "e2",
           "start_time": 15.0,
           "end_time": 18.75,
           "evidence_frames": [
@@ -1100,60 +948,17 @@
             "dense_0075_t0018.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "state_changes": [
-        {
-          "entity": "e1",
-          "before": "calmo",
-          "after": "aggredito",
-          "start_time": 16.5,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0066_t0016.500.jpg",
-            "dense_0067_t0016.750.jpg",
-            "dense_0068_t0017.000.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0070_t0017.500.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0072_t0018.000.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0074_t0018.500.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
           "confidence": 0.9
         }
       ],
+      "state_changes": [],
       "temporal_relations": [],
-      "causal_hypotheses": [
-        {
-          "cause": "e2 entra in farmacia con intenzioni ostili",
-          "effect": "e1 viene aggredito",
-          "start_time": 16.5,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0066_t0016.500.jpg",
-            "dense_0067_t0016.750.jpg",
-            "dense_0068_t0017.000.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0070_t0017.500.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0072_t0018.000.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0074_t0018.500.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "inferred",
-          "confidence": 0.8
-        }
-      ]
+      "causal_hypotheses": []
     },
     {
       "segment_id": "segment_0006",
       "start_time": 18.0,
-      "end_time": 21.75,
+      "end_time": 20.25,
       "input_frames": [
         "dense_0072_t0018.000.jpg",
         "dense_0073_t0018.250.jpg",
@@ -1164,24 +969,19 @@
         "dense_0078_t0019.500.jpg",
         "dense_0079_t0019.750.jpg",
         "dense_0080_t0020.000.jpg",
-        "dense_0081_t0020.250.jpg",
-        "dense_0082_t0020.500.jpg",
-        "dense_0083_t0020.750.jpg",
-        "dense_0084_t0021.000.jpg",
-        "dense_0085_t0021.250.jpg",
-        "dense_0086_t0021.500.jpg",
-        "dense_0087_t0021.750.jpg"
+        "dense_0081_t0020.250.jpg"
       ],
       "entities": [
         {
           "entity_id": "e1",
-          "label": "persona",
-          "role": "commesso",
+          "label": "cane",
+          "role": "soggetto",
           "attributes": [
-            "occhiali"
+            "bianco",
+            "grigio"
           ],
           "start_time": 18.0,
-          "end_time": 21.75,
+          "end_time": 20.25,
           "evidence_frames": [
             "dense_0072_t0018.000.jpg",
             "dense_0073_t0018.250.jpg",
@@ -1192,13 +992,7 @@
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
             "dense_0080_t0020.000.jpg",
-            "dense_0081_t0020.250.jpg",
-            "dense_0082_t0020.500.jpg",
-            "dense_0083_t0020.750.jpg",
-            "dense_0084_t0021.000.jpg",
-            "dense_0085_t0021.250.jpg",
-            "dense_0086_t0021.500.jpg",
-            "dense_0087_t0021.750.jpg"
+            "dense_0081_t0020.250.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -1206,13 +1000,13 @@
         {
           "entity_id": "e2",
           "label": "persona",
-          "role": "rapinatore",
+          "role": "interagente",
           "attributes": [
-            "maschera",
-            "ascia"
+            "vestiti scuri",
+            "scarpe"
           ],
           "start_time": 18.0,
-          "end_time": 21.75,
+          "end_time": 20.25,
           "evidence_frames": [
             "dense_0072_t0018.000.jpg",
             "dense_0073_t0018.250.jpg",
@@ -1222,7 +1016,8 @@
             "dense_0077_t0019.250.jpg",
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -1230,31 +1025,11 @@
       ],
       "actions": [
         {
-          "description": "minaccia",
-          "actor": "e2",
-          "object": "e1",
-          "start_time": 18.0,
-          "end_time": 21.75,
-          "evidence_frames": [
-            "dense_0072_t0018.000.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0074_t0018.500.jpg",
-            "dense_0075_t0018.750.jpg",
-            "dense_0076_t0019.000.jpg",
-            "dense_0077_t0019.250.jpg",
-            "dense_0078_t0019.500.jpg",
-            "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "parla",
+          "description": "saltare",
           "actor": "e1",
           "object": null,
           "start_time": 18.0,
-          "end_time": 21.75,
+          "end_time": 20.25,
           "evidence_frames": [
             "dense_0072_t0018.000.jpg",
             "dense_0073_t0018.250.jpg",
@@ -1264,20 +1039,22 @@
             "dense_0077_t0019.250.jpg",
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.8
+          "confidence": 1.0
         }
       ],
-      "events": [],
-      "spatial_relations": [
+      "events": [
         {
-          "subject": "e2",
-          "relation": "davanti a",
-          "object": "e1",
+          "description": "interazione cane-persona",
+          "participants": [
+            "e1",
+            "e2"
+          ],
           "start_time": 18.0,
-          "end_time": 21.75,
+          "end_time": 20.25,
           "evidence_frames": [
             "dense_0072_t0018.000.jpg",
             "dense_0073_t0018.250.jpg",
@@ -1287,461 +1064,34 @@
             "dense_0077_t0019.250.jpg",
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         }
       ],
-      "state_changes": [],
-      "temporal_relations": [],
-      "causal_hypotheses": []
-    },
-    {
-      "segment_id": "segment_0007",
-      "start_time": 21.0,
-      "end_time": 24.75,
-      "input_frames": [
-        "dense_0084_t0021.000.jpg",
-        "dense_0085_t0021.250.jpg",
-        "dense_0086_t0021.500.jpg",
-        "dense_0087_t0021.750.jpg",
-        "dense_0088_t0022.000.jpg",
-        "dense_0089_t0022.250.jpg",
-        "dense_0090_t0022.500.jpg",
-        "dense_0091_t0022.750.jpg",
-        "dense_0092_t0023.000.jpg",
-        "dense_0093_t0023.250.jpg",
-        "dense_0094_t0023.500.jpg",
-        "dense_0095_t0023.750.jpg",
-        "dense_0096_t0024.000.jpg",
-        "dense_0097_t0024.250.jpg",
-        "dense_0098_t0024.500.jpg",
-        "dense_0099_t0024.750.jpg"
-      ],
-      "entities": [
-        {
-          "entity_id": "e1",
-          "label": "persona",
-          "role": "cliente",
-          "attributes": [
-            "occhiali",
-            "giacca scura"
-          ],
-          "start_time": 21.0,
-          "end_time": 24.75,
-          "evidence_frames": [
-            "dense_0084_t0021.000.jpg",
-            "dense_0085_t0021.250.jpg",
-            "dense_0086_t0021.500.jpg",
-            "dense_0087_t0021.750.jpg",
-            "dense_0088_t0022.000.jpg",
-            "dense_0089_t0022.250.jpg",
-            "dense_0090_t0022.500.jpg",
-            "dense_0091_t0022.750.jpg",
-            "dense_0092_t0023.000.jpg",
-            "dense_0093_t0023.250.jpg",
-            "dense_0094_t0023.500.jpg",
-            "dense_0095_t0023.750.jpg",
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "persona",
-          "role": "farmacista",
-          "attributes": [
-            "camicia bianca"
-          ],
-          "start_time": 24.0,
-          "end_time": 24.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "actions": [
-        {
-          "description": "parla",
-          "actor": "e1",
-          "object": null,
-          "start_time": 21.0,
-          "end_time": 24.75,
-          "evidence_frames": [
-            "dense_0084_t0021.000.jpg",
-            "dense_0085_t0021.250.jpg",
-            "dense_0086_t0021.500.jpg",
-            "dense_0087_t0021.750.jpg",
-            "dense_0088_t0022.000.jpg",
-            "dense_0089_t0022.250.jpg",
-            "dense_0090_t0022.500.jpg",
-            "dense_0091_t0022.750.jpg",
-            "dense_0092_t0023.000.jpg",
-            "dense_0093_t0023.250.jpg",
-            "dense_0094_t0023.500.jpg",
-            "dense_0095_t0023.750.jpg",
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "description": "parla",
-          "actor": "e2",
-          "object": null,
-          "start_time": 24.0,
-          "end_time": 24.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "events": [],
       "spatial_relations": [
         {
           "subject": "e1",
           "relation": "davanti a",
           "object": "e2",
-          "start_time": 24.0,
-          "end_time": 24.75,
+          "start_time": 18.0,
+          "end_time": 20.25,
           "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg"
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
-        }
-      ],
-      "state_changes": [],
-      "temporal_relations": [],
-      "causal_hypotheses": []
-    },
-    {
-      "segment_id": "segment_0008",
-      "start_time": 24.0,
-      "end_time": 27.75,
-      "input_frames": [
-        "dense_0096_t0024.000.jpg",
-        "dense_0097_t0024.250.jpg",
-        "dense_0098_t0024.500.jpg",
-        "dense_0099_t0024.750.jpg",
-        "dense_0100_t0025.000.jpg",
-        "dense_0101_t0025.250.jpg",
-        "dense_0102_t0025.500.jpg",
-        "dense_0103_t0025.750.jpg",
-        "dense_0104_t0026.000.jpg",
-        "dense_0105_t0026.250.jpg",
-        "dense_0106_t0026.500.jpg",
-        "dense_0107_t0026.750.jpg",
-        "dense_0108_t0027.000.jpg",
-        "dense_0109_t0027.250.jpg",
-        "dense_0110_t0027.500.jpg",
-        "dense_0111_t0027.750.jpg"
-      ],
-      "entities": [
-        {
-          "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
-          "attributes": [
-            "indossa camice bianco"
-          ],
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0101_t0025.250.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0103_t0025.750.jpg",
-            "dense_0104_t0026.000.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0106_t0026.500.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
-          "attributes": [
-            "indossa giacca scura",
-            "occhiali"
-          ],
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0101_t0025.250.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0103_t0025.750.jpg",
-            "dense_0104_t0026.000.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0106_t0026.500.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e3",
-          "label": "oggetto",
-          "role": null,
-          "attributes": [
-            "scuro",
-            "allungato"
-          ],
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0101_t0025.250.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0103_t0025.750.jpg",
-            "dense_0104_t0026.000.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0106_t0026.500.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.8
-        }
-      ],
-      "actions": [
-        {
-          "description": "mostra",
-          "actor": "e1",
-          "object": "e3",
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0101_t0025.250.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0103_t0025.750.jpg",
-            "dense_0104_t0026.000.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0106_t0026.500.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        }
-      ],
-      "events": [],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "davanti a",
-          "object": "e2",
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0101_t0025.250.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0103_t0025.750.jpg",
-            "dense_0104_t0026.000.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0106_t0026.500.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "state_changes": [],
-      "temporal_relations": [],
-      "causal_hypotheses": []
-    },
-    {
-      "segment_id": "segment_0009",
-      "start_time": 27.0,
-      "end_time": 29.75,
-      "input_frames": [
-        "dense_0108_t0027.000.jpg",
-        "dense_0109_t0027.250.jpg",
-        "dense_0110_t0027.500.jpg",
-        "dense_0111_t0027.750.jpg",
-        "dense_0112_t0028.000.jpg",
-        "dense_0113_t0028.250.jpg",
-        "dense_0114_t0028.500.jpg",
-        "dense_0115_t0028.750.jpg",
-        "dense_0116_t0029.000.jpg",
-        "dense_0117_t0029.250.jpg",
-        "dense_0118_t0029.500.jpg",
-        "dense_0119_t0029.750.jpg"
-      ],
-      "entities": [
-        {
-          "entity_id": "e1",
-          "label": "persona",
-          "role": "cliente",
-          "attributes": [
-            "occhiali",
-            "capelli scuri"
-          ],
-          "start_time": 27.0,
-          "end_time": 29.75,
-          "evidence_frames": [
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg",
-            "dense_0112_t0028.000.jpg",
-            "dense_0113_t0028.250.jpg",
-            "dense_0114_t0028.500.jpg",
-            "dense_0115_t0028.750.jpg",
-            "dense_0116_t0029.000.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "entity_id": "e2",
-          "label": "persona",
-          "role": "farmacista",
-          "attributes": [
-            "camicia bianca"
-          ],
-          "start_time": 28.5,
-          "end_time": 29.75,
-          "evidence_frames": [
-            "dense_0114_t0028.500.jpg",
-            "dense_0115_t0028.750.jpg",
-            "dense_0116_t0029.000.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "actions": [
-        {
-          "description": "parla",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 27.0,
-          "end_time": 29.75,
-          "evidence_frames": [
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg",
-            "dense_0112_t0028.000.jpg",
-            "dense_0113_t0028.250.jpg",
-            "dense_0114_t0028.500.jpg",
-            "dense_0115_t0028.750.jpg",
-            "dense_0116_t0029.000.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "mostra",
-          "actor": "e2",
-          "object": "documento",
-          "start_time": 28.5,
-          "end_time": 29.75,
-          "evidence_frames": [
-            "dense_0114_t0028.500.jpg",
-            "dense_0115_t0028.750.jpg",
-            "dense_0116_t0029.000.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        }
-      ],
-      "events": [],
-      "spatial_relations": [
-        {
-          "subject": "e1",
-          "relation": "davanti a",
-          "object": "e2",
-          "start_time": 28.5,
-          "end_time": 29.75,
-          "evidence_frames": [
-            "dense_0114_t0028.500.jpg",
-            "dense_0115_t0028.750.jpg",
-            "dense_0116_t0029.000.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
         }
       ],
       "state_changes": [],

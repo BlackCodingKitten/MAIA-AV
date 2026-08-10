@@ -1,5 +1,5 @@
 {
-  "id_video": "video001",
+  "id_video": "video003",
   "model": "google/gemma-3-27b-it",
   "configuration": {
     "window_seconds": 4.0,
@@ -7,7 +7,7 @@
     "max_frames_per_window": 32,
     "input_type": "ordered_dense_frames"
   },
-  "numero_segmenti": 10,
+  "numero_segmenti": 13,
   "numero_errori": 0,
   "segments": [
     {
@@ -35,10 +35,10 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
+          "label": "persona",
+          "role": "spettatore",
           "attributes": [
-            "indossa camice bianco"
+            "calvo"
           ],
           "start_time": 0.0,
           "end_time": 3.75,
@@ -65,14 +65,45 @@
         },
         {
           "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
+          "label": "persona",
+          "role": "oratore",
           "attributes": [
-            "indossa giacca scura"
+            "con giacca"
           ],
-          "start_time": 0.25,
+          "start_time": 0.0,
           "end_time": 3.75,
           "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "televisione",
+          "role": null,
+          "attributes": [
+            "schermo rettangolare"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
             "dense_0001_t0000.250.jpg",
             "dense_0002_t0000.500.jpg",
             "dense_0003_t0000.750.jpg",
@@ -95,49 +126,9 @@
       ],
       "actions": [
         {
-          "description": "consegna",
+          "description": "guardare",
           "actor": "e1",
-          "object": "farmaco",
-          "start_time": 0.5,
-          "end_time": 2.0,
-          "evidence_frames": [
-            "dense_0002_t0000.500.jpg",
-            "dense_0003_t0000.750.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0005_t0001.250.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "riceve",
-          "actor": "e2",
-          "object": "farmaco",
-          "start_time": 0.5,
-          "end_time": 2.0,
-          "evidence_frames": [
-            "dense_0002_t0000.500.jpg",
-            "dense_0003_t0000.750.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0005_t0001.250.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        }
-      ],
-      "events": [
-        {
-          "description": "transazione in farmacia",
-          "participants": [
-            "e1",
-            "e2"
-          ],
+          "object": "e3",
           "start_time": 0.0,
           "end_time": 3.75,
           "evidence_frames": [
@@ -162,41 +153,16 @@
           "confidence": 1.0
         }
       ],
+      "events": [],
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "dietro a",
-          "object": "scaffali",
+          "relation": "davanti a",
+          "object": "e3",
           "start_time": 0.0,
           "end_time": 3.75,
           "evidence_frames": [
             "dense_0000_t0000.000.jpg",
-            "dense_0001_t0000.250.jpg",
-            "dense_0002_t0000.500.jpg",
-            "dense_0003_t0000.750.jpg",
-            "dense_0004_t0001.000.jpg",
-            "dense_0005_t0001.250.jpg",
-            "dense_0006_t0001.500.jpg",
-            "dense_0007_t0001.750.jpg",
-            "dense_0008_t0002.000.jpg",
-            "dense_0009_t0002.250.jpg",
-            "dense_0010_t0002.500.jpg",
-            "dense_0011_t0002.750.jpg",
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        },
-        {
-          "subject": "e2",
-          "relation": "davanti a",
-          "object": "e1",
-          "start_time": 0.25,
-          "end_time": 3.75,
-          "evidence_frames": [
             "dense_0001_t0000.250.jpg",
             "dense_0002_t0000.500.jpg",
             "dense_0003_t0000.750.jpg",
@@ -247,11 +213,10 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "cliente",
+          "role": "oratore",
           "attributes": [
-            "occhiali",
-            "giacca",
-            "camicia"
+            "con occhiali",
+            "in giacca"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
@@ -266,17 +231,22 @@
             "dense_0019_t0004.750.jpg",
             "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
           "entity_id": "e2",
-          "label": "persona",
-          "role": "farmacista",
+          "label": "televisione",
+          "role": null,
           "attributes": [
-            "camicia bianca"
+            "con schermo rettangolare"
           ],
           "start_time": 3.0,
           "end_time": 6.75,
@@ -291,7 +261,34 @@
             "dense_0019_t0004.750.jpg",
             "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": null,
+          "attributes": [
+            "arancione"
+          ],
+          "start_time": 5.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -299,9 +296,9 @@
       ],
       "actions": [
         {
-          "description": "parla",
+          "description": "parlare",
           "actor": "e1",
-          "object": "e2",
+          "object": null,
           "start_time": 3.0,
           "end_time": 6.75,
           "evidence_frames": [
@@ -315,65 +312,80 @@
             "dense_0019_t0004.750.jpg",
             "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
-        }
-      ],
-      "events": [
+          "confidence": 1.0
+        },
         {
-          "description": "conversazione",
-          "participants": [
-            "e1",
-            "e2"
-          ],
-          "start_time": 3.0,
+          "description": "cadere",
+          "actor": "e2",
+          "object": null,
+          "start_time": 5.0,
           "end_time": 6.75,
           "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0017_t0004.250.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0019_t0004.750.jpg",
             "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
+      "events": [],
       "spatial_relations": [
         {
-          "subject": "e1",
-          "relation": "davanti a",
-          "object": "e2",
-          "start_time": 3.0,
+          "subject": "e2",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 5.0,
           "end_time": 6.75,
           "evidence_frames": [
-            "dense_0012_t0003.000.jpg",
-            "dense_0013_t0003.250.jpg",
-            "dense_0014_t0003.500.jpg",
-            "dense_0015_t0003.750.jpg",
-            "dense_0016_t0004.000.jpg",
-            "dense_0017_t0004.250.jpg",
-            "dense_0018_t0004.500.jpg",
-            "dense_0019_t0004.750.jpg",
             "dense_0020_t0005.000.jpg",
             "dense_0021_t0005.250.jpg",
-            "dense_0022_t0005.500.jpg"
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         }
       ],
       "state_changes": [],
       "temporal_relations": [],
-      "causal_hypotheses": []
+      "causal_hypotheses": [
+        {
+          "cause": "caduta della televisione",
+          "effect": "danneggiamento dell'auto",
+          "start_time": 5.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
     },
     {
       "segment_id": "segment_0002",
@@ -400,11 +412,10 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "persona",
-          "role": "cliente",
+          "label": "auto",
+          "role": null,
           "attributes": [
-            "indossa giacca",
-            "indossa occhiali"
+            "arancione"
           ],
           "start_time": 6.0,
           "end_time": 9.75,
@@ -432,19 +443,11 @@
         {
           "entity_id": "e2",
           "label": "persona",
-          "role": "farmacista",
-          "attributes": [
-            "indossa camice"
-          ],
-          "start_time": 6.0,
+          "role": null,
+          "attributes": [],
+          "start_time": 7.5,
           "end_time": 9.75,
           "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0027_t0006.750.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0029_t0007.250.jpg",
             "dense_0030_t0007.500.jpg",
             "dense_0031_t0007.750.jpg",
             "dense_0032_t0008.000.jpg",
@@ -460,77 +463,16 @@
           "confidence": 1.0
         }
       ],
-      "actions": [
-        {
-          "description": "parla",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 6.0,
-          "end_time": 9.75,
-          "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0027_t0006.750.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0029_t0007.250.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0031_t0007.750.jpg",
-            "dense_0032_t0008.000.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0034_t0008.500.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "ascolta",
-          "actor": "e2",
-          "object": "e1",
-          "start_time": 6.0,
-          "end_time": 9.75,
-          "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0027_t0006.750.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0029_t0007.250.jpg",
-            "dense_0030_t0007.500.jpg",
-            "dense_0031_t0007.750.jpg",
-            "dense_0032_t0008.000.jpg",
-            "dense_0033_t0008.250.jpg",
-            "dense_0034_t0008.500.jpg",
-            "dense_0035_t0008.750.jpg",
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        }
-      ],
+      "actions": [],
       "events": [],
       "spatial_relations": [
         {
-          "subject": "e1",
-          "relation": "davanti a",
-          "object": "e2",
-          "start_time": 6.0,
+          "subject": "e2",
+          "relation": "sopra",
+          "object": "e1",
+          "start_time": 7.5,
           "end_time": 9.75,
           "evidence_frames": [
-            "dense_0024_t0006.000.jpg",
-            "dense_0025_t0006.250.jpg",
-            "dense_0026_t0006.500.jpg",
-            "dense_0027_t0006.750.jpg",
-            "dense_0028_t0007.000.jpg",
-            "dense_0029_t0007.250.jpg",
             "dense_0030_t0007.500.jpg",
             "dense_0031_t0007.750.jpg",
             "dense_0032_t0008.000.jpg",
@@ -575,11 +517,9 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
-          "attributes": [
-            "indossa camice bianco"
-          ],
+          "label": "persona",
+          "role": null,
+          "attributes": [],
           "start_time": 9.0,
           "end_time": 12.75,
           "evidence_frames": [
@@ -605,128 +545,27 @@
         },
         {
           "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
+          "label": "auto",
+          "role": null,
           "attributes": [
-            "indossa giacca scura",
-            "indossa occhiali"
+            "arancione"
           ],
           "start_time": 9.0,
-          "end_time": 12.75,
+          "end_time": 9.0,
           "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0041_t0010.250.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0043_t0010.750.jpg",
-            "dense_0044_t0011.000.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0046_t0011.500.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0048_t0012.000.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0051_t0012.750.jpg"
+            "dense_0036_t0009.000.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         }
       ],
-      "actions": [
-        {
-          "description": "parla",
-          "actor": "e1",
-          "object": "e2",
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0041_t0010.250.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0043_t0010.750.jpg",
-            "dense_0044_t0011.000.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0046_t0011.500.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0048_t0012.000.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        },
-        {
-          "description": "guarda",
-          "actor": "e2",
-          "object": "e1",
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0041_t0010.250.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0043_t0010.750.jpg",
-            "dense_0044_t0011.000.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0046_t0011.500.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0048_t0012.000.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.8
-        }
-      ],
-      "events": [
-        {
-          "description": "interazione al banco",
-          "participants": [
-            "e1",
-            "e2"
-          ],
-          "start_time": 9.0,
-          "end_time": 12.75,
-          "evidence_frames": [
-            "dense_0036_t0009.000.jpg",
-            "dense_0037_t0009.250.jpg",
-            "dense_0038_t0009.500.jpg",
-            "dense_0039_t0009.750.jpg",
-            "dense_0040_t0010.000.jpg",
-            "dense_0041_t0010.250.jpg",
-            "dense_0042_t0010.500.jpg",
-            "dense_0043_t0010.750.jpg",
-            "dense_0044_t0011.000.jpg",
-            "dense_0045_t0011.250.jpg",
-            "dense_0046_t0011.500.jpg",
-            "dense_0047_t0011.750.jpg",
-            "dense_0048_t0012.000.jpg",
-            "dense_0049_t0012.250.jpg",
-            "dense_0050_t0012.500.jpg",
-            "dense_0051_t0012.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
+      "actions": [],
+      "events": [],
       "spatial_relations": [
         {
-          "subject": "e2",
-          "relation": "davanti a",
-          "object": "e1",
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e2",
           "start_time": 9.0,
           "end_time": 12.75,
           "evidence_frames": [
@@ -780,10 +619,10 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
+          "label": "persona",
+          "role": null,
           "attributes": [
-            "indossa camice bianco"
+            "indossa maglietta scura"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -810,11 +649,10 @@
         },
         {
           "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
+          "label": "balcone",
+          "role": null,
           "attributes": [
-            "indossa cappotto nero",
-            "porta occhiali"
+            "con ringhiera in ferro"
           ],
           "start_time": 12.0,
           "end_time": 15.75,
@@ -842,36 +680,50 @@
       ],
       "actions": [
         {
-          "description": "parla",
-          "actor": "e2",
-          "object": "e1",
+          "description": "appoggia le mani sulla ringhiera",
+          "actor": "e1",
+          "object": "e2",
           "start_time": 12.0,
-          "end_time": 15.75,
+          "end_time": 13.0,
           "evidence_frames": [
             "dense_0048_t0012.000.jpg",
             "dense_0049_t0012.250.jpg",
             "dense_0050_t0012.500.jpg",
             "dense_0051_t0012.750.jpg",
-            "dense_0052_t0013.000.jpg",
-            "dense_0053_t0013.250.jpg",
-            "dense_0054_t0013.500.jpg",
-            "dense_0055_t0013.750.jpg",
-            "dense_0056_t0014.000.jpg",
-            "dense_0057_t0014.250.jpg",
-            "dense_0058_t0014.500.jpg",
-            "dense_0059_t0014.750.jpg",
-            "dense_0060_t0015.000.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0063_t0015.750.jpg"
+            "dense_0052_t0013.000.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         },
         {
-          "description": "tocca",
-          "actor": "e2",
-          "object": "bancone",
+          "description": "alza un braccio",
+          "actor": "e1",
+          "object": null,
+          "start_time": 13.25,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "persona sul balcone",
+          "participants": [
+            "e1"
+          ],
           "start_time": 12.0,
           "end_time": 15.75,
           "evidence_frames": [
@@ -893,15 +745,14 @@
             "dense_0063_t0015.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.8
+          "confidence": 1.0
         }
       ],
-      "events": [],
       "spatial_relations": [
         {
-          "subject": "e2",
+          "subject": "e1",
           "relation": "davanti a",
-          "object": "e1",
+          "object": "e2",
           "start_time": 12.0,
           "end_time": 15.75,
           "evidence_frames": [
@@ -956,10 +807,10 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "farmacista",
+          "role": "uomo",
           "attributes": [
-            "occhiali",
-            "giacca scura"
+            "calvo",
+            "maglietta scura"
           ],
           "start_time": 15.0,
           "end_time": 18.75,
@@ -987,37 +838,38 @@
         {
           "entity_id": "e2",
           "label": "persona",
-          "role": "aggressore",
+          "role": "uomo",
           "attributes": [
-            "abbigliamento scuro",
-            "maschera"
+            "maglietta gialla"
           ],
-          "start_time": 16.5,
+          "start_time": 18.0,
           "end_time": 18.75,
           "evidence_frames": [
-            "dense_0066_t0016.500.jpg",
-            "dense_0067_t0016.750.jpg",
-            "dense_0068_t0017.000.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0070_t0017.500.jpg",
-            "dense_0071_t0017.750.jpg",
             "dense_0072_t0018.000.jpg",
             "dense_0073_t0018.250.jpg",
             "dense_0074_t0018.500.jpg",
             "dense_0075_t0018.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.8
         }
       ],
       "actions": [
         {
-          "description": "colpire",
-          "actor": "e2",
-          "object": "e1",
-          "start_time": 17.0,
+          "description": "sporgersi",
+          "actor": "e1",
+          "object": null,
+          "start_time": 15.0,
           "end_time": 18.75,
           "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
             "dense_0068_t0017.000.jpg",
             "dense_0069_t0017.250.jpg",
             "dense_0070_t0017.500.jpg",
@@ -1031,54 +883,27 @@
           "confidence": 1.0
         },
         {
-          "description": "scrivere",
-          "actor": "e1",
+          "description": "camminare",
+          "actor": "e2",
           "object": null,
-          "start_time": 15.0,
-          "end_time": 16.5,
-          "evidence_frames": [
-            "dense_0060_t0015.000.jpg",
-            "dense_0061_t0015.250.jpg",
-            "dense_0062_t0015.500.jpg",
-            "dense_0063_t0015.750.jpg",
-            "dense_0064_t0016.000.jpg",
-            "dense_0065_t0016.250.jpg",
-            "dense_0066_t0016.500.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.8
-        }
-      ],
-      "events": [
-        {
-          "description": "aggressione in farmacia",
-          "participants": [
-            "e1",
-            "e2"
-          ],
-          "start_time": 16.5,
+          "start_time": 18.0,
           "end_time": 18.75,
           "evidence_frames": [
-            "dense_0066_t0016.500.jpg",
-            "dense_0067_t0016.750.jpg",
-            "dense_0068_t0017.000.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0070_t0017.500.jpg",
-            "dense_0071_t0017.750.jpg",
             "dense_0072_t0018.000.jpg",
             "dense_0073_t0018.250.jpg",
             "dense_0074_t0018.500.jpg",
             "dense_0075_t0018.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 1.0
+          "confidence": 0.8
         }
       ],
+      "events": [],
       "spatial_relations": [
         {
           "subject": "e1",
           "relation": "davanti a",
-          "object": "scaffali",
+          "object": "balcone",
           "start_time": 15.0,
           "end_time": 18.75,
           "evidence_frames": [
@@ -1103,52 +928,9 @@
           "confidence": 1.0
         }
       ],
-      "state_changes": [
-        {
-          "entity": "e1",
-          "before": "calmo",
-          "after": "aggredito",
-          "start_time": 16.5,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0066_t0016.500.jpg",
-            "dense_0067_t0016.750.jpg",
-            "dense_0068_t0017.000.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0070_t0017.500.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0072_t0018.000.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0074_t0018.500.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        }
-      ],
+      "state_changes": [],
       "temporal_relations": [],
-      "causal_hypotheses": [
-        {
-          "cause": "e2 entra in farmacia con intenzioni ostili",
-          "effect": "e1 viene aggredito",
-          "start_time": 16.5,
-          "end_time": 18.75,
-          "evidence_frames": [
-            "dense_0066_t0016.500.jpg",
-            "dense_0067_t0016.750.jpg",
-            "dense_0068_t0017.000.jpg",
-            "dense_0069_t0017.250.jpg",
-            "dense_0070_t0017.500.jpg",
-            "dense_0071_t0017.750.jpg",
-            "dense_0072_t0018.000.jpg",
-            "dense_0073_t0018.250.jpg",
-            "dense_0074_t0018.500.jpg",
-            "dense_0075_t0018.750.jpg"
-          ],
-          "evidence_type": "inferred",
-          "confidence": 0.8
-        }
-      ]
+      "causal_hypotheses": []
     },
     {
       "segment_id": "segment_0006",
@@ -1176,9 +958,10 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "commesso",
+          "role": "uomo",
           "attributes": [
-            "occhiali"
+            "con cappellino",
+            "con bottiglia"
           ],
           "start_time": 18.0,
           "end_time": 21.75,
@@ -1206,10 +989,9 @@
         {
           "entity_id": "e2",
           "label": "persona",
-          "role": "rapinatore",
+          "role": "uomo",
           "attributes": [
-            "maschera",
-            "ascia"
+            "con panino"
           ],
           "start_time": 18.0,
           "end_time": 21.75,
@@ -1222,7 +1004,41 @@
             "dense_0077_t0019.250.jpg",
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "autobus",
+          "role": null,
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -1230,9 +1046,9 @@
       ],
       "actions": [
         {
-          "description": "minaccia",
-          "actor": "e2",
-          "object": "e1",
+          "description": "bere",
+          "actor": "e1",
+          "object": "bottiglia",
           "start_time": 18.0,
           "end_time": 21.75,
           "evidence_frames": [
@@ -1244,15 +1060,22 @@
             "dense_0077_t0019.250.jpg",
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
         },
         {
-          "description": "parla",
-          "actor": "e1",
-          "object": null,
+          "description": "mangiare",
+          "actor": "e2",
+          "object": "panino",
           "start_time": 18.0,
           "end_time": 21.75,
           "evidence_frames": [
@@ -1264,18 +1087,25 @@
             "dense_0077_t0019.250.jpg",
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.8
+          "confidence": 1.0
         }
       ],
       "events": [],
       "spatial_relations": [
         {
-          "subject": "e2",
-          "relation": "davanti a",
-          "object": "e1",
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
           "start_time": 18.0,
           "end_time": 21.75,
           "evidence_frames": [
@@ -1287,7 +1117,38 @@
             "dense_0077_t0019.250.jpg",
             "dense_0078_t0019.500.jpg",
             "dense_0079_t0019.750.jpg",
-            "dense_0080_t0020.000.jpg"
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -1323,10 +1184,9 @@
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "cliente",
+          "role": "uomo",
           "attributes": [
-            "occhiali",
-            "giacca scura"
+            "in piedi"
           ],
           "start_time": 21.0,
           "end_time": 24.75,
@@ -1354,27 +1214,10 @@
         {
           "entity_id": "e2",
           "label": "persona",
-          "role": "farmacista",
+          "role": "uomo",
           "attributes": [
-            "camicia bianca"
+            "in piedi"
           ],
-          "start_time": 24.0,
-          "end_time": 24.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "actions": [
-        {
-          "description": "parla",
-          "actor": "e1",
-          "object": null,
           "start_time": 21.0,
           "end_time": 24.75,
           "evidence_frames": [
@@ -1399,12 +1242,27 @@
           "confidence": 1.0
         },
         {
-          "description": "parla",
-          "actor": "e2",
-          "object": null,
-          "start_time": 24.0,
+          "entity_id": "e3",
+          "label": "autobus",
+          "role": null,
+          "attributes": [
+            "giallo"
+          ],
+          "start_time": 21.0,
           "end_time": 24.75,
           "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
             "dense_0096_t0024.000.jpg",
             "dense_0097_t0024.250.jpg",
             "dense_0098_t0024.500.jpg",
@@ -1414,15 +1272,55 @@
           "confidence": 1.0
         }
       ],
+      "actions": [],
       "events": [],
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "davanti a",
+          "relation": "a sinistra di",
           "object": "e2",
-          "start_time": 24.0,
+          "start_time": 21.0,
           "end_time": 24.75,
           "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
             "dense_0096_t0024.000.jpg",
             "dense_0097_t0024.250.jpg",
             "dense_0098_t0024.500.jpg",
@@ -1461,10 +1359,11 @@
       "entities": [
         {
           "entity_id": "e1",
-          "label": "farmacista",
-          "role": "addetto",
+          "label": "persona",
+          "role": "uomo",
           "attributes": [
-            "indossa camice bianco"
+            "indossa maglietta gialla",
+            "indossa pantaloni neri"
           ],
           "start_time": 24.0,
           "end_time": 27.75,
@@ -1491,11 +1390,11 @@
         },
         {
           "entity_id": "e2",
-          "label": "cliente",
-          "role": "acquirente",
+          "label": "persona",
+          "role": "uomo",
           "attributes": [
-            "indossa giacca scura",
-            "occhiali"
+            "indossa maglietta rossa",
+            "tiene cibo in mano"
           ],
           "start_time": 24.0,
           "end_time": 27.75,
@@ -1522,11 +1421,10 @@
         },
         {
           "entity_id": "e3",
-          "label": "oggetto",
+          "label": "auto",
           "role": null,
           "attributes": [
-            "scuro",
-            "allungato"
+            "rossa"
           ],
           "start_time": 24.0,
           "end_time": 27.75,
@@ -1549,44 +1447,43 @@
             "dense_0111_t0027.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.8
+          "confidence": 1.0
         }
       ],
-      "actions": [
-        {
-          "description": "mostra",
-          "actor": "e1",
-          "object": "e3",
-          "start_time": 24.0,
-          "end_time": 27.75,
-          "evidence_frames": [
-            "dense_0096_t0024.000.jpg",
-            "dense_0097_t0024.250.jpg",
-            "dense_0098_t0024.500.jpg",
-            "dense_0099_t0024.750.jpg",
-            "dense_0100_t0025.000.jpg",
-            "dense_0101_t0025.250.jpg",
-            "dense_0102_t0025.500.jpg",
-            "dense_0103_t0025.750.jpg",
-            "dense_0104_t0026.000.jpg",
-            "dense_0105_t0026.250.jpg",
-            "dense_0106_t0026.500.jpg",
-            "dense_0107_t0026.750.jpg",
-            "dense_0108_t0027.000.jpg",
-            "dense_0109_t0027.250.jpg",
-            "dense_0110_t0027.500.jpg",
-            "dense_0111_t0027.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 0.9
-        }
-      ],
+      "actions": [],
       "events": [],
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "davanti a",
+          "relation": "vicino a",
           "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "vicino a",
+          "object": "e1",
           "start_time": 24.0,
           "end_time": 27.75,
           "evidence_frames": [
@@ -1618,7 +1515,7 @@
     {
       "segment_id": "segment_0009",
       "start_time": 27.0,
-      "end_time": 29.75,
+      "end_time": 30.75,
       "input_frames": [
         "dense_0108_t0027.000.jpg",
         "dense_0109_t0027.250.jpg",
@@ -1631,19 +1528,23 @@
         "dense_0116_t0029.000.jpg",
         "dense_0117_t0029.250.jpg",
         "dense_0118_t0029.500.jpg",
-        "dense_0119_t0029.750.jpg"
+        "dense_0119_t0029.750.jpg",
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg"
       ],
       "entities": [
         {
           "entity_id": "e1",
           "label": "persona",
-          "role": "cliente",
+          "role": null,
           "attributes": [
-            "occhiali",
-            "capelli scuri"
+            "con maglietta gialla",
+            "con bottiglia"
           ],
           "start_time": 27.0,
-          "end_time": 29.75,
+          "end_time": 30.75,
           "evidence_frames": [
             "dense_0108_t0027.000.jpg",
             "dense_0109_t0027.250.jpg",
@@ -1656,7 +1557,11 @@
             "dense_0116_t0029.000.jpg",
             "dense_0117_t0029.250.jpg",
             "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 1.0
@@ -1664,31 +1569,13 @@
         {
           "entity_id": "e2",
           "label": "persona",
-          "role": "farmacista",
+          "role": null,
           "attributes": [
-            "camicia bianca"
+            "con maglietta rossa",
+            "con pane"
           ],
-          "start_time": 28.5,
-          "end_time": 29.75,
-          "evidence_frames": [
-            "dense_0114_t0028.500.jpg",
-            "dense_0115_t0028.750.jpg",
-            "dense_0116_t0029.000.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
-          ],
-          "evidence_type": "observed",
-          "confidence": 1.0
-        }
-      ],
-      "actions": [
-        {
-          "description": "parla",
-          "actor": "e1",
-          "object": "e2",
           "start_time": 27.0,
-          "end_time": 29.75,
+          "end_time": 30.75,
           "evidence_frames": [
             "dense_0108_t0027.000.jpg",
             "dense_0109_t0027.250.jpg",
@@ -1701,24 +1588,673 @@
             "dense_0116_t0029.000.jpg",
             "dense_0117_t0029.250.jpg",
             "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
           ],
           "evidence_type": "observed",
-          "confidence": 0.9
+          "confidence": 1.0
         },
         {
-          "description": "mostra",
-          "actor": "e2",
-          "object": "documento",
-          "start_time": 28.5,
-          "end_time": 29.75,
+          "entity_id": "e3",
+          "label": "auto",
+          "role": null,
+          "attributes": [
+            "rossa"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
           "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
             "dense_0114_t0028.500.jpg",
             "dense_0115_t0028.750.jpg",
             "dense_0116_t0029.000.jpg",
             "dense_0117_t0029.250.jpg",
             "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0010",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "input_frames": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0125_t0031.250.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0127_t0031.750.jpg",
+        "dense_0128_t0032.000.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0130_t0032.500.jpg",
+        "dense_0131_t0032.750.jpg",
+        "dense_0132_t0033.000.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "in piedi"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "in piedi"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "bottiglia",
+          "role": null,
+          "attributes": [
+            "di plastica",
+            "piena"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "pane",
+          "role": null,
+          "attributes": [
+            "in confezione"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tiene in mano",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tiene in mano",
+          "actor": "e2",
+          "object": "e4",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0011",
+      "start_time": 33.0,
+      "end_time": 36.75,
+      "input_frames": [
+        "dense_0132_t0033.000.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0135_t0033.750.jpg",
+        "dense_0136_t0034.000.jpg",
+        "dense_0137_t0034.250.jpg",
+        "dense_0138_t0034.500.jpg",
+        "dense_0139_t0034.750.jpg",
+        "dense_0140_t0035.000.jpg",
+        "dense_0141_t0035.250.jpg",
+        "dense_0142_t0035.500.jpg",
+        "dense_0143_t0035.750.jpg",
+        "dense_0144_t0036.000.jpg",
+        "dense_0145_t0036.250.jpg",
+        "dense_0146_t0036.500.jpg",
+        "dense_0147_t0036.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "indossa maglietta a righe gialle e occhiali da sole"
+          ],
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0142_t0035.500.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "indossa maglietta rossa"
+          ],
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0142_t0035.500.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "panino",
+          "role": "oggetto",
+          "attributes": [
+            "avvolto in carta"
+          ],
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0142_t0035.500.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "bottiglia",
+          "role": "oggetto",
+          "attributes": [
+            "di plastica",
+            "contenente liquido"
+          ],
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0142_t0035.500.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tiene",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0142_t0035.500.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tiene",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0142_t0035.500.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
+          "start_time": 33.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg",
+            "dense_0136_t0034.000.jpg",
+            "dense_0137_t0034.250.jpg",
+            "dense_0138_t0034.500.jpg",
+            "dense_0139_t0034.750.jpg",
+            "dense_0140_t0035.000.jpg",
+            "dense_0141_t0035.250.jpg",
+            "dense_0142_t0035.500.jpg",
+            "dense_0143_t0035.750.jpg",
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0012",
+      "start_time": 36.0,
+      "end_time": 36.75,
+      "input_frames": [
+        "dense_0144_t0036.000.jpg",
+        "dense_0145_t0036.250.jpg",
+        "dense_0146_t0036.500.jpg",
+        "dense_0147_t0036.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": null,
+          "attributes": [
+            "maglietta a righe",
+            "capelli ricci"
+          ],
+          "start_time": 36.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": null,
+          "attributes": [
+            "calvo",
+            "occhiali da sole"
+          ],
+          "start_time": 36.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e3",
+          "label": "cibo",
+          "role": null,
+          "attributes": [
+            "avvolto in carta"
+          ],
+          "start_time": 36.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "actions": [
+        {
+          "description": "guardare",
+          "actor": "e1",
+          "object": null,
+          "start_time": 36.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.7
+        },
+        {
+          "description": "tenere",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 36.0,
+          "end_time": 36.75,
+          "evidence_frames": [
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 0.9
@@ -1728,17 +2264,15 @@
       "spatial_relations": [
         {
           "subject": "e1",
-          "relation": "davanti a",
+          "relation": "a sinistra di",
           "object": "e2",
-          "start_time": 28.5,
-          "end_time": 29.75,
+          "start_time": 36.0,
+          "end_time": 36.75,
           "evidence_frames": [
-            "dense_0114_t0028.500.jpg",
-            "dense_0115_t0028.750.jpg",
-            "dense_0116_t0029.000.jpg",
-            "dense_0117_t0029.250.jpg",
-            "dense_0118_t0029.500.jpg",
-            "dense_0119_t0029.750.jpg"
+            "dense_0144_t0036.000.jpg",
+            "dense_0145_t0036.250.jpg",
+            "dense_0146_t0036.500.jpg",
+            "dense_0147_t0036.750.jpg"
           ],
           "evidence_type": "observed",
           "confidence": 0.9
