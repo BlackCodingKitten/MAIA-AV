@@ -1,0 +1,143 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "Una bambina è presente.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "Una cartella blu è presente.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "Un tavolo marrone è presente.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "La bambina è di fronte alla cartella.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "La bambina è sorridente.",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "La bambina tiene in mano un portacarte rosa.",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1",
+        "e5"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video078",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video078_semantic.json"
+}

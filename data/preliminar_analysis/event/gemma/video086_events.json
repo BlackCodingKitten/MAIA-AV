@@ -1,0 +1,158 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "bambina con capelli bagnati e costume da bagno tiene due sacchetti",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "piscina",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "tavolo",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "sacchetto bianco con scritte",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "tubo verde",
+      "start_time": 2.25,
+      "end_time": 3.75,
+      "participants": [],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "bambina che gioca con l'unicorno",
+      "start_time": 21.0,
+      "end_time": 30.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0006",
+      "relation": "after",
+      "second_event": "E0005",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video086",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video086_semantic.json"
+}

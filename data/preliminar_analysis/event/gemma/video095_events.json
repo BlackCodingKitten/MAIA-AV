@@ -1,0 +1,77 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "lezione",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "parla",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "incontro tra una donna e un uomo in un ufficio",
+      "start_time": 18.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "during",
+      "second_event": "E0001",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "after",
+      "second_event": "E0001",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video095",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video095_semantic.json"
+}

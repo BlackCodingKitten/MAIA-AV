@@ -1,0 +1,196 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "Un aereo biplano colorato di grigio chiaro è visibile.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "Una persona indossa un cappello e abiti colorati.",
+      "start_time": 2.25,
+      "end_time": 3.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "Una persona indossa un cappello e abiti verdi.",
+      "start_time": 2.25,
+      "end_time": 3.75,
+      "participants": [
+        "e3"
+      ],
+      "evidence_segments": [
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "Una persona indossa un cappello e abiti marroni.",
+      "start_time": 2.25,
+      "end_time": 3.75,
+      "participants": [
+        "e4"
+      ],
+      "evidence_segments": [
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "Una persona cade.",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0014_t0003.500.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "Una persona (e1) è all'interno dell'aereo.",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "Una persona (e1) scende dall'aereo.",
+      "start_time": 30.0,
+      "end_time": 34.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "Una persona (e3) assiste alla discesa di una persona dall'aereo.",
+      "start_time": 33.0,
+      "end_time": 34.75,
+      "participants": [
+        "e3"
+      ],
+      "evidence_segments": [],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "overlaps",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "after",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0006",
+      "relation": "before",
+      "second_event": "E0007",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0007",
+      "relation": "before",
+      "second_event": "E0008",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0008",
+      "relation": "after",
+      "second_event": "E0005",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video091",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video091_semantic.json"
+}

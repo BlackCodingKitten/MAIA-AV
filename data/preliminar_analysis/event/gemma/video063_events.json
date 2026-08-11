@@ -1,0 +1,109 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "Un uomo con capelli grigi, occhiali, giacca blu e camicia azzurra è presente.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "Un uomo con capelli bianchi, occhiali, giacca grigia e camicia blu scuro è presente.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "Bambini sono presenti.",
+      "start_time": 2.25,
+      "end_time": 3.75,
+      "participants": [
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "Un uomo con capelli grigi, occhiali, giacca blu e camicia viola è presente.",
+      "start_time": 18.0,
+      "end_time": 24.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "Una bambina con capelli castani e cerchietto blu è presente.",
+      "start_time": 27.75,
+      "end_time": 27.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video063",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video063_semantic.json"
+}

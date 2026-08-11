@@ -1,0 +1,120 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "Persona e auto presenti",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "Rissa",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "Persona che si muove",
+      "start_time": 12.0,
+      "end_time": 30.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "dense_0108_t0030.000.jpg",
+        "dense_0110_t0030.250.jpg",
+        "dense_0112_t0030.500.jpg",
+        "dense_0114_t0030.750.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0119_t0029.750.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0123_t0030.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.95
+    },
+    {
+      "event_id": "E0004",
+      "description": "Intervento",
+      "start_time": 30.0,
+      "end_time": 31.75,
+      "participants": [
+        "e1",
+        "e4"
+      ],
+      "evidence_segments": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0125_t0031.250.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0127_t0031.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.85
+    }
+  ],
+  "temporal_relations": [],
+  "causal_hypotheses": [
+    {
+      "cause": "aggressione da parte di e1",
+      "effect": "ferimento di e2",
+      "start_time": 30.0,
+      "end_time": 31.75,
+      "evidence_frames": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0125_t0031.250.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0127_t0031.750.jpg"
+      ],
+      "evidence_type": "inferred",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video045",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video045_semantic.json"
+}

@@ -1,0 +1,175 @@
+{
+  "events": [],
+  "temporal_relations": [],
+  "causal_hypotheses": [],
+  "segments": [
+    {
+      "segment_id": "0000",
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "chef",
+          "attributes": [],
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "carne",
+          "role": "ingrediente",
+          "attributes": [
+            "rossa",
+            "con grasso"
+          ],
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "cipolla",
+          "role": "ingrediente",
+          "attributes": [
+            "bianca",
+            "a pezzi"
+          ],
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 0.5,
+          "end_time": 1.0,
+          "evidence_frames": [
+            "dense_0002_t0000.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "segment_id": "0001",
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "chef",
+          "attributes": [],
+          "start_time": 3.0,
+          "end_time": 3.0,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "carne",
+          "role": "ingrediente",
+          "attributes": [
+            "rossa",
+            "con grasso"
+          ],
+          "start_time": 3.0,
+          "end_time": 3.0,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tagliare",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 3.5,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0014_t0013.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "segment_id": "0002",
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "chef",
+          "attributes": [],
+          "start_time": 12.0,
+          "end_time": 12.0,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "cipolla",
+          "role": "ingrediente",
+          "attributes": [],
+          "start_time": 12.0,
+          "end_time": 12.0,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tagliare il sedano",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 24.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "id_video": "video016",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video016_semantic.json"
+}

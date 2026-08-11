@@ -1,0 +1,140 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "Presenza di due uomini in un'area non specificata.",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "Un uomo (e1) gesticola verso un altro uomo (e2).",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0003",
+      "description": "Un commesso (e1) ripone scatole sullo scaffale.",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "Un attore (e1) si presenta con un abbigliamento casual.",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "Un attore (e1) si presenta con un abbigliamento formale.",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0002",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0003",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0005",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0006",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0002",
+      "relation": "after",
+      "second_event": "E0003",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0003",
+      "relation": "after",
+      "second_event": "E0004",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0004",
+      "relation": "after",
+      "second_event": "E0005",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0005",
+      "relation": "after",
+      "second_event": "E0006",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video029",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video029_semantic.json"
+}

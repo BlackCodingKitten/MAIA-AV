@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "bambina che gioca con una palla",
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "start_time": 24.0,
+      "end_time": 33.75,
+      "evidence_segments": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0131_t0032.750.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "bambina che si accovaccia",
+      "participants": [
+        "e1"
+      ],
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "evidence_segments": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0131_t0032.750.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "after",
+      "second_event": "E0002",
+      "confidence": 1.0
+    }
+  ],
+  "causal_hypotheses": [],
+  "id_video": "video034",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video034_semantic.json"
+}

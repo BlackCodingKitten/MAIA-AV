@@ -1,0 +1,161 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "Presenza di due persone (e1 e e2).",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "dense_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "Una persona (e1) si siede.",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0012",
+        "dense_0014",
+        "dense_0016",
+        "dense_0018",
+        "dense_0021",
+        "dense_0023",
+        "dense_0025",
+        "dense_0027"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "Una persona (e1) tocca un telefono (e3).",
+      "start_time": 15.25,
+      "end_time": 18.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "dense_0072",
+        "dense_0074",
+        "dense_0076",
+        "dense_0078",
+        "dense_0081",
+        "dense_0083",
+        "dense_0085",
+        "dense_0087"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "Una persona (e1) si morde il labbro.",
+      "start_time": 18.0,
+      "end_time": 18.5,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "dense_0108"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "Una persona (e1) è seduta su un divano (e3).",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "dense_0108",
+        "dense_0110",
+        "dense_0111",
+        "dense_0113",
+        "dense_0114",
+        "dense_0116",
+        "dense_0117",
+        "dense_0119"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "Una persona (e1) tocca una mano (e2).",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "dense_0108",
+        "dense_0110",
+        "dense_0111",
+        "dense_0113",
+        "dense_0114",
+        "dense_0116",
+        "dense_0117",
+        "dense_0119"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video061",
+  "model": "google/gemma-3n-E4B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma/video061_semantic.json"
+}
