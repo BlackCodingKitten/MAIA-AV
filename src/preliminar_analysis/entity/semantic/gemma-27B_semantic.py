@@ -7,7 +7,7 @@ import os
 # DEVE ESSERE FATTA PRIMA DI IMPORTARE vLLM / torch
 # ==============================================================================
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,4,5"
+os.environ["CUDA_VISIBLE_DEVICES"] = "5,6,7,0"
 
 os.environ["VLLM_USE_FLASHINFER_SAMPLING"] = "0"
 os.environ["VLLM_USE_FLASHINFER"] = "0"

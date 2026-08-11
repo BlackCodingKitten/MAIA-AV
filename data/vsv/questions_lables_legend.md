@@ -1,172 +1,528 @@
-# Legend for the Diagnostic S, T, and C Labels
+# Objective legend for the diagnostic S, T, and C labels
 
-This file describes the labels used in the CSV to classify the prerequisite abilities required by the VSV questions.
+This legend defines a fixed, evidence-based three-level complexity scale for
+spatial, temporal, and causal questions.
 
-A single question may receive multiple labels because it may simultaneously require spatial, temporal, and causal abilities.
+The scale evaluates the **minimum operations and evidence required by the
+question**, rather than assigning a subjective estimate of the difficulty of
+the corresponding video.
 
----
-
-## S Labels — Spatial Reasoning
-
-### S0 — Recognition of the involved entities
-Requires the model to correctly identify the people, objects, animals, or locations needed to answer the question.
-
-**Example:** recognizing the dog and its owner before determining where the dog is located.
-
-### S1 — Simple spatial relation
-Requires the model to identify a spatial relation that is directly observable at a given moment.
-
-Typical relations include:
-- above / below;
-- inside / outside;
-- in front of / behind;
-- to the right / to the left;
-- near / far;
-- on / in;
-- origin or destination of a movement.
-
-**Example:** determining where an object is located or on which surface it is placed.
-
-### S2 — Change in spatial relation over time
-Requires the model to compare the position of an entity at different moments in the video.
-
-**Example:** determining where an object was before being picked up and where it is afterwards.
-
-### S3 — Spatial relation conditioned by an event or temporal phase
-Requires the model to identify a spatial relation that is valid only during or after a specific event.
-
-**Example:** determining where the child is when she starts crying.
+The same 0–2 progression is applied independently to the spatial, temporal,
+and causal dimensions.
 
 ---
 
-## T Labels — Temporal Reasoning
+# Shared 0–2 complexity scale
 
-### T0 — Recognition of events
-Requires the model to correctly identify the actions or events mentioned in the question.
+## Level 0 — Direct retrieval
 
-**Example:** recognizing the moment when a person sits down and the moment when the same person greets someone.
+The answer can be obtained by retrieving one directly available piece of
+evidence.
 
-### T1 — Temporal localization
-Requires the model to determine when an event occurs in the video.
+Objective criteria:
 
-This may refer to:
-- a timestamp;
-- a specific moment;
-- a delimited phase of the video.
+- exactly one relevant evidence unit is sufficient;
+- no comparison between different evidence units is required;
+- no temporal alignment between distinct events is required;
+- no reconstruction of a change of state is required;
+- no implicit inference is required.
 
-**Example:** determining when a person starts running.
+Typical evidence scope:
 
-### T2 — Order or relation between events
-Requires the model to compare two events and determine their temporal relation.
+`single_frame` or one directly observable event/state.
 
-Typical relations include:
-- before;
-- after;
-- during;
-- simultaneously;
-- while;
-- already in progress.
-
-**Example:** determining whether the woman sighs before or after the phone rings.
-
-### T3 — Global position within the video
-Requires the model to determine whether an event occurs:
-- at the beginning;
-- in the middle;
-- near the end of the video.
-
-**Example:** determining whether an action occurs at the beginning or at the end of the scene.
-
-### T4 — Duration
-Requires the model to estimate or determine how long an event, activity, or interval lasts.
-
-**Example:** determining how long it takes to complete a procedure.
-
-### T5 — Change of state
-Requires the model to recognize a transformation between an initial state and a final state.
-
-**Example:** an object is initially closed and later opened, or a person changes from standing to sitting.
+This level corresponds to the previous Level 0 and remains unchanged.
 
 ---
 
-## C Labels — Causal Reasoning
+## Level 1 — Explicit relational integration
 
-### C0 — Recognition of the effect
-Requires the model to identify the result, consequence, or state that must be explained.
+The answer requires establishing an explicit relation, alignment, or
+dependency involving one or two evidence units.
 
-**Example:** recognizing that a person is crying, becoming angry, or falling.
+A question is assigned Level 1 if its solution requires at least one of the
+following operations:
 
-### C1 — Recognition of a candidate cause
-Requires the model to identify the event, action, or condition that may have produced the effect.
+- identifying one explicit relation between entities;
+- conditioning the retrieval of information on one explicitly identifiable
+  event or phase;
+- comparing or aligning two explicit evidence units;
+- ordering two explicitly observable events;
+- connecting one explicit antecedent, action, instruction, or goal to one
+  explicit consequence.
 
-**Example:** recognizing that a child starts crying after falling.
+Objective constraints:
 
-### C2 — Temporal relation between cause and effect
-Requires the model to verify that the cause precedes or accompanies the effect in a coherent way.
+- the relevant evidence is directly observable;
+- at most two evidence units need to be integrated;
+- no implicit causal, intentional, or social inference is necessary;
+- no multi-event state-transition reconstruction is necessary.
 
-**Example:** determining that the fall occurs before the crying.
+Typical evidence scope:
 
-### C3 — Causal link
-Requires the model to establish that one event does not merely precede another, but explains it.
+`local_interval` or `two_intervals`.
 
-**Example:** concluding that the child is crying because she fell.
-
-### C4 — Implicit causal inference
-Requires the model to reconstruct a cause that is not fully visible or explicitly stated, using contextual evidence from the video.
-
-**Example:** inferring why a person is worried from the surrounding situation and their reactions.
-
-### C5 — Necessity or counterfactual reasoning
-Requires the model to evaluate what would have happened if a cause had not occurred or if a condition had been different.
-
-**Example:** determining whether an effect would still have occurred in the absence of the observed cause.
+This level merges the previous Levels 1 and 2.
 
 ---
 
-## Interpreting the Compositionality Lists
+## Level 2 — Multi-step, implicit, or state-transition integration
 
-The `composizionalita` column contains a list of the dimensions involved in each question.
+The answer requires integrating information beyond a simple explicit
+pairwise relation.
+
+A question is assigned Level 2 if **at least one** of the following conditions
+holds:
+
+- evidence must be integrated across more than two relevant units or events;
+- the question requires reconstructing a sequence of states or events;
+- the answer depends on a change of state;
+- the answer requires tracking how an entity or relation changes over time;
+- duration or repeated occurrences must be accumulated or counted;
+- at least one relevant causal, intentional, social, or contextual relation
+  is not explicitly stated and must be inferred;
+- solving the question requires combining multiple operations sequentially.
+
+Typical evidence scope:
+
+`multi_event_sequence`.
+
+This level merges the previous Levels 3 and 4.
+
+---
+
+# Operational decision rule
+
+The following decision procedure should be applied in order.
+
+1. **Can the answer be obtained from one directly available evidence unit,
+   without comparison, alignment, or inference?**
+
+   Yes → Level 0.
+
+2. **Otherwise, can the answer be obtained by integrating at most two explicit
+   evidence units through one observable relation, comparison, temporal
+   alignment, or explicit cause–effect connection?**
+
+   Yes → Level 1.
+
+3. **Otherwise**, if the question requires multi-event integration,
+   state-transition reconstruction, duration/counting, tracking across phases,
+   or an implicit inferential step:
+
+   → Level 2.
+
+The highest required operation determines the complexity level.
+
+---
+
+# S labels — Spatial reasoning
+
+## S0 — Direct spatial retrieval
+
+Retrieve the location of an entity from one frame or stable scene state.
+
+**Objective criteria:**
+
+- one entity or target spatial property;
+- one evidence unit;
+- no event needs to be used to condition the retrieval;
+- no comparison between different spatial states is required.
+
+**Evidence scope:** `single_frame`
+
+**Typical question:**  
+“Where is the object?”
+
+---
+
+## S1 — Explicit or event-conditioned spatial relation
+
+Retrieve a spatial relation that is directly observable either within one
+action interval or after aligning the spatial information with one explicitly
+identifiable event.
+
+This category includes both local spatial relations and event-conditioned
+spatial retrieval.
+
+**Objective criteria:**
+
+At least one of the following applies:
+
+- retrieve one explicit source, destination, direction, support surface,
+  body part, containment relation, or placement relation;
+- identify one event and retrieve the spatial configuration associated with
+  that event;
+- compare at most two explicitly observable spatial evidence units.
+
+The spatial relation itself must remain directly observable.
+
+**Maximum evidence units:** 2
+
+**Evidence scope:** `local_interval` or `two_intervals`
+
+**Possible auxiliary ability:** `T0` or `T1`
+
+**Typical questions:**
+
+“Where does the person put the object?”
+
+“Where is the child when she starts crying?”
+
+---
+
+## S2 — Spatial reconstruction across phases or state transitions
+
+Reconstruct a spatial configuration by integrating information across
+multiple temporal phases, events, or states.
+
+**Objective criteria:**
+
+At least one of the following applies:
+
+- reconstruct where an entity was before or after another event when the
+  relevant state must be recovered from different phases;
+- track the movement or relocation of an entity;
+- compare the spatial state of the same entity across multiple phases;
+- determine how an event changes a spatial configuration;
+- integrate more than two relevant evidence units.
+
+**Evidence scope:** `multi_event_sequence`
+
+**Required auxiliary ability:** temporal reasoning, normally `T1` or `T2`
+
+**Typical questions:**
+
+“Where was the phone before the woman answered?”
+
+“Where was the object before it was picked up, and where is it afterwards?”
+
+---
+
+# T labels — Temporal reasoning
+
+## T0 — Event recognition
+
+Recognize one event or state.
+
+No ordering, duration estimation, temporal comparison, or reconstruction is
+required.
+
+**Objective criteria:**
+
+- one event/state;
+- one evidence unit;
+- no comparison with another event;
+- no temporal sequence reconstruction.
+
+In this dataset, T0 can also be used as an auxiliary prerequisite for other
+dimensions.
+
+---
+
+## T1 — Explicit temporal localization or pairwise ordering
+
+Locate an event relative to an explicit temporal anchor or determine the
+temporal relation between two explicitly observable events.
+
+This category includes both temporal localization and pairwise event ordering.
+
+**Objective criteria:**
+
+At least one of the following applies:
+
+- locate one event relative to an explicit time, date, phase, or temporal
+  anchor;
+- identify two events and determine which occurs first;
+- determine a direct `before`, `after`, or equivalent pairwise temporal
+  relation.
+
+**Maximum relevant evidence units:** 2
+
+No reconstruction of a longer event sequence is necessary.
+
+**Evidence scope:** `local_interval` or `two_intervals`
+
+**Typical questions:**
+
+“When did the event happen?”
+
+“Did the event happen before or after 11:30?”
+
+“Does the woman sigh before or after the phone rings?”
+
+---
+
+## T2 — Temporal sequence or state reconstruction
+
+Reconstruct temporal information distributed across a sequence rather than a
+single pair of events.
+
+**Objective criteria:**
+
+At least one of the following applies:
+
+- count repetitions of an action;
+- estimate or compare duration across an interval;
+- identify the onset, continuation, or completion of a state;
+- distinguish an earlier state from a later state;
+- determine whether an action was already in progress when another event
+  occurred;
+- reconstruct an ordered sequence involving more than two relevant
+  evidence units.
+
+**Evidence scope:** `multi_event_sequence`
+
+**Typical questions:**
+
+“After how many repetitions does the assistant help?”
+
+“Was the action already in progress, or did it begin after the other event?”
+
+---
+
+# C labels — Causal reasoning
+
+## C0 — Explicitly stated cause
+
+Retrieve a cause that is directly and unambiguously stated in the available
+evidence.
+
+No causal reconstruction is required.
+
+**Objective criteria:**
+
+- the causal relation is explicitly expressed in the available evidence;
+- one evidence unit is sufficient;
+- no connection between separate events needs to be inferred.
+
+No current item is necessarily assigned C0 solely from question form and
+existing metadata; the label remains available when explicit causal evidence
+is present.
+
+---
+
+## C1 — Explicit causal relation
+
+Establish a causal relation between directly observable or explicitly
+available antecedent and consequence information.
+
+This category includes both direct local causation and causal links distributed
+across two explicit evidence units.
+
+**Objective criteria:**
+
+At least one of the following applies:
+
+- identify one directly observable physical or behavioral cause–effect pair;
+- connect an explicit antecedent to an explicit consequence;
+- connect an explicit instruction or goal to the corresponding action or
+  outcome.
+
+**Maximum relevant evidence units:** 2
+
+The causal link must be supported without reconstructing an unstated mental,
+social, or contextual explanation.
+
+**Evidence scope:** `local_interval` or `two_intervals`
+
+**Possible auxiliary ability:** normally `T1`
+
+**Typical questions:**
+
+“Why does the paper make a bang?”
+
+“Why does the trainer tell the athlete to perform the exercise?”
+
+---
+
+## C2 — Implicit or multi-event causal reconstruction
+
+Infer a causal, intentional, social, or motivational relation by integrating
+context distributed across multiple events or states.
+
+**Objective criteria:**
+
+At least one of the following applies:
+
+- the causal relation is not directly stated or locally observable;
+- an unstated intention, motivation, mental state, or social reason must be
+  inferred;
+- more than two evidence units must be integrated;
+- a causal explanation depends on reconstructing a change of state;
+- multiple preceding events must be connected to explain a later reaction or
+  consequence;
+- the solution requires an implicit causal chain.
+
+**Evidence scope:** `multi_event_sequence`
+
+**Required auxiliary ability:** normally temporal reconstruction (`T2`)
+
+**Typical questions:**
+
+“Why is the person worried?”
+
+“Why does the character react this way after the sequence of preceding events?”
+
+---
+
+# Mapping from the previous scale
+
+The previous five-level scale is converted deterministically as follows:
+
+| Previous level | New level |
+|----------------|-----------|
+| 0              | 0         |
+| 1              | 1         |
+| 2              | 1         |
+| 3              | 2         |
+| 4              | 2         |
+
+Accordingly:
+
+- `S0 → S0`
+- `S1, S2 → S1`
+- `S3, S4 → S2`
+
+- `T0 → T0`
+- `T1, T2 → T1`
+- `T3, T4 → T2`
+
+- `C0 → C0`
+- `C1, C2 → C1`
+- `C3, C4 → C2`
+
+---
+
+# CSV columns
+
+## `diagnostic_label`
+
+Principal label followed by any auxiliary labels.
 
 Examples:
 
-- `["spatial"]`
-- `["temporal"]`
-- `["causal"]`
-- `["spatial", "temporal"]`
-- `["temporal", "causal"]`
-- `["spatial", "temporal", "causal"]`
+`S1|T0`
 
-The presence of more than one dimension indicates that the question requires a combination of abilities.
+`S2|T1`
 
-**Example:**  
-“Where is the child when she starts crying?” requires:
-- spatial recognition of the child's location;
-- temporal recognition of the onset of crying.
+`C2|T2`
 
 ---
 
-## Interpreting the Complexity Level
+## `complexity_level`
 
-The `livello_complessita_1_5` column provides an overall estimate of the expected difficulty of the question based on its linguistic formulation and required prerequisites.
+Numerical complexity of the principal dimension:
 
-- **1 — very low:** direct recognition of an entity or a simple relation;
-- **2 — low:** an explicit relation or a single easily localized event;
-- **3 — medium:** comparison between events, change of state, or a short inference;
-- **4 — high:** integration of multiple events, relations, or dimensions;
-- **5 — very high:** implicit inference, complex causal reasoning, or a spatial-temporal-causal combination.
+- `0` = direct retrieval;
+- `1` = explicit relational integration;
+- `2` = multi-step, implicit, or state-transition integration.
 
 ---
 
-## Methodological Note
+## `principal_label`
 
-The labels describe the prerequisite abilities required by the question. They do not directly measure the actual difficulty of the video.
+The `S`, `T`, or `C` label corresponding to the primary operation required by
+the question.
 
-The real difficulty may also depend on:
-- video quality and duration;
-- number of people or objects;
-- occlusions;
-- speed of the events;
-- audio clarity;
-- temporal distance between events;
-- scene ambiguity;
-- amount of implicit knowledge required.
+Examples:
+
+`S0`, `S1`, `S2`
+
+`T0`, `T1`, `T2`
+
+`C0`, `C1`, `C2`
+
+---
+
+## `auxiliary_labels`
+
+Prerequisite operations belonging to dimensions different from the principal
+one.
+
+Auxiliary labels describe necessary supporting operations but do not determine
+the principal complexity level.
+
+---
+
+## `objective_criterion`
+
+Short textual justification identifying the observable rule that triggered the
+classification.
+
+The justification should refer to operations such as:
+
+- direct retrieval;
+- one explicit relation;
+- alignment of two evidence units;
+- pairwise temporal ordering;
+- multi-event reconstruction;
+- state-transition tracking;
+- implicit causal inference.
+
+It should not contain subjective expressions such as “easy”, “difficult”,
+“complex”, or “challenging”.
+
+---
+
+## `evidence_scope`
+
+One of:
+
+- `single_frame`
+- `local_interval`
+- `two_intervals`
+- `multi_event_sequence`
+
+---
+
+## `evidence_units`
+
+Minimum number of distinct evidence units that must be retrieved and integrated
+to answer the question.
+
+This value should refer to logically necessary evidence rather than the total
+number of events visible in the video.
+
+---
+
+## `dimension_combination`
+
+List of reasoning dimensions that must be integrated to solve the question.
+
+Examples:
+
+`[S]`
+
+`[S,T]`
+
+`[T]`
+
+`[C,T]`
+
+`[C,S,T]`
+
+---
+
+# Methodological limitation
+
+The scale measures the **structural complexity of the operations required by
+the question**.
+
+It does not measure the perceptual difficulty of extracting the corresponding
+evidence from a particular video.
+
+Consequently, factors such as:
+
+- occlusion;
+- video quality;
+- number of visually similar entities;
+- event speed;
+- speech intelligibility;
+- acoustic noise;
+- visual ambiguity;
+
+do not affect the S/T/C complexity level.
+
+These properties should be represented separately if the objective is to
+measure the empirical perceptual difficulty of individual video instances.

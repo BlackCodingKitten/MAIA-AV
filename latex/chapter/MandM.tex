@@ -1,1 +1,40 @@
 \section{Preliminary video content analysis as a diagnostic tool for multimodal assessment}
+The preliminary analysis we conduct aims to render the MAIA assessment more diagnostic and less reliant on final outcomes. The fundamental issue is that a model's correctness—or lack thereof—on a Visual Question Answering (VQA) item does not reveal which component of the reasoning pipeline succeeded or failed. A correct answer does not guarantee that the model accurately identified relevant objects, reconstructed events, established temporal relations, or properly interpreted the prompt. Conversely, an incorrect answer fails to pinpoint where the failure occurred.
+This limitation is particularly critical for MAIA, which evaluates fine-grained reasoning and video content grounding. Consequently, the preliminary analysis precedes the VQA tasks. Rather than evaluating the model solely via direct VQA performance and aggregated accuracy, our approach preprocesses the video to construct a structured entity-event-inference representation, which is then benchmarked against a parallel analysis of the questions. This separation prevents content analysis from being implicitly biased by linguistic plausibility or multiple-choice options. Ultimately, we seek to establish \textbf{what is effectively retrievable from the video frames and at what complexity level}, before comparing this baseline with the model's actual task demands.
+This framework shares a strong methodological affinity with \textit{VILMA} \cite{kesen2024vilma}, adopting its combination of a preliminary proficiency evaluation and a main test. \textit{VILMA} operationalizes this via a structured caption-foil paradigm in a zero-shot setting, ensuring that \textbf{more complex capabilities are evaluated only when foundational conditions are met}.
+However, our preliminary analysis does not replicate \textit{VILMA}'s format. Instead, we operationalize its underlying principle: \textbf{complex reasoning capacities must be deconstructed into their perceptual, temporal, and semantic prerequisites}. Accordingly, our analysis distinguishes between low-level tasks (e.g., retrieving an entity in a single frame) and high-level demands (e.g., tracking entities over time, detecting state changes, linking sequential events, and inferring causal relationships). This shifts evaluation from a purely outcome-based metric toward \textbf{deconstructing the specific skills required for problem-solving}.
+In video domains, this distinction is crucial. Information may be localized to a single frame or distributed across a sequence, requiring object detection, motion tracking, entity interaction, event sequencing, or long-range temporal reasoning. As a result, questions within the same nominal category can demand vastly different processing depths—a spatial question might require single-frame observation or, alternatively, spatial inference following a complex sequence. To address this variance, we replace intuitive classifications with objective, reproducible evaluation criteria.
+The question classification framework we propose estimates the operational complexity required to retrieve relevant evidence. We established a coherent, comparable scale across three analysis dimensions: \textbf{spatial}, \textbf{temporal}, and \textbf{causal}. Entry-level capabilities involve retrieving localized, immediately noticeable information. Higher complexity levels progressively incorporate multi-entity dependencies, multiple events, broader temporal spans, information integration across scenes, and inferential steps.
+In the spatial dimension, complexity ranges from simple identification of spatial information within a single frame to the reconstruction of spatial relationships across time or causal events (e.g., tracking an object whose position was altered by an event). The same principle of progressive complexity applies to the temporal and causal dimensions as shown in Table\ref{tab:question_classifications}. To ensure methodologically sound, reproducible, and comparable categories, we define class properties based on observable video evidence, such as the number of involved entities, the sequence of events required for a correct answer, and the explicitness of the information. Crucially, these elements are not treated as mere linguistic descriptors; rather, they reflect concrete properties grounded in the video. Consequently, a preliminary video analysis is indispensable: without an independent representation of entities, events, and their relationships, level assignment risks being subjectively biased by question phrasing.
+\begin{table}[htbp]
+    \centering
+    \caption{Objective complexity levels for spatial, temporal, and causal questions.}
+    \label{tab:question_classifications}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\textwidth}{lXXX}
+        \toprule
+        \textbf{Category} &
+        \textbf{Level 0 -- Direct retrieval} &
+        \textbf{Level 1 -- Explicit relational integration} &
+        \textbf{Level 2 -- Multi-step or implicit integration} \\
+        \midrule
+
+        \textbf{Spatial (S)} &
+        Retrieval of the location or spatial property of an entity from a single frame or stable scene state. No temporal conditioning or comparison is required. &
+        Identification of an explicit spatial relation, destination, direction, or location conditioned by one observable event. At most two explicit evidence units must be integrated. &
+        Reconstruction of a spatial configuration across multiple temporal phases, including movement, relocation, or changes in the spatial state of an entity. \\
+
+        \textbf{Temporal (T)} &
+        Recognition of a single event or state, without ordering, comparison, duration estimation, or temporal reconstruction. &
+        Temporal localization with respect to an explicit anchor or pairwise ordering between two observable events, such as before/after relations. &
+        Reconstruction of a temporal sequence involving multiple events or states, including duration, repetition, onset, continuation, completion, or changes across phases. \\
+
+        \textbf{Causal (C)} &
+        Retrieval of a cause that is directly and explicitly stated in the available evidence, without causal reconstruction. &
+        Identification of an explicit cause--effect relation between directly observable antecedent and consequence, involving at most two evidence units. &
+        Reconstruction of an implicit or multi-event causal relation requiring contextual integration, intentional or social inference, state changes, or a causal chain. \\
+
+        \bottomrule
+    \end{tabularx}
+\end{table}
+%Non Corretto
