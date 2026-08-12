@@ -1,0 +1,4863 @@
+{
+  "id_video": "video046",
+  "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 32,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 12,
+  "numero_errori": 0,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0001_t0000.250.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0003_t0000.750.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0005_t0001.250.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0007_t0001.750.jpg",
+        "dense_0008_t0002.000.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0010_t0002.500.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "tenitore",
+          "attributes": [
+            "mano",
+            "dita"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "telefono",
+          "role": "oggetto tenuto",
+          "attributes": [
+            "schermo acceso",
+            "schermo blu",
+            "schermo con orologio",
+            "schermo con data",
+            "custodia"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "monitor",
+          "role": "oggetto sullo sfondo",
+          "attributes": [
+            "schermo acceso",
+            "sullo sfondo"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tenere un telefono",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una persona tiene un telefono acceso",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "schermo acceso con orologio 23:47 e data venerdì 10 gennaio",
+          "after": "schermo acceso con orologio 23:47 e data venerdì 10 gennaio",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "evento A",
+          "relation": "during",
+          "second_event": "evento B",
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 0.0,
+          "end_time": 3.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0017_t0004.250.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0019_t0004.750.jpg",
+        "dense_0020_t0005.000.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0022_t0005.500.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "tenitore",
+          "attributes": [
+            "mano",
+            "dita"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "telefono",
+          "role": "oggetto tenuto",
+          "attributes": [
+            "schermo acceso",
+            "schermo spento",
+            "schermo blu",
+            "schermo con testo",
+            "coperchio"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "legno",
+            "superficie"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "tastiera",
+          "role": "oggetto sul tavolo",
+          "attributes": [
+            "nera",
+            "tastiera"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "mouse",
+          "role": "oggetto sul tavolo",
+          "attributes": [
+            "nero",
+            "mouse"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "tenere il telefono",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "schermo del telefono acceso",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.0,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "schermo del telefono spento",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 6.25,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "a sinistra di",
+          "object": "e5",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "schermo acceso",
+          "after": "schermo spento",
+          "start_time": 6.0,
+          "end_time": 6.25,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "schermo del telefono acceso",
+          "relation": "before",
+          "second_event": "schermo del telefono spento",
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 3.0,
+          "end_time": 6.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "il telefono è stato spento",
+          "effect": "lo schermo è diventato nero",
+          "start_time": 6.0,
+          "end_time": 6.25,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0029_t0007.250.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0031_t0007.750.jpg",
+        "dense_0032_t0008.000.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0034_t0008.500.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "utente",
+          "attributes": [
+            "mano che tiene un telefono"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "telefono",
+          "role": "dispositivo",
+          "attributes": [
+            "schermo spento",
+            "schermo acceso",
+            "schermo con sfondo blu",
+            "schermo con orologio digitale",
+            "schermo con data"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tastiera",
+          "role": "oggetto",
+          "attributes": [
+            "nera",
+            "sul tavolo"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "di legno",
+            "sulla quale sono posizionati oggetti"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona tiene un telefono",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "il telefono viene mosso",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una persona tiene un telefono che viene mosso",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sopra",
+          "object": "e4",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "sopra",
+          "object": "e4",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "schermo spento",
+          "after": "schermo acceso",
+          "start_time": 9.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona tiene un telefono che viene mosso",
+          "relation": "durante",
+          "second_event": "il telefono viene acceso",
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 6.0,
+          "end_time": 9.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la persona preme il pulsante di accensione",
+          "effect": "il telefono si accende",
+          "start_time": 9.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0041_t0010.250.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0043_t0010.750.jpg",
+        "dense_0044_t0011.000.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0046_t0011.500.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "telefono",
+          "role": "oggetto tenuto",
+          "attributes": [
+            "schermo acceso",
+            "schermo blu",
+            "schermo con orologio",
+            "schermo con data"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "di legno",
+            "sulla destra"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tastiera",
+          "role": "oggetto",
+          "attributes": [
+            "sulla sinistra"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "mouse",
+          "role": "oggetto",
+          "attributes": [
+            "sulla destra",
+            "sul mousepad"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "mousepad",
+          "role": "oggetto",
+          "attributes": [
+            "sulla destra",
+            "sotto il mouse"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "il telefono viene tenuto in mano",
+          "actor": "e1",
+          "object": null,
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "la telecamera si sposta verso destra",
+          "actor": "telecamera",
+          "object": null,
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "il telefono è acceso e mostra l'ora",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "a sinistra di",
+          "object": "e1",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sopra",
+          "object": "e5",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "a destra di",
+          "object": "e1",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in primo piano",
+          "after": "in primo piano ma parzialmente fuori campo",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "il telefono è acceso e mostra l'ora",
+          "relation": "durante",
+          "second_event": "la telecamera si sposta verso destra",
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 9.0,
+          "end_time": 12.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0053_t0013.250.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0055_t0013.750.jpg",
+        "dense_0056_t0014.000.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0058_t0014.500.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "utente",
+          "attributes": [
+            "mano",
+            "pelle chiara"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "telefono",
+          "role": "dispositivo",
+          "attributes": [
+            "schermo acceso",
+            "colore chiaro",
+            "schermo blu"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tastiera",
+          "role": "dispositivo",
+          "attributes": [
+            "colore nero",
+            "tastiera da computer"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "mouse",
+          "role": "dispositivo",
+          "attributes": [
+            "colore nero",
+            "mouse ergonomico"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "monitor",
+          "role": "dispositivo",
+          "attributes": [
+            "schermo acceso",
+            "colore blu"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "colore chiaro",
+            "superficie di lavoro"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona tiene un telefono",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona sposta il telefono",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una persona tiene e sposta un telefono",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e6",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sopra",
+          "object": "e6",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "a sinistra di",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sopra",
+          "object": "e6",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "dietro a",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "schermo acceso",
+          "after": "schermo acceso",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona tiene e sposta un telefono",
+          "relation": "during",
+          "second_event": "una persona tiene un telefono",
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 12.0,
+          "end_time": 15.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0065_t0016.250.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0067_t0016.750.jpg",
+        "dense_0068_t0017.000.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0070_t0017.500.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "utente",
+          "attributes": [
+            "ha la mano destra",
+            "è seduta"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e2",
+          "label": "tastiera",
+          "role": "null",
+          "attributes": [
+            "è nera",
+            "è esterna"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "entity_id": "e3",
+          "label": "laptop",
+          "role": "null",
+          "attributes": [
+            "è acceso",
+            "ha lo schermo bianco"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "entity_id": "e4",
+          "label": "monitor",
+          "role": "null",
+          "attributes": [
+            "è acceso",
+            "ha lo schermo blu"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "entity_id": "e5",
+          "label": "mouse",
+          "role": "null",
+          "attributes": [
+            "è nero",
+            "è su un mousepad"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e6",
+          "label": "mousepad",
+          "role": "null",
+          "attributes": [
+            "è nero",
+            "è sotto il mouse"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e7",
+          "label": "telefono",
+          "role": "null",
+          "attributes": [
+            "è bianco",
+            "è sul mousepad"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona utilizza un mouse",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        }
+      ],
+      "events": [
+        {
+          "description": "una persona utilizza un computer",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e4",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e5",
+          "relation": "sopra",
+          "object": "e6",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e7",
+          "relation": "sopra",
+          "object": "e6",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e2",
+          "relation": "a sinistra di",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e3",
+          "relation": "a sinistra di",
+          "object": "e4",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "ha la mano destra sul mouse",
+          "after": "ha la mano destra fuori dal mouse",
+          "start_time": 15.0,
+          "end_time": 15.25,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity": "e1",
+          "before": "ha la mano destra fuori dal mouse",
+          "after": "ha la mano destra sul mouse",
+          "start_time": 15.25,
+          "end_time": 15.5,
+          "evidence_frames": [
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona utilizza un mouse",
+          "relation": "during",
+          "second_event": "una persona utilizza un computer",
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95,
+          "start_time": 15.0,
+          "end_time": 18.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "una persona utilizza un mouse",
+          "effect": "una persona utilizza un computer",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0077_t0019.250.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0079_t0019.750.jpg",
+        "dense_0080_t0020.000.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0082_t0020.500.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "utente",
+          "attributes": [
+            "seduta",
+            "in ombra"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "entity_id": "e2",
+          "label": "laptop",
+          "role": "dispositivo",
+          "attributes": [
+            "acceso",
+            "sul tavolo"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tastiera",
+          "role": "dispositivo",
+          "attributes": [
+            "sul tavolo",
+            "davanti al laptop"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "osservare lo schermo del laptop",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "persona che utilizza il laptop",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "subject": "e3",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sul tavolo",
+          "object": "tavolo",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "seduta",
+          "after": "seduta",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "evento A",
+          "relation": "during",
+          "second_event": "evento B",
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 18.0,
+          "end_time": 21.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0089_t0022.250.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0091_t0022.750.jpg",
+        "dense_0092_t0023.000.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0094_t0023.500.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "utente",
+          "attributes": [
+            "seduta",
+            "con barba",
+            "con occhiali",
+            "indossa maglione scuro"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e2",
+          "label": "laptop",
+          "role": "dispositivo",
+          "attributes": [
+            "aperto",
+            "schermo acceso",
+            "sul tavolo"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "entity_id": "e3",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "sulla quale sono posizionati oggetti"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.99
+        },
+        {
+          "entity_id": "e4",
+          "label": "monitor",
+          "role": "dispositivo",
+          "attributes": [
+            "sul lato destro",
+            "schermo acceso"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        }
+      ],
+      "actions": [
+        {
+          "description": "osserva lo schermo del laptop",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        }
+      ],
+      "events": [
+        {
+          "description": "persona osserva il laptop",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e2",
+          "relation": "sul",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.99
+        },
+        {
+          "subject": "e4",
+          "relation": "a destra di",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "non visibile",
+          "after": "visibile",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "persona osserva il laptop",
+          "relation": "during",
+          "second_event": "laptop acceso",
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98,
+          "start_time": 21.0,
+          "end_time": 24.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "laptop acceso",
+          "effect": "persona osserva lo schermo",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0101_t0025.250.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0103_t0025.750.jpg",
+        "dense_0104_t0026.000.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0106_t0026.500.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "utente",
+          "attributes": [
+            "seduta",
+            "con barba",
+            "con capelli scuri"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        },
+        {
+          "entity_id": "e2",
+          "label": "laptop",
+          "role": "dispositivo",
+          "attributes": [
+            "aperto",
+            "schermo acceso",
+            "sulla scrivania"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "entity_id": "e3",
+          "label": "monitor",
+          "role": "dispositivo",
+          "attributes": [
+            "acceso",
+            "sulla scrivania",
+            "schermo con sfondo blu"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.97
+        },
+        {
+          "entity_id": "e4",
+          "label": "scrivania",
+          "role": "superficie",
+          "attributes": [
+            "sulla quale sono posizionati i dispositivi"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.99
+        }
+      ],
+      "actions": [
+        {
+          "description": "osservare lo schermo del laptop",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.95
+        }
+      ],
+      "events": [
+        {
+          "description": "persona che utilizza un computer",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        },
+        {
+          "subject": "e2",
+          "relation": "sulla",
+          "object": "e4",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.99
+        },
+        {
+          "subject": "e3",
+          "relation": "a destra di",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.98
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "seduta e concentrata sul laptop",
+          "after": "seduta e concentrata sul laptop",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.99
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "evento A",
+          "relation": "during",
+          "second_event": "evento B",
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.99,
+          "start_time": 24.0,
+          "end_time": 27.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "presenza di un laptop e di un monitor",
+          "effect": "persona che utilizza un computer",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0009",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "input_frames": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0113_t0028.250.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0115_t0028.750.jpg",
+        "dense_0116_t0029.000.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0118_t0029.500.jpg",
+        "dense_0119_t0029.750.jpg",
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "utente",
+          "attributes": [
+            "seduta",
+            "con indosso occhiali",
+            "con indosso maglietta scura"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "laptop",
+          "role": "dispositivo",
+          "attributes": [
+            "aperto",
+            "schermo acceso",
+            "sul tavolo"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "monitor",
+          "role": "dispositivo",
+          "attributes": [
+            "sul tavolo",
+            "schermo acceso",
+            "con sfondo di un pianeta"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "la persona guarda lo schermo del laptop",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "la persona è seduta al tavolo e guarda il laptop",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "a sinistra di",
+          "object": "e3",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "seduta a sinistra del laptop",
+          "after": "si sposta leggermente verso sinistra",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "la persona guarda il laptop",
+          "relation": "durante",
+          "second_event": "il monitor è acceso",
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 27.0,
+          "end_time": 30.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la persona sta lavorando al computer",
+          "effect": "la persona guarda lo schermo del laptop",
+          "start_time": 27.0,
+          "end_time": 30.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg",
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0010",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "input_frames": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0125_t0031.250.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0127_t0031.750.jpg",
+        "dense_0128_t0032.000.jpg",
+        "dense_0129_t0032.250.jpg",
+        "dense_0130_t0032.500.jpg",
+        "dense_0131_t0032.750.jpg",
+        "dense_0132_t0033.000.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "laptop",
+          "role": null,
+          "attributes": [
+            "schermo acceso",
+            "sul tavolo"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "monitor",
+          "role": null,
+          "attributes": [
+            "schermo acceso",
+            "sul tavolo",
+            "sfondo con pianeta"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tavolo",
+          "role": null,
+          "attributes": [
+            "di legno",
+            "sulla superficie ci sono oggetti"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "circuit board",
+          "role": null,
+          "attributes": [
+            "sul tavolo",
+            "connesso a un breadboard",
+            "con un led verde acceso"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "breadboard",
+          "role": null,
+          "attributes": [
+            "sul tavolo",
+            "connesso a un circuit board"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "keyboard",
+          "role": null,
+          "attributes": [
+            "sul tavolo",
+            "in primo piano"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "cavo",
+          "role": null,
+          "attributes": [
+            "sul tavolo",
+            "intrecciato"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "description": "il monitor mostra un desktop con un'immagine di un pianeta",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "il laptop mostra uno schermo bianco",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un circuit board con un led verde acceso è visibile sul tavolo",
+          "participants": [
+            "e4"
+          ],
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg",
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sotto",
+          "object": "e5",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sul tavolo",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "sul tavolo",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e6",
+          "relation": "sotto",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e7",
+          "relation": "sul tavolo",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e4",
+          "before": "non visibile",
+          "after": "visibile",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e5",
+          "before": "non visibile",
+          "after": "visibile",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0129_t0032.250.jpg",
+            "dense_0130_t0032.500.jpg",
+            "dense_0131_t0032.750.jpg",
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e6",
+          "before": "non visibile",
+          "after": "visibile",
+          "start_time": 30.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "il circuit board e il breadboard diventano visibili",
+          "relation": "before",
+          "second_event": "la tastiera diventa visibile",
+          "evidence_frames": [
+            "dense_0128_t0032.000.jpg",
+            "dense_0132_t0033.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 30.0,
+          "end_time": 33.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0011",
+      "start_time": 33.0,
+      "end_time": 33.75,
+      "input_frames": [
+        "dense_0132_t0033.000.jpg",
+        "dense_0133_t0033.250.jpg",
+        "dense_0134_t0033.500.jpg",
+        "dense_0135_t0033.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "laptop",
+          "role": null,
+          "attributes": [
+            "schermo acceso",
+            "aperto"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "monitor",
+          "role": null,
+          "attributes": [
+            "schermo acceso",
+            "visualizza desktop"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "tavolo",
+          "role": null,
+          "attributes": [
+            "di legno",
+            "superficie piana"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "tastiera",
+          "role": null,
+          "attributes": [
+            "nera",
+            "parzialmente visibile"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "circuiti",
+          "role": null,
+          "attributes": [
+            "sul breadboard",
+            "connessi a un microcontrollore",
+            "microcontrollore con luce verde accesa"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "cavo",
+          "role": null,
+          "attributes": [
+            "nero",
+            "intrecciato"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "penna",
+          "role": null,
+          "attributes": [
+            "arancione",
+            "con cappuccio"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "description": "laptop acceso",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "monitor acceso",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "microcontrollore acceso",
+          "participants": [
+            "e5"
+          ],
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e6",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e7",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "schermo acceso",
+          "after": "schermo acceso",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "schermo acceso",
+          "after": "schermo acceso",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e5",
+          "before": "microcontrollore acceso",
+          "after": "microcontrollore acceso",
+          "start_time": 33.0,
+          "end_time": 33.75,
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "laptop acceso",
+          "relation": "simultaneous",
+          "second_event": "monitor acceso",
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 33.0,
+          "end_time": 33.75
+        },
+        {
+          "first_event": "laptop acceso",
+          "relation": "simultaneous",
+          "second_event": "microcontrollore acceso",
+          "evidence_frames": [
+            "dense_0132_t0033.000.jpg",
+            "dense_0133_t0033.250.jpg",
+            "dense_0134_t0033.500.jpg",
+            "dense_0135_t0033.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 33.0,
+          "end_time": 33.75
+        }
+      ],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": []
+}

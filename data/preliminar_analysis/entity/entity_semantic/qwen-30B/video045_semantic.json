@@ -1,0 +1,4254 @@
+{
+  "id_video": "video045",
+  "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 32,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 10,
+  "numero_errori": 1,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0001_t0000.250.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0003_t0000.750.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0005_t0001.250.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0007_t0001.750.jpg",
+        "dense_0008_t0002.000.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0010_t0002.500.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "poliziotto",
+          "attributes": [
+            "in uniforme blu",
+            "in piedi"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "individuo",
+          "attributes": [
+            "senza camicia",
+            "in piedi"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": "veicolo della polizia",
+          "attributes": [
+            "nera",
+            "con luci lampeggianti blu",
+            "con scritta '112' e 'CARA'"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "bandiera",
+          "role": "bandiera italiana",
+          "attributes": [
+            "tricolore verde, bianco, rosso",
+            "a mezz'asta"
+          ],
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "bandiera",
+          "role": "bandiera dell'Unione Europea",
+          "attributes": [
+            "blu con stelle gialle",
+            "a mezz'asta"
+          ],
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "edificio",
+          "role": "edificio pubblico",
+          "attributes": [
+            "con facciata in pietra",
+            "con finestre"
+          ],
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona in uniforme blu si trova accanto a un'auto della polizia",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona senza camicia si trova accanto a un'auto della polizia",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "le luci lampeggianti blu dell'auto della polizia sono accese",
+          "actor": "e3",
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "le bandiere sono a mezz'asta",
+          "actor": "e4",
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una folla di persone si raduna intorno a un'auto della polizia durante il tramonto",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "le bandiere sono a mezz'asta davanti a un edificio",
+          "participants": [
+            "e4",
+            "e5",
+            "e6"
+          ],
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e3",
+          "relation": "davanti a",
+          "object": "e6",
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sopra",
+          "object": "e6",
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "sopra",
+          "object": "e6",
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e3",
+          "before": "luci lampeggianti spente",
+          "after": "luci lampeggianti accese",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "le bandiere sono a mezz'asta",
+          "relation": "before",
+          "second_event": "una folla di persone si raduna intorno a un'auto della polizia",
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 0.0,
+          "end_time": 3.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "le bandiere sono a mezz'asta",
+          "effect": "l'evento è un lutto nazionale",
+          "start_time": 0.0,
+          "end_time": 0.0,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0017_t0004.250.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0019_t0004.750.jpg",
+        "dense_0020_t0005.000.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0022_t0005.500.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "poliziotto",
+          "attributes": [
+            "indossa uniforme blu",
+            "è in piedi vicino alla macchina"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "manifestante",
+          "attributes": [
+            "indossa pantaloni bianchi",
+            "è senza maglietta",
+            "è in piedi vicino alla macchina"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": "auto della polizia",
+          "attributes": [
+            "colore nero",
+            "ha luci blu lampeggianti",
+            "ha il numero 112 sul retro"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "auto",
+          "role": "auto nera",
+          "attributes": [
+            "colore nero",
+            "porta aperta"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "gruppo di persone",
+          "role": "folla",
+          "attributes": [
+            "numerose persone",
+            "si trova in un campo aperto"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona in uniforme blu sta parlando con una persona senza maglietta",
+          "actor": "e1, e2",
+          "object": null,
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona senza maglietta sta aprendo la portiera di un'auto nera",
+          "actor": "e2",
+          "object": "e4",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una folla di persone si raduna intorno a un'auto della polizia",
+          "actor": "e5",
+          "object": "e3",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una folla di persone si raduna intorno a un'auto della polizia",
+          "participants": [
+            "e5",
+            "e3"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "davanti a",
+          "object": "e5",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e4",
+          "before": "porta chiusa",
+          "after": "porta aperta",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona in uniforme blu sta parlando con una persona senza maglietta",
+          "relation": "during",
+          "second_event": "una folla di persone si raduna intorno a un'auto della polizia",
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 3.0,
+          "end_time": 6.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "una persona in uniforme blu sta parlando con una persona senza maglietta",
+          "effect": "una folla di persone si raduna intorno a un'auto della polizia",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0029_t0007.250.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0031_t0007.750.jpg",
+        "dense_0032_t0008.000.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0034_t0008.500.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "auto",
+          "role": "veicolo della polizia",
+          "attributes": [
+            "nera",
+            "con luci blu lampeggianti",
+            "con scritta 112"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "aggressore",
+          "attributes": [
+            "uomo",
+            "senza camicia",
+            "pantaloni bianchi"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "aggressore",
+          "attributes": [
+            "uomo",
+            "maglietta bianca",
+            "pantaloni chiari"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "aggressore",
+          "attributes": [
+            "uomo",
+            "maglietta a maniche corte",
+            "pantaloni scuri"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "aggressore",
+          "attributes": [
+            "uomo",
+            "maglietta a maniche corte",
+            "pantaloni scuri"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "auto",
+          "role": "veicolo civile",
+          "attributes": [
+            "nera",
+            "con portiera aperta"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e7",
+          "label": "gruppo di persone",
+          "role": "folla",
+          "attributes": [
+            "in piedi",
+            "circonda i veicoli"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "persone attaccano un'auto della polizia",
+          "actor": "e2, e3, e4, e5",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "persone attaccano un'auto civile",
+          "actor": "e2, e3, e4, e5",
+          "object": "e6",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "luci blu lampeggianti sull'auto della polizia",
+          "actor": "e1",
+          "object": null,
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "attacco a un'auto della polizia",
+          "participants": [
+            "e1",
+            "e2",
+            "e3",
+            "e4",
+            "e5"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "attacco a un'auto civile",
+          "participants": [
+            "e6",
+            "e2",
+            "e3",
+            "e4",
+            "e5"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e7",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e6",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "luci blu non lampeggianti",
+          "after": "luci blu lampeggianti",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "attacco a un'auto della polizia",
+          "relation": "simultaneous",
+          "second_event": "attacco a un'auto civile",
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 6.0,
+          "end_time": 9.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "presenza di forze dell'ordine",
+          "effect": "attacco da parte della folla",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0041_t0010.250.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0043_t0010.750.jpg",
+        "dense_0044_t0011.000.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0046_t0011.500.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "nudo di sopra",
+            "asciugamano bianco intorno al collo",
+            "pantaloni scuri"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "cappello",
+            "maglietta bianca",
+            "pantaloni blu"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "uomo piegato in avanti",
+          "actor": "e1",
+          "object": null,
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "uomo in piedi accanto a un altro uomo",
+          "actor": "e2",
+          "object": "e1",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "uomo piegato in avanti mentre un altro uomo lo osserva",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi",
+          "after": "piegato in avanti",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "uomo piegato in avanti mentre un altro uomo lo osserva",
+          "relation": "during",
+          "second_event": "uomo piegato in avanti",
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 9.0,
+          "end_time": 12.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0053_t0013.250.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0055_t0013.750.jpg",
+        "dense_0056_t0014.000.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0058_t0014.500.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "poliziotto",
+          "attributes": [
+            "in uniforme",
+            "in piedi"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "auto",
+          "role": "auto dei carabinieri",
+          "attributes": [
+            "nera",
+            "con luci lampeggianti blu",
+            "con scritta 'CARABINIERI'"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "gruppo di persone",
+          "role": "folla",
+          "attributes": [
+            "in piedi",
+            "in strada"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "auto",
+          "role": "auto",
+          "attributes": [
+            "nella folla"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona in uniforme si avvicina a un'auto dei carabinieri",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un'auto dei carabinieri con le luci lampeggianti blu",
+          "actor": "e2",
+          "object": null,
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una folla di persone si raduna intorno all'auto dei carabinieri",
+          "actor": "e3",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "un'auto dei carabinieri con le luci lampeggianti è circondata da una folla di persone",
+          "participants": [
+            "e2",
+            "e3"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "in mezzo a",
+          "object": "e3",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "auto ferma",
+          "after": "auto con luci lampeggianti",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "un'auto dei carabinieri con le luci lampeggianti è circondata da una folla di persone",
+          "relation": "during",
+          "second_event": "una persona in uniforme si avvicina a un'auto dei carabinieri",
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 12.0,
+          "end_time": 15.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la presenza di una folla di persone",
+          "effect": "l'arrivo di un'auto dei carabinieri con le luci lampeggianti",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0065_t0016.250.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0067_t0016.750.jpg",
+        "dense_0068_t0017.000.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0070_t0017.500.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "auto",
+          "role": "veicolo della polizia",
+          "attributes": [
+            "nera",
+            "con luci blu lampeggianti",
+            "con scritta 'CARABINIERI'",
+            "con numero '112'"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "agente di polizia",
+          "attributes": [
+            "in uniforme blu",
+            "in piedi accanto all'auto"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "membro della folla",
+          "attributes": [
+            "in piedi",
+            "in abiti casual"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "folla",
+          "role": "gruppo di persone",
+          "attributes": [
+            "numerosa",
+            "in piedi"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una folla di persone circonda un'auto della polizia",
+          "actor": "e4",
+          "object": "e1",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un agente di polizia sta accanto all'auto della polizia",
+          "actor": "e2",
+          "object": "e1",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "le luci blu dell'auto della polizia lampeggiano",
+          "actor": "e1",
+          "object": null,
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una folla di persone circonda un'auto della polizia con le luci lampeggianti",
+          "participants": [
+            "e4",
+            "e1"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "in mezzo a",
+          "object": "e4",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "accanto a",
+          "object": "e1",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "ferma",
+          "after": "con luci lampeggianti",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una folla di persone circonda un'auto della polizia con le luci lampeggianti",
+          "relation": "during",
+          "second_event": "un agente di polizia sta accanto all'auto della polizia",
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 15.0,
+          "end_time": 18.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la presenza di una folla di persone",
+          "effect": "l'auto della polizia ha le luci lampeggianti",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0077_t0019.250.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0079_t0019.750.jpg",
+        "dense_0080_t0020.000.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0082_t0020.500.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "auto",
+          "role": "veicolo di polizia",
+          "attributes": [
+            "nera",
+            "con luci blu lampeggianti",
+            "con scritta 'CARABINIERI'",
+            "con numero '112'"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "agente di polizia",
+          "attributes": [
+            "in uniforme blu",
+            "in piedi accanto all'auto"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "folla",
+          "attributes": [
+            "gruppo di persone",
+            "in piedi",
+            "in movimento"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "auto",
+          "role": "veicolo civile",
+          "attributes": [
+            "scura",
+            "parzialmente visibile"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una folla di persone si raduna intorno a un'auto di polizia",
+          "actor": "e3",
+          "object": "e1",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un agente di polizia sta accanto all'auto di polizia",
+          "actor": "e2",
+          "object": "e1",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "le luci blu dell'auto di polizia lampeggiano",
+          "actor": "e1",
+          "object": null,
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una folla si raduna intorno a un'auto di polizia con le luci lampeggianti",
+          "participants": [
+            "e1",
+            "e2",
+            "e3"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e3",
+          "relation": "intorno a",
+          "object": "e1",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "accanto a",
+          "object": "e1",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "luci blu spente",
+          "after": "luci blu lampeggianti",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "evento A: una folla si raduna intorno a un'auto di polizia",
+          "relation": "simultaneous",
+          "second_event": "evento B: le luci blu dell'auto di polizia lampeggiano",
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 18.0,
+          "end_time": 21.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la presenza di una folla di persone",
+          "effect": "l'attivazione delle luci lampeggianti dell'auto di polizia",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0089_t0022.250.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0091_t0022.750.jpg",
+        "dense_0092_t0023.000.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0094_t0023.500.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "aggressore",
+          "attributes": [
+            "maschio",
+            "senza camicia",
+            "indossa pantaloni bianchi"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "agente di polizia",
+          "attributes": [
+            "maschio",
+            "indossa uniforme blu"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": "auto dei carabinieri",
+          "attributes": [
+            "nera",
+            "con luci blu lampeggianti",
+            "scritta 'CARABINIERI' sul fianco"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "auto",
+          "role": "auto civile",
+          "attributes": [
+            "grigia",
+            "con portiera aperta"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "gruppo di persone",
+          "role": "folla",
+          "attributes": [
+            "in movimento",
+            "in agitazione"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona senza camicia si avvicina a un'auto e colpisce il finestrino",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un agente di polizia si avvicina alla folla",
+          "actor": "e2",
+          "object": "e5",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un'auto dei carabinieri ha le luci blu lampeggianti",
+          "actor": "e3",
+          "object": null,
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una folla si raduna intorno a un'auto dei carabinieri e a un'auto civile",
+          "participants": [
+            "e5",
+            "e3",
+            "e4"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona senza camicia colpisce il finestrino di un'auto",
+          "participants": [
+            "e1",
+            "e4"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e4",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "davanti a",
+          "object": "e5",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi",
+          "after": "in movimento verso l'auto",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "in piedi",
+          "after": "in movimento verso la folla",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona senza camicia si avvicina a un'auto",
+          "relation": "durante",
+          "second_event": "un agente di polizia si avvicina alla folla",
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 21.0,
+          "end_time": 24.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "una persona senza camicia colpisce il finestrino di un'auto",
+          "effect": "un agente di polizia si avvicina alla folla",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0101_t0025.250.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0103_t0025.750.jpg",
+        "dense_0104_t0026.000.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0106_t0026.500.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "carabiniere",
+          "role": "agente di polizia",
+          "attributes": [
+            "in uniforme blu",
+            "in piedi",
+            "vicino a un'auto"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "auto",
+          "role": "veicolo di servizio",
+          "attributes": [
+            "nera",
+            "con scritta 'CARABINIERI'",
+            "con luci blu lampeggianti"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "civile",
+          "attributes": [
+            "in piedi",
+            "in mezzo alla folla"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "folla",
+          "role": "gruppo di persone",
+          "attributes": [
+            "in movimento",
+            "in agitazione"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "un carabiniere cammina lungo la strada",
+          "actor": "e1",
+          "object": null,
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona si avvicina a un carabiniere",
+          "actor": "e3",
+          "object": "e1",
+          "start_time": 26.5,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona si avvicina a un'auto dei carabinieri",
+          "actor": "e3",
+          "object": "e2",
+          "start_time": 26.5,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona si avvicina a un carabiniere e lo colpisce",
+          "actor": "e3",
+          "object": "e1",
+          "start_time": 27.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "un carabiniere si muove lungo la strada in mezzo a una folla",
+          "participants": [
+            "e1",
+            "e4"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona si avvicina a un carabiniere e lo colpisce",
+          "participants": [
+            "e3",
+            "e1"
+          ],
+          "start_time": 27.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e4",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 26.5,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e3",
+          "before": "in piedi in mezzo alla folla",
+          "after": "in movimento verso un carabiniere",
+          "start_time": 26.5,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "un carabiniere cammina lungo la strada",
+          "relation": "before",
+          "second_event": "una persona si avvicina a un carabiniere e lo colpisce",
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0108_t0027.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 24.0,
+          "end_time": 27.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "una persona si avvicina a un carabiniere in modo aggressivo",
+          "effect": "il carabiniere si prepara a reagire",
+          "start_time": 27.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0010",
+      "start_time": 30.0,
+      "end_time": 31.75,
+      "input_frames": [
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg",
+        "dense_0124_t0031.000.jpg",
+        "dense_0125_t0031.250.jpg",
+        "dense_0126_t0031.500.jpg",
+        "dense_0127_t0031.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "carabiniere",
+          "attributes": [
+            "in uniforme",
+            "in piedi",
+            "in posizione di lotta"
+          ],
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "civile",
+          "attributes": [
+            "in abiti casual",
+            "in piedi",
+            "in posizione di lotta"
+          ],
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": "veicolo di servizio",
+          "attributes": [
+            "nera",
+            "con scritta 'CARABINIERI'",
+            "con luci blu lampeggianti"
+          ],
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "spettatore",
+          "attributes": [
+            "in piedi",
+            "in gruppo",
+            "in lontananza"
+          ],
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "lotta fisica",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "spingere",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tenere in piedi",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "lotta fisica tra un carabiniere e un civile",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "a destra di",
+          "object": "e2",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "lontano da",
+          "object": "e1",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "in piedi",
+          "after": "in posizione di lotta",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e1",
+          "before": "in piedi",
+          "after": "in posizione di lotta",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "lotta fisica tra un carabiniere e un civile",
+          "relation": "during",
+          "second_event": "presenza di una folla di spettatori",
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 30.0,
+          "end_time": 31.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "presenza di una folla di spettatori",
+          "effect": "lotta fisica tra un carabiniere e un civile",
+          "start_time": 30.0,
+          "end_time": 31.75,
+          "evidence_frames": [
+            "dense_0120_t0030.000.jpg",
+            "dense_0121_t0030.250.jpg",
+            "dense_0122_t0030.500.jpg",
+            "dense_0123_t0030.750.jpg",
+            "dense_0124_t0031.000.jpg",
+            "dense_0125_t0031.250.jpg",
+            "dense_0126_t0031.500.jpg",
+            "dense_0127_t0031.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "segment_id": "segment_0009",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "input_frames": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0113_t0028.250.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0115_t0028.750.jpg",
+        "dense_0116_t0029.000.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0118_t0029.500.jpg",
+        "dense_0119_t0029.750.jpg",
+        "dense_0120_t0030.000.jpg",
+        "dense_0121_t0030.250.jpg",
+        "dense_0122_t0030.500.jpg",
+        "dense_0123_t0030.750.jpg"
+      ],
+      "error": "SemanticOutputError: Oggetto JSON incompleto nella risposta del modello.",
+      "raw_response": "```json\n{\n  \"entities\": [\n    {\n      \"entity_id\": \"e1\",\n      \"label\": \"persona\",\n      \"role\": \"carabiniere\",\n      \"attributes\": [\n        \"in uniforme blu\",\n        \"in piedi accanto a un'auto\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e2\",\n      \"label\": \"persona\",\n      \"role\": \"civile\",\n      \"attributes\": [\n        \"in piedi\",\n        \"in piedi vicino a un'auto\",\n        \"in piedi di fronte a un carabiniere\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e3\",\n      \"label\": \"auto\",\n      \"role\": \"veicolo dei carabinieri\",\n      \"attributes\": [\n        \"nera\",\n        \"con scritta 'CARABINIERI'\",\n        \"con luci blu lampeggianti\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e4\",\n      \"label\": \"persona\",\n      \"role\": \"civile\",\n      \"attributes\": [\n        \"in piedi\",\n        \"in piedi di fronte a un carabiniere\",\n        \"in piedi vicino a un'auto\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e5\",\n      \"label\": \"auto\",\n      \"role\": \"veicolo\",\n      \"attributes\": [\n        \"nera\",\n        \"in primo piano\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"actions\": [\n    {\n      \"description\": \"un carabiniere affronta una persona\",\n      \"actor\": \"e1\",\n      \"object\": \"e2\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si avvicina a un carabiniere\",\n      \"actor\": \"e4\",\n      \"object\": \"e1\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si allontana da un carabiniere\",\n      \"actor\": \"e4\",\n      \"object\": \"e1\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si avvicina a un'auto\",\n      \"actor\": \"e2\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si allontana da un'auto\",\n      \"actor\": \"e2\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si avvicina a un'auto\",\n      \"actor\": \"e4\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si allontana da un'auto\",\n      \"actor\": \"e4\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"events\": [\n    {\n      \"description\": \"un carabiniere affronta una persona\",\n      \"participants\": [\n        \"e1\",\n        \"e2\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si avvicina a un carabiniere\",\n      \"participants\": [\n        \"e4\",\n        \"e1\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si allontana da un carabiniere\",\n      \"participants\": [\n        \"e4\",\n        \"e1\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si avvicina a un'auto\",\n      \"participants\": [\n        \"e2\",\n        \"e3\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si allontana da un'auto\",\n      \"participants\": [\n        \"e2\",\n        \"e3\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si avvicina a un'auto\",\n      \"participants\": [\n        \"e4\",\n        \"e3\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una persona si allontana da un'auto\",\n      \"participants\": [\n        \"e4\",\n        \"e3\"\n      ],\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"spatial_relations\": [\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"vicino a\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e2\",\n      \"relation\": \"vicino a\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e4\",\n      \"relation\": \"vicino a\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"vicino a\",\n      \"object\": \"e2\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e4\",\n      \"relation\": \"vicino a\",\n      \"object\": \"e1\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e5\",\n      \"relation\": \"davanti a\",\n      \"object\": \"e3\",\n      \"start_time\": 27.000,\n      \"end_time\": 30.750,\n      \"evidence_frames\": [\n        \"dense_0108_t0027.000.jpg\",\n        \"dense_0109_t0027.250.jpg\",\n        \"dense_0110_t0027.500.jpg\",\n        \"dense_0111_t0027.750.jpg\",\n        \"dense_0112_t0028.000.jpg\",\n        \"dense_0113_t0028.250.jpg\",\n        \"dense_0114_t0028.500.jpg\",\n        \"dense_0115_t0028.750.jpg\",\n        \"dense_0116_t0029.000.jpg\",\n        \"dense_0117_t0029.250.jpg\",\n        \"dense_0118_t0029.500.jpg\",\n        \"dense_0119_t0029.750.jpg\",\n        \"dense_0120_t0030.000.jpg\",\n        \"dense_0121_t0030.250.jpg\",\n        \"dense_0122_t0030.500.jpg\",\n        \"dense_0123_t0030.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"state_changes\": [\n    {"
+    }
+  ]
+}

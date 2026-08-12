@@ -1,0 +1,1995 @@
+{
+  "id_video": "video043",
+  "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 32,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 5,
+  "numero_errori": 1,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0001_t0000.250.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0003_t0000.750.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0005_t0001.250.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0007_t0001.750.jpg",
+        "dense_0008_t0002.000.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0010_t0002.500.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "insegnante",
+          "attributes": [
+            "uomo",
+            "calvo",
+            "indossa giacca rossa e blu",
+            "indossa pantaloni bianchi",
+            "calza piedi nudi"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "studente",
+          "attributes": [
+            "donna",
+            "indossa kimono bianco",
+            "indossa cintura rossa",
+            "indossa occhiali da sole",
+            "indossa scarpe da ginnastica bianche"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "padded",
+          "role": "attrezzo",
+          "attributes": [
+            "rosso",
+            "nero",
+            "tenuto da e1"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "tappetino",
+          "role": "superficie",
+          "attributes": [
+            "a strisce rosse e blu"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "e1 tiene i padded",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "e2 esegue un calcio",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 2.0,
+          "end_time": 2.5,
+          "evidence_frames": [
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "e2 si prepara a eseguire un calcio",
+          "actor": "e2",
+          "object": "null",
+          "start_time": 0.0,
+          "end_time": 1.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "e2 si riprende dopo il calcio",
+          "actor": "e2",
+          "object": "null",
+          "start_time": 2.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "e2 esegue un calcio",
+          "participants": [
+            "e2",
+            "e3"
+          ],
+          "start_time": 2.0,
+          "end_time": 2.5,
+          "evidence_frames": [
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "e2 si prepara a eseguire un calcio",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 0.0,
+          "end_time": 1.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "e2 si riprende dopo il calcio",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 2.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "a sinistra di",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e4",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "sopra",
+          "object": "e4",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "in posizione di attesa",
+          "after": "esegue un calcio",
+          "start_time": 2.0,
+          "end_time": 2.5,
+          "evidence_frames": [
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "esegue un calcio",
+          "after": "in posizione di attesa",
+          "start_time": 2.75,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "e2 si prepara a eseguire un calcio",
+          "relation": "before",
+          "second_event": "e2 esegue un calcio",
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 0.0,
+          "end_time": 3.75
+        },
+        {
+          "first_event": "e2 esegue un calcio",
+          "relation": "before",
+          "second_event": "e2 si riprende dopo il calcio",
+          "evidence_frames": [
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 0.0,
+          "end_time": 3.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "e1 tiene i padded",
+          "effect": "e2 esegue un calcio",
+          "start_time": 2.0,
+          "end_time": 2.5,
+          "evidence_frames": [
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0017_t0004.250.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0019_t0004.750.jpg",
+        "dense_0020_t0005.000.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0022_t0005.500.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "insegnante",
+          "attributes": [
+            "uomo",
+            "calvo",
+            "indossa giacca rossa e bianca",
+            "indossa pantaloni bianchi",
+            "calza piedi nudi",
+            "tiene in mano protezioni per pugni"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "praticante",
+          "attributes": [
+            "donna",
+            "indossa kimono bianco",
+            "indossa cintura rossa",
+            "indossa scarpe da ginnastica bianche",
+            "ha i capelli scuri"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "praticante esegue un calcio alto",
+          "actor": "e2",
+          "object": "protezione per pugni",
+          "start_time": 3.0,
+          "end_time": 4.0,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "praticante esegue un calcio alto",
+          "actor": "e2",
+          "object": "protezione per pugni",
+          "start_time": 6.75,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "insegnante tiene in mano le protezioni per pugni",
+          "actor": "e1",
+          "object": "protezione per pugni",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "praticante esegue un calcio alto",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 3.0,
+          "end_time": 4.0,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "praticante esegue un calcio alto",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 6.75,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "davanti a",
+          "object": "e1",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "in posizione di attacco",
+          "after": "esegue un calcio alto",
+          "start_time": 3.0,
+          "end_time": 4.0,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "in posizione di attacco",
+          "after": "esegue un calcio alto",
+          "start_time": 6.75,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "praticante esegue un calcio alto",
+          "relation": "before",
+          "second_event": "praticante esegue un calcio alto",
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 3.0,
+          "end_time": 6.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0029_t0007.250.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0031_t0007.750.jpg",
+        "dense_0032_t0008.000.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0034_t0008.500.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "insegnante",
+          "attributes": [
+            "uomo",
+            "calvo",
+            "indossa giacca rossa e blu",
+            "indossa pantaloni bianchi",
+            "calza piedi nudi"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "praticante",
+          "attributes": [
+            "donna",
+            "indossa kimono bianco",
+            "indossa cintura rossa",
+            "indossa occhiali",
+            "ha i capelli scuri"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "attrezzo",
+          "role": "padded target",
+          "attributes": [
+            "rosso",
+            "nero",
+            "tenuto da e1"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "tappetino",
+          "role": "pavimento",
+          "attributes": [
+            "a strisce rosse e blu",
+            "in ginnasio"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "spettatore",
+          "attributes": [
+            "seduto",
+            "a sinistra"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "praticante esegue un calcio",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "insegnante tiene un attrezzo",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "insegnante esegue un calcio",
+          "actor": "e1",
+          "object": "null",
+          "start_time": 8.0,
+          "end_time": 9.0,
+          "evidence_frames": [
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "praticante esegue un calcio",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "insegnante esegue un calcio",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 8.0,
+          "end_time": 9.0,
+          "evidence_frames": [
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "davanti a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "a destra di",
+          "object": "e5",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "in posizione di attacco",
+          "after": "esegue un calcio",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e1",
+          "before": "in posizione di attacco",
+          "after": "esegue un calcio",
+          "start_time": 8.0,
+          "end_time": 9.0,
+          "evidence_frames": [
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "praticante esegue un calcio",
+          "relation": "during",
+          "second_event": "insegnante esegue un calcio",
+          "evidence_frames": [
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 6.0,
+          "end_time": 9.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "praticante esegue un calcio",
+          "effect": "insegnante esegue un calcio",
+          "start_time": 8.0,
+          "end_time": 9.0,
+          "evidence_frames": [
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0053_t0013.250.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0055_t0013.750.jpg",
+        "dense_0056_t0014.000.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0058_t0014.500.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "atleta",
+          "attributes": [
+            "indossa kimono da karate bianco",
+            "ha una cintura rossa",
+            "indossa occhiali da sole",
+            "ha i capelli scuri",
+            "è in piedi"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "atleta",
+          "attributes": [
+            "indossa kimono da karate bianco",
+            "ha una cintura nera",
+            "indossa occhiali",
+            "ha i capelli chiari",
+            "è in piedi"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "atleta",
+          "attributes": [
+            "indossa giacca da ginnastica rossa, blu e bianca",
+            "ha i capelli scuri",
+            "è in piedi"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "oggetto",
+          "role": "attrezzo da karate",
+          "attributes": [
+            "è nero",
+            "ha forma di scudo",
+            "è tenuto in mano"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "oggetto",
+          "role": "attrezzo da karate",
+          "attributes": [
+            "è rosso",
+            "ha forma di scudo",
+            "è tenuto in mano"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona tiene un attrezzo da karate nero in mano",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona tiene un attrezzo da karate rosso in mano",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona esegue un movimento con un attrezzo da karate rosso",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 14.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una persona tiene due attrezzi da karate",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e5",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi con attrezzi in mano",
+          "after": "in piedi con attrezzi in mano e in movimento",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona tiene due attrezzi da karate",
+          "relation": "during",
+          "second_event": "una persona esegue un movimento con un attrezzo da karate rosso",
+          "evidence_frames": [
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 12.0,
+          "end_time": 15.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 17.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0065_t0016.250.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0067_t0016.750.jpg",
+        "dense_0068_t0017.000.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0070_t0017.500.jpg",
+        "dense_0071_t0017.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "insegnante",
+          "attributes": [
+            "indossa kimono da karate bianco",
+            "ha una cintura rossa",
+            "indossa occhiali da sole",
+            "ha i capelli scuri",
+            "è in piedi"
+          ],
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "studente",
+          "attributes": [
+            "indossa kimono da karate bianco",
+            "è parzialmente visibile"
+          ],
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0068_t0017.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "pattino",
+          "role": "attrezzo di allenamento",
+          "attributes": [
+            "è nero",
+            "è tenuto in mano"
+          ],
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "pattino",
+          "role": "attrezzo di allenamento",
+          "attributes": [
+            "è rosso",
+            "è tenuto in mano"
+          ],
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona tiene due pattini da karate",
+          "actor": "e1",
+          "object": "e3, e4",
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona esegue un colpo di karate",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 15.0,
+          "end_time": 15.25,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona esegue un colpo di karate",
+          "actor": "e2",
+          "object": "e4",
+          "start_time": 17.0,
+          "end_time": 17.25,
+          "evidence_frames": [
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una persona tiene due pattini da karate",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona esegue un colpo di karate",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 15.0,
+          "end_time": 17.25,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "tappetino",
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "a destra di",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "ha un pattino nero in mano destra e uno rosso in mano sinistra",
+          "after": "ha un pattino nero in mano destra e uno rosso in mano sinistra",
+          "start_time": 15.0,
+          "end_time": 17.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona esegue un colpo di karate",
+          "relation": "before",
+          "second_event": "una persona esegue un colpo di karate",
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 15.0,
+          "end_time": 17.75
+        }
+      ],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": [
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0041_t0010.250.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0043_t0010.750.jpg",
+        "dense_0044_t0011.000.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0046_t0011.500.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "error": "SemanticOutputError: Oggetto JSON incompleto nella risposta del modello.",
+      "raw_response": "```json\n{\n  \"entities\": [\n    {\n      \"entity_id\": \"e1\",\n      \"label\": \"persona\",\n      \"role\": \"insegnante\",\n      \"attributes\": [\n        \"uomo\",\n        \"calvo\",\n        \"indossa giacca rossa, blu e bianca\",\n        \"indossa pantaloni bianchi\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e2\",\n      \"label\": \"persona\",\n      \"role\": \"atleta\",\n      \"attributes\": [\n        \"donna\",\n        \"indossa kimono bianco\",\n        \"indossa cintura rossa\",\n        \"indossa occhiali da sole\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e3\",\n      \"label\": \"persona\",\n      \"role\": \"atleta\",\n      \"attributes\": [\n        \"uomo\",\n        \"indossa kimono bianco\",\n        \"indossa cintura nera\",\n        \"indossa occhiali\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e4\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e5\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e6\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e7\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e8\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e9\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e10\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e11\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e12\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e13\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e14\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e15\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e16\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e17\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e18\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e19\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e20\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e21\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e22\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e23\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e24\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,\n      \"end_time\": 12.750,\n      \"evidence_frames\": [\n        \"dense_0036_t0009.000.jpg\",\n        \"dense_0037_t0009.250.jpg\",\n        \"dense_0038_t0009.500.jpg\",\n        \"dense_0039_t0009.750.jpg\",\n        \"dense_0040_t0010.000.jpg\",\n        \"dense_0041_t0010.250.jpg\",\n        \"dense_0042_t0010.500.jpg\",\n        \"dense_0043_t0010.750.jpg\",\n        \"dense_0044_t0011.000.jpg\",\n        \"dense_0045_t0011.250.jpg\",\n        \"dense_0046_t0011.500.jpg\",\n        \"dense_0047_t0011.750.jpg\",\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e25\",\n      \"label\": \"medaglia\",\n      \"role\": \"premio\",\n      \"attributes\": [\n        \"dorata\",\n        \"appesa a una cintura\"\n      ],\n      \"start_time\": 9.000,"
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import os
-
 # Configurazione prima di importare torch/vLLM.
 os.environ["CUDA_VISIBLE_DEVICES"] = "5,6,1,2"
 os.environ["VLLM_USE_FLASHINFER_SAMPLING"] = "0"
