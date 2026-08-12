@@ -31,7 +31,11 @@
 \usepackage{titlesec} % per la formattazione dei titoli delle sezioni, capitoli etc.
 \usepackage{float} % per il posizionamento delle immagini
 \usepackage{booktabs}
+
+\usepackage{colortbl}
 \usepackage{tabularx}
+
+
 \usepackage{listings} % per il codice di programmazione
 % Fonte https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings. Per la lista di sintassi riconosciute.
 \renewcommand{\lstlistingname}{Code}% Listing -> Codice
@@ -224,6 +228,8 @@ Academic Year 2026/2027
 \null
 \thispagestyle{empty}
 \tableofcontents
+\listoffigures
+\listoftables
 \thispagestyle{empty}
 \clearpage
 \newpage
@@ -242,12 +248,12 @@ Academic Year 2026/2027
 \input{chapter/State_of_the_art.tex}
 \clearpage
 %-----DATASET------------
-\chapter{Dataset Creation and Preprocessing}
+\chapter{Data Collection}
 \label{ch:dataset}
 \input{chapter/Dataset.tex}
 \clearpage
 %------MATERIALI E METODI
-\chapter{Materiali e metodi}
+\chapter{Study Design and Experimental Setup}
 \label{ch:MeMs}
 \input{chapter/MandM.tex}
 \clearpage
