@@ -1,0 +1,2487 @@
+{
+  "id_video": "video050",
+  "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 32,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 5,
+  "numero_errori": 2,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0001_t0000.250.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0003_t0000.750.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0005_t0001.250.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0007_t0001.750.jpg",
+        "dense_0008_t0002.000.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0010_t0002.500.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "gruppo di studenti",
+          "attributes": [
+            "porta zaino",
+            "cammina",
+            "in fila"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [
+            "cammina",
+            "in piedi"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "edificio",
+          "role": "scuola",
+          "attributes": [
+            "bianco",
+            "con finestre",
+            "in fondo alla strada"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "auto",
+          "role": "veicolo",
+          "attributes": [
+            "nera",
+            "parcheggiata"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "montagna",
+          "role": "paesaggio",
+          "attributes": [
+            "rocciosa",
+            "in lontananza"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "cartello",
+          "role": "segnaletica stradale",
+          "attributes": [
+            "blu",
+            "con figura di pedone",
+            "sulla destra"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "camminare",
+          "actor": "e1",
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "attraversare la strada",
+          "actor": "e1",
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "camminare",
+          "actor": "e2",
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "un gruppo di studenti cammina lungo il marciapiede e attraversa la strada",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona cammina sul lato sinistro della strada",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sul marciapiede",
+          "object": "strada",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "a sinistra di",
+          "object": "e1",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "a sinistra di",
+          "object": "e1",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "dietro a",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi sul marciapiede",
+          "after": "in movimento lungo il marciapiede",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "in piedi sul lato sinistro della strada",
+          "after": "in movimento lungo il lato sinistro della strada",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "un gruppo di studenti cammina lungo il marciapiede e attraversa la strada",
+          "relation": "simultaneous",
+          "second_event": "una persona cammina sul lato sinistro della strada",
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 0.0,
+          "end_time": 3.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la presenza di un adulto che cammina sul lato della strada",
+          "effect": "la sicurezza del gruppo di studenti che attraversa",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0001_t0000.250.jpg",
+            "dense_0002_t0000.500.jpg",
+            "dense_0003_t0000.750.jpg",
+            "dense_0004_t0001.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0006_t0001.500.jpg",
+            "dense_0007_t0001.750.jpg",
+            "dense_0008_t0002.000.jpg",
+            "dense_0009_t0002.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0011_t0002.750.jpg",
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0029_t0007.250.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0031_t0007.750.jpg",
+        "dense_0032_t0008.000.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0034_t0008.500.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "studente",
+          "attributes": [
+            "con zaino",
+            "con valigia a rotelle",
+            "in fila"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "adulto",
+          "attributes": [
+            "in piedi",
+            "a sinistra della strada"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "strada",
+          "role": "ambiente",
+          "attributes": [
+            "asfaltata",
+            "con marciapiede",
+            "con strisce pedonali"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "edificio",
+          "role": "ambiente",
+          "attributes": [
+            "bianco",
+            "con finestre",
+            "in fondo alla strada"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "camminare",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "attraversare la strada",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "stare in piedi",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "un gruppo di studenti attraversa la strada",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi sul marciapiede",
+          "after": "in movimento attraverso la strada",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "un gruppo di studenti attraversa la strada",
+          "relation": "during",
+          "second_event": "un adulto sta in piedi a sinistra della strada",
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 6.0,
+          "end_time": 9.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la presenza di un adulto che sorveglia",
+          "effect": "gli studenti attraversano la strada in modo ordinato",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0041_t0010.250.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0043_t0010.750.jpg",
+        "dense_0044_t0011.000.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0046_t0011.500.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambino",
+          "role": "studente",
+          "attributes": [
+            "con zaino",
+            "con valigia a rotelle"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "adulto",
+          "role": "genitore o accompagnatore",
+          "attributes": [
+            "con giacca a vento gialla"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "adulto",
+          "role": "genitore o accompagnatore",
+          "attributes": [
+            "con giacca a vento gialla"
+          ],
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "bambino",
+          "role": "studente",
+          "attributes": [
+            "con zaino blu"
+          ],
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "bambino",
+          "role": "studente",
+          "attributes": [
+            "con zaino rosa"
+          ],
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e6",
+          "label": "bambino",
+          "role": "studente",
+          "attributes": [
+            "con zaino nero"
+          ],
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "camminare",
+          "actor": "e1",
+          "object": null,
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "trascinare una valigia",
+          "actor": "e1",
+          "object": "valigia",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "guidare i bambini",
+          "actor": "e2",
+          "object": "e1",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "stare in piedi",
+          "actor": "e3",
+          "object": null,
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "un gruppo di bambini attraversa la strada",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un adulto in giacca a vento gialla guida i bambini",
+          "participants": [
+            "e2",
+            "e1"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un adulto in giacca a vento gialla sta in piedi a guardare",
+          "participants": [
+            "e3"
+          ],
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "strada",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "a destra di",
+          "object": "e1",
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 10.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi sul marciapiede",
+          "after": "in movimento attraverso la strada",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "un gruppo di bambini attraversa la strada",
+          "relation": "durante",
+          "second_event": "un adulto in giacca a vento gialla sta in piedi a guardare",
+          "evidence_frames": [
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 9.0,
+          "end_time": 12.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la presenza di un adulto in giacca a vento gialla",
+          "effect": "i bambini attraversano la strada in sicurezza",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0065_t0016.250.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0067_t0016.750.jpg",
+        "dense_0068_t0017.000.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0070_t0017.500.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambino",
+          "role": "studente",
+          "attributes": [
+            "con zaino",
+            "in fila"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "adulto",
+          "role": "accompagnatore",
+          "attributes": [
+            "con giacca gialla",
+            "in piedi"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "auto",
+          "role": "veicolo",
+          "attributes": [
+            "nera",
+            "parcheggiata"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "carta",
+          "role": "documento",
+          "attributes": [
+            "con logo CLIMB",
+            "sul tavolo"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "tavolo",
+          "role": "superficie",
+          "attributes": [
+            "rosso"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "bambini attraversano la strada",
+          "actor": "e1",
+          "object": "strada",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "adulti sorvegliano i bambini",
+          "actor": "e2",
+          "object": "e1",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "auto parcheggiata sul lato della strada",
+          "actor": "e3",
+          "object": "strada",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "carte posizionate sul tavolo",
+          "actor": "e4",
+          "object": "e5",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "bambini attraversano la strada con l'accompagnamento di adulti",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "presentazione di documenti del progetto CLIMB",
+          "participants": [
+            "e4",
+            "e5"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e5",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "a sinistra di",
+          "object": "e1",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "sopra",
+          "object": "e5",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi sul marciapiede",
+          "after": "in movimento attraverso la strada",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "bambini attraversano la strada con l'accompagnamento di adulti",
+          "relation": "during",
+          "second_event": "presentazione di documenti del progetto CLIMB",
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 15.0,
+          "end_time": 18.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "bambini attraversano la strada",
+          "effect": "adulti sorvegliano i bambini",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 19.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0077_t0019.250.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0079_t0019.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "documento",
+          "role": "oggetto espositivo",
+          "attributes": [
+            "bianco",
+            "con testo in italiano",
+            "con immagini"
+          ],
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "tavolo",
+          "role": "superficie di appoggio",
+          "attributes": [
+            "rosso scuro",
+            "liscio"
+          ],
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "libretto",
+          "role": "oggetto espositivo",
+          "attributes": [
+            "bianco",
+            "con logo colorato",
+            "con testo in italiano"
+          ],
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "un documento è aperto e mostra il suo contenuto",
+          "actor": "e1",
+          "object": "il suo contenuto",
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "i libretti sono disposti in pila",
+          "actor": "e3",
+          "object": "altri libretti",
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "un documento è esposto su un tavolo",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "i libretti sono esposti su un tavolo",
+          "participants": [
+            "e3",
+            "e2"
+          ],
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "sopra",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "sopra",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "a destra di",
+          "object": "e3",
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "chiuso",
+          "after": "aperto",
+          "start_time": 18.0,
+          "end_time": 19.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "un documento è esposto su un tavolo",
+          "relation": "simultaneous",
+          "second_event": "i libretti sono esposti su un tavolo",
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 18.0,
+          "end_time": 19.75
+        }
+      ],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": [
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0017_t0004.250.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0019_t0004.750.jpg",
+        "dense_0020_t0005.000.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0022_t0005.500.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "error": "SemanticOutputError: Oggetto JSON incompleto nella risposta del modello.",
+      "raw_response": "```json\n{\n  \"entities\": [\n    {\n      \"entity_id\": \"e1\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e2\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e3\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e4\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e5\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e6\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e7\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e8\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e9\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e10\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e11\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e12\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e13\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e14\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e15\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e16\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e17\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e18\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e19\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e20\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e21\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e22\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e23\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e24\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e25\",\n      \"label\": \"persona\",\n      \"role\": \"bambino\",\n      \"attributes\": [\n        \"con zaino\",\n        \"in fila\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t000"
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0053_t0013.250.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0055_t0013.750.jpg",
+        "dense_0056_t0014.000.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0058_t0014.500.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "error": "SemanticOutputError: Oggetto JSON incompleto nella risposta del modello.",
+      "raw_response": "```json\n{\n  \"entities\": [\n    {\n      \"entity_id\": \"e1\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\",\n        \"con valigetta a rotelle\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e2\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e3\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e4\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e5\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e6\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e7\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e8\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e9\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e10\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e11\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e12\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e13\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e14\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e15\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e16\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e17\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e18\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e19\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e20\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e21\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e22\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e23\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e24\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015.000.jpg\",\n        \"dense_0061_t0015.250.jpg\",\n        \"dense_0062_t0015.500.jpg\",\n        \"dense_0063_t0015.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e25\",\n      \"label\": \"bambino\",\n      \"role\": \"studente\",\n      \"attributes\": [\n        \"con zaino\"\n      ],\n      \"start_time\": 12.000,\n      \"end_time\": 15.750,\n      \"evidence_frames\": [\n        \"dense_0048_t0012.000.jpg\",\n        \"dense_0049_t0012.250.jpg\",\n        \"dense_0050_t0012.500.jpg\",\n        \"dense_0051_t0012.750.jpg\",\n        \"dense_0052_t0013.000.jpg\",\n        \"dense_0053_t0013.250.jpg\",\n        \"dense_0054_t0013.500.jpg\",\n        \"dense_0055_t0013.750.jpg\",\n        \"dense_0056_t0014.000.jpg\",\n        \"dense_0057_t0014.250.jpg\",\n        \"dense_0058_t0014.500.jpg\",\n        \"dense_0059_t0014.750.jpg\",\n        \"dense_0060_t0015."
+    }
+  ]
+}

@@ -1,0 +1,4103 @@
+{
+  "id_video": "video055",
+  "model": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 32,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 8,
+  "numero_errori": 2,
+  "segments": [
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0029_t0007.250.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0031_t0007.750.jpg",
+        "dense_0032_t0008.000.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0034_t0008.500.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "uomo",
+          "role": "osservatore",
+          "attributes": [
+            "calvo",
+            "senza maglietta",
+            "indossa pantaloncini neri"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "giocatrice",
+          "attributes": [
+            "ha i capelli lunghi",
+            "indossa un costume da bagno arcobaleno",
+            "ha un bracciolo galleggiante bianco",
+            "gioca con un'acqua"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "acqua",
+          "role": "giocattolo",
+          "attributes": [
+            "verde",
+            "a forma di drago"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "acqua",
+          "role": "giocattolo",
+          "attributes": [
+            "giallo",
+            "a forma di pistola"
+          ],
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "un uomo sta in piedi nell'acqua",
+          "actor": "e1",
+          "object": null,
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina è in piedi nell'acqua",
+          "actor": "e2",
+          "object": null,
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina gioca con un'acqua",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina tiene un'acqua",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona tiene un'acqua",
+          "actor": "e2",
+          "object": "e4",
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "un uomo e una bambina sono in acqua",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina gioca con un'acqua nell'acqua",
+          "participants": [
+            "e2",
+            "e3"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "in mano a",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "in mano a",
+          "object": "e2",
+          "start_time": 9.25,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e2",
+          "before": "in piedi nell'acqua",
+          "after": "in piedi nell'acqua",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "un uomo e una bambina sono in acqua",
+          "relation": "simultaneous",
+          "second_event": "una bambina gioca con un'acqua nell'acqua",
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 6.0,
+          "end_time": 9.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0041_t0010.250.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0043_t0010.750.jpg",
+        "dense_0044_t0011.000.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0046_t0011.500.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "nuotatrice",
+          "attributes": [
+            "ha i capelli scuri",
+            "indossa un costume da bagno a scaglie",
+            "ha un bracciolo galleggiante",
+            "gioca con una pistola ad acqua"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "uomo",
+          "role": "nuotatore",
+          "attributes": [
+            "calvo",
+            "indossa pantaloncini da bagno neri",
+            "ha la pancia scoperta"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "uomo",
+          "role": "nuotatore",
+          "attributes": [
+            "indossa pantaloncini da bagno blu"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "uomo",
+          "role": "nuotatore",
+          "attributes": [
+            "indossa pantaloncini da bagno neri"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "bambina",
+          "role": "nuotatrice",
+          "attributes": [
+            "indossa un costume da bagno a strisce"
+          ],
+          "start_time": 12.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una bambina si china nell'acqua",
+          "actor": "e1",
+          "object": "acqua",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un uomo sta in piedi nell'acqua",
+          "actor": "e2",
+          "object": "acqua",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un uomo si allontana camminando nell'acqua",
+          "actor": "e3",
+          "object": "acqua",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un uomo si allontana camminando nell'acqua",
+          "actor": "e4",
+          "object": "acqua",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina si alza in piedi nell'acqua",
+          "actor": "e5",
+          "object": "acqua",
+          "start_time": 12.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una bambina si china nell'acqua",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un uomo sta in piedi nell'acqua",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "due uomini camminano nell'acqua",
+          "participants": [
+            "e3",
+            "e4"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina si alza in piedi nell'acqua",
+          "participants": [
+            "e5"
+          ],
+          "start_time": 12.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "lontano da",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "lontano da",
+          "object": "e2",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e5",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 12.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi nell'acqua",
+          "after": "chino nell'acqua",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e5",
+          "before": "non visibile",
+          "after": "in piedi nell'acqua",
+          "start_time": 12.75,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una bambina si china nell'acqua",
+          "relation": "durante",
+          "second_event": "un uomo sta in piedi nell'acqua",
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 9.0,
+          "end_time": 12.75
+        },
+        {
+          "first_event": "due uomini camminano nell'acqua",
+          "relation": "durante",
+          "second_event": "un uomo sta in piedi nell'acqua",
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 9.0,
+          "end_time": 12.75
+        },
+        {
+          "first_event": "una bambina si alza in piedi nell'acqua",
+          "relation": "dopo",
+          "second_event": "una bambina si china nell'acqua",
+          "evidence_frames": [
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 9.0,
+          "end_time": 12.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0053_t0013.250.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0055_t0013.750.jpg",
+        "dense_0056_t0014.000.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0058_t0014.500.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "giocatrice",
+          "attributes": [
+            "capelli scuri",
+            "braccialetti galleggianti",
+            "costume da bagno a tema sirena"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "giocatrice",
+          "attributes": [
+            "capelli scuri",
+            "costume da bagno a strati"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "pistola ad acqua",
+          "role": "giocattolo",
+          "attributes": [
+            "gialla",
+            "con dettagli blu e rossi"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "pistola ad acqua",
+          "role": "giocattolo",
+          "attributes": [
+            "verde",
+            "con dettagli gialli"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "acqua",
+          "role": "ambiente",
+          "attributes": [
+            "trasparente",
+            "in movimento"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una bambina si china nell'acqua",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina tiene una pistola ad acqua",
+          "actor": "e2",
+          "object": "e3",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina tiene una pistola ad acqua",
+          "actor": "e1",
+          "object": "e4",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina si alza",
+          "actor": "e1",
+          "object": "e5",
+          "start_time": 15.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "due bambine giocano nell'acqua",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "dentro",
+          "object": "e5",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "dentro",
+          "object": "e5",
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in posizione accovacciata",
+          "after": "in posizione eretta",
+          "start_time": 15.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "due bambine giocano nell'acqua",
+          "relation": "during",
+          "second_event": "una bambina si alza",
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 12.0,
+          "end_time": 15.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "una bambina si alza",
+          "effect": "la bambina si allontana dall'acqua",
+          "start_time": 15.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0065_t0016.250.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0067_t0016.750.jpg",
+        "dense_0068_t0017.000.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0070_t0017.500.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": "giocatrice",
+          "attributes": [
+            "capelli scuri",
+            "costume da bagno azzurro e rosa",
+            "pistola ad acqua gialla"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "giocatrice",
+          "attributes": [
+            "capelli scuri",
+            "costume da bagno azzurro e viola",
+            "braccialetti galleggianti",
+            "pistola ad acqua verde e gialla"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "uomo",
+          "role": "nuotatore",
+          "attributes": [
+            "calvo",
+            "costume da bagno nero"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "uomo",
+          "role": "nuotatore",
+          "attributes": [
+            "costume da bagno blu"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "giocare con le pistole ad acqua",
+          "actor": "e1",
+          "object": "pistola ad acqua",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "giocare con le pistole ad acqua",
+          "actor": "e2",
+          "object": "pistola ad acqua",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "nuotare",
+          "actor": "e3",
+          "object": null,
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "nuotare",
+          "actor": "e4",
+          "object": null,
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "due bambine giocano con le pistole ad acqua in riva al mare",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "uomini nuotano in mare",
+          "participants": [
+            "e3",
+            "e4"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "in mare",
+          "object": "mare",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "in mare",
+          "object": "mare",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "in mare",
+          "object": "mare",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "in mare",
+          "object": "mare",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi nell'acqua",
+          "after": "in piedi nell'acqua",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "in piedi nell'acqua",
+          "after": "in piedi nell'acqua",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "due bambine giocano con le pistole ad acqua in riva al mare",
+          "relation": "simultaneous",
+          "second_event": "uomini nuotano in mare",
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 15.0,
+          "end_time": 18.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0077_t0019.250.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0079_t0019.750.jpg",
+        "dense_0080_t0020.000.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0082_t0020.500.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "con capelli lunghi",
+            "in costume da bagno",
+            "con braccioli galleggianti"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "con capelli lunghi",
+            "in costume da bagno"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "calvo",
+            "in costume da bagno"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "giocare con l'acqua",
+          "actor": "e1",
+          "object": "acqua",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "giocare con l'acqua",
+          "actor": "e2",
+          "object": "acqua",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "nuotare",
+          "actor": "e3",
+          "object": "acqua",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "due bambine giocano nell'acqua",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un uomo nuota nell'acqua",
+          "participants": [
+            "e3"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "in acqua",
+          "object": "null",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "in acqua",
+          "object": "null",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "in acqua",
+          "object": "null",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi nell'acqua",
+          "after": "in piedi nell'acqua",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "in piedi nell'acqua",
+          "after": "in piedi nell'acqua",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e3",
+          "before": "in piedi nell'acqua",
+          "after": "in piedi nell'acqua",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "due bambine giocano nell'acqua",
+          "relation": "simultaneous",
+          "second_event": "un uomo nuota nell'acqua",
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 18.0,
+          "end_time": 21.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0089_t0022.250.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0091_t0022.750.jpg",
+        "dense_0092_t0023.000.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0094_t0023.500.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "indossa costume da bagno rosso",
+            "ha i capelli lunghi e scuri"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "indossa braccioli",
+            "ha i capelli lunghi e scuri"
+          ],
+          "start_time": 23.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "indossa costume da bagno nero",
+            "ha i capelli corti"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "indossa costume da bagno nero",
+            "ha i capelli corti"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e5",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "indossa costume da bagno nero",
+            "ha i capelli corti"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una persona tiene in braccio un'altra persona",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 23.0,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona corre nell'acqua",
+          "actor": "e1",
+          "object": null,
+          "start_time": 23.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona nuota nell'acqua",
+          "actor": "e3",
+          "object": null,
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona nuota nell'acqua",
+          "actor": "e4",
+          "object": null,
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona nuota nell'acqua",
+          "actor": "e5",
+          "object": null,
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una persona tiene in braccio un'altra persona",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 21.0,
+          "end_time": 23.0,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una persona corre nell'acqua",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 23.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 23.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "a destra di",
+          "object": "e2",
+          "start_time": 23.25,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 23.0,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e4",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e5",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "è tenuta in braccio da un'altra persona",
+          "after": "corre nell'acqua",
+          "start_time": 23.0,
+          "end_time": 23.25,
+          "evidence_frames": [
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "è tenuta in braccio da un'altra persona",
+          "after": "nuota nell'acqua",
+          "start_time": 23.0,
+          "end_time": 23.25,
+          "evidence_frames": [
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una persona tiene in braccio un'altra persona",
+          "relation": "before",
+          "second_event": "una persona corre nell'acqua",
+          "evidence_frames": [
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 21.0,
+          "end_time": 24.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "una persona tiene in braccio un'altra persona",
+          "effect": "la persona tenuta in braccio è più vicina alla riva",
+          "start_time": 21.0,
+          "end_time": 23.0,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0101_t0025.250.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0103_t0025.750.jpg",
+        "dense_0104_t0026.000.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0106_t0026.500.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "in costume da bagno",
+            "con capelli scuri",
+            "sorridente"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "con braccioli galleggianti",
+            "in acqua"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "in costume da bagno",
+            "in piedi nell'acqua"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "uomo",
+          "attributes": [
+            "in costume da bagno",
+            "in piedi nell'acqua"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una bambina corre nell'acqua",
+          "actor": "e1",
+          "object": null,
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina galleggia nell'acqua",
+          "actor": "e2",
+          "object": null,
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina si volta verso la telecamera",
+          "actor": "e1",
+          "object": null,
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un uomo lancia una palla",
+          "actor": "e3",
+          "object": "palla",
+          "start_time": 27.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una bambina corre nell'acqua",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina galleggia nell'acqua",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "un uomo lancia una palla",
+          "participants": [
+            "e3"
+          ],
+          "start_time": 27.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "a destra di",
+          "object": "e2",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "lontano da",
+          "object": "e1",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "lontano da",
+          "object": "e1",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi nell'acqua",
+          "after": "in piedi nell'acqua",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity": "e2",
+          "before": "in acqua",
+          "after": "in acqua",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una bambina corre nell'acqua",
+          "relation": "during",
+          "second_event": "una bambina galleggia nell'acqua",
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 24.0,
+          "end_time": 27.75
+        },
+        {
+          "first_event": "un uomo lancia una palla",
+          "relation": "after",
+          "second_event": "una bambina corre nell'acqua",
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 24.0,
+          "end_time": 27.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "una bambina corre nell'acqua",
+          "effect": "una bambina galleggia nell'acqua",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.0
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0009",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "input_frames": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0113_t0028.250.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0115_t0028.750.jpg",
+        "dense_0116_t0029.000.jpg",
+        "dense_0117_t0029.250.jpg",
+        "dense_0118_t0029.500.jpg",
+        "dense_0119_t0029.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "in costume da bagno",
+            "con capelli scuri",
+            "sorridente",
+            "in piedi nell'acqua"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "persona",
+          "role": "bambina",
+          "attributes": [
+            "in costume da bagno",
+            "con capelli scuri",
+            "sorridente",
+            "in acqua"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona",
+          "role": "ragazzo",
+          "attributes": [
+            "in costume da bagno",
+            "in piedi nell'acqua"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e4",
+          "label": "persona",
+          "role": "ragazzo",
+          "attributes": [
+            "in costume da bagno",
+            "in piedi nell'acqua"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "una bambina cammina nell'acqua",
+          "actor": "e1",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina nuota nell'acqua",
+          "actor": "e2",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina sorride",
+          "actor": "e1",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina si allontana dalla macchina fotografica",
+          "actor": "e1",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina si avvicina alla macchina fotografica",
+          "actor": "e1",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "una bambina cammina nell'acqua",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "una bambina nuota nell'acqua",
+          "participants": [
+            "e2"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "lontano da",
+          "object": "e1",
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e4",
+          "relation": "lontano da",
+          "object": "e1",
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "in piedi nell'acqua",
+          "after": "cammina nell'acqua",
+          "start_time": 27.0,
+          "end_time": 29.75,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "una bambina cammina nell'acqua",
+          "relation": "simultaneous",
+          "second_event": "una bambina nuota nell'acqua",
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg",
+            "dense_0117_t0029.250.jpg",
+            "dense_0118_t0029.500.jpg",
+            "dense_0119_t0029.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 27.0,
+          "end_time": 29.75
+        }
+      ],
+      "causal_hypotheses": []
+    }
+  ],
+  "errors": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0001_t0000.250.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0003_t0000.750.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0005_t0001.250.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0007_t0001.750.jpg",
+        "dense_0008_t0002.000.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0010_t0002.500.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "error": "SemanticOutputError: Oggetto JSON incompleto nella risposta del modello.",
+      "raw_response": "```json\n{\n  \"entities\": [\n    {\n      \"entity_id\": \"e1\",\n      \"label\": \"uomo\",\n      \"role\": \"genitore\",\n      \"attributes\": [\n        \"calvo\",\n        \"nudo di sopra\",\n        \"indossa pantaloncini neri\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e2\",\n      \"label\": \"bambina\",\n      \"role\": \"bambina\",\n      \"attributes\": [\n        \"capelli lunghi scuri\",\n        \"indossa costume da bagno a righe\",\n        \"ha braccioli galleggianti\",\n        \"tiene pistola ad acqua verde\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e3\",\n      \"label\": \"bambina\",\n      \"role\": \"bambina\",\n      \"attributes\": [\n        \"capelli lunghi scuri\",\n        \"indossa costume da bagno a righe\",\n        \"tiene pistola ad acqua gialla e arancione\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e4\",\n      \"label\": \"uomo\",\n      \"role\": \"nuotatore\",\n      \"attributes\": [\n        \"nudo di sopra\",\n        \"indossa pantaloncini neri\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e5\",\n      \"label\": \"uomo\",\n      \"role\": \"nuotatore\",\n      \"attributes\": [\n        \"nudo di sopra\",\n        \"indossa pantaloncini blu\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e6\",\n      \"label\": \"palla\",\n      \"role\": \"palla\",\n      \"attributes\": [\n        \"palla da calcio\",\n        \"bianca e nera\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e7\",\n      \"label\": \"galleggiante\",\n      \"role\": \"galleggiante\",\n      \"attributes\": [\n        \"arancione\",\n        \"sferico\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"actions\": [\n    {\n      \"description\": \"una bambina corre verso la riva\",\n      \"actor\": \"e3\",\n      \"object\": null,\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una bambina tiene una pistola ad acqua\",\n      \"actor\": \"e3\",\n      \"object\": \"pistola ad acqua\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una bambina tiene una pistola ad acqua\",\n      \"actor\": \"e2\",\n      \"object\": \"pistola ad acqua\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"un uomo sta in piedi nell'acqua\",\n      \"actor\": \"e4\",\n      \"object\": null,\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"un uomo sta in piedi nell'acqua\",\n      \"actor\": \"e5\",\n      \"object\": null,\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"un uomo gioca con una palla\",\n      \"actor\": \"e4\",\n      \"object\": \"palla\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"un uomo gioca con una palla\",\n      \"actor\": \"e5\",\n      \"object\": \"palla\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"un uomo guarda le bambine\",\n      \"actor\": \"e1\",\n      \"object\": \"e2, e3\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"events\": [\n    {\n      \"description\": \"una bambina corre verso la riva\",\n      \"participants\": [\n        \"e3\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"un uomo e due bambine stanno sulla riva\",\n      \"participants\": [\n        \"e1\",\n        \"e2\",\n        \"e3\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"due uomini giocano con una palla nell'acqua\",\n      \"participants\": [\n        \"e4\",\n        \"e5\",\n        \"e6\"\n      ],\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"spatial_relations\": [\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"a sinistra di\",\n      \"object\": \"e2\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e2\",\n      \"relation\": \"a sinistra di\",\n      \"object\": \"e3\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"dietro a\",\n      \"object\": \"e2\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e2\",\n      \"relation\": \"dietro a\",\n      \"object\": \"e3\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e3\",\n      \"relation\": \"davanti a\",\n      \"object\": \"e1\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e2\",\n      \"relation\": \"davanti a\",\n      \"object\": \"e1\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e3\",\n      \"relation\": \"vicino a\",\n      \"object\": \"e2\",\n      \"start_time\": 0.000,\n      \"end_time\": 3.750,\n      \"evidence_frames\": [\n        \"dense_0000_t0000.000.jpg\",\n        \"dense_0001_t0000.250.jpg\",\n        \"dense_0002_t0000.500.jpg\",\n        \"dense_0003_t0000.750.jpg\",\n        \"dense_0004_t0001.000.jpg\",\n        \"dense_0005_t0001.250.jpg\",\n        \"dense_0006_t0001.500.jpg\",\n        \"dense_0007_t0001.750.jpg\",\n        \"dense_0008_t0002.000.jpg\",\n        \"dense_0009_t0002.250.jpg\",\n        \"dense_0010_t0002.500.jpg\",\n        \"dense_0011_t0002.750.jpg\",\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e2\",\n      \"relation\": \"vicino a\",\n      \"object\": \"e3\","
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0017_t0004.250.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0019_t0004.750.jpg",
+        "dense_0020_t0005.000.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0022_t0005.500.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "error": "SemanticOutputError: Oggetto JSON incompleto nella risposta del modello.",
+      "raw_response": "```json\n{\n  \"entities\": [\n    {\n      \"entity_id\": \"e1\",\n      \"label\": \"bambina\",\n      \"role\": \"osservatrice\",\n      \"attributes\": [\n        \"capelli lunghi\",\n        \"costume da bagno a strisce\",\n        \"braccialetti galleggianti\",\n        \"in piedi sulla spiaggia\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e2\",\n      \"label\": \"bambina\",\n      \"role\": \"giocatrice\",\n      \"attributes\": [\n        \"costume da bagno a righe\",\n        \"in piedi in acqua\",\n        \"in mano una pistola ad acqua\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e3\",\n      \"label\": \"uomo\",\n      \"role\": \"osservatore\",\n      \"attributes\": [\n        \"senza maglietta\",\n        \"in piedi sulla spiaggia\",\n        \"con le mani sui fianchi\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e4\",\n      \"label\": \"uomo\",\n      \"role\": \"giocatore\",\n      \"attributes\": [\n        \"senza maglietta\",\n        \"in piedi in acqua\",\n        \"con i pantaloncini da bagno\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e5\",\n      \"label\": \"uomo\",\n      \"role\": \"giocatore\",\n      \"attributes\": [\n        \"senza maglietta\",\n        \"in piedi in acqua\",\n        \"con i pantaloncini da bagno\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e6\",\n      \"label\": \"palla\",\n      \"role\": \"oggetto di gioco\",\n      \"attributes\": [\n        \"palla da pallavolo\",\n        \"in aria\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity_id\": \"e7\",\n      \"label\": \"pistola ad acqua\",\n      \"role\": \"gioco\",\n      \"attributes\": [\n        \"gialla\",\n        \"rossa\",\n        \"in mano\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"actions\": [\n    {\n      \"description\": \"una bambina tiene una pistola ad acqua\",\n      \"actor\": \"e2\",\n      \"object\": \"e7\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una bambina osserva i giocatori in acqua\",\n      \"actor\": \"e1\",\n      \"object\": \"e4\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"due uomini giocano a pallavolo in acqua\",\n      \"actor\": \"e4\",\n      \"object\": \"e5\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"un uomo osserva i giocatori in acqua\",\n      \"actor\": \"e3\",\n      \"object\": \"e4\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"una palla vola in aria\",\n      \"actor\": \"e6\",\n      \"object\": null,\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"events\": [\n    {\n      \"description\": \"una bambina osserva i giocatori in acqua\",\n      \"participants\": [\n        \"e1\",\n        \"e4\",\n        \"e5\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"description\": \"due uomini giocano a pallavolo in acqua\",\n      \"participants\": [\n        \"e4\",\n        \"e5\",\n        \"e6\"\n      ],\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"spatial_relations\": [\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"dietro a\",\n      \"object\": \"e2\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e1\",\n      \"relation\": \"a sinistra di\",\n      \"object\": \"e3\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e2\",\n      \"relation\": \"a destra di\",\n      \"object\": \"e1\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e3\",\n      \"relation\": \"a sinistra di\",\n      \"object\": \"e1\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e4\",\n      \"relation\": \"in acqua\",\n      \"object\": \"e1\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e5\",\n      \"relation\": \"in acqua\",\n      \"object\": \"e1\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"subject\": \"e6\",\n      \"relation\": \"in aria\",\n      \"object\": \"e4\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    }\n  ],\n  \"state_changes\": [\n    {\n      \"entity\": \"e1\",\n      \"before\": \"in piedi sulla spiaggia\",\n      \"after\": \"in piedi sulla spiaggia\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity\": \"e2\",\n      \"before\": \"in piedi sulla spiaggia\",\n      \"after\": \"in piedi sulla spiaggia\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity\": \"e3\",\n      \"before\": \"in piedi sulla spiaggia\",\n      \"after\": \"in piedi sulla spiaggia\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1.0\n    },\n    {\n      \"entity\": \"e4\",\n      \"before\": \"in acqua\",\n      \"after\": \"in acqua\",\n      \"start_time\": 3.000,\n      \"end_time\": 6.750,\n      \"evidence_frames\": [\n        \"dense_0012_t0003.000.jpg\",\n        \"dense_0013_t0003.250.jpg\",\n        \"dense_0014_t0003.500.jpg\",\n        \"dense_0015_t0003.750.jpg\",\n        \"dense_0016_t0004.000.jpg\",\n        \"dense_0017_t0004.250.jpg\",\n        \"dense_0018_t0004.500.jpg\",\n        \"dense_0019_t0004.750.jpg\",\n        \"dense_0020_t0005.000.jpg\",\n        \"dense_0021_t0005.250.jpg\",\n        \"dense_0022_t0005.500.jpg\",\n        \"dense_0023_t0005.750.jpg\",\n        \"dense_0024_t0006.000.jpg\",\n        \"dense_0025_t0006.250.jpg\",\n        \"dense_0026_t0006.500.jpg\",\n        \"dense_0027_t0006.750.jpg\"\n      ],\n      \"evidence_type\": \"observed\",\n      \"confidence\": 1"
+    }
+  ]
+}

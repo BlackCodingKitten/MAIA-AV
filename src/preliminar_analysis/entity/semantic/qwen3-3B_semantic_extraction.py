@@ -48,7 +48,7 @@ class QwenVLLMInferencer:
             dtype="bfloat16",
             tensor_parallel_size=4,
             gpu_memory_utilization=gpu_memory_utilization,
-            max_model_len=32768,
+            max_model_len=50000,
             limit_mm_per_prompt={"image": max_frames},
             trust_remote_code=True,
         )
