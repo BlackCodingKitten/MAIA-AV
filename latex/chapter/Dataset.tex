@@ -4,7 +4,6 @@ The dataset adopted in MAIA-AV builds upon the guidelines of \ac{MAIA}, comprisi
 Building upon this initial set, we collected an additional 100 videos, each uniquely identified from \texttt{video001} to \texttt{video100}. These identifiers map each video to its corresponding audio stream and text transcriptions. Each video was precisely trimmed to extract targeted segments, creating a controlled corpus of clips. Particular attention was paid to the alignment between dialogue content and the elements appearing in the scene.
 This targeted selection of relevant dialogue enables a precise investigation of multimodal interactions. By prioritizing scenarios where spoken dialogue is semantically grounded in the visual content, we ensure that the audio signal plays a genuinely informative role in the multimodal instance.
 This distinction represents the core departure from the original dataset: \ac{MAIA}-AV is a benchmark engineered to combine and compare distributed evidence across visual, auditory, and textual modalities.
-
 \paragraph{Implementation Details}
 The video acquisition pipeline relies on \texttt{yt\_dlp} to retrieve targeted temporal segments from selected YouTube videos. Rather than downloading complete sources for post-hoc editing, each clip is specified prior to acquisition via three parameters: source URL, start timestamp, and duration. These parameters configure a precise temporal interval directly governing the retrieval process.
 Timestamp conversion into seconds is handled by \texttt{parse\_time}, which reduces \texttt{HH:MM:SS} or \texttt{MM:SS} strings into integer values:
@@ -100,8 +99,7 @@ except Exception as e:
     sys.exit(1)
 \end{lstlisting}
 This setup allows \texttt{yt\_dlp} to coordinate format resolution, stream extraction, interval clipping, and FFmpeg transcoding within a single execution pass.
-
-\subsection*{Audio Extraction}
+\subsection*{Audio Conversion}
 In the MAIA-AV framework, the auditory element of each video is regarded as an autonomous source of information rather than a mere supplementary part of the visual narrative. Spoken language, ambient sounds, and acoustic phenomena offer significant evidence that enhances visual data and aids in scene interpretation. Isolating the audio allows this modality to be independently analyzed, ensuring its contribution is maintained throughout subsequent processing stages.
 For every video, the original audio track is extracted and archived as a separate file. This separation retains the identical temporal parameters and identifier associated with the corresponding audiovisual entity. Such a one-to-one mapping upholds alignment across modalities, enabling visual, acoustic, and textual representations to be traced back to the same foundational event.
 The resulting audio files function as direct inputs for further pipeline stages, including automatic speech transcription and specialized audio analyses. The extraction process neither generates a modified version of the original content nor alters it; instead, it separates the auditory channel, allowing independent processing while remaining completely synchronized with the originating video content.
@@ -211,7 +209,7 @@ Each file conversion is executed inside localized exception blocks:
         print(f"FFmpeg error: {error}")
 \end{lstlisting}
 Capturing \texttt{CalledProcessError} exceptions locally prevents single-file execution failures from interrupting broader batch operations while logging specific processing errors.
-\subsection*{Audio-Transcription Pipeline}
+\subsection*{Transcription Extraction}
 Another key representation in our dataset is the audio transcription, following the methodology established in our previous work \cite{deodati2026lost}. Transcriptions were generated using the \textit{Faster-Whisper} model (\texttt{large-v3}), a reimplementation of \textit{OpenAI's Whisper} powered by the \textit{CTranslate2} fast inference engine for Transformer architectures. The model processes raw audio content directly, with the language parameter set to Italian. Additionally, a \textit{Voice Activity Detection} (VAD) filter is applied to isolate segments containing actual speech, thereby minimizing non-speech transcriptions.
 The overall transcription procedure aims to convert spoken dialogue into textual content that can be reliably recognized and processed by downstream models. This methodology represents an evolution compared to previous approaches on acoustic content analysis \cite{deodati2026lost}, which jointly employed \textit{Whisper-1} and \textit{GPT-4o-transcribe} to compare and align outputs for higher precision. In contrast, the current pipeline streamlines the transcription workflow by deploying a single, locally executed model, providing an efficient and reproducible framework.
 \paragraph{Implementation Details}
@@ -299,9 +297,7 @@ Finally, extracted transcripts are exported to a structured CSV file indexed by 
         ],
         delimiter=";",
     )
-
     writer.writeheader()
-
     writer.writerows(
         {
             "video_name": video_name,
@@ -312,4 +308,265 @@ Finally, extracted transcripts are exported to a structured CSV file indexed by 
     )
 \end{lstlisting}
 
+\section{Expanding the Questions and Answers Dataset}
+
+The construction of linguistic data in MAIA-AV mirrors the methodological framework established in the original MAIA benchmark. The process retains the question as the foundational element for subsequent answer collection and the creation of an evaluation dataset. In the original MAIA benchmark, each video was associated with 2,400 questions. Expert annotators, operating under specific category guidelines, were responsible for generating these questions. The questions were designed in an open-ended format to preclude simple binary responses, such as yes or no. Given that the original benchmark was intended for models based solely on visual input, annotators were explicitly instructed to disregard all acoustic data during the question formulation phase.
+MAIA-AV extends the original framework by modifying the informational basis for question generation. This version includes a total of 300 questions, with each video offering three inquiries that delve into spatial, temporal, and causal dimensions of the presented information. These categories are aligned with the structure of the original MAIA benchmark. The spatial category focuses on identifying locations or entities, either visible or referenced, along with detailing the spatial relationships between them. The temporal category examines event sequences, identifying when specific occurrences take place and establishing temporal relationships such as preceding, succeeding, or simultaneous actions. The causal category investigates the reasons behind or consequences of actions, events, or behaviors observed within the video context.
+The primary distinction between the original MAIA and its successor, MAIA-AV, is the integration of audio information, which is crucial in the latter version. Certain questions are specifically designed to address audio elements of the video, including character dialogue, vocal commands to infotainment systems, and ambient sounds. This addition incorporates linguistic content that connects information across both visual and auditory channels.
+The process of acquiring answers adheres to the MAIA guidelines. For the newly devised set of 300 questions, data was gathered through a questionnaire distributed among four volunteers. These individuals are native speakers of Italian, each born in Italy, and possessing at least a high school diploma. These participants engaged with 100 videos, responding to the corresponding 300 questions, thus enabling the collection of independent responses and four distinct articulations of each answer. The structured approach remains intact: the videos operate as the multimodal information source, the questions identify the specific information to be extracted, and the human-generated answers provide the necessary linguistic reference for constructing subsequent components of the benchmark.
+\subsection*{Caption-Foil Generation}
+Building upon the human-annotated responses, the construction of \textit{MAIA-AV} proceeds with the automated generation of \textit{caption--foil} pairs for the \ac{VSV} task. This procedure follows the methodology established in \textit{MAIA}: each question-answer pair is first converted into a declarative true statement (\textit{True Statement}, TS) and subsequently modified to create a minimally contrastive false statement (\textit{False Statement}, FS). Consequently, the caption and foil share maximum linguistic structure, differing primarily in question-relevant information.
+While the original benchmark collects eight human responses per question to yield eight TS--FS pairs, \textit{MAIA-AV} adopts a scaled-down approach: four independent responses per question yield four captions and four corresponding foils. With three questions per video (spatial, temporal, and causal), each video comprises twelve caption--foil pairs. The automated generation employs \texttt{GPT-4o-2024-08-06}, matching the exact model version used in the original \textit{MAIA} pipeline.
+Generation proceeds in two distinct stages. In the initial stage, the model receives only the question and a single human answer. Rather than generating novel content, the prompt directs the model to synthesize the question--answer pair into a single declarative statement preserving the original semantic content. The instructions mandate minimal alterations to annotators' phrasing while requiring the conversion of first-person expressions into an impersonal stance. Accordingly, phrases like ``I think that'' or ``I believe that'' are removed from the caption without discarding any underlying uncertainty. Restricting outputs to concise declarative sentences leverages natural annotator variance while avoiding reliance on the model for factual core generation.
+This initial phase employs the prompt used for True Statement generation in \textit{MAIA}:
+\begin{quote}
+\small
+\texttt{Sei un assistente che crea affermazioni in italiano sui video.}\\
+\texttt{Data una domanda Q e una risposta A relative a un video, devi creare un'affermazione S basata su A.}\\
+\texttt{Mentre generi S, cerca di non alterare le parole che compongono A.}\\
+\texttt{Se A include verbi o frasi in prima persona (ad es., 'penso', 'credo'), riformula S in modo impersonale, evitando la prima persona.}\\
+\texttt{L'affermazione deve essere una frase breve e dichiarativa.}\footnote{English translation: \textit{You are an assistant that creates statements in Italian about videos. Given a question Q and an answer A concerning a video, you must create a statement S based on A. While generating S, try not to alter the words composing A. If A includes first-person verbs or phrases (e.g., 'I think,' 'I believe'), rephrase S to be impersonal, avoiding a first-person perspective. The statement should be a concise, declarative sentence.}}
+\end{quote}
+The instructions include few-shot examples demonstrating question--answer fusion, with specific coverage of negative responses, non-deducible information, and expressions of uncertainty. Appended to the prompt, the target question and annotator response appear in \texttt{Q:} and \texttt{A:} format, conditioning the model to output solely the statement \texttt{S:}.
+The second stage processes the generated caption to yield the corresponding foil. Unlike the initial phase, this prompt adapts to the target question category. The core methodology relies on constructing \textit{minimal pairs}: the model modifies only the information necessary to invalidate the caption, avoiding extraneous additions and preserving sentence structure. Consequently, distinguishing between caption and foil tests a model's ability to ground claims in audiovisual content rather than relying on surface linguistic cues. This design adheres to \textit{MAIA}, directing GPT-4o to alter exclusively elements relevant to the specified semantic domain.
+Across all categories, the system prompt assigns a uniform role:
+\begin{quote}
+\small
+\texttt{Sei un assistente progettato per creare foil a partire dalle caption.}\footnote{English translation: \textit{You are an assistant designed to create foils based on captions.}}
+\end{quote}
+Subsequent instructions vary by targeted semantic dimension. For \textbf{spatial} questions, foil generation alters strictly the entity's position or location:
+\begin{quote}
+\small
+\texttt{Data una caption in italiano (C) riguardante la posizione o la localizzazione di qualcuno o qualcosa, il tuo compito è creare il suo foil (F) modificando solo l'informazione spaziale.}\\
+\texttt{Non aggiungere altre informazioni rispetto a quanto dichiarato in C.}\footnote{English translation: \textit{Given an Italian caption (C) regarding the position or location of someone or something, your task is to create its foil (F) by changing only the spatial information. Don't add other information with respect to what is stated in C.}}
+\end{quote}
+An accompanying example relocates a woman standing in a poppy field to a school setting. Preserving the subject and surrounding text isolates spatial information as the sole determinant of truth value.
+For \textbf{temporal} questions, instructions dictate altering the temporal relationships within the caption:
+\begin{quote}
+\small
+\texttt{Data una caption in italiano (C) riguardante gli eventi e quando avvengono, il tuo compito è creare il suo foil (F) modificando solo l'informazione temporale.}\\
+\texttt{Non aggiungere altre informazioni rispetto a quanto dichiarato in C.}\footnote{English translation: \textit{Given an Italian caption (C) regarding events and when they happen, your task is to create its foil (F) by changing only the temporal information. Don't add other information with respect to what is stated in C.}}
+\end{quote}
+An illustrative example converts the chronological order of two events into an alternative sequence, preserving core semantic content while modifying event timing or order.
+For \textbf{causal} questions, foil construction alters the cause-and-effect relationship expressed in the caption:
+\begin{quote}
+\small
+\texttt{Data una caption in italiano (C) riguardante le cause o gli effetti degli eventi, il tuo compito è creare il suo foil (F) modificando le cause o l'effetto dell'evento principale.}\\
+\texttt{Non aggiungere altre informazioni rispetto a quanto dichiarato in C.}\footnote{English translation: \textit{Given an Italian caption (C) regarding the causes or the effects of events, your task is to create its foil (F) by changing the causes or the effect of the main event. Don't add other information with respect to what is stated in C.}}
+\end{quote}
+The provided example retains the principal action, such as a person beginning to run, while altering solely the underlying cause. This focuses the contrast on the causal link rather than arbitrary scene modifications. In the final task setup, option ordering is randomized, preventing positional bias and ensuring performance metrics reflect semantic comprehension rather than structural pattern exploitation.
+\paragraph{Implementation Details}
+The \textit{caption--foil} generation pipeline is implemented in \texttt{caption\_foil.py}. The script relies on \texttt{pandas} for tabular data processing and the OpenAI Python client for model inference. Both caption and foil generation utilize \texttt{gpt-4o-2024-08-06}, with authentication managed via the \texttt{OPENAI\_API\_KEY} environment variable. Input and output paths, along with the expected annotation structure, are defined at initialization:
+\begin{lstlisting}[language=Python]
+MODEL = "gpt-4o-2024-08-06"
+RAW_ANSWERS_DIR = Path("data/vsv/raw_human_answers")
+QUESTIONS_FILE = Path("data/vsv/question_classification.csv")
+OUTPUT_DIR = Path("data/vsv/caption-foil")
+CHECKPOINT_FILE = OUTPUT_DIR / "caption_foil_checkpoint.csv"
+OUTPUT_FILE = OUTPUT_DIR / "caption_foil.csv"
+RANDOM_SEED = 42
+EXPECTED_MACROAREAS = {"spaziale", "temporale", "causale"}
+EXPECTED_ANNOTATORS = 4
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+\end{lstlisting}
+Questions are loaded from \texttt{data/vsv/question\_classification.csv}. Only the video identifier, principal dimension, and question text are required for this stage:
+\begin{lstlisting}[language=Python]
+questions = pd.read_csv(
+    QUESTIONS_FILE,
+    sep=";",
+    encoding="utf-8-sig",
+)
+questions = questions[
+    ["video_name", "principal_dimension", "question_text"]
+].copy()
+\end{lstlisting}
+Prior to processing, the script verifies column availability, discards missing values, normalizes category labels, and confirms the presence of only the three expected macroareas. Video identifiers are standardized using \texttt{normalize\_video\_name()}, which extracts the numeric identifier and converts it to the format used across the dataset:
+\begin{lstlisting}[language=Python]
+def normalize_video_name(value):
+    value = str(value).strip()
+    match = re.search(r"(\d+)", value)
+    if not match:
+        raise ValueError(
+            f"Impossibile ricavare il numero del video da: {value}"
+        )
+
+    return f"video{int(match.group(1)):03d}.mp4"
+\end{lstlisting}
+Additionally, the script ensures that each video is associated with exactly one spatial, one temporal, and one causal question. Duplicate video--macroarea pairs are rejected prior to generation.
+Human responses are automatically loaded from all CSV files within \texttt{data/vsv/raw\_human\_answers}. The file count is validated against the expected number of annotators:
+\begin{lstlisting}[language=Python]
+files = sorted(RAW_ANSWERS_DIR.glob("*.csv"))
+if len(files) != EXPECTED_ANNOTATORS:
+    raise ValueError(
+        f"Attesi {EXPECTED_ANNOTATORS} file di annotatori in "
+        f"{RAW_ANSWERS_DIR}, trovati {len(files)}"
+    )
+\end{lstlisting}
+Each file must contain the columns \texttt{titolo\_video}, \texttt{macroarea}, and \texttt{risposta}. For backward compatibility, the alternative column name \texttt{risposte} is also accepted and automatically renamed. Annotator identifiers are extracted directly from the filenames:
+\begin{lstlisting}[language=Python]
+if "risposta" not in df.columns and "risposte" in df.columns:
+    df = df.rename(columns={"risposte": "risposta"})
+df = df[["titolo_video", "macroarea", "risposta"]].copy()
+df["video_name"] = df["titolo_video"].map(
+    normalize_video_name
+)
+df["macroarea"] = (
+    df["macroarea"]
+    .astype(str)
+    .str.lower()
+    .str.strip()
+)
+df["annotator"] = file.stem.removeprefix("risposte_")
+\end{lstlisting}
+Questions and responses are subsequently aligned via the shared \texttt{video\_name} and \texttt{macroarea} fields. The merge is constrained as \textit{many-to-one}, matching multiple annotator responses to a single question:
+\begin{lstlisting}[language=Python]
+data = answers.merge(
+    questions,
+    on=["video_name", "macroarea"],
+    how="left",
+    validate="many_to_one",
+)
+\end{lstlisting}
+Additional consistency checks validate question keys against annotator responses. Missing answers or orphan responses interrupt execution prior to invoking any API requests.
+Responses corresponding to the same video and macroarea are grouped into a common pool. The pool identifier is formed by concatenating the video identifier with the corresponding macroarea:
+\begin{lstlisting}[language=Python]
+data["video_id"] = (
+    data["video_name"].str.removesuffix(".mp4")
+)
+data["pool_id"] = (
+    data["video_id"] + "_" + data["macroarea"]
+)
+\end{lstlisting}
+Each pool must contain exactly four responses. Individual entries are assigned a sequential position and a unique identifier:
+\begin{lstlisting}[language=Python]
+data["pool_item"] = (
+    data.groupby("pool_id").cumcount() + 1
+)
+data["id"] = (
+    data["pool_id"]
+    + "_"
+    + data["pool_item"].astype(str).str.zfill(2)
+)
+\end{lstlisting}
+API calls are centralized within \texttt{call\_openai()}, which serves both caption and foil generation functions:
+\begin{lstlisting}[language=Python]
+response = client.chat.completions.create(
+    model=MODEL,
+    messages=messages,
+    max_tokens=max_tokens,
+)
+return response.choices[0].message.content.strip()
+\end{lstlisting}
+The function executes up to five attempts for recoverable API failures. Rate-limit errors trigger a 30-second sleep interval, whereas generic API errors pause execution for 10 seconds. Authentication errors terminate execution immediately:
+\begin{lstlisting}[language=Python]
+except RateLimitError:
+    if attempt == retries - 1:
+        raise
+    time.sleep(30)
+except AuthenticationError:
+    raise RuntimeError(
+        "Errore di autenticazione: controlla OPENAI_API_KEY."
+    )
+except APIError:
+    if attempt == retries - 1:
+        raise
+    time.sleep(10)
+\end{lstlisting}
+For each annotated response, caption and foil generation proceed sequentially. The former accepts the question and human answer as input, whereas the latter accepts the generated caption along with its associated macroarea:
+\begin{lstlisting}[language=Python]
+caption = generate_caption(
+    row["question_text"],
+    row["risposta"],
+)
+foil = generate_foil(
+    caption,
+    row["macroarea"],
+)
+\end{lstlisting}
+Outputs are post-processed via \texttt{clean\_generation()}, which strips optional \texttt{S:} or \texttt{F:} prefixes returned by the model:
+\begin{lstlisting}[language=Python]
+def clean_generation(text, prefix):
+    text = text.strip()
+    if text.startswith(f"{prefix}: "):
+        text = text[3:]
+    elif text.startswith(f"{prefix}:"):
+        text = text[2:]
+
+    return text.strip()
+\end{lstlisting}
+To accommodate long-running executions, the script implements a checkpointing mechanism. Cached entries are reused only if their question, annotator, and human answer match the current source data and both generated fields are non-null:
+\begin{lstlisting}[language=Python]
+checkpoint_is_valid = (
+    saved is not None
+    and str(saved["question"]) == str(row["question_text"])
+    and str(saved["annotator"]) == str(row["annotator"])
+    and str(saved["human_answer"]) == str(row["risposta"])
+    and pd.notna(saved["caption"])
+    and pd.notna(saved["foil"])
+)
+\end{lstlisting}
+Newly generated entries are appended incrementally to \texttt{caption\_foil\_checkpoint.csv}:
+\begin{lstlisting}[language=Python]
+pd.DataFrame(generated_rows).to_csv(
+    CHECKPOINT_FILE,
+    index=False,
+    encoding="utf-8-sig",
+)
+\end{lstlisting}
+Following generation, caption and foil positions are randomized independently within each question category. A fixed random seed guarantees reproducibility while maintaining a balanced distribution of options across positions:
+\begin{lstlisting}[language=Python]
+rng = random.Random(RANDOM_SEED)
+for category, indices in (
+    df.groupby("question_category").groups.items()
+):
+    indices = list(indices)
+    n = len(indices)
+    labels = [0] * (n // 2) + [1] * (n // 2)
+
+    if n % 2:
+        labels.append(rng.randint(0, 1))
+
+    rng.shuffle(labels)
+\end{lstlisting}
+The resulting \texttt{target} variable indicates the position of the correct caption: a value of 0 places the caption in \texttt{answer1}, whereas a value of 1 assigns it to \texttt{answer2}:
+\begin{lstlisting}[language=Python]
+df["answer1"] = df.apply(
+    lambda row:
+    row["caption"]
+    if row["target"] == 0
+    else row["foil"],
+    axis=1,
+)
+df["answer2"] = df.apply(
+    lambda row:
+    row["foil"]
+    if row["target"] == 0
+    else row["caption"],
+    axis=1,
+)
+\end{lstlisting}
+The final dataset is saved to \texttt{data/vsv/caption-foil/caption\_foil.csv}. Alongside the randomized options and target labels, the output retains all metadata required to trace each pair back to its originating video, question, annotator, and human response:
+\begin{lstlisting}[language=Python]
+columns = [
+    "id",
+    "video_id",
+    "video_name",
+    "pool_id",
+    "pool_item",
+    "question_category",
+    "question",
+    "annotator",
+    "human_answer",
+    "caption",
+    "foil",
+    "answer1",
+    "answer2",
+    "target",
+]
+final_df[columns].to_csv(
+    OUTPUT_FILE,
+    index=False,
+    encoding="utf-8-sig",
+)
+\end{lstlisting}
 %Non Corretto
