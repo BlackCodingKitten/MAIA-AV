@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,4,5"
+os.environ["CUDA_VISIBLE_DEVICES"] = "5,6,1,2"
 os.environ["VLLM_USE_FLASHINFER_SAMPLING"] = "0"
 os.environ["VLLM_USE_FLASHINFER"] = "0"
 os.environ["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
@@ -14,8 +14,8 @@ import torch
 from vllm import LLM, SamplingParams
 
 MODEL_ID = "google/gemma-3-27b-it"
-SEMANTIC_DIR = Path("data/preliminar_analysis/entity/entity_semantic/gemma-27B")
-OUTPUT_DIR = Path("data/preliminar_analysis/event_analysis/gemma-27B")
+SEMANTIC_DIR = Path("data/preliminar_analysis/entity/gemma-27B")
+OUTPUT_DIR = Path("data/preliminar_analysis/event/gemma-27B")
 
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
