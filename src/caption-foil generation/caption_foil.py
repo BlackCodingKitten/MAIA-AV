@@ -18,6 +18,8 @@ CHECKPOINT_FILE = OUTPUT_DIR / "caption_foil_checkpoint.csv"
 OUTPUT_FILE = OUTPUT_DIR / "caption_foil.csv"
 
 RANDOM_SEED = 42
+EXPECTED_MACROAREAS = {"spaziale", "temporale", "causale"}
+EXPECTED_ANNOTATORS = 4
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
@@ -162,10 +164,38 @@ def load_questions():
         encoding="utf-8-sig",
     )
 
+    required = {"video_name", "principal_dimension", "question_text"}
+    missing = required - set(questions.columns)
+
+    if missing:
+        raise ValueError(
+            f"{QUESTIONS_FILE} non contiene le colonne richieste: {sorted(missing)}"
+        )
+
+    questions = questions[
+        ["video_name", "principal_dimension", "question_text"]
+    ].copy()
+
+    if questions.isna().any().any():
+        raise ValueError(
+            f"{QUESTIONS_FILE} contiene valori mancanti nelle colonne richieste."
+        )
+
     questions["video_name"] = questions["video_name"].map(normalize_video_name)
     questions["principal_dimension"] = (
-        questions["principal_dimension"].str.lower().str.strip()
+        questions["principal_dimension"]
+        .astype(str)
+        .str.lower()
+        .str.strip()
     )
+    questions["question_text"] = questions["question_text"].astype(str).str.strip()
+
+    unsupported = set(questions["principal_dimension"]) - EXPECTED_MACROAREAS
+    if unsupported:
+        raise ValueError(
+            "Macroaree non supportate nel file delle domande: "
+            f"{sorted(unsupported)}"
+        )
 
     duplicated = questions.duplicated(
         ["video_name", "principal_dimension"],
@@ -178,21 +208,45 @@ def load_questions():
             ["video_name", "principal_dimension", "question_text"],
         ]
         raise ValueError(
-            "Sono presenti più domande per la stessa coppia video/macroarea:\n"
+            "Sono presenti più domande per la stessa coppia video/macroarea:"
             f"{duplicates.to_string(index=False)}"
         )
 
-    return questions[
-        ["video_name", "principal_dimension", "question_text"]
-    ].rename(columns={"principal_dimension": "macroarea"})
+    macroareas_by_video = questions.groupby("video_name")[
+        "principal_dimension"
+    ].agg(set)
 
+    invalid_videos = macroareas_by_video[
+        macroareas_by_video != EXPECTED_MACROAREAS
+    ]
 
+    if not invalid_videos.empty:
+        details = "".join(
+            f"{video}: {sorted(macroareas)}"
+            for video, macroareas in invalid_videos.items()
+        )
+        raise ValueError(
+            "Ogni video deve avere esattamente una domanda spaziale, "
+            "una temporale e una causale."
+            f"{details}"
+        )
+
+    return questions.rename(
+        columns={"principal_dimension": "macroarea"}
+    )
 def load_human_answers():
     files = sorted(RAW_ANSWERS_DIR.glob("*.csv"))
 
     if not files:
         raise FileNotFoundError(
             f"Nessun CSV trovato in {RAW_ANSWERS_DIR}"
+        )
+
+    if len(files) != EXPECTED_ANNOTATORS:
+        raise ValueError(
+            f"Attesi {EXPECTED_ANNOTATORS} file di annotatori in "
+            f"{RAW_ANSWERS_DIR}, trovati {len(files)}: "
+            f"{', '.join(file.name for file in files)}"
         )
 
     frames = []
@@ -218,25 +272,93 @@ def load_human_answers():
 
         df = df[["titolo_video", "macroarea", "risposta"]].copy()
         df["video_name"] = df["titolo_video"].map(normalize_video_name)
-        df["macroarea"] = df["macroarea"].str.lower().str.strip()
+        df["macroarea"] = (
+            df["macroarea"].astype(str).str.lower().str.strip()
+        )
         df["annotator"] = file.stem.removeprefix("risposte_")
 
-        frames.append(df)
+        unsupported = set(df["macroarea"]) - EXPECTED_MACROAREAS
+        if unsupported:
+            raise ValueError(
+                f"{file} contiene macroaree non supportate: "
+                f"{sorted(unsupported)}"
+            )
 
-    answers = pd.concat(frames, ignore_index=True)
+        df = df.dropna(subset=["risposta"])
+        df["risposta"] = df["risposta"].astype(str).str.strip()
+        df = df[df["risposta"] != ""]
 
-    answers = answers.dropna(subset=["risposta"])
-    answers["risposta"] = answers["risposta"].astype(str).str.strip()
-    answers = answers[answers["risposta"] != ""]
+        duplicated = df.duplicated(
+            ["video_name", "macroarea"],
+            keep=False,
+        )
 
-    return answers[
-        ["video_name", "macroarea", "annotator", "risposta"]
-    ]
+        if duplicated.any():
+            duplicates = df.loc[
+                duplicated,
+                ["video_name", "macroarea"],
+            ]
+            raise ValueError(
+                f"{file} contiene più risposte per la stessa "
+                "coppia video/macroarea:"
+                f"{duplicates.to_string(index=False)}"
+            )
 
+        frames.append(
+            df[["video_name", "macroarea", "annotator", "risposta"]]
+        )
 
+    return pd.concat(frames, ignore_index=True)
 def prepare_source_data():
     questions = load_questions()
     answers = load_human_answers()
+
+    question_keys = set(
+        map(
+            tuple,
+            questions[["video_name", "macroarea"]].itertuples(
+                index=False,
+                name=None,
+            ),
+        )
+    )
+
+    for annotator, group in answers.groupby("annotator"):
+        answer_keys = set(
+            map(
+                tuple,
+                group[["video_name", "macroarea"]].itertuples(
+                    index=False,
+                    name=None,
+                ),
+            )
+        )
+
+        missing = question_keys - answer_keys
+        extra = answer_keys - question_keys
+
+        if missing or extra:
+            message = [f"Risposte non allineate per l'annotatore {annotator}."]
+
+            if missing:
+                message.append(
+                    "Domande senza risposta: "
+                    + ", ".join(
+                        f"{video}/{macroarea}"
+                        for video, macroarea in sorted(missing)
+                    )
+                )
+
+            if extra:
+                message.append(
+                    "Risposte senza domanda corrispondente: "
+                    + ", ".join(
+                        f"{video}/{macroarea}"
+                        for video, macroarea in sorted(extra)
+                    )
+                )
+
+            raise ValueError("".join(message))
 
     data = answers.merge(
         questions,
@@ -244,19 +366,6 @@ def prepare_source_data():
         how="left",
         validate="many_to_one",
     )
-
-    missing_questions = data[data["question_text"].isna()]
-
-    if not missing_questions.empty:
-        missing = (
-            missing_questions[["video_name", "macroarea"]]
-            .drop_duplicates()
-            .to_string(index=False)
-        )
-        raise ValueError(
-            "Non trovo la domanda corrispondente per:\n"
-            f"{missing}"
-        )
 
     data["video_id"] = data["video_name"].str.removesuffix(".mp4")
     data["pool_id"] = data["video_id"] + "_" + data["macroarea"]
@@ -266,6 +375,16 @@ def prepare_source_data():
         kind="stable",
     ).reset_index(drop=True)
 
+    pool_sizes = data.groupby("pool_id").size()
+    invalid_pools = pool_sizes[pool_sizes != EXPECTED_ANNOTATORS]
+
+    if not invalid_pools.empty:
+        raise ValueError(
+            "Ogni pool deve contenere esattamente "
+            f"{EXPECTED_ANNOTATORS} risposte."
+            f"{invalid_pools.to_string()}"
+        )
+
     data["pool_item"] = data.groupby("pool_id").cumcount() + 1
     data["id"] = (
         data["pool_id"]
@@ -274,19 +393,37 @@ def prepare_source_data():
     )
 
     return data
-
-
 def load_checkpoint():
-    if CHECKPOINT_FILE.exists():
-        checkpoint = pd.read_csv(CHECKPOINT_FILE)
-        return {
-            row["id"]: row
-            for _, row in checkpoint.iterrows()
-        }
+    if not CHECKPOINT_FILE.exists():
+        return {}
 
-    return {}
+    checkpoint = pd.read_csv(
+        CHECKPOINT_FILE,
+        encoding="utf-8-sig",
+    )
 
+    required = {
+        "id",
+        "question",
+        "annotator",
+        "human_answer",
+        "caption",
+        "foil",
+    }
+    missing = required - set(checkpoint.columns)
 
+    if missing:
+        raise ValueError(
+            f"{CHECKPOINT_FILE} non contiene le colonne richieste: "
+            f"{sorted(missing)}"
+        )
+
+    checkpoint = checkpoint.drop_duplicates("id", keep="last")
+
+    return {
+        row["id"]: row
+        for _, row in checkpoint.iterrows()
+    }
 def generate_caption_foil_pairs(data):
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -297,10 +434,18 @@ def generate_caption_foil_pairs(data):
 
     for index, row in data.iterrows():
         item_id = row["id"]
+        saved = checkpoint.get(item_id)
 
-        if item_id in checkpoint:
-            saved = checkpoint[item_id]
+        checkpoint_is_valid = (
+            saved is not None
+            and str(saved["question"]) == str(row["question_text"])
+            and str(saved["annotator"]) == str(row["annotator"])
+            and str(saved["human_answer"]) == str(row["risposta"])
+            and pd.notna(saved["caption"])
+            and pd.notna(saved["foil"])
+        )
 
+        if checkpoint_is_valid:
             generated_rows.append({
                 "id": item_id,
                 "video_id": row["video_id"],
@@ -318,7 +463,13 @@ def generate_caption_foil_pairs(data):
             print(f"[{index + 1}/{total}] {item_id} già presente: skip")
             continue
 
-        print(f"[{index + 1}/{total}] {item_id}")
+        if saved is not None:
+            print(
+                f"[{index + 1}/{total}] {item_id} checkpoint non coerente: "
+                "rigenerazione"
+            )
+        else:
+            print(f"[{index + 1}/{total}] {item_id}")
 
         caption = generate_caption(
             row["question_text"],
@@ -347,11 +498,10 @@ def generate_caption_foil_pairs(data):
         pd.DataFrame(generated_rows).to_csv(
             CHECKPOINT_FILE,
             index=False,
+            encoding="utf-8-sig",
         )
 
     return pd.DataFrame(generated_rows)
-
-
 def randomize_caption_foil_order(df):
     """
     Randomizza la posizione caption/foil senza introdurre un bias di posizione.
@@ -363,9 +513,9 @@ def randomize_caption_foil_order(df):
     rng = random.Random(RANDOM_SEED)
 
     df = df.copy()
-    targets = pd.Series(index=df.index, dtype="int64")
+    targets = {}
 
-    for _, indices in df.groupby("question_category").groups.items():
+    for category, indices in df.groupby("question_category").groups.items():
         indices = list(indices)
         n = len(indices)
 
@@ -377,9 +527,9 @@ def randomize_caption_foil_order(df):
         rng.shuffle(labels)
 
         for idx, target in zip(indices, labels):
-            targets.loc[idx] = target
+            targets[idx] = target
 
-    df["target"] = targets.astype(int)
+    df["target"] = df.index.map(targets).astype(int)
 
     df["answer1"] = df.apply(
         lambda row: row["caption"] if row["target"] == 0 else row["foil"],
@@ -392,8 +542,6 @@ def randomize_caption_foil_order(df):
     )
 
     return df
-
-
 def main():
     data = prepare_source_data()
 
@@ -434,10 +582,11 @@ def main():
     final_df[columns].to_csv(
         OUTPUT_FILE,
         index=False,
+        encoding="utf-8-sig",
     )
 
-    print(f"\nFile finale salvato in: {OUTPUT_FILE}")
-    print("\nDistribuzione target:")
+    print(f"File finale salvato in: {OUTPUT_FILE}")
+    print("Distribuzione target:")
     print(
         final_df.groupby(
             ["question_category", "target"]
