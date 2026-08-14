@@ -19,7 +19,7 @@ CAPTION_FOIL_FILE = Path("data/vsv/caption-foil/caption_foil.csv")
 OUTPUT_RESULTS = FINAL_DIR / "nli_risultati.csv"
 OUTPUT_PROFICIENCY = FINAL_DIR / "question_proficiency.csv"
 
-client = OpenAI()
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
 PROMPT = """Sei un valutatore di Natural Language Inference.

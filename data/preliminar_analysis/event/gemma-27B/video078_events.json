@@ -1,0 +1,145 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "osservazione",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "guarda",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "lettura",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "legge",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "guarda",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "persona sorride",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "guarda",
+      "start_time": 21.0,
+      "end_time": 23.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "studio",
+      "start_time": 21.0,
+      "end_time": 23.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.8
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0007",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video078",
+  "model": "google/gemma-3-27b-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma-27B/video078_semantic.json"
+}
