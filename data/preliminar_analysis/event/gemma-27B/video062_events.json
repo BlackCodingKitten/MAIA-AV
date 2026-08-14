@@ -1,0 +1,274 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "cliente esamina cappotto",
+      "start_time": 1.5,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "cliente esamina cappotto",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "cliente parla con venditore",
+      "start_time": 4.5,
+      "end_time": 6.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.8
+    },
+    {
+      "event_id": "E0004",
+      "description": "cliente osserva commesso",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0005",
+      "description": "cliente sfoglia vestiti",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.8
+    },
+    {
+      "event_id": "E0006",
+      "description": "cliente esamina jeans",
+      "start_time": 10.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "cliente osserva jeans",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "commesso sfoglia",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0009",
+      "description": "cliente osserva prodotto",
+      "start_time": 20.0,
+      "end_time": 21.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0010",
+      "description": "commesso offre prodotto",
+      "start_time": 22.5,
+      "end_time": 24.75,
+      "participants": [
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0011",
+      "description": "cliente esamina jeans",
+      "start_time": 26.0,
+      "end_time": 27.75,
+      "participants": [
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.8
+    },
+    {
+      "event_id": "E0012",
+      "description": "cliente esamina cartellino",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0013",
+      "description": "cliente tiene cartellino",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0006",
+      "relation": "before",
+      "second_event": "E0007",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0007",
+      "relation": "overlaps",
+      "second_event": "E0008",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0008",
+      "relation": "before",
+      "second_event": "E0009",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0009",
+      "relation": "before",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0010",
+      "relation": "before",
+      "second_event": "E0011",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0011",
+      "relation": "before",
+      "second_event": "E0012",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0012",
+      "relation": "before",
+      "second_event": "E0013",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video062",
+  "model": "google/gemma-3-27b-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma-27B/video062_semantic.json"
+}
