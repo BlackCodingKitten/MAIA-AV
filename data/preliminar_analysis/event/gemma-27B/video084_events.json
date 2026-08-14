@@ -1,0 +1,94 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "versamento",
+      "start_time": 0.5,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e3",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "avvicinamento al frigorifero",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "mangiare",
+      "start_time": 11.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0004",
+      "description": "tiene",
+      "start_time": 12.0,
+      "end_time": 14.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.95
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video084",
+  "model": "google/gemma-3-27b-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma-27B/video084_semantic.json"
+}
