@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "motivates",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona con capelli rossi e giacca beige osserva un venditore (E0001) e successivamente osserva un prodotto (E0004). L'osservazione del venditore potrebbe motivare l'osservazione del prodotto.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0001",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona con capelli rossi e giacca beige osserva un venditore (E0001) e successivamente osserva dei jeans (E0006). L'osservazione del venditore potrebbe motivare l'osservazione dei jeans.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "motivates",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona con capelli castani e giacca nera osserva un prodotto (E0003) e successivamente la persona con capelli rossi e giacca beige osserva un prodotto (E0004). L'osservazione del prodotto da parte della persona con capelli castani potrebbe motivare l'osservazione del prodotto da parte della persona con capelli rossi.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video062",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video062_events.json"
+}

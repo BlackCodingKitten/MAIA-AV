@@ -1,0 +1,61 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'apertura della porta (E0002) permette di spostare la sedia (E0003).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Lo spostamento della sedia (E0003) permette di spostare la sedia (E0004).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Lo spostamento della sedia (E0004) permette di spostare la sedia (E0005).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il chinarsi (E0007) permette di chinarsi (E0008).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il chinarsi (E0008) permette di chinarsi (E0009).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il chinarsi (E0009) permette di chinarsi (E0010).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video072",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video072_events.json"
+}

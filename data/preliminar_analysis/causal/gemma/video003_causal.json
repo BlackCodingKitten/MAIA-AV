@@ -1,0 +1,25 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'evento E0001 (Due uomini sono presenti in un'area esterna) crea il contesto per l'evento E0002 (Un uomo offre una bottiglia d'acqua a un altro uomo).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'evento E0002 (Un uomo offre una bottiglia d'acqua a un altro uomo) porta all'evento E0003 (Un uomo prende una tazza).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video003",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video003_events.json"
+}

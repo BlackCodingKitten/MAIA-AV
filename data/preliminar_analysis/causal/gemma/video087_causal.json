@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La bambina guarda il suo riflesso nello specchio, il che le permette di toccare il suo viso nello specchio.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La bambina tocca il suo viso nello specchio, il che le permette di toccare i suoi denti nello specchio.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La bambina guarda il suo riflesso nello specchio, il che le permette di guardarsi allo specchio.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video087",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video087_events.json"
+}

@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "E0001 (uomo con capelli grigi, occhiali, giacca blu e camicia azzurra) precede E0003 (bambini sono presenti). La presenza dell'uomo con capelli grigi, occhiali, giacca blu e camicia azzurra permette la presenza dei bambini.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "E0002 (uomo con capelli bianchi, occhiali, giacca grigia e camicia blu scuro) precede E0003 (bambini sono presenti). La presenza dell'uomo con capelli bianchi, occhiali, giacca grigia e camicia blu scuro permette la presenza dei bambini.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "E0003 (bambini sono presenti) precede E0004 (uomo con capelli grigi, occhiali, giacca blu e camicia viola è presente). La presenza dei bambini permette la presenza dell'uomo con capelli grigi, occhiali, giacca blu e camicia viola.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "E0004 (uomo con capelli grigi, occhiali, giacca blu e camicia viola) precede E0005 (una bambina con capelli castani e cerchietto blu è presente). La presenza dell'uomo con capelli grigi, occhiali, giacca blu e camicia viola permette la presenza della bambina con capelli castani e cerchietto blu.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video063",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video063_events.json"
+}

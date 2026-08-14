@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La presenza di persone (e1 e e2) potrebbe aver creato un contesto per l'azione successiva di una persona (e1) di sedersi.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona seduta (e1) potrebbe aver avuto la possibilità di toccare il telefono (e3) una volta seduta.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona seduta (e1) potrebbe aver avuto la possibilità di mordere il labbro (e1) una volta seduta.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona seduta (e1) potrebbe essere seduta su un divano (e3) una volta seduta.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona seduta (e1) potrebbe toccare una mano (e2) una volta seduta.",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video061",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video061_events.json"
+}

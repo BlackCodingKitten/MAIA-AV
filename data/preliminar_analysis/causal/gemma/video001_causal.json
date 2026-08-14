@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il video mostra un prodotto, poi lo porge. La presentazione del prodotto abilita la sua offerta.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il porgere del prodotto potrebbe motivare una conversazione a riguardo.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "motivates",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La conversazione potrebbe portare ad un'aggressione.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video001",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video001_events.json"
+}

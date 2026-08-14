@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza di una persona con casco giallo su una vela permette alla persona di sollevare la vela.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Sollevare la vela permette alla persona di guidare la barca.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Guidare la barca permette alla persona di essere su una barca.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Essere su una barca permette alla persona di essere vicino all'acqua.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Essere su una barca permette alla persona di essere vicino alle montagne.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video099",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video099_events.json"
+}

@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza di persona e auto (E0001) è una condizione che permette la rissa (E0002).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La rissa (E0002) potrebbe motivare la persona a muoversi (E0003).",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "prevents",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La rissa (E0002) potrebbe portare all'intervento (E0004).",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video045",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video045_events.json"
+}

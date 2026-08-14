@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'apertura di un foglio di carta permette la manipolazione del foglio di carta.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'apertura di una scatola permette di tenere un foglio di carta.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Tenere un foglio di carta permette di aprirlo.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video088",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video088_events.json"
+}

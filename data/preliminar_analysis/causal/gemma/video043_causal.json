@@ -1,0 +1,40 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0001"
+      ],
+      "explanation": "L'allenatore mostra un movimento (E0002) che l'allievo esegue poi (E0003).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "L'allenamento di arti marziali (E0001) include l'allenamento di movimenti che l'allievo esegue (E0003).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "L'allenatore tiene un guanto da allenamento rosso (E0004) che l'allievo usa per eseguire un calcio (E0005).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video043",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video043_events.json"
+}

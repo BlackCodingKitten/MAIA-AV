@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane cammina prima di correre nel prato.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane corre nel prato prima dell'interazione con la persona.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'interazione con la persona precede il rotolarsi del cane sull'erba.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane si rotola sull'erba prima di sedersi.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video004",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video004_events.json"
+}

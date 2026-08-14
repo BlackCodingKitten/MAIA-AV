@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona tiene in mano un telefono, il che le permette di guardarlo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona guarda il telefono, il che le permette di tenerlo in mano.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona tiene in mano un telefono, il che le permette di tenerlo in mano.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video011",
+  "model": "google/gemma-3n-E4B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma/video011_events.json"
+}

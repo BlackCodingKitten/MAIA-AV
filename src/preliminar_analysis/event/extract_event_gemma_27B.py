@@ -1,32 +1,42 @@
 from __future__ import annotations
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "5,6,1,2"
-os.environ["VLLM_USE_FLASHINFER_SAMPLING"] = "0"
-os.environ["VLLM_USE_FLASHINFER"] = "0"
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,7"
+os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
 os.environ["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
 import argparse
 import json
 from pathlib import Path
 
-import torch
 from vllm import LLM, SamplingParams
+
 
 MODEL_ID = "google/gemma-3-27b-it"
 SEMANTIC_DIR = Path("data/preliminar_analysis/entity/gemma-27B")
 OUTPUT_DIR = Path("data/preliminar_analysis/event/gemma-27B")
 
+
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def parse_json(text):
     text = text.replace("```json", "").replace("```", "").strip()
     start, end = text.find("{"), text.rfind("}")
+
     if start < 0 or end < start:
         raise ValueError("La risposta non contiene un oggetto JSON.")
+
     candidate = text[start:end + 1]
+
     try:
         return json.loads(candidate)
     except json.JSONDecodeError:
@@ -34,15 +44,20 @@ def parse_json(text):
         return json.loads(repair_json(candidate))
 
 
-def write_json(path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-
 def compact(payload):
     keys = (
-        "segment_id", "start_time", "end_time", "entities", "actions", "events",
-        "spatial_relations", "state_changes", "temporal_relations", "causal_hypotheses"
+        "segment_id",
+        "start_time",
+        "end_time",
+        "entities",
+        "actions",
+        "events",
+        "spatial_relations",
+        "state_changes",
+        "temporal_relations",
+        "causal_hypotheses",
     )
+
     return {
         "id_video": payload.get("id_video"),
         "segments": [{key: segment.get(key, []) for key in keys} for segment in payload.get("segments", [])],
@@ -92,16 +107,21 @@ INPUT:
 
 class Inferencer:
     def __init__(self, model_id, max_new_tokens, gpu_utilization):
-        if torch.cuda.device_count() != 4:
-            raise RuntimeError(f"Mi aspettavo 4 GPU visibili, ma PyTorch ne vede {torch.cuda.device_count()}.")
         self.llm = LLM(
             model=model_id,
             dtype="bfloat16",
-            tensor_parallel_size=4,
+            tensor_parallel_size=2,
             gpu_memory_utilization=gpu_utilization,
             max_model_len=32768,
+            max_num_seqs=1,
+            limit_mm_per_prompt={"image": 0},
+            enforce_eager=True,
         )
-        self.sampling = SamplingParams(temperature=0.0, max_tokens=max_new_tokens)
+
+        self.sampling = SamplingParams(
+            temperature=0.0,
+            max_tokens=max_new_tokens,
+        )
 
     def __call__(self, prompt):
         output = self.llm.chat(
@@ -109,6 +129,7 @@ class Inferencer:
             sampling_params=self.sampling,
             use_tqdm=False,
         )[0]
+
         return output.outputs[0].text.strip()
 
 
@@ -121,16 +142,24 @@ def main():
     parser.add_argument("--gpu-utilization", type=float, default=0.85)
     parser.add_argument("--limit-videos", type=int, default=0)
     parser.add_argument("--overwrite", action="store_true")
+
     args = parser.parse_args()
 
     files = sorted(args.semantic_directory.glob("*_semantic.json"))
+
     if args.limit_videos:
         files = files[:args.limit_videos]
+
     if not files:
         parser.error(f"Nessun *_semantic.json trovato in {args.semantic_directory}")
 
     args.output_directory.mkdir(parents=True, exist_ok=True)
-    infer = Inferencer(args.model, args.max_new_tokens, args.gpu_utilization)
+
+    infer = Inferencer(
+        args.model,
+        args.max_new_tokens,
+        args.gpu_utilization,
+    )
 
     for index, path in enumerate(files, 1):
         payload = read_json(path)
@@ -141,10 +170,17 @@ def main():
             print(f"[{index}/{len(files)}] SKIP {video_id}")
             continue
 
-        print(f"[{index}/{len(files)}] {video_id} su CUDA:2,3,4,5")
+        print(f"[{index}/{len(files)}] {video_id} su GPU fisiche 0,7 (TP=2)")
+
         raw = infer(build_prompt(compact(payload)))
         result = parse_json(raw)
-        result.update({"id_video": video_id, "model": args.model, "source_semantic_file": str(path)})
+
+        result.update({
+            "id_video": video_id,
+            "model": args.model,
+            "source_semantic_file": str(path),
+        })
+
         write_json(output_path, result)
 
     print(f"Creato output in: {args.output_directory}")
