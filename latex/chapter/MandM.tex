@@ -119,3 +119,138 @@ At this initial stage, a unified global video description is not yet constructed
 \caption{Semantic information extracted from each temporal window.}
 \label{tab:semantic_representation}
 \end{table}
+\paragraph{Implementaion Detail}
+Entity and semantic analysis is implemented through a unified extraction pipeline shared across all evaluated models. Model-specific wrapper scripts load the corresponding architectures and format selected input frames, while temporal framing, prompt generation, schema definitions, validation logic, and serialization are centralized in \texttt{utils.py}. This separation ensures that all models are evaluated against an identical semantic protocol regardless of underlying architectural differences.
+The common semantic space is defined across seven categories:
+\begin{lstlisting}[language=Python]
+SEMANTIC_CATEGORIES = (
+    "entities",
+    "actions",
+    "events",
+    "spatial_relations",
+    "state_changes",
+    "temporal_relations",
+    "causal_hypotheses",
+)
+\end{lstlisting}
+The categories illustrated in Table~\ref{tab:semantic_representation} specify the structured information required from each temporal window.
+For each temporal window, the pipeline constructs a standardized extraction prompt via \texttt{build\_semantic\_prompt}. In addition to category definitions, the prompt provides the video ID, window boundaries, and an explicit frame-to-timestamp map:
+\begin{lstlisting}[language=Python]
+frame_map = "\n".join(
+    f'- frame {index}: "{path.name}", '
+    f'timestamp={get_timestamp(path):.3f}s'
+    for index, path in enumerate(
+        window.frame_paths,
+        start=1,
+    )
+)
+\end{lstlisting}
+Rather than eliciting free-form descriptions, the prompt\footnote{English Translation:\textit{"Do not invent details that are not visible. Use evidence\_type="observed" for directly visible facts. Use evidence\_type="inferred" only for unavoidable inferences or causal hypotheses. For each element, indicate confidence between 0 and 1 and the exact frame names that support it. Do not confuse temporal succession with a causal relationship. If a category contains no elements, return an empty list. Return exclusively a valid JSON object."}} enforces strict visual grounding. Every extracted element must reference supporting frames, temporal boundaries, a confidence score, and an \texttt{evidence\_type}. Directly visible details are classified as \texttt{observed}, whereas inferential claims are labeled as \texttt{inferred}. Furthermore, the prompt explicitly instructs the model not to treat simple temporal succession as causality:
+\begin{lstlisting}[language=Python]
+    """Non inventare dettagli non visibili.
+    Usa evidence_type="observed"
+    per fatti direttamente visibili.
+    Usa evidence_type="inferred"
+    soltanto per inferenze inevitabili
+    o ipotesi causali.
+    Per ogni elemento indica confidence
+    tra 0 e 1 e i nomi esatti dei frame
+    che lo supportano.
+    Non confondere una successione
+    temporale con una relazione causale.
+    Se una categoria non contiene elementi,
+    restituisci una lista vuota.
+    Restituisci esclusivamente
+    un oggetto JSON valido."""
+\end{lstlisting}
+Models are constrained to output structured JSON objects containing standardized metadata including \texttt{start\_time}, \texttt{end\_time}, \texttt{evidence\_frames}, \texttt{evidence\_type}, and \texttt{confidence}. Entity identifiers generated within a window can be cross-referenced across actions, events, and relations in the same segment.
+The main execution loop is encapsulated in \texttt{process\_video\_with\_inferencer}. After dense frames are partitioned into temporal windows, each window is processed sequentially:
+\begin{lstlisting}[language=Python]
+for window_index, window in enumerate(
+    windows,
+    start=1,
+):
+    prompt = build_semantic_prompt(
+        video_directory.name,
+        window,
+    )
+    response = inferencer(
+        window.frame_paths,
+        prompt,
+    )
+
+    parsed = parse_model_json(response)
+
+    segment = normalize_semantic_output(
+        parsed,
+        window,
+    )
+
+    segments.append(segment)
+\end{lstlisting}
+The \texttt{inferencer} component represents the sole model-dependent step in this loop, accepting frame paths and prompts to return textual outputs. All downstream parsing and validation operations remain identical across architectures.
+To manage output formatting inconsistencies from generative models, the parsing stage strips Markdown wrappers and extracts the primary JSON object. If standard decoding fails, the pipeline attempts recovery using \texttt{json\_repair} before marking the response invalid:
+\begin{lstlisting}[language=Python]
+try:
+    parsed = json.loads(candidate)
+except json.JSONDecodeError as first_error:
+    try:
+        from json_repair import repair_json
+        parsed = json.loads(
+            repair_json(candidate)
+        )
+    except Exception as repair_error:
+        raise SemanticOutputError(
+            f"JSON non valido: {first_error}"
+        ) from repair_error
+\end{lstlisting}
+Structural constraints are subsequently enforced by \texttt{normalize\_semantic\_output}. This function clips temporal boundaries to window limits, restricts confidence scores to the interval $[0,1]$, and filters out invalid frame references. Evidence types are validated against \texttt{observed}, \texttt{inferred}, or \texttt{uncertain}, automatically reclassifying causal hypotheses as \texttt{inferred} if initially marked as \texttt{observed}:
+\begin{lstlisting}[language=Python]
+confidence = _safe_float(
+    item.get("confidence"),
+    0.0,
+)
+item["confidence"] = round(
+    max(0.0, min(1.0, confidence)),
+    4,
+)
+evidence_type = str(
+    item.get(
+        "evidence_type",
+        "observed",
+    )
+).lower()
+if evidence_type not in {
+    "observed",
+    "inferred",
+    "uncertain",
+}:
+    evidence_type = "uncertain"
+if (
+    category == "causal_hypotheses"
+    and evidence_type == "observed"
+):
+    evidence_type = "inferred"
+\end{lstlisting}
+Frame-level grounding validation retains only filenames present in the input temporal window:
+\begin{lstlisting}[language=Python]
+valid_evidence = set(
+    window.evidence_frames
+)
+item["evidence_frames"] = [
+    str(name)
+    for name in evidence_frames
+    if str(name) in valid_evidence
+]
+\end{lstlisting}
+Normalized segments are enriched with temporal metadata from the preprocessing stage:
+\begin{lstlisting}[language=Python]
+normalized = {
+    "segment_id": window.segment_id,
+    "start_time": window.start_time,
+    "end_time": window.end_time,
+    "input_frames": window.evidence_frames,
+}
+\end{lstlisting}
+utputs are saved per video in a dedicated \texttt{\_semantic.json} file alongside model metadata and window configuration settings. Window failures are logged in an \texttt{errors} field containing segment identifiers, temporal bounds, frame lists, and error descriptions, preserving optional raw responses for diagnostic review.
+Ultimately, this phase transforms temporally indexed visual evidence into structured local representations. Cross-window deduplication is omitted at this step to preserve local grounding, leaving element consolidation and full video reconstruction to subsequent analysis stages.
