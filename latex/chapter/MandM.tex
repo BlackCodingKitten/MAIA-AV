@@ -69,7 +69,53 @@ parser.add_argument("--stride-seconds", type=float, default=3.0)
 A 4-second window with a 3-second stride yields a 1-second overlap between consecutive observations. The pipeline selects dense frames within these nominal boundaries. If frame counts exceed the allowed maximum, frames are sampled uniformly across the window. At 4 FPS, a 4-second interval contains 16 frames, remaining well below the default 32-frame ceiling. Duplicate consecutive windows are automatically omitted.
 Each temporal unit is encapsulated in a \texttt{TemporalWindow}, mapping a unique segment ID to its start time, end time, and frame paths. Crucially, recorded boundaries reflect the timestamps of the first and last selected frames rather than nominal window limits. Millisecond precision is maintained to ensure exact alignment with the source video.
 The transition to semantic extraction relies strictly on \textit{ordered dense frames}. For each window, the model receives selected RGB images alongside a prompt specifying the video ID, temporal interval, and frame-to-timestamp map. No questions, answers, transcriptions, or acoustic signals are provided. Temporal segmentation thus serves purely as an indexing mechanism for visual evidence, deferring semantic interpretation to the subsequent extraction stage.
-\subsection{}
-%Non Corretto
-starting frome the temporal windows framed defined before, the pipeline proceed with the semantic representation. This level has the the purpuse to describe the structured semantic represetation, for each model, of the windovs' fram in analysis, each windows is idependetly elaborated. 
-the seam extract procedure is repeated for each of the four models considered. While the models use different architecture and different 
+\subsection*{Semantic Representation Extraction}
+Building upon the defined temporal windows, the pipeline proceeds with semantic representation extraction. This stage generates a structured semantic description for each window, processing every window independently. The extraction procedure is repeated across all four evaluated models. Although the models employ distinct architectures and inference modalities, each receives identical inputs and is constrained to produce a standardized representation adhering to a common schema, as shown in Table\ref{tab:semantic_representation}., adhering to a common schema. Consequently, performance differences can be attributed directly to model capabilities rather than annotation formatting.
+For each window, the representation spans seven semantic categories:
+\begin{description}
+  \item[\textbf{entities}]: Operating at the most fundamental descriptive level, each entity receives a local identifier, a concise label, visually observable attributes, and its role within the scene when discernible. The representation tracks the temporal occurrence of the entity and the specific frames providing visual evidence. These local identifiers enable consistent references across other descriptive categories within the same segment.
+  \item[\textbf{actions}]: Actions represent visually observable occurrences, specifying the performing agent and target object whenever feasible.
+  \item[\textbf{events}]: Events denote broader semantic units linked to one or more participants across a given temporal span. This distinction separates the detection of an isolated action from the broader event context in which it occurs.
+  \item[\textbf{spatial\_relations}]: Spatial configurations between entities or scene elements are defined using a subject-relation-object structure. Permissible relations include configurations such as \textit{in front of}, \textit{behind}, \textit{above}, \textit{below}, \textit{inside}, \textit{outside}, \textit{left of}, \textit{right of}, \textit{near}, and \textit{on}. These spatial descriptors are temporally localized, meaning a spatial configuration observed in one segment is not assumed to hold throughout the video.
+  \item[\textbf{state\_changes}]: State changes capture observable transformations affecting an entity. By contrasting a prior state with a subsequent state, this structure represents temporal variations within a segment. This level is essential when answering a question requires tracking changes in an entity's properties, position, or condition over time.
+  \item[\textbf{temporal\_relations}]: The model describes temporal links such as \textit{before}, \textit{after}, \textit{overlaps}, \textit{during}, \textit{starts}, \textit{finishes}, and \textit{simultaneous}. However, these relations remain strictly localized to the current window. Global video temporal structure is not reconstructed at this stage, nor are event correspondences across different segments systematically resolved.
+  \item[\textbf{causal\_hypotheses}]: Causal candidate relations are explicitly separated from directly observed facts. The framework requires causal hypotheses to be flagged as inferred evidence, preventing temporal precedence from being automatically interpreted as a cause and effect relationship. This design preserves a clear boundary between observed evidence and model inference.
+\end{description}
+The distinction between observed and inferred evidence is preserved through the \textit{evidence\_type} field, accompanied by a confidence score between 0 and 1. Each element also includes an \textit{evidence\_frames} list identifying supporting frames. During output normalization, frame references are retained only if they fall within the processed window, and generated temporal intervals are similarly bounded by segment limits. These constraints maintain strict alignment between semantic representations and supporting visual evidence.
+Categories may remain empty if a model detects insufficient evidence within a segment. At the segment level, the pipeline preserves \textit{segment\_id}, \textit{start\_time}, \textit{end\_time}, and \textit{input\_frames}.
+At this initial stage, a unified global video description is not yet constructed. Due to frame overlap between consecutive windows, identical entities, actions, or events may be extracted repeatedly across adjacent segments. This redundancy is intentionally preserved during extraction to maintain a direct mapping between each prediction and its supporting local evidence. Entity reconciliation and global temporal aggregation are deferred to subsequent pipeline stages.
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \rowcolor{EcoForestGreen}
+    \textcolor{white}{\textbf{Field}} &
+    \textcolor{white}{\textbf{Information represented}} \\
+    \hline
+    \texttt{entities} &
+    Identified entities, observable attributes, roles, and temporal occurrence. \\
+    \hline
+    \texttt{actions} &
+    Local actions, their actors, and involved objects. \\
+    \hline
+    \texttt{events} &
+    Temporally extended local events and their participants. \\
+    \hline
+    \texttt{spatial\_relations} &
+    Spatial configurations between entities or scene elements. \\
+    \hline
+    \texttt{state\_changes} &
+    Observable transitions between an entity's previous and subsequent states. \\
+    \hline
+    \texttt{temporal\_relations} &
+    Temporal relations between events identified within the same local context. \\
+    \hline
+    \texttt{causal\_hypotheses} &
+    Candidate causal relations explicitly marked as inferred evidence. \\
+    \hline
+\end{tabularx}
+\caption{Semantic information extracted from each temporal window.}
+\label{tab:semantic_representation}
+\end{table}
