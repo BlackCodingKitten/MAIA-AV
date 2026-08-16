@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Literal
 import json
+import os
 import re
 
 import pandas as pd
@@ -18,6 +19,13 @@ CAPTION_FOIL_FILE = Path("data/vsv/caption-foil/caption_foil.csv")
 
 OUTPUT_RESULTS = FINAL_DIR / "nli_risultati.csv"
 OUTPUT_PROFICIENCY = FINAL_DIR / "question_proficiency.csv"
+
+EXPECTED_MODELS = (
+    "gemma",
+    "gemma-4-12B",
+    "qwen",
+    "qwen-30B",
+)
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
@@ -185,10 +193,22 @@ def crea_proficiency(risultati):
 def main():
     NLI_DIR.mkdir(parents=True, exist_ok=True)
 
-    final_files = sorted(FINAL_DIR.glob("*.json"))
+    final_files = [
+        FINAL_DIR / f"{model}.json"
+        for model in EXPECTED_MODELS
+    ]
 
-    if len(final_files) != 4:
-        raise RuntimeError(f"Mi aspettavo 4 file JSON in {FINAL_DIR}, ma ne ho trovati {len(final_files)}.")
+    mancanti = [
+        path.name
+        for path in final_files
+        if not path.exists()
+    ]
+
+    if mancanti:
+        raise RuntimeError(
+            "Mancano i file di finalizzazione attesi in "
+            f"{FINAL_DIR}: {', '.join(mancanti)}"
+        )
 
     domande = carica_domande()
     coppie = carica_coppie(domande)
