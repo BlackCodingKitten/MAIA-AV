@@ -1,10 +1,17 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+
+# Mantengo il nome del file gemma27B.py per compatibilità con il repository,
+# ma il modello usato è Gemma 4 12B Unified.
+os.environ["CUDA_VISIBLE_DEVICES"] = "5,6,7,0"
+os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
 
 import traceback
 
-import torch
-from transformers import AutoProcessor, Gemma3nForConditionalGeneration
+from transformers import AutoProcessor
+from vllm import LLM, SamplingParams
 
 from common import SYSTEM, arguments, evaluate, extract_audio
 from media_utils import (
@@ -15,7 +22,8 @@ from media_utils import (
 )
 
 
-MODEL_ID = "google/gemma-3n-E4B-it"
+MODEL_ID = "google/gemma-4-12B-it"
+MODEL_NAME = "gemma-4-12B"
 NUM_FRAMES = 32
 
 
@@ -23,12 +31,25 @@ class Model:
     def __init__(self):
         self.processor = AutoProcessor.from_pretrained(MODEL_ID)
 
-        self.model = Gemma3nForConditionalGeneration.from_pretrained(
-            MODEL_ID,
-            torch_dtype=torch.bfloat16,
-            device_map={"": 0},
-            low_cpu_mem_usage=True,
-        ).eval()
+        self.llm = LLM(
+            model=MODEL_ID,
+            dtype="bfloat16",
+            tensor_parallel_size=4,
+            gpu_memory_utilization=0.85,
+            max_model_len=32768,
+            max_num_seqs=1,
+            limit_mm_per_prompt={
+                "image": NUM_FRAMES,
+                "audio": 1,
+            },
+            trust_remote_code=True,
+            enforce_eager=True,
+        )
+
+        self.sampling = SamplingParams(
+            temperature=0.0,
+            max_tokens=16,
+        )
 
     def __call__(self, mode, row, prompt, paths):
         images = []
@@ -45,6 +66,7 @@ class Model:
                 audio = load_audio_waveform(
                     paths["audio"],
                     AUDIO_SAMPLE_RATE,
+                    max_seconds=30.0,
                 )
 
             elif mode == "video_audio":
@@ -55,9 +77,10 @@ class Model:
                 audio = load_audio_waveform(
                     extract_audio(paths["video"]),
                     AUDIO_SAMPLE_RATE,
+                    max_seconds=30.0,
                 )
 
-            # no_input e only_transcription rimangono text-only.
+            # no_input e only_transcription sono text-only.
             content = []
 
             content.extend(
@@ -65,13 +88,13 @@ class Model:
                 for _ in images
             )
 
-            if audio is not None:
-                content.append({"type": "audio"})
-
             content.append({
                 "type": "text",
                 "text": prompt,
             })
+
+            if audio is not None:
+                content.append({"type": "audio"})
 
             messages = [
                 {
@@ -89,39 +112,38 @@ class Model:
                 },
             ]
 
-            text = self.processor.apply_chat_template(
+            formatted_prompt = self.processor.apply_chat_template(
                 messages,
-                add_generation_prompt=True,
                 tokenize=False,
+                add_generation_prompt=True,
+                enable_thinking=False,
             )
 
-            processor_kwargs = {
-                "text": text,
-                "images": images if images else None,
-                "audio": audio,
-                "return_tensors": "pt",
+            request = {
+                "prompt": formatted_prompt,
             }
 
+            multi_modal_data = {}
+
+            if images:
+                multi_modal_data["image"] = images
+
             if audio is not None:
-                processor_kwargs["sampling_rate"] = AUDIO_SAMPLE_RATE
+                multi_modal_data["audio"] = (
+                    audio,
+                    AUDIO_SAMPLE_RATE,
+                )
 
-            inputs = self.processor(
-                **processor_kwargs,
-            ).to(self.model.device)
+            if multi_modal_data:
+                request["multi_modal_data"] = multi_modal_data
 
-            n = inputs["input_ids"].shape[-1]
+            output = self.llm.generate(
+                request,
+                self.sampling,
+                use_tqdm=False,
+            )[0].outputs[0].text.strip()
 
-            with torch.inference_mode():
-                output = self.model.generate(
-                    **inputs,
-                    max_new_tokens=4,
-                    do_sample=False,
-                )[0][n:]
-
-            return self.processor.decode(
-                output,
-                skip_special_tokens=True,
-            ).strip()
+            return output
 
         except Exception:
             traceback.print_exc()
@@ -135,7 +157,7 @@ if __name__ == "__main__":
     a = arguments()
 
     evaluate(
-        "gemma",
+        MODEL_NAME,
         Model(),
         a.modes,
         a.limit,
