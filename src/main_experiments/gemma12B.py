@@ -1,7 +1,7 @@
 import os
 
 # 1. Modificato: Esponiamo solo 2 GPU (ad esempio la 5 e la 6)
-os.environ["CUDA_VISIBLE_DEVICES"] = "5,6"
+os.environ["CUDA_VISIBLE_DEVICES"] = "4,6"
 os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 os.environ["OMP_NUM_THREADS"] = "1"
