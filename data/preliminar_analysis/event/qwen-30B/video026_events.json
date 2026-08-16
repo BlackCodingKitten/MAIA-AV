@@ -1,0 +1,258 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "allenato esegue un esercizio di press a sedere con l'aiuto dell'allenatore",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "allenato esegue un esercizio di press a sedere",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "allenato esegue un esercizio con la macchina",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "allenato che esegue un esercizio di pressa",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "allenatore esegue un esercizio di press",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "allenato osserva l'allenatore",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e2",
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "allenamento con macchina per esercizi",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "osservazione dell'allenamento",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0009",
+      "description": "allenatore che istruisce l'allenato durante l'esercizio",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0010",
+      "description": "e1 e e2 eseguono un esercizio di pressa sulla macchina da palestra",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0011",
+      "description": "allenatore e allenato interagiscono durante l'allenamento",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0012",
+      "description": "una persona si siede su un attrezzo da palestra",
+      "start_time": 30.0,
+      "end_time": 31.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0010"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0013",
+      "description": "una persona entra in scena e si posiziona di fronte a un'altra persona",
+      "start_time": 30.5,
+      "end_time": 31.75,
+      "participants": [
+        "e2",
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0010"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "overlaps",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "overlaps",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "overlaps",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "overlaps",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "during",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0007",
+      "relation": "simultaneous",
+      "second_event": "E0008",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0009",
+      "relation": "simultaneous",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0011",
+      "relation": "simultaneous",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0012",
+      "relation": "during",
+      "second_event": "E0013",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video026",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen-30B/video026_semantic.json"
+}
