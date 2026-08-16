@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "5"
 
 import traceback
 
@@ -16,7 +16,7 @@ from media_utils import (
 
 
 MODEL_ID = "google/gemma-3n-E4B-it"
-NUM_FRAMES = 32
+N_FRAMES = 32
 
 
 class Model:
@@ -38,7 +38,7 @@ class Model:
             if mode in ("only_video", "transcript_video"):
                 images = load_video_frames(
                     paths["mute"],
-                    NUM_FRAMES,
+                    N_FRAMES,
                 )
 
             elif mode == "only_audio":
@@ -50,8 +50,9 @@ class Model:
             elif mode == "video_audio":
                 images = load_video_frames(
                     paths["video"],
-                    NUM_FRAMES,
+                    N_FRAMES,
                 )
+
                 audio = load_audio_waveform(
                     extract_audio(paths["video"]),
                     AUDIO_SAMPLE_RATE,
@@ -101,9 +102,6 @@ class Model:
                 "audio": audio,
                 "return_tensors": "pt",
             }
-
-            if audio is not None:
-                processor_kwargs["sampling_rate"] = AUDIO_SAMPLE_RATE
 
             inputs = self.processor(
                 **processor_kwargs,

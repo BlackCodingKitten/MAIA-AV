@@ -1,10 +1,5 @@
 import os
-<<<<<<< HEAD
-os.environ["CUDA_VISIBLE_DEVICES"] = "4"
-=======
-
 os.environ["CUDA_VISIBLE_DEVICES"] = "6"
->>>>>>> refs/remotes/origin/main
 
 import traceback
 
@@ -24,7 +19,7 @@ from media_utils import (
 
 
 MODEL_ID = "Qwen/Qwen2.5-Omni-3B"
-NUM_FRAMES = 32
+N_FRAMES = 32
 
 
 class Model:
@@ -64,11 +59,11 @@ class Model:
                     else paths["mute"]
                 )
 
-                # Passiamo a process_mm_info una LISTA DI FRAME già decodificati.
-                # Così Qwen non usa né TorchCodec né torchvision per aprire l'MP4.
+                # Il video viene già decodificato da ffmpeg in media_utils.
+                # process_mm_info riceve una lista di PIL.Image e non apre l'MP4.
                 frames = load_video_frames(
                     video_path,
-                    NUM_FRAMES,
+                    N_FRAMES,
                 )
 
                 content.append({
@@ -78,16 +73,18 @@ class Model:
                 })
 
             if mode == "only_audio":
+                audio_path = ensure_wav(
+                    paths["audio"]
+                )
+
                 content.append({
                     "type": "audio",
-                    "audio": str(
-                        ensure_wav(paths["audio"]).resolve()
-                    ),
+                    "audio": str(audio_path.resolve()),
                 })
 
             elif mode == "video_audio":
-                # L'audio è separato dal video: niente use_audio_in_video.
-                # Viene estratto con ffmpeg e passato come vera modalità audio.
+                # Audio separato dal video:
+                # ffmpeg -> WAV 16 kHz -> audio encoder Qwen.
                 audio_path = ensure_wav(
                     extract_audio(paths["video"])
                 )
@@ -97,7 +94,7 @@ class Model:
                     "audio": str(audio_path.resolve()),
                 })
 
-            # no_input e only_transcription rimangono text-only.
+            # no_input e only_transcription sono text-only.
             content.append({
                 "type": "text",
                 "text": prompt,
@@ -125,7 +122,9 @@ class Model:
                 tokenize=False,
             )
 
-            # Audio e video sono passati come due modalità indipendenti.
+            # L'audio del video è già stato estratto e aggiunto come modalità
+            # audio indipendente, quindi non chiediamo al loader di riaprire
+            # il file video per estrarne l'audio.
             use_audio_in_video = False
 
             audios, images, videos = process_mm_info(

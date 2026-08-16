@@ -1,5 +1,4 @@
 import os
-
 os.environ["CUDA_VISIBLE_DEVICES"] = "1,2"
 
 import traceback
@@ -20,7 +19,7 @@ from media_utils import (
 
 
 MODEL_ID = "Qwen/Qwen3-Omni-30B-A3B-Instruct"
-NUM_FRAMES = 32
+N_FRAMES = 32
 
 
 class Model:
@@ -60,10 +59,10 @@ class Model:
                     else paths["mute"]
                 )
 
-                # Frame già decodificati: nessun TorchCodec.
+                # Frame già estratti via ffmpeg: niente TorchCodec/cv2.
                 frames = load_video_frames(
                     video_path,
-                    NUM_FRAMES,
+                    N_FRAMES,
                 )
 
                 content.append({
@@ -73,11 +72,13 @@ class Model:
                 })
 
             if mode == "only_audio":
+                audio_path = ensure_wav(
+                    paths["audio"]
+                )
+
                 content.append({
                     "type": "audio",
-                    "audio": str(
-                        ensure_wav(paths["audio"]).resolve()
-                    ),
+                    "audio": str(audio_path.resolve()),
                 })
 
             elif mode == "video_audio":
@@ -90,7 +91,7 @@ class Model:
                     "audio": str(audio_path.resolve()),
                 })
 
-            # no_input e only_transcription rimangono text-only.
+            # no_input e only_transcription sono text-only.
             content.append({
                 "type": "text",
                 "text": prompt,
