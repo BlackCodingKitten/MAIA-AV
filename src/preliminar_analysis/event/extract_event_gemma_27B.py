@@ -21,14 +21,14 @@ import torch
 from vllm import LLM, SamplingParams
 
 
-MODEL_ID = "google/gemma-3-27b-it"
+MODEL_ID = "google/gemma-4-12B-it"
 
 SEMANTIC_DIR = Path(
-    "data/preliminar_analysis/entity/gemma-27B"
+    "data/preliminar_analysis/entity/gemma-12B"
 )
 
 OUTPUT_DIR = Path(
-    "data/preliminar_analysis/event/gemma-27B"
+    "data/preliminar_analysis/event/gemma-12B"
 )
 
 MAX_RETRIES = 3
