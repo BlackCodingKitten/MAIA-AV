@@ -1,16 +1,33 @@
 from __future__ import annotations
 
 import os
+
+# GPU fisiche usate da vLLM
 os.environ["CUDA_VISIBLE_DEVICES"] = "1,2"
+
+# --- FIX DEADLOCK 1: Disabilita il parallelismo del tokenizer Rust prima degli import ---
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+# --- FIX DEADLOCK 2: Evita blocchi P2P/NCCL su bus PCIe non supportati ---
+os.environ["NCCL_P2P_DISABLE"] = "1"
+os.environ["NCCL_IB_DISABLE"] = "1"
+
+# Gestione backend FlashInfer e FlashAttention
 os.environ["VLLM_USE_FLASHINFER_SAMPLING"] = "0"
 os.environ["VLLM_USE_FLASHINFER"] = "0"
 os.environ["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
+
+# vLLM usa multiprocessing con spawn
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+
+# Limita il parallelismo CPU
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
 
 import argparse
 import json
 from pathlib import Path
 
-import torch
 from vllm import LLM, SamplingParams
 
 MODEL_ID = "Qwen/Qwen3-Omni-30B-A3B-Instruct"
@@ -31,7 +48,7 @@ def write_json(path: Path, data: dict) -> None:
 
 
 def parse_json(text: str) -> dict:
-    text = text.replace("```json", "").replace("```", "").strip()
+    text = text.replace("```json", "").replace("```JSON", "").replace("```", "").strip()
     start, end = text.find("{"), text.rfind("}")
     if start < 0 or end < start:
         raise ValueError("La risposta non contiene un oggetto JSON.")
@@ -147,25 +164,33 @@ def normalize_result(result: dict, payload: dict) -> dict:
 
 class Inferencer:
     def __init__(self, model_id: str, max_new_tokens: int, gpu_utilization: float) -> None:
-        if torch.cuda.device_count() != 2:
-            raise RuntimeError(f"Mi aspettavo 2 GPU visibili, ma PyTorch ne vede {torch.cuda.device_count()}.")
+        print("Inizializzazione vLLM con Tensor Parallelism = 2...", flush=True)
+
+        # --- FIX DEADLOCK 3: Nessuna chiamata a torch.cuda.* prima di LLM() ---
+        # L'inizializzazione avviene direttamente tramite vLLM che gestisce i worker spawn
         self.llm = LLM(
             model=model_id,
             dtype="bfloat16",
             tensor_parallel_size=2,
             gpu_memory_utilization=gpu_utilization,
             max_model_len=32768,
+            limit_mm_per_prompt={
+                "image": 0,
+                "audio": 0,
+                "video": 0,
+            },
             trust_remote_code=True,
+            enforce_eager=True,
         )
         self.sampling = SamplingParams(temperature=0.0, max_tokens=max_new_tokens)
 
     def __call__(self, prompt: str) -> str:
-        output = self.llm.chat(
-            [{"role": "user", "content": prompt}],
+        outputs = self.llm.chat(
+            messages=[{"role": "user", "content": prompt}],
             sampling_params=self.sampling,
             use_tqdm=False,
-        )[0]
-        return output.outputs[0].text.strip()
+        )
+        return outputs[0].outputs[0].text.strip()
 
 
 def infer_json(inferencer: Inferencer, prompt: str, attempts: int = 2) -> dict:
@@ -209,10 +234,10 @@ def main() -> None:
         output_path = args.output_directory / f"{video_id}_causal.json"
 
         if output_path.exists() and not args.overwrite:
-            print(f"[{index}/{len(files)}] SKIP {video_id}")
+            print(f"[{index}/{len(files)}] SKIP {video_id}", flush=True)
             continue
 
-        print(f"[{index}/{len(files)}] {video_id} su GPU fisiche 1,2 (TP=2)")
+        print(f"[{index}/{len(files)}] {video_id} su GPU fisiche 1,2 (TP=2)", flush=True)
         compact_payload = compact(payload)
         try:
             result = infer_json(inferencer, build_prompt(compact_payload))
@@ -223,7 +248,7 @@ def main() -> None:
                 "source_event_file": str(path),
             })
         except Exception as error:
-            print(f"ERRORE {video_id}: {type(error).__name__}: {error}")
+            print(f"ERRORE {video_id}: {type(error).__name__}: {error}", flush=True)
             result = {
                 "id_video": video_id,
                 "model": args.model,
@@ -234,7 +259,7 @@ def main() -> None:
 
         write_json(output_path, result)
 
-    print(f"Creato output in: {args.output_directory}")
+    print(f"Creato output in: {args.output_directory}", flush=True)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "motivates",
+      "effect_event": "E0005",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Giocare al telefono potrebbe motivare una persona a parlare al telefono.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "motivates",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Parlare al telefono potrebbe motivare a continuare a parlare al telefono.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Parlare al telefono potrebbe motivare a continuare a parlare.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "motivates",
+      "effect_event": "E0011",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Parlare potrebbe motivare a continuare a parlare.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video011",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video011_events.json"
+}

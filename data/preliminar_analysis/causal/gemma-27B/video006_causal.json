@@ -1,0 +1,79 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "motivates",
+      "effect_event": "E0002",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona che cammina con una borsa potrebbe essere motivata a premere il citofono per entrare o comunicare.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "causes",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Premere il citofono (E0002) causa un'interazione con il citofono (E0003).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "motivates",
+      "effect_event": "E0005",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'interazione con il citofono (E0003) potrebbe motivare la persona a guardare (E0005).",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Guardare (E0005) potrebbe motivare la persona ad avvicinarsi (E0006).",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Avvicinarsi (E0006) potrebbe motivare la persona ad osservare (E0007).",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Osservare (E0007) potrebbe rendere possibile la consegna (E0008).",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Una consegna (E0008) potrebbe motivare un'altra consegna (E0009).",
+      "confidence": 0.5
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "motivates",
+      "effect_event": "E0010",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Una consegna (E0009) potrebbe motivare la persona a camminare (E0010).",
+      "confidence": 0.5
+    }
+  ],
+  "id_video": "video006",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video006_events.json"
+}

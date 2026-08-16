@@ -12,7 +12,7 @@ VIDEO_DIR = Path("data/input/video")
 TRANSCRIPTIONS = Path("data/input/transcription/transcriptions.csv")
 OUTPUT_DIR = Path("data/output")
 
-MODES = ("no_input", "only_audio", "only_video", "video_audio", "transcript_video")
+MODES = ("no_input", "only_audio", "only_video", "only_transcription", "video_audio", "transcript_video")
 
 SYSTEM = "Sei un assistente binario per un task di Visual Statement Verification. Rispondi esclusivamente con 0 oppure 1."
 
@@ -36,6 +36,15 @@ PROMPTS = {
     "only_video": (
         "Osserva il video fornito"
         "Scegli quale delle due descrizioni è corretta sulla base esclusivamente delle informazioni visive disponibili.\n\n"
+        "0: {answer1}\n"
+        "1: {answer2}\n\n"
+        "Rispondi esclusivamente con 0 oppure 1."
+    ),
+
+    "only_transcription": (
+        "Leggi esclusivamente la trascrizione dell'audio fornita. "
+        "Scegli quale delle due descrizioni è corretta sulla base esclusivamente delle informazioni testuali disponibili nella trascrizione.\n\n"
+        "Trascrizione dell'audio: {transcript}\n\n"
         "0: {answer1}\n"
         "1: {answer2}\n\n"
         "Rispondi esclusivamente con 0 oppure 1."
@@ -150,7 +159,7 @@ def evaluate(model_name, infer, modes, limit=0, overwrite=False, unsupported=())
                 if row["id"] in done:
                     continue
 
-                transcript = transcripts.get(row["video_name"], "") if mode == "transcript_video" else ""
+                transcript = transcripts.get(row["video_name"], "") if mode in ("only_transcription", "transcript_video") else ""
                 raw, pred, error = "", None, ""
 
                 if mode in unsupported:

@@ -1,0 +1,115 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0007",
+      "relation": "motivates",
+      "effect_event": "E0008",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il pedone (donna) guarda e poi si avvicina all'altro pedone (uomo), suggerendo che lo sguardo potrebbe aver motivato l'avvicinamento.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "causes",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'avvicinamento dei due pedoni precede direttamente l'inizio dell'aggressione.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione è descritta sia come 'aggressione' che come 'aggressione fisica', indicando che l'aggressione include l'aggressione fisica.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione iniziale (E0009) precede e porta a un'ulteriore aggressione fisica (E0011).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "causes",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione fisica (E0011) è descritta anche come 'aggressione' (E0012).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "causes",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione fisica (E0011) precede e porta a un'ulteriore aggressione fisica (E0013).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione fisica (E0013) è descritta anche come 'aggressione' (E0014).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione fisica (E0013) precede e porta a un'ulteriore aggressione fisica (E0015).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "causes",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione fisica (E0015) è descritta anche come 'aggressione' (E0016).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "causes",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione fisica (E0015) precede l'inizio della corsa (E0017).",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "motivates",
+      "effect_event": "E0020",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona in movimento (E0017) potrebbe essere in fuga dopo l'aggressione.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0019",
+      "relation": "causes",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La caduta (E0019) causa la persona a terra (E0018).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video044",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video044_events.json"
+}

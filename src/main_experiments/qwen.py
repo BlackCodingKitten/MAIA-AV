@@ -29,6 +29,8 @@ class Model:
             content.append({"type": "audio", "audio": str(paths["audio"].resolve())})
         elif mode in ("only_video", "transcript_video"):
             content.append({"type": "video", "video": str(paths["mute"].resolve())})
+        elif mode == "only_transcription":
+            pass
         elif mode == "video_audio":
             content.append({"type": "video", "video": str(paths["video"].resolve())})
 

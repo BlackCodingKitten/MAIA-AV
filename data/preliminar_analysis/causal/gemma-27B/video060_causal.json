@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "motivates",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Aggiustare l'asciugamano potrebbe motivare il successivo tocco dell'asciugamano.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'attività sulla spiaggia potrebbe motivare il movimento delle braccia.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il movimento delle braccia potrebbe motivare il gioco con la sabbia.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il gioco con la sabbia permette di continuare a giocare con la sabbia.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video060",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video060_events.json"
+}

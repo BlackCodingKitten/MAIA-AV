@@ -56,7 +56,7 @@ class Model:
         self.sampling = SamplingParams(temperature=0, max_tokens=4)
 
     def __call__(self, mode, row, prompt, paths):
-        images = [] if mode == "no_input" else frames(paths["mute"])
+        images = frames(paths["mute"]) if mode in ("only_video", "transcript_video") else []
         content = [{"type": "image"} for _ in images] + [{"type": "text", "text": prompt}]
         messages = [
             {"role": "system", "content": [{"type": "text", "text": SYSTEM}]},
@@ -81,5 +81,5 @@ if __name__ == "__main__":
         a.modes,
         a.limit,
         a.overwrite,
-        unsupported=("only_audio", "video_audio"),
-    )
+        unsupported=("only_audio", "video_audio"),)
+  

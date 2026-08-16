@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "5"
 
 import torch
 from transformers import AutoProcessor, Gemma3nForConditionalGeneration
@@ -26,6 +26,8 @@ class Model:
             content.append({"type": "audio", "audio": str(paths["audio"].resolve())})
         elif mode in ("only_video", "transcript_video"):
             content.append({"type": "video", "video": str(paths["mute"].resolve())})
+        elif mode == "only_transcription":
+            pass
         elif mode == "video_audio":
             content += [
                 {"type": "video", "video": str(paths["video"].resolve())},

@@ -1,0 +1,29 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "motivates",
+      "effect_event": "E0002",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "L'interazione affettuosa tra e1 ed e2 potrebbe motivare e1 e e2 a sorridere.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0001",
+      "relation": "motivates",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "L'interazione affettuosa tra e1 ed e2 potrebbe motivare e1 e e2 a sorridere.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video024",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video024_events.json"
+}

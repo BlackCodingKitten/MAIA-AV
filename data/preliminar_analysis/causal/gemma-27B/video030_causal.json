@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0011",
+      "relation": "causes",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'avvicinarsi alla piscina (E0011) precede direttamente il tuffo in piscina (E0012).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "motivates",
+      "effect_event": "E0013",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il tuffo in piscina (E0012) potrebbe motivare la persona a appoggiarsi alla piscina (E0013) subito dopo.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "motivates",
+      "effect_event": "E0014",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il tuffo in piscina (E0012) potrebbe motivare un'altra persona a filmare (E0014).",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video030",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video030_events.json"
+}

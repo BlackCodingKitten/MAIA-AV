@@ -1,0 +1,61 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "causes",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La caduta della televisione (E0003) causa il danneggiamento dell'auto (E0004) nello stesso intervallo temporale.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona parla (E0002) e successivamente beve (E0009), suggerendo che la conversazione potrebbe aver motivato l'atto di bere.",
+      "confidence": 0.5
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0010",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona parla (E0002) e successivamente mangia (E0010), suggerendo che la conversazione potrebbe aver motivato l'atto di mangiare.",
+      "confidence": 0.5
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza della persona sul balcone (E0006) abilita l'azione di appoggiare le mani sulla ringhiera (E0007).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza della persona sul balcone (E0006) abilita l'azione di alzare un braccio (E0008).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0011",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona sul balcone (E0006) si sporge (E0011), suggerendo che la posizione sul balcone potrebbe aver motivato l'azione di sporgersi.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video003",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video003_events.json"
+}

@@ -1,0 +1,25 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'apertura della porta (E0004) permette la comparsa di una persona (E0005).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La comparsa di una persona (E0005) motiva l'espressione di sorpresa (E0006).",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video022",
+  "model": "google/gemma-3-27b-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-27B/video022_events.json"
+}
