@@ -1,0 +1,231 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "pioggia intensa con vento",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "albero",
+        "pioggia"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "pioggia che cade",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "pioggia"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "pioggia che cade su alberi",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "pioggia",
+        "albero"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "il corridoio è illuminato",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "corridoio"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "il corridoio è in uno stato di degrado",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "corridoio",
+        "soffitto"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "soffitto danneggiato in un corridoio",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "soffitto"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "pavimento bagnato con detriti in un corridoio",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "pavimento",
+        "detriti"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "pavimento sporco con macchie di liquido",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0009",
+      "description": "il soffitto è rotto e mostra cavi elettrici",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0010",
+      "description": "il soffitto è rotto e mostra i cavi elettrici",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0011",
+      "description": "il pavimento è coperto da detriti e carta",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e4",
+        "e3",
+        "e6"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "during",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "during",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0006",
+      "relation": "during",
+      "second_event": "E0007",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0007",
+      "relation": "before",
+      "second_event": "E0008",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0008",
+      "relation": "before",
+      "second_event": "E0009",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0009",
+      "relation": "before",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0010",
+      "relation": "before",
+      "second_event": "E0011",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video010",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen-30B/video010_semantic.json"
+}
