@@ -2,7 +2,7 @@ import os
 
 # Mantengo il nome del file gemma27B.py per compatibilità con il repository,
 # ma il modello usato è Gemma 4 12B Unified.
-os.environ["CUDA_VISIBLE_DEVICES"] = "5,6,7,0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 os.environ["OMP_NUM_THREADS"] = "1"
@@ -34,7 +34,7 @@ class Model:
         self.llm = LLM(
             model=MODEL_ID,
             dtype="bfloat16",
-            tensor_parallel_size=4,
+            tensor_parallel_size=2,
             gpu_memory_utilization=0.85,
             max_model_len=32768,
             max_num_seqs=1,
