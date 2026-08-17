@@ -11,7 +11,7 @@ from typing import Any, Dict, List
 # CONFIGURAZIONE AMBIENTE (ANTI-DEADLOCK & SHM FIX)
 # Deve essere eseguita PRIMA di importare vLLM o PyTorch
 # =============================================================================
-os.environ["CUDA_VISIBLE_DEVICES"] = "1,2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3,5"
 
 # Disabilita P2P per evitare blocchi hardware PCIe
 os.environ["NCCL_P2P_DISABLE"] = "1"
