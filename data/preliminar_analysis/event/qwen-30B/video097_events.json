@@ -1,0 +1,284 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "due ginnaste si arrampicano sulle parallele",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "una ginnasta si aggrappa alle parallele",
+      "start_time": 6.0,
+      "end_time": 6.75,
+      "participants": [
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "due ginnaste si tengono alla sbarra alta",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "due ginnaste stanno in piedi sul pavimento",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "una ginnasta si tocca la testa",
+      "start_time": 9.75,
+      "end_time": 9.75,
+      "participants": [
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "due ginnaste si esercitano sulla sbarra alta",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "due ginnaste osservano le compagne che si esercitano",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "ginnaste che si aggrappano alla barra orizzontale",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0009",
+      "description": "ginnaste che si esercitano sulla barra orizzontale",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0010",
+      "description": "ginnasta che salta per afferrare la barra",
+      "start_time": 14.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0011",
+      "description": "quattro ginnaste sospese alla sbarra parallela",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0012",
+      "description": "quattro ginnaste sospese alla barra parallela",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0013",
+      "description": "ginnaste che si tengono alla barra parallela",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0006",
+      "relation": "before",
+      "second_event": "E0007",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0007",
+      "relation": "before",
+      "second_event": "E0008",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0008",
+      "relation": "before",
+      "second_event": "E0009",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0008",
+      "relation": "during",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0009",
+      "relation": "during",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0011",
+      "relation": "during",
+      "second_event": "E0012",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0012",
+      "relation": "during",
+      "second_event": "E0013",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video097",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen-30B/video097_semantic.json"
+}

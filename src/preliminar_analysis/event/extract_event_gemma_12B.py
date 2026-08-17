@@ -2,12 +2,28 @@ from __future__ import annotations
 
 import os
 
-# Limitato alle GPU standardizzate
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
-os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
+# Utilizza esclusivamente le GPU fisiche 4 e 6.
+# All'interno del processo verranno viste come cuda:0 e cuda:1.
+os.environ["CUDA_VISIBLE_DEVICES"] = "2,1"
+
+# Multiprocessing vLLM
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+
+# Disabilita FlashInfer sampler
+os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
+
+# Configurazione NCCL
+os.environ["NCCL_P2P_DISABLE"] = "1"
+os.environ["NCCL_IB_DISABLE"] = "1"
+os.environ["NCCL_SOCKET_IFNAME"] = "lo"
+
+# Comunicazione locale vLLM
+os.environ["VLLM_HOST_IP"] = "127.0.0.1"
+
+# Limita i thread CPU
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
+
 
 import argparse
 import json

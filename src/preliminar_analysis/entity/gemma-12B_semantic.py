@@ -9,7 +9,7 @@ import os
 
 # Utilizza esclusivamente le GPU fisiche 4 e 6.
 # All'interno del processo verranno viste come cuda:0 e cuda:1.
-os.environ["CUDA_VISIBLE_DEVICES"] = "4,6"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 
 # Multiprocessing vLLM
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"

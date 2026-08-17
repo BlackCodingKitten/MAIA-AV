@@ -1,0 +1,254 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "una bambina sorride alla telecamera mentre è in una piscina",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "una persona è seduta con le gambe piegate",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "una mano afferra il polso di una persona e tiene una bottiglia",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e2",
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "una persona tiene una piscina gonfiabile",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "una persona è seduta con le gambe piegate",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "una persona nuota in una piscina",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "una persona nuota in una piscina",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "una bambina si trova in una piscina",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0009",
+      "description": "una persona indossa un braccialetto gonfiabile",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0010"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0010",
+      "description": "una persona si alza da una sedia",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0010"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0011",
+      "description": "una persona si alza da una sedia",
+      "start_time": 33.0,
+      "end_time": 33.25,
+      "participants": [
+        "e1",
+        "e3"
+      ],
+      "evidence_segments": [
+        "segment_0011"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0012",
+      "description": "una persona si china verso un gonfiabile",
+      "start_time": 33.5,
+      "end_time": 35.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0011"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "before",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "before",
+      "second_event": "E0005",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0005",
+      "relation": "before",
+      "second_event": "E0006",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0006",
+      "relation": "before",
+      "second_event": "E0007",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0007",
+      "relation": "overlaps",
+      "second_event": "E0008",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0008",
+      "relation": "before",
+      "second_event": "E0009",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0008",
+      "relation": "before",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0009",
+      "relation": "simultaneous",
+      "second_event": "E0010",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0011",
+      "relation": "before",
+      "second_event": "E0012",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video086",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_semantic_file": "data/preliminar_analysis/entity/qwen-30B/video086_semantic.json"
+}
