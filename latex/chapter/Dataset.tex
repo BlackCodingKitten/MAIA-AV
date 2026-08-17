@@ -402,7 +402,7 @@ if len(files) != EXPECTED_ANNOTATORS:
         f"{RAW_ANSWERS_DIR}, trovati {len(files)}"
     )
 \end{lstlisting}
-Each file must contain the columns \texttt{titolo\_video}, \texttt{macroarea}, and \texttt{risposta}. For backward compatibility, the alternative column name \texttt{risposte} is also accepted and automatically renamed. Annotator identifiers are extracted directly from the filenames:
+Each file must contain the columns \texttt{titolo\_video}, \texttt{macro-\\area}, and \texttt{risposta}. For backward compatibility, the alternative column name \texttt{risposte} is also accepted and automatically renamed. Annotator identifiers are extracted directly from the filenames:
 \begin{lstlisting}[language=Python]
 if "risposta" not in df.columns and "risposte" in df.columns:
     df = df.rename(columns={"risposte": "risposta"})
@@ -545,7 +545,7 @@ df["answer2"] = df.apply(
     axis=1,
 )
 \end{lstlisting}
-The final dataset is saved to \texttt{data/vsv/caption-foil/caption\_foil.csv}. Alongside the randomized options and target labels, the output retains all metadata required to trace each pair back to its originating video, question, annotator, and human response:
+The final dataset is saved to \texttt{data/vsv/caption-foil/cap-\\tion\_foil.csv}. Alongside the randomized options and target labels, the output retains all metadata required to trace each pair back to its originating video, question, annotator, and human response:
 \begin{lstlisting}[language=Python]
 columns = [
     "id",

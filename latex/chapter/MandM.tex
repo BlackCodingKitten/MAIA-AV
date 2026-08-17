@@ -21,16 +21,16 @@ The Gemma models considered in this work implement multimodality through two dis
 \subsubsection*{Gemma 3n E4B IT}
 Gemma 3n accepts text, images, audio, and video and generates textual responses; separate perceptual encoders convert acoustic and visual signals into token representations for the central language model \cite{gemma3n2025}.
 The E4B configuration is built on \textit{MatFormer} (Matryoshka Transformer), which nests a smaller E2B computational path within the larger E4B structure; both are trained jointly, allowing the model to operate under different computational budgets without requiring separate weights \cite{gemma3n2025}.
-Gemma 3n also introduces \textit{Per-Layer Embeddings}, storing a substantial portion of the embedding parameters outside accelerator memory. As a result, E4B keeps only around four billion core parameters resident on the accelerator despite a larger overall parameter count — a gain in computational efficiency rather than a change to how modalities are integrated \cite{gemma3n2025}.
+Gemma 3n also introduces \textit{Per-Layer Embeddings}, storing a substantial portion of the embedding parameters outside accelerator memory. As a result, E4B keeps only around four billion core parameters resident on the accelerator despite a larger overall parameter count ,a gain in computational efficiency rather than a change to how modalities are integrated \cite{gemma3n2025}.
 Audio is processed by an encoder based on the Universal Speech Model, producing roughly one acoustic token every 160~ms (about six tokens per second) that feed directly into the language model \cite{gemma3n2025}. Visual input is handled by MobileNet-V5-300M, supporting resolutions of $256 \times 256$, $512 \times 512$, and $768 \times 768$ pixels across both image and video content \cite{gemma3n2025}. A \textit{Multi-Scale Fusion VLM adapter} processes the resulting visual representations before they reach the language model; its role is limited to combining features at different scales and does not amount to a general audiovisual fusion mechanism \cite{gemma3n2025}.
 Multimodal integration remains centered on the language-model backbone: audio and visual encoders produce modality-specific representations that become available to the Transformer during generation, and the available documentation does not describe a shared temporal alignment mechanism between acoustic and visual signals comparable to TMRoPE in the Qwen models \cite{gemma3n2025}.
-Gemma 3n further employs \textit{KV Cache Sharing}, letting keys and values from intermediate attention layers be reused by subsequent ones, which reduces redundant computation during the prefill stage — a benefit that is particularly relevant for the long sequences produced by audio and video input \cite{gemma3n2025}.
+Gemma 3n further employs \textit{KV Cache Sharing}, letting keys and values from intermediate attention layers be reused by subsequent ones, which reduces redundant computation during the prefill stage, a benefit that is particularly relevant for the long sequences produced by audio and video input \cite{gemma3n2025}.
 \subsubsection*{Gemma 4 12B IT}
 Gemma 4 is a natively multimodal family built on a decoder-only Transformer, and the 12B configuration departs from the rest of the family architecturally. Rather than relying on perceptual encoders, it is trained from scratch under a unified encoder-free paradigm, with visual and acoustic input mapped directly into the language model's embedding space through lightweight projection modules \cite{gemma4technicalreport}.
 This sets it apart from the other Gemma 4 configurations: the smaller E2B and E4B models retain distinct vision and audio encoders, and even the larger variants keep dedicated visual processing. Gemma 4 12B alone drops both the vision and the audio encoder, replacing them with a direct projection of raw perceptual information \cite{gemma4technicalreport}.
-For visual input, the model operates on RGB patches of $48 \times 48 \times 3$ values. A large linear projection of roughly 35 million parameters takes the place of the Vision Transformer used elsewhere in the family, mapping the resulting representations directly into the language model's embedding space \cite{gemma4technicalreport}. Spatial information is preserved by adding two-dimensional coordinate-based positional embeddings to the projected patches, followed by a final LayerNorm before the visual representations enter the backbone — enough to keep spatial structure available without a separate visual encoder \cite{gemma4technicalreport}.
+For visual input, the model operates on RGB patches of $48 \times 48 \times 3$ values. A large linear projection of roughly 35 million parameters takes the place of the Vision Transformer used elsewhere in the family, mapping the resulting representations directly into the language model's embedding space \cite{gemma4technicalreport}. Spatial information is preserved by adding two-dimensional coordinate-based positional embeddings to the projected patches, followed by a final LayerNorm before the visual representations enter the backbone, enough to keep spatial structure available without a separate visual encoder \cite{gemma4technicalreport}.
 The audio pathway follows the same principle. Raw audio, sampled at 16~kHz, is divided into 40~ms segments of 640 values each; the USM-based Conformer encoder used by the other Gemma 4 variants is removed entirely, and each 640-dimensional segment is projected directly into the language model's embedding space \cite{gemma4technicalreport}. No additional positional encoding is introduced for these acoustic representations, since their sequential order already preserves the temporal structure of the audio stream. Visual and acoustic information thus enter the same embedding space through modality-specific linear projections rather than through independent high-capacity encoders \cite{gemma4technicalreport}.
-Multimodal integration accordingly takes place directly inside the decoder-only Transformer: the projection modules establish representational compatibility between raw perceptual input and the language model's embedding space, and the Transformer itself carries out the subsequent interaction between perceptual and linguistic information — narrowing the separation between perceptual encoding and language processing found in more conventional multimodal systems \cite{gemma4technicalreport}.
+Multimodal integration accordingly takes place directly inside the decoder-only Transformer: the projection modules establish representational compatibility between raw perceptual input and the language model's embedding space, and the Transformer itself carries out the subsequent interaction between perceptual and linguistic information, narrowing the separation between perceptual encoding and language processing found in more conventional multimodal systems \cite{gemma4technicalreport}.
 The 12B model is dense and combines local and global self-attention, with five local attention blocks per global block. Local layers use RoPE, while global layers use $p$-RoPE with $p=0.25$; the architecture also reuses keys as values in global attention layers, reducing the memory footprint of the global KV
 
 \section{Preliminary Analysis as a Diagnostic Tool for Multimodal Assessment}
@@ -44,6 +44,12 @@ The \textbf{entity level} describes elements identified within the visual conten
 The \textbf{event level} captures actions, interactions, and state changes tied to specific temporal intervals. Because overlapping video segments may yield duplicate descriptions of the same event, the extracted outputs are consolidated to eliminate redundancy while preserving genuinely recurrent events. Temporal anchoring maintains a direct link between each event and the corresponding video segment providing supporting evidence.
 The \textbf{relation level} organizes extracted events according to temporal and inferential dependencies. Temporal relations encompass configurations such as \textit{before}, \textit{after}, \textit{during}, and \textit{overlap}, supporting event reordering and tracking changes across the video timeline.
 Causal relations are treated independently of temporal succession, simple temporal precedence does not inherently establish a cause--effect relationship. The analysis thus differentiates causal information directly supported by visual evidence from relations requiring further inference over events, states, or intentions. This distinction separates observable content from information introduced by the model's inferential process.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/preliminar_analysis_schema.png}
+    \caption{Conceptual schema of the preliminary analysis.}
+    \label{fig:preliminar_analysis_schema}
+\end{figure}
 The distinction between representational levels is crucial because questions assigned to the same nominal category can demand substantially different types and volumes of evidence. For instance, identifying an object's location within a single frame requires fundamentally different operations than determining its position following a sequence of movements. Similarly, recognizing an isolated event differs from reconstructing the sequence of multiple events or inferring causal links between them.
 To systematically categorize these distinctions, questions are analyzed along three operational dimensions: \textbf{spatial}, \textbf{temporal}, and \textbf{causal}. A unified three-level scale is applied across each dimension: Level 0 denotes cases where the required information can be directly retrieved, Level 1 entails integrating an explicit relation or a limited number of evidence units and Level~2 demands broader reconstruction across multiple events, temporal phases, state changes, or implicit relations. These criteria are summarized in Table~\ref{tab:question_classifications}.
 This classification reflects the informational requirements of the questions rather than their linguistic complexity. It accounts for properties such as the temporal distribution of evidence, the number of relevant evidence units, the presence of inter-event relations, and whether the required information is explicit or implicit.
@@ -289,3 +295,409 @@ normalized = {
 \end{lstlisting}
 utputs are saved per video in a dedicated \texttt{\_semantic.json} file alongside model metadata and window configuration settings. Window failures are logged in an \texttt{errors} field containing segment identifiers, temporal bounds, frame lists, and error descriptions, preserving optional raw responses for diagnostic review.
 Ultimately, this phase transforms temporally indexed visual evidence into structured local representations. Cross-window deduplication is omitted at this step to preserve local grounding, leaving element consolidation and full video reconstruction to subsequent analysis stages.
+
+\subsection*{Event Analysis}
+\subsubsection*{Spatial Relations}
+Spatial information captures entity configurations within the scene and tracks positional changes across localized visual observations. Unlike temporal relations, spatial features are extracted directly during the semantic representation phase while visual windows remain accessible.
+Spatial relations encode explicit configurations between entities or between an entity and scene elements. These encompass positional, proximity, containment, and orientation relations, including \textit{left of}, \textit{right of}, \textit{above}, \textit{below}, \textit{inside}, \textit{outside}, \textit{in front of}, \textit{behind}, \textit{near}, and \textit{on}. Because these descriptors tie to localized segments, a single entity pair may exhibit distinct spatial arrangements across different temporal intervals.
+Displacements and state transitions also drive spatial variations. A positional change combines spatial relations observed at different timestamps, corresponding actions, and recorded \texttt{state\_changes}, thereby distinguishing static scene layouts from dynamic rearrangements. Furthermore, event-dependent localization evaluates spatial configurations relative to an event interval (before, during, or after), isolating how previous actions alter an entity's final position.
+Methodologically, co-occurrence does not imply a spatial relation. The presence of two entities within the same temporal segment provides insufficient grounds to assume proximity, orientation, containment, or contact. A relation is retained only when explicitly captured in the semantic analysis. Currently, spatial evidence remains bound to local semantic descriptions. The event extraction stage leverages \texttt{spatial\_relations} for event reconstruction without constructing a global spatial graph.
+\subsubsection*{Temporal Relations}
+Temporal information is formalized during event extraction, where local semantic descriptions consolidate into a chronological timeline covering the full video. Each consolidated event retains a \texttt{start\_time} and an \texttt{end\_time} to define its temporal boundary and duration.
+Relations between events are explicitly modeled using pairs of \texttt{event\_id} references. Supported relation types include \textit{before}, \textit{after}, \textit{overlaps}, \textit{during}, and \textit{simultaneous}. Each relation links two existing events in the consolidated representation alongside an associated confidence score. The terms \textit{before} and \textit{after} define temporal precedence and sequence. \textit{During} denotes temporal containment, \textit{overlaps} indicates partial interval sharing, and \textit{simultaneous} denotes concurrent occurrences.
+This structure captures chronological succession, repetition, containment, and overlap across the video timeline while preserving distinct occurrences. Crucially, generation order within the JSON output does not constitute temporal evidence. Dependencies derive strictly from segment timestamps and relational metadata rather than model output sequence.
+The temporal schema adopts the following structure:
+\begin{lstlisting}[language=Python]
+"temporal_relations": [
+{
+"first_event": "E0001",
+"relation": "before|after|overlaps|during|simultaneous",
+"second_event": "E0002",
+"confidence": 0.0
+}
+]
+\end{lstlisting}
+This consolidated event structure serves as input for causal analysis. Chronological organization is kept distinct from causal inference, as temporal precedence does not establish a cause and effect relationship.
+\paragraph{Implementation Details}
+The event analysis is implemented as a second-stage transformation over the structured semantic representations produced by the previous phase. No visual input is processed again at this stage. For each model, the corresponding semantic output is loaded and used as the only source of information for event reconstruction. The event analyzer can reorganize and consolidate previously extracted information, but it cannot introduce evidence obtained from a new inspection of the video. This preserves the separation between perceptual extraction and subsequent structural reasoning.
+The input therefore consists of the temporally indexed semantic segments generated for the same model. Each segment retains its identifier and temporal boundaries together with the semantic categories extracted from the corresponding visual window. The information made available to the event analysis includes entities, actions, local events, spatial relations, state changes, temporal relations, and causal hypotheses:
+\begin{lstlisting}[language=Python]
+keys = (
+"segment_id",
+"start_time",
+"end_time",
+"entities",
+"actions",
+"events",
+"spatial_relations",
+"state_changes",
+"temporal_relations",
+"causal_hypotheses",
+)
+\end{lstlisting}
+These fields are jointly considered because an event may not be represented exclusively in the local \texttt{events} field. For instance, an action or an observable state transition may provide relevant information for reconstructing an event even when the local semantic description does not encode it as an independent event. The event analysis consequently operates over the complete local semantic representation rather than simply concatenating the previously extracted event lists.
+Before inference, the semantic segments are arranged according to their temporal position and serialized into a structured textual input. The model is explicitly instructed to treat this representation as a closed source of evidence. The common prompt constrains the reconstruction process through a set of rules designed to prevent additional perceptual or commonsense information from being introduced:
+\begin{lstlisting}[language=Python]
+
+* usa esclusivamente le informazioni presenti
+nell'analisi semantica
+* non inventare azioni, oggetti, intenzioni,
+emozioni o cause mancanti
+* unisci soltanto i duplicati causati dalla
+sovrapposizione delle finestre
+* mantieni separati eventi realmente distinti
+o ripetuti
+* ricava i tempi soltanto dai segmenti forniti
+\end{lstlisting}
+A central function of this phase is the consolidation of local descriptions produced by overlapping temporal windows. Since the semantic extraction uses 4-second windows with a 3-second stride, adjacent segments share part of the same visual evidence, and the same physical event can consequently appear in multiple semantic outputs. During event reconstruction, descriptions referring to the same occurrence are merged into a single event. The operation is intended to remove redundancy introduced by the preprocessing strategy rather than repetitions that genuinely occur in the video.
+The prompt explicitly enforces this distinction. Events with similar descriptions are not automatically treated as duplicates: two occurrences are merged only when their temporal context and supporting segments indicate that they represent the same event observed through overlapping windows. Repeated actions occurring at different moments, by contrast, remain represented as distinct events, so that repetition is preserved as a meaningful temporal property of the video.
+The consolidated representation follows a common JSON schema. Each reconstructed event contains a unique identifier, a concise description, temporal boundaries, the participants involved, the semantic segments supporting the event, the type of evidence, and a confidence value:
+\begin{lstlisting}[language=Python]
+{
+"event_id": "E0001",
+"description": "string",
+"start_time": 0.0,
+"end_time": 0.0,
+"participants": ["entity or participant"],
+"evidence_segments": ["segment_0001"],
+"evidence_type":
+"observed|inferred|uncertain",
+"confidence": 0.0
+}
+\end{lstlisting}
+The \texttt{event\_id} field provides a stable reference for subsequent relational analyses. Events are assigned progressive identifiers such as \texttt{E0001}, \texttt{E0002}, and \texttt{E0003}, associated with the consolidated chronological representation rather than inherited from the local semantic outputs, so that events can be referred to consistently after multiple local descriptions have been merged.
+Temporal localization is inherited from the semantic analysis. The event extractor does not estimate event boundaries by accessing the original frames. Instead, \texttt{start\_time} and \texttt{end\_time} must remain compatible with the temporal intervals of the semantic segments supporting the event. When the same occurrence is represented across multiple overlapping windows, its consolidated interval can reflect the temporal evidence distributed across those segments.
+The \texttt{evidence\_segments} field preserves provenance after consolidation. An event extracted from a single semantic window may contain only one segment identifier, whereas an event observed across overlapping windows may be associated with multiple segments:
+\begin{lstlisting}[language=Python]
+"evidence_segments": [
+"segment_0004",
+"segment_0005"
+]
+\end{lstlisting}
+Consolidation removes duplicated event descriptions without discarding the evidence from which they originated, which is essential for keeping the resulting event representation traceable. The event representation is therefore more compact than the semantic representation while remaining traceable to the local observations produced in the previous phase.
+Participants are derived from entities or participants already represented in the semantic analysis and are not generated as independent new entities during this stage. The event representation maintains the semantic continuity between entity extraction and event reconstruction in this way.
+The epistemic status of each event is represented through \texttt{evidence\_type}. The analysis distinguishes three values:
+\begin{lstlisting}[language=Python]
+"observed"
+"inferred"
+"uncertain"
+\end{lstlisting}
+\texttt{Observed} is used for events supported by information previously represented as directly visible. \texttt{Inferred} is reserved for information that already requires an inferential interpretation of the available semantic evidence. \texttt{Uncertain} represents cases in which the available evidence does not support a stronger classification. The event extraction stage is not intended to transform directly observed information into unsupported inference.
+Confidence is represented numerically in the $[0,1]$ interval and is subsequently normalized to ensure a consistent representation. Normalization also verifies the structural validity of the generated output before serialization.
+In addition to individual events, the same inference produces an initial global temporal organization. Temporal relations connect events through their newly assigned identifiers rather than through their textual descriptions:
+\begin{lstlisting}[language=Python]
+"temporal_relations": [
+{
+"first_event": "E0001",
+"relation":
+"before|after|overlaps|during|simultaneous",
+"second_event": "E0002",
+"confidence": 0.0
+}
+]
+\end{lstlisting}
+The allowed relations distinguish precedence, succession, containment, partial temporal overlap, and simultaneity. Their inclusion at this stage provides an explicit representation of the temporal structure that emerges once local events have been consolidated.
+Temporal relations cannot be derived solely from the order in which events are written in the generated JSON. The prompt explicitly requires temporal organization to depend on the intervals and relations available in the semantic representation. The order in which the text is generated is not treated as temporal evidence, and temporal succession is likewise kept distinct from causal interpretation.
+The model output is parsed as structured JSON rather than retained as free-form text. Responses are cleaned from possible Markdown delimiters, and the JSON object is extracted before decoding. The same robust parsing strategy used in the semantic stage allows malformed but recoverable outputs to be repaired when possible:
+\begin{lstlisting}[language=Python]
+text = (
+text.replace("`json", "")
+        .replace("`", "")
+.strip()
+)
+
+start = text.find("{")
+end = text.rfind("}")
+
+if start < 0 or end < start:
+raise ValueError(
+"La risposta non contiene un oggetto JSON"
+)
+
+payload = json.loads(
+text[start:end + 1]
+)
+\end{lstlisting}
+This phase primarily influences the granularity of representation. Semantic analysis captures evidence within specific, overlapping segments, whereas event analysis transforms these observations into a cohesive, event-centric depiction of the entire video. It eliminates redundancies from temporal overlap, retains authentically repeated instances, assigns consistent identifiers, preserves temporal and evidential origins, and sets up initial explicit connections among events, all without the need for additional visual input inspection.
+\subsection*{Causal Inference}
+Causal inference operates exclusively on the consolidated event representation, functioning independently from perceptual extraction. This phase receives no visual frames or raw multimodal inputs, relying solely on previously reconstructed events and their established \texttt{temporal\_relations}.
+Isolating causal reasoning prevents the recovery of omitted visual details or the insertion of unobserved events. Before processing, the event representation is pruned to essential fields: \texttt{event\_id}, description, temporal interval, participants, supporting semantic segments, \texttt{evidence\_type}, and confidence.
+The analysis evaluates four causal dependency types:
+\begin{itemize}
+  \item \texttt{causes}: One event directly generates the outcome represented by another.
+  \item \texttt{enables}: One event establishes the prerequisite conditions for a subsequent event.
+  \item \texttt{motivates}: Visual evidence supports an intentional or motivational link.
+  \item \texttt{prevents}: One event inhibits or counteracts another.
+\end{itemize}
+Each entry links a \texttt{cause\_event} to an \texttt{effect\_event}, optionally incorporating \texttt{supporting\_events} to substantiate the inference. No new events are instantiated during this phase.
+The resulting structure follows this schema:
+\begin{lstlisting}[language=Python]
+"causal_relations": [
+  {
+    "cause_event": "E0001",
+    "relation": "causes|enables|motivates|prevents",
+    "effect_event": "E0002",
+    "evidence_type": "direct|inferred|uncertain",
+    "supporting_events": ["E0003"],
+    "explanation": "string",
+    "confidence": 0.0
+  }
+]
+\end{lstlisting}
+The epistemic status of each relation is indicated by \texttt{evidence\_type}. Dependencies grounded in explicit physical interactions or state transitions use \texttt{direct}. Connections requiring contextual interpretation use \texttt{inferred}, while partially supported links receive \texttt{uncertain}. Motivational dependencies require explicit support within the event representation rather than speculative plausibility.
+Temporal succession does not imply causation. A chronological link such as \textit{before} or \textit{after} remains insufficient to establish a causal relation. Dependencies are introduced only when the semantic content explicitly supports causation, enabling, motivation, or prevention. Separating these stages ensures temporal ordering is not mistaken for causal evidence, preserving the distinction between extracted facts and inferential reasoning.
+
+\paragraph{Implementation Details}
+The causal inference stage operates as a text-only processing step over the consolidated event representation produced in the preceding phase. For each video, the pipeline loads the corresponding \texttt{\_events.json} file generated by the model. Crucially, no raw video frames, audio signals, transcriptions, or downstream text prompts are supplied. The causal analyzer thus operates exclusively on a closed representation of previously extracted visual information.
+Prior to inference, the event file is pruned via the \texttt{compact} function to retain only essential fields:
+\begin{lstlisting}[language=Python]
+def compact(payload):
+    return {
+        "id_video": payload.get("id_video"),
+        "events": [
+            {
+                "event_id": event.get("event_id"),
+                "description": event.get("description"),
+                "start_time": event.get("start_time"),
+                "end_time": event.get("end_time"),
+                "participants": event.get("participants", []),
+                "evidence_segments": event.get("evidence_segments", []),
+                "evidence_type": event.get("evidence_type"),
+                "confidence": event.get("confidence"),
+            }
+            for event in payload.get("events", [])
+        ],
+        "temporal_relations": payload.get("temporal_relations", []),
+    }
+\end{lstlisting}
+This filtering isolates causal reasoning from original perceptual features, requiring the model to derive dependencies strictly from consolidated events and their temporal layout.
+The implementation explicitly bounds the allowable relation types and evidence categories:
+\begin{lstlisting}[language=Python]
+ALLOWED_RELATIONS = {
+    "causes",
+    "enables",
+    "motivates",
+    "prevents",
+}
+ALLOWED_EVIDENCE = {
+    "direct",
+    "inferred",
+    "uncertain",
+}
+\end{lstlisting}
+These definitions differentiate direct cause-and-effect links (\texttt{causes}) from enabling conditions (\texttt{enables}), intentional drivers (\texttt{motivates}), or inhibitory actions (\texttt{prevents}).
+Inference is guided by a standardized prompt instructing the model to rely solely on the provided events and temporal relations. The prompt explicitly forbids treating simple chronological succession as causal evidence:
+\begin{lstlisting}[language=Python]
+
+usa esclusivamente gli eventi e le relazioni
+temporali presenti nell'input;
+non usare domande, caption, foil o altre
+informazioni esterne;
+la semplice successione temporale NON implica
+causalita;
+crea una relazione soltanto quando il contenuto
+degli eventi supporta una dipendenza causa-effetto,
+una condizione abilitante, una motivazione oppure
+una prevenzione;
+cause_event ed effect_event devono essere ID
+di eventi presenti nell'input;
+non inventare eventi, oggetti, intenzioni o cause
+non ricavabili dalla rappresentazione fornita;
+se non esiste evidenza sufficiente, restituisci
+causal_relations come lista vuota;
+\end{lstlisting}
+Relationships are classified by epistemic confidence: \texttt{direct} for explicit physical or state-change interactions, \texttt{inferred} for contextual or intentional deductions, and \texttt{uncertain} for weakly supported cues.
+Output formatting enforces a structured JSON schema:
+\begin{lstlisting}[language=Python]
+{
+"causal_relations": [
+{
+    "cause_event": "E0001",
+    "relation": "causes|enables|motivates|prevents",
+    "effect_event": "E0002",
+    "evidence_type": "direct|inferred|uncertain",
+    "supporting_events": ["E0003"],
+    "explanation": "string",
+    "confidence": 0.0
+}
+]
+}
+\end{lstlisting}
+The fields \texttt{cause\_event} and \texttt{effect\_event} reference existing event IDs, while \texttt{supporting\_events} optionally logs contextually relevant secondary events.
+Output parsing strips Markdown delimiters and decodes the outer JSON object. If formatting errors occur, \texttt{json\_repair} attempts structural recovery:
+\begin{lstlisting}[language=Python]
+text = text.replace("```json", "").replace("```", "").strip()
+start = text.find("{")
+end = text.rfind("}")
+candidate = text[start : end + 1]
+try:
+    return json.loads(candidate)
+except json.JSONDecodeError:
+    from json_repair import repair_json
+    return json.loads(repair_json(candidate))
+\end{lstlisting}
+If parsing fails entirely, a secondary generation call requests strictly formatted JSON without altering input prompts.
+
+A normalization step validates candidate relations against valid event IDs parsed from input:
+\begin{lstlisting}[language=Python]
+valid_ids = {
+    event.get("event_id")
+    for event in payload.get("events", [])
+    if event.get("event_id")
+}
+\end{lstlisting}
+
+Self-referential links and invalid event IDs are rejected:
+\begin{lstlisting}[language=Python]
+if (
+    cause not in valid_ids
+    or effect not in valid_ids
+    or cause == effect
+):
+    continue
+\end{lstlisting}
+
+Unrecognized relation types are discarded, while invalid evidence labels default to \texttt{inferred}:
+\begin{lstlisting}[language=Python]
+if rel not in ALLOWED_RELATIONS:
+    continue
+if evidence not in ALLOWED_EVIDENCE:
+    evidence = "inferred"
+\end{lstlisting}
+
+Duplicate relations are deduplicated using unique (cause, relation, effect) triplets:
+\begin{lstlisting}[language=Python]
+key = (cause, rel, effect)
+if key in seen:
+    continue
+seen.add(key)
+\end{lstlisting}
+
+Auxiliary \texttt{supporting\_events} entries are filtered to exclude invalid IDs or self-references:
+\begin{lstlisting}[language=Python]
+supporting = [
+    event_id
+    for event_id in relation.get("supporting_events", [])
+    if event_id in valid_ids and event_id not in {cause, effect}
+]
+\end{lstlisting}
+
+Confidence scores are bounded within the $[0, 1]$ interval:
+\begin{lstlisting}[language=Python]
+try:
+    confidence = float(relation.get("confidence", 0.0))
+except (TypeError, ValueError):
+    confidence = 0.0
+confidence = max(0.0, min(1.0, confidence))
+\end{lstlisting}
+Final outputs are serialized per video into \texttt{\_causal.json} files containing metadata, model parameters, and target relations. Unresolvable errors yield empty relation arrays rather than speculative fallbacks. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
