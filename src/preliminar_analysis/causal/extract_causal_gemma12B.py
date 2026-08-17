@@ -1,69 +1,16 @@
 from __future__ import annotations
 
 import os
-<<<<<<< HEAD
-os.environ["CUDA_VISIBLE_DEVICES"] = "3,4,1,2"
-os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
-os.environ["VLLM_USE_FLASHINFER"] = "0"
-os.environ["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
-
-os.environ["NCCL_P2P_DISABLE"] = "1"
-os.environ["NCCL_IB_DISABLE"] = "1"
-os.environ["VLLM_CUSTOM_ALL_REDUCE"] = "0"
-os.environ["NCCL_SOCKET_IFNAME"] = "lo"
-os.environ["VLLM_HOST_IP"] = "127.0.0.1"
-os.environ["VLLM_RPC_TIMEOUT"] = "300"
-
-=======
 
 # Stesse GPU, ma limitate a 2
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
->>>>>>> refs/remotes/origin/main
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
 
 import argparse
 import json
-<<<<<<< HEAD
-from pathlib import Path
-
-import torch
-from vllm import LLM, SamplingParams
-
-MODEL_ID = "google/gemma-4-12B-it"
-EVENT_DIR = Path("data/preliminar_analysis/event/gemma-127B")
-OUTPUT_DIR = Path("data/preliminar_analysis/causal/gemma-12B")
-
-ALLOWED_RELATIONS = {"causes", "enables", "motivates", "prevents"}
-ALLOWED_EVIDENCE = {"direct", "inferred", "uncertain"}
-
-
-def read_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def write_json(path: Path, data: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-
-
-def parse_json(text: str) -> dict:
-    text = text.replace("```json", "").replace("```", "").strip()
-    start, end = text.find("{"), text.rfind("}")
-    if start < 0 or end < start:
-        raise ValueError("La risposta non contiene un oggetto JSON.")
-    candidate = text[start:end + 1]
-    try:
-        return json.loads(candidate)
-    except json.JSONDecodeError:
-        from json_repair import repair_json
-        return json.loads(repair_json(candidate))
-
-
-def compact(payload: dict) -> dict:
-=======
 import traceback
 from pathlib import Path
 
@@ -162,29 +109,10 @@ def parse_json(text):
 
 
 def compact(payload):
->>>>>>> refs/remotes/origin/main
     return {
         "id_video": payload.get("id_video"),
         "events": [
             {
-<<<<<<< HEAD
-                "event_id": event.get("event_id"),
-                "description": event.get("description"),
-                "start_time": event.get("start_time"),
-                "end_time": event.get("end_time"),
-                "participants": event.get("participants", []),
-                "evidence_segments": event.get("evidence_segments", []),
-                "evidence_type": event.get("evidence_type"),
-                "confidence": event.get("confidence"),
-            }
-            for event in payload.get("events", [])
-        ],
-        "temporal_relations": payload.get("temporal_relations", []),
-    }
-
-
-def build_prompt(payload: dict) -> str:
-=======
                 "event_id": event.get(
                     "event_id"
                 ),
@@ -225,7 +153,6 @@ def build_prompt(payload: dict) -> str:
 
 
 def build_prompt(payload):
->>>>>>> refs/remotes/origin/main
     return f"""Analizza la rappresentazione consolidata degli eventi di un video e individua esclusivamente le relazioni causali supportate dagli eventi forniti.
 
 Regole:
@@ -239,12 +166,7 @@ Regole:
 - usa evidence_type="uncertain" solo quando esiste un indizio causale ma l'evidenza è debole;
 - supporting_events contiene soltanto eventuali ulteriori eventi necessari a sostenere la relazione;
 - non inventare eventi, oggetti, intenzioni o cause non ricavabili dalla rappresentazione fornita;
-<<<<<<< HEAD
-- se non esiste evidenza sufficiente, restituisci causal_relations come lista vuota;
-- restituisci ESCLUSIVAMENTE un oggetto JSON valido.
-=======
 - restituisci esclusivamente JSON valido.
->>>>>>> refs/remotes/origin/main
 
 Schema:
 {{
@@ -259,13 +181,8 @@ Schema:
       "explanation": "breve spiegazione basata esclusivamente sugli eventi forniti",
 =======
       "supporting_events": [],
-      "explanation": "string",
->>>>>>> refs/remotes/origin/main
-      "confidence": 0.0
-    }}
   ]
 }}
-
 INPUT:
 {json.dumps(payload, ensure_ascii=False, separators=(",", ":"))}"""
 
