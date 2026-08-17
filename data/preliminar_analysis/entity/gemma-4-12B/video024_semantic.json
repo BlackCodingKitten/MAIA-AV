@@ -1,0 +1,2556 @@
+{
+  "id_video": "video024",
+  "model": "google/gemma-4-12B-it",
+  "configuration": {
+    "window_seconds": 4.0,
+    "stride_seconds": 3.0,
+    "max_frames_per_window": 32,
+    "input_type": "ordered_dense_frames"
+  },
+  "numero_segmenti": 10,
+  "numero_errori": 0,
+  "segments": [
+    {
+      "segment_id": "segment_0000",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "input_frames": [
+        "dense_0000_t0000.000.jpg",
+        "dense_0001_t0000.250.jpg",
+        "dense_0002_t0000.500.jpg",
+        "dense_0003_t0000.750.jpg",
+        "dense_0004_t0001.000.jpg",
+        "dense_0005_t0001.250.jpg",
+        "dense_0006_t0001.500.jpg",
+        "dense_0007_t0001.750.jpg",
+        "dense_0008_t0002.000.jpg",
+        "dense_0009_t0002.250.jpg",
+        "dense_0010_t0002.500.jpg",
+        "dense_0011_t0002.750.jpg",
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": null,
+          "attributes": [
+            "capelli scuri",
+            "sorridente",
+            "maglia bianca con grafica",
+            "cerchietto con fiori"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "donna",
+          "role": null,
+          "attributes": [
+            "capelli scuri",
+            "sorridente"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "porta finestra",
+          "role": null,
+          "attributes": [
+            "con tende bianche",
+            "in fondo alla stanza"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "sorridere",
+          "actor": "e1",
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "sorridere",
+          "actor": "e2",
+          "object": null,
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0005_t0001.250.jpg",
+            "dense_0010_t0002.500.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "posa per una foto o video",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e3",
+          "start_time": 0.0,
+          "end_time": 3.75,
+          "evidence_frames": [
+            "dense_0000_t0000.000.jpg",
+            "dense_0015_t0003.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0001",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "input_frames": [
+        "dense_0012_t0003.000.jpg",
+        "dense_0013_t0003.250.jpg",
+        "dense_0014_t0003.500.jpg",
+        "dense_0015_t0003.750.jpg",
+        "dense_0016_t0004.000.jpg",
+        "dense_0017_t0004.250.jpg",
+        "dense_0018_t0004.500.jpg",
+        "dense_0019_t0004.750.jpg",
+        "dense_0020_t0005.000.jpg",
+        "dense_0021_t0005.250.jpg",
+        "dense_0022_t0005.500.jpg",
+        "dense_0023_t0005.750.jpg",
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "bambina",
+          "role": null,
+          "attributes": [
+            "capelli scuri",
+            "fiocchi rossi nei capelli",
+            "maglia bianca con grafica",
+            "sorridente"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "donna",
+          "role": null,
+          "attributes": [
+            "capelli scuri",
+            "sorridente"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "persona in background",
+          "role": null,
+          "attributes": [
+            "maglia grigia",
+            "pantaloni grigi",
+            "scarpe rosse",
+            "mascherina azzurra"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "sorridere",
+          "actor": "e1",
+          "object": null,
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "sorridere",
+          "actor": "e2",
+          "object": null,
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tenere una mascherina",
+          "actor": "e3",
+          "object": "mascherina",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "momento di gioia in famiglia",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e3",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 3.0,
+          "end_time": 6.75,
+          "evidence_frames": [
+            "dense_0012_t0003.000.jpg",
+            "dense_0013_t0003.250.jpg",
+            "dense_0014_t0003.500.jpg",
+            "dense_0015_t0003.750.jpg",
+            "dense_0016_t0004.000.jpg",
+            "dense_0017_t0004.250.jpg",
+            "dense_0018_t0004.500.jpg",
+            "dense_0019_t0004.750.jpg",
+            "dense_0020_t0005.000.jpg",
+            "dense_0021_t0005.250.jpg",
+            "dense_0022_t0005.500.jpg",
+            "dense_0023_t0005.750.jpg",
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0002",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "input_frames": [
+        "dense_0024_t0006.000.jpg",
+        "dense_0025_t0006.250.jpg",
+        "dense_0026_t0006.500.jpg",
+        "dense_0027_t0006.750.jpg",
+        "dense_0028_t0007.000.jpg",
+        "dense_0029_t0007.250.jpg",
+        "dense_0030_t0007.500.jpg",
+        "dense_0031_t0007.750.jpg",
+        "dense_0032_t0008.000.jpg",
+        "dense_0033_t0008.250.jpg",
+        "dense_0034_t0008.500.jpg",
+        "dense_0035_t0008.750.jpg",
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "persona adulta",
+          "attributes": [
+            "indossa una maglia grigia",
+            "indossa pantaloni grigi",
+            "indossa scarpe rosse",
+            "indossa una mascherina azzurra"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "indossa una maglia bianca con grafica",
+            "indossa pantaloni neri",
+            "ha capelli lunghi e scuri",
+            "indossa un fiocco rosso tra i capelli"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "danza con le mani alzate",
+          "actor": "e1",
+          "object": null,
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "si muove e guarda verso l'alto",
+          "actor": "e2",
+          "object": null,
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0025_t0006.250.jpg",
+            "dense_0026_t0006.500.jpg",
+            "dense_0027_t0006.750.jpg",
+            "dense_0028_t0007.000.jpg",
+            "dense_0029_t0007.250.jpg",
+            "dense_0030_t0007.500.jpg",
+            "dense_0031_t0007.750.jpg",
+            "dense_0032_t0008.000.jpg",
+            "dense_0033_t0008.250.jpg",
+            "dense_0034_t0008.500.jpg",
+            "dense_0035_t0008.750.jpg",
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        }
+      ],
+      "events": [
+        {
+          "description": "momento di danza e gioco in casa",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "dietro a",
+          "object": "e2",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "porta finestra",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "danza della donna",
+          "relation": "simultaneous",
+          "second_event": "movimento della bambina",
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 6.0,
+          "end_time": 9.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la donna sta ballando",
+          "effect": "la bambina reagisce muovendosi",
+          "start_time": 6.0,
+          "end_time": 9.75,
+          "evidence_frames": [
+            "dense_0024_t0006.000.jpg",
+            "dense_0039_t0009.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0003",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "input_frames": [
+        "dense_0036_t0009.000.jpg",
+        "dense_0037_t0009.250.jpg",
+        "dense_0038_t0009.500.jpg",
+        "dense_0039_t0009.750.jpg",
+        "dense_0040_t0010.000.jpg",
+        "dense_0041_t0010.250.jpg",
+        "dense_0042_t0010.500.jpg",
+        "dense_0043_t0010.750.jpg",
+        "dense_0044_t0011.000.jpg",
+        "dense_0045_t0011.250.jpg",
+        "dense_0046_t0011.500.jpg",
+        "dense_0047_t0011.750.jpg",
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "persona principale",
+          "attributes": [
+            "capelli castani",
+            "mascherina azzurra",
+            "maglione grigio",
+            "pantaloni grigi",
+            "scarpe rosse"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambino",
+          "role": "persona secondaria",
+          "attributes": [
+            "capelli scuri",
+            "maglione bianco",
+            "pantaloni neri"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "ballare",
+          "actor": "e1",
+          "object": null,
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0037_t0009.250.jpg",
+            "dense_0038_t0009.500.jpg",
+            "dense_0039_t0009.750.jpg",
+            "dense_0040_t0010.000.jpg",
+            "dense_0041_t0010.250.jpg",
+            "dense_0042_t0010.500.jpg",
+            "dense_0043_t0010.750.jpg",
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "toccare la schiena",
+          "actor": "e2",
+          "object": "e1",
+          "start_time": 11.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0044_t0011.000.jpg",
+            "dense_0045_t0011.250.jpg",
+            "dense_0046_t0011.500.jpg",
+            "dense_0047_t0011.750.jpg",
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "momento di gioco e ballo in casa",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "finestra con tende",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 9.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0036_t0009.000.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "ballare",
+          "relation": "simultaneous",
+          "second_event": "toccare la schiena",
+          "evidence_frames": [
+            "dense_0044_t0011.000.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9,
+          "start_time": 9.0,
+          "end_time": 12.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "interazione ludica",
+          "effect": "il bambino tocca la schiena della donna mentre ballano",
+          "start_time": 11.0,
+          "end_time": 12.75,
+          "evidence_frames": [
+            "dense_0044_t0011.000.jpg",
+            "dense_0051_t0012.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0004",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "input_frames": [
+        "dense_0048_t0012.000.jpg",
+        "dense_0049_t0012.250.jpg",
+        "dense_0050_t0012.500.jpg",
+        "dense_0051_t0012.750.jpg",
+        "dense_0052_t0013.000.jpg",
+        "dense_0053_t0013.250.jpg",
+        "dense_0054_t0013.500.jpg",
+        "dense_0055_t0013.750.jpg",
+        "dense_0056_t0014.000.jpg",
+        "dense_0057_t0014.250.jpg",
+        "dense_0058_t0014.500.jpg",
+        "dense_0059_t0014.750.jpg",
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "protagonista",
+          "attributes": [
+            "capelli ricci castani",
+            "mascherina azzurra",
+            "maglione grigio chiaro",
+            "pantaloni scuri"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambino",
+          "role": "osservatore",
+          "attributes": [
+            "maglietta bianca con scritta",
+            "pantaloni scuri"
+          ],
+          "start_time": 14.5,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "actions": [
+        {
+          "description": "muovere le mani in avanti",
+          "actor": "e1",
+          "object": null,
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "camminare verso la destra",
+          "actor": "e1",
+          "object": null,
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "la donna cammina e gesticola",
+          "participants": [
+            "e1"
+          ],
+          "start_time": 12.0,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0048_t0012.000.jpg",
+            "dense_0049_t0012.250.jpg",
+            "dense_0050_t0012.500.jpg",
+            "dense_0051_t0012.750.jpg",
+            "dense_0052_t0013.000.jpg",
+            "dense_0053_t0013.250.jpg",
+            "dense_0054_t0013.500.jpg",
+            "dense_0055_t0013.750.jpg",
+            "dense_0056_t0014.000.jpg",
+            "dense_0057_t0014.250.jpg",
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e2",
+          "relation": "dietro a",
+          "object": "e1",
+          "start_time": 14.5,
+          "end_time": 15.75,
+          "evidence_frames": [
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "la donna cammina e gesticola",
+          "relation": "overlaps",
+          "second_event": "il bambino appare dietro di lei",
+          "evidence_frames": [
+            "dense_0058_t0014.500.jpg",
+            "dense_0059_t0014.750.jpg",
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 12.0,
+          "end_time": 15.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0005",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "input_frames": [
+        "dense_0060_t0015.000.jpg",
+        "dense_0061_t0015.250.jpg",
+        "dense_0062_t0015.500.jpg",
+        "dense_0063_t0015.750.jpg",
+        "dense_0064_t0016.000.jpg",
+        "dense_0065_t0016.250.jpg",
+        "dense_0066_t0016.500.jpg",
+        "dense_0067_t0016.750.jpg",
+        "dense_0068_t0017.000.jpg",
+        "dense_0069_t0017.250.jpg",
+        "dense_0070_t0017.500.jpg",
+        "dense_0071_t0017.750.jpg",
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "protagonista",
+          "attributes": [
+            "capelli castani",
+            "mascherina azzurra",
+            "maglione grigio",
+            "pantaloni scuri",
+            "pantofole rosse"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "figura secondaria",
+          "attributes": [
+            "maglione chiaro",
+            "pantaloni scuri",
+            "scarpe bianche"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "scrivania",
+          "role": null,
+          "attributes": [
+            "legno"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "balla e muove le braccia",
+          "actor": "e1",
+          "object": null,
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "si muove e balla",
+          "actor": "e2",
+          "object": null,
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "si sporge in avanti",
+          "actor": "e1",
+          "object": null,
+          "start_time": 17.0,
+          "end_time": 18.0,
+          "evidence_frames": [
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "momento di ballo in casa",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 18.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "ballo della donna",
+          "relation": "simultaneous",
+          "second_event": "ballo della bambina",
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 15.0,
+          "end_time": 18.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "musica o gioco",
+          "effect": "ballo di e1 ed e2",
+          "start_time": 15.0,
+          "end_time": 18.75,
+          "evidence_frames": [
+            "dense_0060_t0015.000.jpg",
+            "dense_0061_t0015.250.jpg",
+            "dense_0062_t0015.500.jpg",
+            "dense_0063_t0015.750.jpg",
+            "dense_0064_t0016.000.jpg",
+            "dense_0065_t0016.250.jpg",
+            "dense_0066_t0016.500.jpg",
+            "dense_0067_t0016.750.jpg",
+            "dense_0068_t0017.000.jpg",
+            "dense_0069_t0017.250.jpg",
+            "dense_0070_t0017.500.jpg",
+            "dense_0071_t0017.750.jpg",
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0006",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "input_frames": [
+        "dense_0072_t0018.000.jpg",
+        "dense_0073_t0018.250.jpg",
+        "dense_0074_t0018.500.jpg",
+        "dense_0075_t0018.750.jpg",
+        "dense_0076_t0019.000.jpg",
+        "dense_0077_t0019.250.jpg",
+        "dense_0078_t0019.500.jpg",
+        "dense_0079_t0019.750.jpg",
+        "dense_0080_t0020.000.jpg",
+        "dense_0081_t0020.250.jpg",
+        "dense_0082_t0020.500.jpg",
+        "dense_0083_t0020.750.jpg",
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "persona adulta",
+          "attributes": [
+            "capelli ricci",
+            "maglia grigia",
+            "pantaloni scuri",
+            "mascherina azzurra",
+            "pantofole rosse"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambina",
+          "attributes": [
+            "maglia chiara",
+            "pantaloni scuri",
+            "scarpe bianche"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "la donna si muove e si piega leggermente in avanti",
+          "actor": "e1",
+          "object": null,
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "la bambina si muove e si appoggia a un mobile",
+          "actor": "e2",
+          "object": "mobile",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra donna e bambina in un ambiente domestico",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "mobile",
+          "start_time": 18.0,
+          "end_time": 21.75,
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "la donna si muove",
+          "relation": "simultaneous",
+          "second_event": "la bambina si muove",
+          "evidence_frames": [
+            "dense_0072_t0018.000.jpg",
+            "dense_0073_t0018.250.jpg",
+            "dense_0074_t0018.500.jpg",
+            "dense_0075_t0018.750.jpg",
+            "dense_0076_t0019.000.jpg",
+            "dense_0077_t0019.250.jpg",
+            "dense_0078_t0019.500.jpg",
+            "dense_0079_t0019.750.jpg",
+            "dense_0080_t0020.000.jpg",
+            "dense_0081_t0020.250.jpg",
+            "dense_0082_t0020.500.jpg",
+            "dense_0083_t0020.750.jpg",
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8,
+          "start_time": 18.0,
+          "end_time": 21.75
+        }
+      ],
+      "causal_hypotheses": []
+    },
+    {
+      "segment_id": "segment_0007",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "input_frames": [
+        "dense_0084_t0021.000.jpg",
+        "dense_0085_t0021.250.jpg",
+        "dense_0086_t0021.500.jpg",
+        "dense_0087_t0021.750.jpg",
+        "dense_0088_t0022.000.jpg",
+        "dense_0089_t0022.250.jpg",
+        "dense_0090_t0022.500.jpg",
+        "dense_0091_t0022.750.jpg",
+        "dense_0092_t0023.000.jpg",
+        "dense_0093_t0023.250.jpg",
+        "dense_0094_t0023.500.jpg",
+        "dense_0095_t0023.750.jpg",
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "persona in primo piano",
+          "attributes": [
+            "capelli ricci castani",
+            "maglia grigia",
+            "pantaloni scuri",
+            "pantofole rosse"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "persona sullo sfondo",
+          "attributes": [
+            "maglia chiara con stampa",
+            "pantaloni neri",
+            "scarpe bianche"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "armadio",
+          "role": null,
+          "attributes": [
+            "legno chiaro"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "la donna si piega in avanti",
+          "actor": "e1",
+          "object": null,
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "la bambina si muove e sorride",
+          "actor": "e2",
+          "object": null,
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione ludica tra donna e bambina",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.8
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "la donna si piega in avanti",
+          "relation": "simultaneous",
+          "second_event": "la bambina si muove e sorride",
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9,
+          "start_time": 21.0,
+          "end_time": 24.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la donna si piega in avanti per interagire",
+          "effect": "la bambina reagisce sorridendo e muovendosi",
+          "start_time": 21.0,
+          "end_time": 24.75,
+          "evidence_frames": [
+            "dense_0084_t0021.000.jpg",
+            "dense_0085_t0021.250.jpg",
+            "dense_0086_t0021.500.jpg",
+            "dense_0087_t0021.750.jpg",
+            "dense_0088_t0022.000.jpg",
+            "dense_0089_t0022.250.jpg",
+            "dense_0090_t0022.500.jpg",
+            "dense_0091_t0022.750.jpg",
+            "dense_0092_t0023.000.jpg",
+            "dense_0093_t0023.250.jpg",
+            "dense_0094_t0023.500.jpg",
+            "dense_0095_t0023.750.jpg",
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0008",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "input_frames": [
+        "dense_0096_t0024.000.jpg",
+        "dense_0097_t0024.250.jpg",
+        "dense_0098_t0024.500.jpg",
+        "dense_0099_t0024.750.jpg",
+        "dense_0100_t0025.000.jpg",
+        "dense_0101_t0025.250.jpg",
+        "dense_0102_t0025.500.jpg",
+        "dense_0103_t0025.750.jpg",
+        "dense_0104_t0026.000.jpg",
+        "dense_0105_t0026.250.jpg",
+        "dense_0106_t0026.500.jpg",
+        "dense_0107_t0026.750.jpg",
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "adulto",
+          "attributes": [
+            "capelli castani",
+            "maglia grigia a maniche lunghe",
+            "pantaloni grigi",
+            "pantofole rosse"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "bambino",
+          "attributes": [
+            "capelli scuri",
+            "maglia chiara",
+            "pantaloni scuri",
+            "scarpe bianche"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "letto",
+          "role": null,
+          "attributes": [
+            "struttura in legno",
+            "coperta a quadri verdi e neri"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "actions": [
+        {
+          "description": "la donna si piega in avanti e si muove verso il letto",
+          "actor": "e1",
+          "object": null,
+          "start_time": 24.0,
+          "end_time": 26.0,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "la bambina cammina e si muove verso la donna",
+          "actor": "e2",
+          "object": null,
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0097_t0024.250.jpg",
+            "dense_0098_t0024.500.jpg",
+            "dense_0099_t0024.750.jpg",
+            "dense_0100_t0025.000.jpg",
+            "dense_0101_t0025.250.jpg",
+            "dense_0102_t0025.500.jpg",
+            "dense_0103_t0025.750.jpg",
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        },
+        {
+          "description": "la donna si alza e si gira verso la bambina",
+          "actor": "e1",
+          "object": "e2",
+          "start_time": 26.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0104_t0026.000.jpg",
+            "dense_0105_t0026.250.jpg",
+            "dense_0106_t0026.500.jpg",
+            "dense_0107_t0026.750.jpg",
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "events": [
+        {
+          "description": "interazione tra la donna e la bambina in una stanza",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "vicino a",
+          "object": "e3",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "e1",
+          "start_time": 26.5,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0106_t0026.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "state_changes": [
+        {
+          "entity": "e1",
+          "before": "piegata in avanti",
+          "after": "eretta e rivolta verso la bambina",
+          "start_time": 24.0,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "temporal_relations": [
+        {
+          "first_event": "la donna si piega in avanti",
+          "relation": "before",
+          "second_event": "la donna si alza e si gira",
+          "evidence_frames": [
+            "dense_0096_t0024.000.jpg",
+            "dense_0108_t0027.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 24.0,
+          "end_time": 27.75
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "la donna si alza e si gira",
+          "effect": "la bambina si ferma o reagisce",
+          "start_time": 26.5,
+          "end_time": 27.75,
+          "evidence_frames": [
+            "dense_0106_t0026.500.jpg",
+            "dense_0111_t0027.750.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "segment_id": "segment_0009",
+      "start_time": 27.0,
+      "end_time": 29.0,
+      "input_frames": [
+        "dense_0108_t0027.000.jpg",
+        "dense_0109_t0027.250.jpg",
+        "dense_0110_t0027.500.jpg",
+        "dense_0111_t0027.750.jpg",
+        "dense_0112_t0028.000.jpg",
+        "dense_0113_t0028.250.jpg",
+        "dense_0114_t0028.500.jpg",
+        "dense_0115_t0028.750.jpg",
+        "dense_0116_t0029.000.jpg"
+      ],
+      "entities": [
+        {
+          "entity_id": "e1",
+          "label": "donna",
+          "role": "adulta",
+          "attributes": [
+            "capelli castani",
+            "maglia grigia",
+            "pantaloni grigi",
+            "pantofole rosse"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e2",
+          "label": "bambina",
+          "role": "figlia",
+          "attributes": [
+            "maglia chiara con stampa",
+            "pantaloni scuri",
+            "scarpe bianche"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "entity_id": "e3",
+          "label": "oggetto",
+          "role": null,
+          "attributes": [
+            "di colore azzurro"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "actions": [
+        {
+          "description": "sorride e ride",
+          "actor": "e1",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "tiene in mano un oggetto azzurro",
+          "actor": "e1",
+          "object": "e3",
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "description": "sta in piedi e guarda verso la telecamera",
+          "actor": "e2",
+          "object": null,
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "events": [
+        {
+          "description": "momento di gioia familiare",
+          "participants": [
+            "e1",
+            "e2"
+          ],
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 0.9
+        }
+      ],
+      "spatial_relations": [
+        {
+          "subject": "e1",
+          "relation": "davanti a",
+          "object": "e2",
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        },
+        {
+          "subject": "e2",
+          "relation": "vicino a",
+          "object": "una porta finestra",
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0
+        }
+      ],
+      "state_changes": [],
+      "temporal_relations": [
+        {
+          "first_event": "e1 sorride",
+          "relation": "simultaneous",
+          "second_event": "e2 guarda la telecamera",
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "observed",
+          "confidence": 1.0,
+          "start_time": 27.0,
+          "end_time": 29.0
+        }
+      ],
+      "causal_hypotheses": [
+        {
+          "cause": "interazione tra e1 ed e2",
+          "effect": "e1 ride",
+          "start_time": 27.0,
+          "end_time": 29.0,
+          "evidence_frames": [
+            "dense_0108_t0027.000.jpg",
+            "dense_0109_t0027.250.jpg",
+            "dense_0110_t0027.500.jpg",
+            "dense_0111_t0027.750.jpg",
+            "dense_0112_t0028.000.jpg",
+            "dense_0113_t0028.250.jpg",
+            "dense_0114_t0028.500.jpg",
+            "dense_0115_t0028.750.jpg",
+            "dense_0116_t0029.000.jpg"
+          ],
+          "evidence_type": "inferred",
+          "confidence": 0.8
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
