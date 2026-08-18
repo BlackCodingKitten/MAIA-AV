@@ -586,29 +586,6 @@ Crucially, \textbf{finalization does not constitute an answer to any \acs{VSV} q
 The proficiency assessment itself is formulated as a Natural Language Inference task. The finalized visual representation acts as the \textbf{premise}, while the caption and the corresponding foil are evaluated independently as alternative hypotheses. GPT-4o is employed exclusively as an NLI judge, not to answer the original question, generate a new description of the video, or select directly between the two alternatives. Its role is restricted to determining the logical relation between the evidence contained in the finalized representation and each hypothesis.
 For both caption and foil, the judge assigns one of three labels: \texttt{entailment}, \texttt{contradiction}, or \texttt{neutral}. \texttt{Entailment} indicates that the hypothesis is supported by the available visual representation. \texttt{Contradiction} indicates that it is incompatible with the represented evidence. \texttt{Neutral} is used when the available information is insufficient to establish either relation, so that missing evidence is not interpreted as contradiction and absence of information is not treated as negative evidence.
 The caption and foil are judged separately. A caption--foil pair receives \texttt{PASS} only when the finalized representation entails the caption and contradicts the foil. Every other combination produces \texttt{NOT PASS}.
-\begin{table}[htbp]
-\centering
-\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{0.8\textwidth}{|X|X|l|}
-\hline
-\rowcolor{EcoForestGreen}
-\textcolor{white}{\textbf{Caption}} &
-\textcolor{white}{\textbf{Foil}} &
-\textcolor{white}{\textbf{Outcome}} \\
-\hline
-Entailment &
-Contradiction &
-\texttt{PASS} \\
-\hline
-Any other combination &
-&
-\texttt{NOT PASS} \\
-\hline
-\end{tabularx}
-\caption{Decision rule for the NLI-based visual proficiency assessment.}
-\label{tab:nli_proficiency_rule}
-\end{table}
 This rule adopts a deliberately conservative criterion. Entailment of the caption alone is insufficient, since the same representation must also provide enough evidence to reject the minimally contrastive foil. Contradiction of the foil, in turn, cannot compensate for a caption classified as \texttt{neutral}. A model is therefore considered proficient on a given pair only when its visual representation supports both sides of the required distinction.
 The procedure is repeated independently for the four caption--foil pairs associated with each question. Question-level proficiency requires consistency across the complete set: a question receives \texttt{PASS} only when all four pairs satisfy the pair-level criterion, and is classified as \texttt{NOT PASS} if at least one pair fails. This strict aggregation reduces the influence of individual linguistic formulations and requires the recovered visual evidence to remain sufficient across multiple, minimally different realizations of the same underlying item.
 For each pair, the procedure records the classification assigned to the caption, the classification assigned to the foil, and the resulting binary decision, which are then aggregated into the final proficiency label associated with the question. The resulting measure is accordingly distinct from conventional question-answering accuracy: rather than evaluating whether the model can generate or select the correct answer after being exposed to the question, it evaluates whether the information independently recovered from the visual channel is sufficiently complete and discriminative to support the correct statement while rejecting its minimally contrastive alternative, connecting question-independent visual analysis to the competence-oriented evaluation objective of the preliminary analysis.
