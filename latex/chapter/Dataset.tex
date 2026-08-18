@@ -130,7 +130,7 @@ When an explicit destination path is omitted, the function retains the base file
         else Path(output_path)
     )
 \end{lstlisting}
-This mapping strategy guarantees cross-modal alignment across representations (e.g., \texttt{video001.mp4} yields \texttt{video001.mp3}).
+This mapping strategy guarantees cross-modal alignment across representations (e.g., \texttt{vi-\\deo001.mp4} yields \texttt{video001.mp3}).
 Prior to invoking FFmpeg, parent directory existence is enforced:
 \begin{lstlisting}[language=Python, xleftmargin=2em]
     output_path.parent.mkdir(
@@ -337,14 +337,14 @@ Across all categories, the system prompt assigns a uniform role:
 Subsequent instructions vary by targeted semantic dimension. For \textbf{spatial} questions, foil generation alters strictly the entity's position or location:
 \begin{quote}
 \small
-\texttt{Data una caption in italiano (C) riguardante la posizione o la localizzazione di qualcuno o qualcosa, il tuo compito è creare il suo foil (F) modificando solo l'informazione spaziale.}\\
+\texttt{Data una caption in italiano (C) riguardante la posizione o la loca-\\lizzazione di qualcuno o qualcosa, il tuo compito è creare il suo foil (F) modificando solo l'informazione spaziale.}\\
 \texttt{Non aggiungere altre informazioni rispetto a quanto dichiarato in C.}\footnote{English translation: \textit{Given an Italian caption (C) regarding the position or location of someone or something, your task is to create its foil (F) by changing only the spatial information. Don't add other information with respect to what is stated in C.}}
 \end{quote}
 An accompanying example relocates a woman standing in a poppy field to a school setting. Preserving the subject and surrounding text isolates spatial information as the sole determinant of truth value.
 For \textbf{temporal} questions, instructions dictate altering the temporal relationships within the caption:
 \begin{quote}
 \small
-\texttt{Data una caption in italiano (C) riguardante gli eventi e quando avvengono, il tuo compito è creare il suo foil (F) modificando solo l'informazione temporale.}\\
+\texttt{Data una caption in italiano (C) riguardante gli eventi e quando av-\\vengono, il tuo compito è creare il suo foil (F) modificando solo \\l'informazione temporale.}\\
 \texttt{Non aggiungere altre informazioni rispetto a quanto dichiarato in C.}\footnote{English translation: \textit{Given an Italian caption (C) regarding events and when they happen, your task is to create its foil (F) by changing only the temporal information. Don't add other information with respect to what is stated in C.}}
 \end{quote}
 An illustrative example converts the chronological order of two events into an alternative sequence, preserving core semantic content while modifying event timing or order.
@@ -356,7 +356,7 @@ For \textbf{causal} questions, foil construction alters the cause-and-effect rel
 \end{quote}
 The provided example retains the principal action, such as a person beginning to run, while altering solely the underlying cause. This focuses the contrast on the causal link rather than arbitrary scene modifications. In the final task setup, option ordering is randomized, preventing positional bias and ensuring performance metrics reflect semantic comprehension rather than structural pattern exploitation.
 \paragraph{Implementation Details}
-The \textit{caption--foil} generation pipeline is implemented in \texttt{caption\_foil.py}. The script relies on \texttt{pandas} for tabular data processing and the OpenAI Python client for model inference. Both caption and foil generation utilize \texttt{gpt-4o-2024-08-06}, with authentication managed via the \texttt{OPENAI\_API\_KEY} environment variable. Input and output paths, along with the expected annotation structure, are defined at initialization:
+The \textit{caption--foil} generation pipeline is implemented in \texttt{cap-\\tion\_foil.py}. The script relies on \texttt{pandas} for tabular data processing and the OpenAI Python client for model inference. Both caption and foil generation utilize \\\texttt{gpt-4o-2024-08-06}, with authentication managed via the \texttt{OPENAI\_API\_KEY} environment variable. Input and output paths, along with the expected annotation structure, are defined at initialization:
 \begin{lstlisting}[language=Python]
 MODEL = "gpt-4o-2024-08-06"
 RAW_ANSWERS_DIR = Path("data/vsv/raw_human_answers")

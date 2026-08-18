@@ -56,10 +56,10 @@ The preliminary analysis thus establishes \textit{what can be seen} prior to eva
     \label{fig:preliminar_analysis_schema}
 \end{figure}
 Overall, the preliminary analysis transforms \textit{MAIA-AV} from a purely result-driven evaluation into a diagnostic, competence-oriented framework. Final performance can thus be analyzed across specific sub-capabilities, including entity recognition, event identification, temporal integration, spatial reconstruction, and causal inference, disentangling evidence availability failures from errors in downstream selection or integration during the \acs{VSV} task.
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \small
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{0.9}
     \begin{tabularx}{\textwidth}{|l|X|X|X|}
         \hline
         \rowcolor{EcoForestGreen}
@@ -94,7 +94,7 @@ Overall, the preliminary analysis transforms \textit{MAIA-AV} from a purely resu
 Prior to the entity extraction phase, each video is preprocessed by dividing it into four-second temporal windows with a stride of three seconds. Consecutive spans share one second of visual content. This overlap reduces the risk that an action or state change occurring near the boundary between two segments is only partially observed, while maintaining shared context across consecutive observations without altering the chronological order of the video.
 For each segment, the \texttt{start\_time} and \texttt{end\_time} are preserved, keeping each segment associated with its original temporal position in the video. This information is maintained throughout all subsequent stages of the pipeline, allowing observations to be reconnected with their exact position in the video.
 The windowing process serves exclusively to provide temporal indexing and structure visual evidence, leaving content and semantic interpretation to subsequent phases. Redundant information is deliberately retained at this stage to prioritize continuity of evidence, with redundancy resolution deferred to the output consolidation step. The preprocessing phase ultimately yields an ordered sequence of temporally localized visual units that serve as the shared foundation for all subsequent stages of analysis.
-\paragraph{Implementation Details} The preprocessing stage is implemented in \texttt{video\_preprocessing.py} to convert each source video into a set of temporally indexed visual representations. The script first retrieves core metadata via \texttt{ffprobe}, including duration, frame rate, spatial resolution, codec, and audio stream presence. Although audio metadata is recorded, the acoustic signal is excluded from visual representation construction. Frames are extracted using OpenCV by seeking directly to target temporal positions, and each is saved as a JPEG image with its original timestamp embedded in both the filename and the JSON manifest, preserving temporal provenance independently of downstream processing.
+\paragraph{Implementation Details} The preprocessing stage is implemented in \texttt{video\_pre-\\processing.py} to convert each source video into a set of temporally indexed visual representations. The script first retrieves core metadata via \texttt{ffprobe}, including duration, frame rate, spatial resolution, codec, and audio stream presence. Although audio metadata is recorded, the acoustic signal is excluded from visual representation construction. Frames are extracted using OpenCV by seeking directly to target temporal positions, and each is saved as a JPEG image with its original timestamp embedded in both the filename and the JSON manifest, preserving temporal provenance independently of downstream processing.
 A core output of the script is the dense visual stream, sampled by default at 4 FPS:
 \begin{lstlisting}[language=Python]
 parser.add_argument("--dense-fps", type=float, default=4.0)
@@ -124,10 +124,10 @@ For each window, the representation spans seven semantic categories:
 The distinction between observed and inferred evidence is preserved through the \textit{evidence\_type} field, accompanied by a confidence score between 0 and 1. Each element also includes an \textit{evidence\_frames} list identifying supporting frames. During output normalization, frame references are retained only if they fall within the processed window, and generated temporal intervals are similarly bounded by segment limits, keeping semantic representations strictly aligned with their supporting visual evidence.
 Categories may remain empty if a model detects insufficient evidence within a segment. At the segment level, the pipeline preserves \textit{segment\_id}, \textit{start\_time}, \textit{end\_time}, and \textit{input\_frames}.
 At this initial stage, a unified global video description is not yet constructed. Because consecutive windows overlap, identical entities, actions, or events may be extracted repeatedly across adjacent segments. This redundancy is intentionally preserved during extraction to maintain a direct mapping between each prediction and its supporting local evidence, leaving entity reconciliation and global temporal aggregation to subsequent pipeline stages.
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \small
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{0.9}
 \begin{tabularx}{\textwidth}{|l|X|}
     \hline
     \rowcolor{EcoForestGreen}
@@ -578,7 +578,7 @@ except (TypeError, ValueError):
 confidence = max(0.0, min(1.0, confidence))
 \end{lstlisting}
 Final outputs are serialized per video into \texttt{\_causal.json} files containing metadata, model parameters, and the resulting relations. Unresolvable errors yield empty relation arrays rather than speculative fallbacks.
-\subsection*{Representation Integration and NLI-Based Visual Proficiency Assessment}
+\subsection*{ NLI-Based Visual Proficiency Assessment}
 The final stage of the preliminary analysis integrates the information produced at the semantic, event, temporal, spatial, and causal levels into a consolidated representation of the visual evidence recovered by each model. The procedure operates exclusively on the outputs generated during the preceding phases, preserving the separation between visual analysis and question-dependent evaluation without performing any further inspection of the video.
 The integrated representation combines complementary information produced at different levels of the pipeline. Entity descriptions, spatial relations, and state changes originate from the semantic analysis. Consolidated events provide a global event-level representation together with their participants, temporal boundaries, supporting segments, evidence type, and confidence. Temporal relations connect these events through their identifiers, while causal relations encode the dependencies established during causal inference. These components are treated not as independent observations, but as progressively structured views of the same visual evidence.
 Finalization does not amount to a simple concatenation of all intermediate outputs. Redundancies introduced by overlapping temporal windows have already been resolved during event consolidation, where multiple descriptions of the same occurrence are merged while genuinely repeated events remain distinct, and duplicated or structurally invalid causal relations have already been removed during causal normalization. The epistemic status assigned during the previous stages is preserved as well: information classified as \texttt{observed}, \texttt{inferred}, or \texttt{uncertain} remains distinguishable in the consolidated representation, together with the corresponding confidence values. Uncertain information is not automatically promoted to positive evidence, nor are conflicting descriptions resolved through an additional interpretation introduced at this stage. The final representation thus captures the entities, events, spatial configurations, temporal organization, and causal dependencies recovered by the model, without expanding the evidence beyond what the visual analysis actually produced.
