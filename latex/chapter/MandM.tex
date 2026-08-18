@@ -2,19 +2,19 @@
 \subsection*{Qwen Family}
 The Qwen models considered in this work share an omnimodal architecture designed to process heterogeneous information within a unified computational framework. Both Qwen2.5-Omni and Qwen3-Omni accept textual, visual, and acoustic inputs, with modality-specific encoders transforming raw signals into representations compatible with a shared language-model backbone. Multimodal integration takes place after perceptual encoding, and particular attention is paid throughout the family to the temporal coordination of audio and video \cite{qwen25omni,qwen3omni}.
 \subsubsection*{Qwen2.5-Omni-3B}
-Qwen2.5-Omni introduces the \textit{Thinker--Talker} architecture, separating multimodal understanding from speech generation. The \textit{Thinker} processes the input modalities and produces textual representations and responses, while the \textit{Talker} takes the Thinker's internal representations and generates speech from them. Perceptual understanding and spoken generation thus remain functionally distinct components of an otherwise end-to-end pipeline \cite{qwen25omni}.
+Qwen2.5-Omni introduces the \textit{Thinker-Talker} architecture, separating multimodal understanding from speech generation. The \textit{Thinker} processes the input modalities and produces textual representations and responses, while the \textit{Talker} takes the Thinker's internal representations and generates speech from them. Perceptual understanding and spoken generation thus remain functionally distinct components of an otherwise end-to-end pipeline \cite{qwen25omni}.
 Text is processed through the Qwen tokenizer. Audio is resampled to 16~kHz and converted into a 128-channel mel-spectrogram, with the encoder producing representations at a temporal resolution of roughly 40~ms. Visual information is handled by a Vision Transformer derived from Qwen2.5-VL and shared across image and video inputs; frames are sampled dynamically to preserve relevant visual content while matching the temporal granularity of the acoustic stream \cite{qwen25omni}.
 The modality-specific encoders are limited to perceptual extraction: their output is passed to the \textit{Thinker}, where multimodal information is processed within the shared Transformer. Both audio and visual encoders additionally support block-wise processing, allowing long multimodal sequences to be handled incrementally \cite{qwen25omni}.
 Multimodal alignment relies on \textit{Time-aligned Multimodal Rotary Position Embedding} (TMRoPE), which represents positional information along temporal, vertical, and horizontal dimensions. Text is assigned identical positional values across all three; images retain a constant temporal coordinate while preserving spatial position along height and width; audio receives temporal positions tracking its progression through the acoustic stream \cite{qwen25omni}.
 Video combines both axes: each frame keeps its two-dimensional spatial layout while carrying a temporal coordinate tied to its position in the clip, on a scale coordinated with the acoustic representation. Audio and video can thus be placed within a common temporal reference system, which is what allows the \textit{Thinker} to relate acoustic and visual evidence occurring at corresponding moments. Encoded representations from both streams are arranged within a single multimodal sequence and processed jointly by the language model's attention mechanism, so integration occurs before response generation rather than through a late combination of independent modality-specific predictions \cite{qwen25omni}.
 The \textit{Talker} is a dual-track autoregressive Transformer decoder, conditioned on the high-dimensional representations it receives from the \textit{Thinker}; the resulting discrete speech units are converted into a waveform through a sliding-window diffusion Transformer \cite{qwen25omni}. The technical report describes this organization at the level of the Qwen2.5-Omni family as a whole, without a fusion mechanism specific to the 3B variant \cite{qwen25omni}.
 \subsubsection*{Qwen3-Omni-30B-A3B-Instruct}
-Qwen3-Omni keeps the Thinker--Talker organization of its predecessor while redesigning several components. It handles text, images, audio, and video, and supports both textual and spoken generation; in the 30B-A3B configuration, both the \textit{Thinker} and the \textit{Talker} adopt a Mixture-of-Experts architecture, increasing overall capacity while limiting the parameters activated at each inference step \cite{qwen3omni}.
+Qwen3-Omni keeps the Thinker-Talker organization of its predecessor while redesigning several components. It handles text, images, audio, and video, and supports both textual and spoken generation; in the 30B-A3B configuration, both the \textit{Thinker} and the \textit{Talker} adopt a Mixture-of-Experts architecture, increasing overall capacity while limiting the parameters activated at each inference step \cite{qwen3omni}.
 The \textit{Thinker} still carries out multimodal understanding and text generation by combining representations from dedicated perceptual encoders. The \textit{Talker}, however, is more loosely coupled to it than in Qwen2.5-Omni: rather than depending directly on the Thinker's high-level textual hidden states, it conditions speech generation on textual context together with high-dimensional visual and acoustic representations \cite{qwen3omni}.
 Audio is processed by the \textit{Audio Transformer} (AuT). Raw audio is resampled to 16~kHz and represented as a 128-channel mel-spectrogram; convolutional downsampling brings the resulting representations to roughly 12.5~Hz, or about 80~ms per acoustic frame. AuT uses attention windows of different sizes to support both global audio understanding and block-wise processing \cite{qwen3omni}.
 Visual input is processed by an encoder derived from Qwen3-VL and initialized from SigLIP2-So400m, shared across images and video; as in Qwen2.5-Omni, frames are sampled dynamically to preserve visual content while matching the temporal granularity of the audio stream \cite{qwen3omni}.
 TMRoPE is retained for multimodal alignment, again along temporal, vertical, and horizontal dimensions: text keeps identical coordinates across all three, images hold a constant temporal coordinate while preserving spatial position, and audio now receives absolute temporal identifiers at roughly 80~ms resolution \cite{qwen3omni}. Video frames are assigned temporal identifiers taken from their actual timestamps, on the same scale used for audio, so acoustic and visual representations share an absolute temporal coordinate system while spatial information is still carried separately through height and width \cite{qwen3omni}.
-This replaces the fixed temporal chunking of Qwen2.5-Omni with alignment based on absolute temporal identifiers, producing a finer correspondence between acoustic and visual events and removing the dependence on a predefined chunk size \cite{qwen3omni}. The aligned representations are then processed by the Mixture-of-Experts \textit{Thinker}, so multimodal integration occurs within the shared Transformer computation after perceptual encoding and temporal alignment; the pre-training strategy reinforces this from the outset, drawing on unimodal and cross-modal data spanning image--text, audio--text, video--text, video--audio, and video--audio--text combinations \cite{qwen3omni}.
+This replaces the fixed temporal chunking of Qwen2.5-Omni with alignment based on absolute temporal identifiers, producing a finer correspondence between acoustic and visual events and removing the dependence on a predefined chunk size \cite{qwen3omni}. The aligned representations are then processed by the Mixture-of-Experts \textit{Thinker}, so multimodal integration occurs within the shared Transformer computation after perceptual encoding and temporal alignment; the pre-training strategy reinforces this from the outset, drawing on unimodal and cross-modal data spanning image-text, audio-text, video-text, video-audio, and video-audio-text combinations \cite{qwen3omni}.
 Speech generation is likewise redesigned. The \textit{Talker} predicts a multi-codebook acoustic representation based on residual vector quantization: the first codebook is generated autoregressively, while a Multi-Token Prediction module estimates the remaining residual codebooks. The final waveform is produced by \textit{Code2Wav}, a causal convolutional renderer built for incremental synthesis \cite{qwen3omni}.
 \subsection*{Gemma Family}
 The Gemma models considered in this work implement multimodality through two distinct strategies. Gemma 3n E4B relies on dedicated perceptual encoders that convert acoustic and visual signals into representations processed by the language-model backbone. Gemma 4 12B instead adopts a unified, encoder-free architecture, mapping raw perceptual information directly into the decoder's embedding space through lightweight projection modules \cite{gemma3n2025,gemma4technicalreport}.
@@ -37,13 +37,13 @@ The 12B model is dense and combines local and global self-attention, with five l
 The preliminary analysis aims to determine which information relevant to the subsequent resolution of \textit{MAIA-AV} questions can be autonomously recovered by each model from the visual content of the video alone. Consequently, the analysis is conducted in a \textit{question-independent} setting: the model receives solely the video input, with no access to the questions, corresponding answers, audio streams, or transcriptions. The output is a structured and temporally grounded representation of the visual content, which is only later compared with the informational requirements of individual questions.
 This separation distinguishes the model's capacity to extract visual information from its ability to retrieve relevant evidence when guided by a linguistic query. While the preliminary analysis does not directly measure performance on the \acs{VSV} task, its purpose is to characterize what the model can represent prior to the introduction of a specific question-answering objective.
 This distinction addresses a key limitation of evaluations based solely on final accuracy. A correct prediction does not guarantee that the model has correctly identified relevant entities, reconstructed events, or established the relations necessary to support its output. Conversely, an incorrect answer fails to reveal which stage of the process caused the failure. The preliminary analysis thus introduces an intermediate diagnostic layer between the raw video content and the final task outcome.
-Methodologically, this approach relates to \textit{VILMA} \cite{kesen2024vilma}, specifically regarding its distinction between proficiency tests and main tests. In \textit{VILMA}, proficiency tests evaluate fundamental capabilities deemed necessary for resolving complex temporal phenomena via a zero-shot caption--foil paradigm. While our method does not replicate this specific evaluation protocol, it adopts the core underlying principle: complex performance must be interpreted relative to the prerequisite capabilities that underpin it.
+Methodologically, this approach relates to \textit{VILMA} \cite{kesen2024vilma}, specifically regarding its distinction between proficiency tests and main tests. In \textit{VILMA}, proficiency tests evaluate fundamental capabilities deemed necessary for resolving complex temporal phenomena via a zero-shot caption-foil paradigm. While our method does not replicate this specific evaluation protocol, it adopts the core underlying principle: complex performance must be interpreted relative to the prerequisite capabilities that underpin it.
 In \textit{MAIA-AV}, these prerequisites are examined via a structured representation of the visual content. For each video, four multimodal and omnimodal models, subsequently evaluated on the \acs{VSV} task, independently analyze temporally localized video segments. Outputs are initially kept separate to enable cross-representation comparison without prematurely merging predictions. Inter-model agreement is interpreted as an indicator of \textbf{prediction stability} rather than absolute ground truth, as multiple models may converge on an identical yet unsupported interpretation.
 The representation is constructed progressively across three levels: \textbf{entities}, \textbf{events}, and \textbf{relations between events}. This hierarchy decouples directly observable perceptual information from information requiring temporal integration or higher-level inference.
 The \textbf{entity level} describes elements identified within the visual content and their observable properties. It details the objects, individuals, and other scene components detected by the model, along with their corresponding temporal intervals of presence.
 The \textbf{event level} captures actions, interactions, and state changes tied to specific temporal intervals. Because overlapping video segments may yield duplicate descriptions of the same event, the extracted outputs are consolidated to eliminate redundancy while preserving genuinely recurrent events. Temporal anchoring maintains a direct link between each event and the corresponding video segment providing supporting evidence.
 The \textbf{relation level} organizes extracted events according to temporal and inferential dependencies. Temporal relations encompass configurations such as \textit{before}, \textit{after}, \textit{during}, and \textit{overlap}, supporting event reordering and tracking changes across the video timeline.
-Causal relations are treated independently of temporal succession, simple temporal precedence does not inherently establish a cause--effect relationship. The analysis thus differentiates causal information directly supported by visual evidence from relations requiring further inference over events, states, or intentions. This distinction separates observable content from information introduced by the model's inferential process.
+Causal relations are treated independently of temporal succession, simple temporal precedence does not inherently establish a cause-effect relationship. The analysis thus differentiates causal information directly supported by visual evidence from relations requiring further inference over events, states, or intentions. This distinction separates observable content from information introduced by the model's inferential process.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{immagini/preliminar_analysis_schema.png}
@@ -84,7 +84,7 @@ Overall, the preliminary analysis transforms \textit{MAIA-AV} from a purely resu
         \cellcolor{EcoForestGreen}
         \textcolor{white}{\textbf{Causal (C)}} &
         Retrieval of an explicitly stated cause without inference. &
-        Explicit cause--effect relation involving at most two evidence units. &
+        Explicit cause-effect relation involving at most two evidence units. &
         Implicit or multi-event causal reconstruction requiring contextual or intentional inference. \\
         \hline
     \end{tabularx}
@@ -98,14 +98,14 @@ The windowing process serves exclusively to provide temporal indexing and struct
 \paragraph{Implementation Details} The preprocessing stage is implemented in \texttt{video\_preproces-\\sing.py} to convert each source video into a set of temporally indexed visual representations. The script first retrieves core metadata via \texttt{ffprobe}, including duration, frame rate, spatial resolution, codec, and audio stream presence. Although audio metadata is recorded, the acoustic signal is excluded from visual representation construction. Frames are extracted using OpenCV by seeking directly to target temporal positions. Each frame is saved as a JPEG image with its original timestamp embedded in both the filename and the JSON manifest, preserving temporal provenance independently of downstream processing.
 A core output of the script is the dense visual stream, sampled by default at 4 FPS:
 \begin{lstlisting}[language=Python]
-parser.add_argument("--dense-fps", type=float, default=4.0)
+parser.add_argument("-dense-fps", type=float, default=4.0)
 \end{lstlisting}
 Extracted frames are saved in the \texttt{dense\_frames} directory for each video. Simultaneously, the script generates 32 uniform global frames and performs shot-boundary detection via PySceneDetect. These boundaries define variable-length segments with a target duration of 4 seconds (ranging from 2 to 6 seconds) and a default overlap of 0.5 seconds, extracting eight frames per segment. The preprocessing output is serialized into \texttt{metadata.json}, \texttt{frames.json}, \texttt{shots.json}, and \texttt{segments.json}.
 For the subsequent preliminary analysis, semantic extraction scripts operate directly on the dense stream rather than shot-based segments. Utility functions locate each video's \texttt{dense\_frames} directory, parse timestamps from filenames, and sort frames chronologically. The model thus receives temporally ordered visual observations instead of isolated or semantically segmented images.
 The inference temporal windows are configured as follows:
 \begin{lstlisting}[language=Python]
-parser.add_argument("--window-seconds", type=float, default=4.0)
-parser.add_argument("--stride-seconds", type=float, default=3.0)
+parser.add_argument("-window-seconds", type=float, default=4.0)
+parser.add_argument("-stride-seconds", type=float, default=3.0)
 \end{lstlisting}
 A 4-second window with a 3-second stride yields a 1-second overlap between consecutive observations. The pipeline selects dense frames within these nominal boundaries. If frame counts exceed the allowed maximum, frames are sampled uniformly across the window. At 4 FPS, a 4-second interval contains 16 frames, remaining well below the default 32-frame ceiling. Duplicate consecutive windows are automatically omitted.
 Each temporal unit is encapsulated in a \texttt{TemporalWindow}, mapping a unique segment ID to its start time, end time, and frame paths. Crucially, recorded boundaries reflect the timestamps of the first and last selected frames rather than nominal window limits. Millisecond precision is maintained to ensure exact alignment with the source video.
@@ -591,113 +591,142 @@ except (TypeError, ValueError):
 confidence = max(0.0, min(1.0, confidence))
 \end{lstlisting}
 Final outputs are serialized per video into \texttt{\_causal.json} files containing metadata, model parameters, and target relations. Unresolvable errors yield empty relation arrays rather than speculative fallbacks. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection*{Representation Integration and NLI-Based Visual Proficiency Assessment}
+The final stage of the preliminary analysis integrates the information produced at the semantic, event, temporal, spatial, and causal levels into a consolidated representation of the visual evidence recovered by each model. The procedure operates exclusively on the outputs generated during the preceding phases, preserving the separation between visual analysis and question-dependent evaluation without performing any further inspection of the video.
+The integrated representation combines complementary information produced at different levels of the pipeline. Entity descriptions, spatial relations, and state changes originate from the semantic analysis. Consolidated events provide a global event-level representation together with their participants, temporal boundaries, supporting segments, evidence type, and confidence. Temporal relations connect these events through their identifiers, while causal relations encode the dependencies established during the dedicated causal inference stage. These components are treated not as independent observations, but as progressively structured views of the same visual evidence.
+Finalization does not amount to a simple concatenation of all intermediate outputs. Redundancies introduced by overlapping temporal windows have already been resolved during event consolidation, where multiple descriptions of the same occurrence are merged while genuinely repeated events remain distinct, and duplicated or structurally invalid causal relations have already been removed during causal normalization. The epistemic status assigned during the previous stages is preserved as well: information classified as \texttt{observed}, \texttt{inferred}, or \texttt{uncertain} remains distinguishable in the consolidated representation, together with the corresponding confidence values. Uncertain information is not automatically promoted to positive evidence, nor are conflicting descriptions resolved through an additional interpretation introduced at this stage. The final representation thus captures the entities, events, spatial configurations, temporal organization, and causal dependencies recovered by the model, without expanding the evidence beyond what the visual analysis actually produced.
+Crucially, \textbf{finalization does not constitute an answer to any \acs{VSV} question}. Its purpose is to fix a representation of what the model has recovered from the visual modality before the linguistic content of the evaluation item is introduced. Questions, captions, and foils therefore play no role in constructing the representation, and once it has been finalized, its content remains fixed throughout the evaluation of the corresponding question: the question may provide context for interpreting the linguistic alternatives, but it cannot trigger the extraction of new entities, events, relations, or visual evidence.
+The proficiency assessment itself is formulated as a Natural Language Inference task. The finalized visual representation acts as the \textbf{premise}, while the caption and the corresponding foil are evaluated independently as alternative hypotheses. GPT-4o is employed exclusively as an NLI judge, not to answer the original question, generate a new description of the video, or select directly between the two alternatives. Its role is restricted to determining the logical relation between the evidence contained in the finalized representation and each hypothesis.
+For both caption and foil, the judge assigns one of three labels: \texttt{entailment}, \texttt{contradiction}, or \texttt{neutral}. \texttt{Entailment} indicates that the hypothesis is supported by the available visual representation. \texttt{Contradiction} indicates that it is incompatible with the represented evidence. \texttt{Neutral} is used when the available information is insufficient to establish either relation, so that missing evidence is not interpreted as contradiction and absence of information is not treated as negative evidence.
+The caption and foil are judged separately. A caption--foil pair receives \texttt{PASS} only when the finalized representation entails the caption and contradicts the foil. Every other combination produces \texttt{NOT PASS}.
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{0.8\textwidth}{|X|X|l|}
+\hline
+\rowcolor{EcoForestGreen}
+\textcolor{white}{\textbf{Caption}} &
+\textcolor{white}{\textbf{Foil}} &
+\textcolor{white}{\textbf{Outcome}} \\
+\hline
+Entailment &
+Contradiction &
+\texttt{PASS} \\
+\hline
+Any other combination &
+&
+\texttt{NOT PASS} \\
+\hline
+\end{tabularx}
+\caption{Decision rule for the NLI-based visual proficiency assessment.}
+\label{tab:nli_proficiency_rule}
+\end{table}
+This rule adopts a deliberately conservative criterion. Entailment of the caption alone is insufficient, since the same representation must also provide enough evidence to reject the minimally contrastive foil. Contradiction of the foil, in turn, cannot compensate for a caption classified as \texttt{neutral}. A model is therefore considered proficient on a given pair only when its visual representation supports both sides of the required distinction.
+The procedure is repeated independently for the four caption--foil pairs associated with each question. Question-level proficiency requires consistency across the complete set: a question receives \texttt{PASS} only when all four pairs satisfy the pair-level criterion, and is classified as \texttt{NOT PASS} if at least one pair fails. This strict aggregation reduces the influence of individual linguistic formulations and requires the recovered visual evidence to remain sufficient across multiple, minimally different realizations of the same underlying item.
+For each pair, the procedure records the classification assigned to the caption, the classification assigned to the foil, and the resulting binary decision, which are then aggregated into the final proficiency label associated with the question. The resulting measure is accordingly distinct from conventional question-answering accuracy: rather than evaluating whether the model can generate or select the correct answer after being exposed to the question, it evaluates whether the information independently recovered from the visual channel is sufficiently complete and discriminative to support the correct statement while rejecting its minimally contrastive alternative, connecting question-independent visual analysis to the competence-oriented evaluation objective of the preliminary analysis.
+\paragraph{Implementation Details}
+The final evaluation is implemented in \texttt{final\_evaluation.py}, which operates on the finalized representations produced for the four evaluated models. These representations are stored as JSON files in \texttt{data/preliminar\_analysis/final\_results} and constitute the fixed visual premises used throughout the proficiency assessment. The script expects one finalization file for each model and verifies their presence before starting the evaluation:
+\begin{lstlisting}[language=Python]
+EXPECTED_MODELS = (
+"gemma",
+"gemma-4-12B",
+"qwen",
+"qwen-30B",
+)
+
+FINAL_DIR = Path(
+"data/preliminar_analysis/final_results"
+)
+
+final_files = [
+FINAL_DIR / f"{model}.json"
+for model in EXPECTED_MODELS
+]
+\end{lstlisting}
+Finalized representations are loaded independently for each model and indexed by normalized video identifiers. The loading procedure accepts different top-level JSON organizations, including lists of video representations, dictionaries containing \texttt{videos} or \texttt{results}, individual video objects, and dictionaries directly indexed by video ID. This normalization allows the subsequent NLI procedure to retrieve the complete representation associated with a video without modifying its content.
+Question metadata and caption--foil pairs are loaded separately from \texttt{question\_classification.csv} and \texttt{caption\_foil.csv}. Video identifiers and question categories are normalized before the two sources are joined using the video and principal question dimension. The question is therefore introduced only after the finalized visual representation has been loaded, and is retained as contextual information for the NLI judge rather than incorporated into the premise itself.
+The NLI evaluation uses \texttt{gpt-4o-2024-08-06} with deterministic generation:
+\begin{lstlisting}[language=Python]
+MODEL = "gpt-4o-2024-08-06"
+
+risposta = client.chat.completions.parse(
+model=MODEL,
+temperature=0,
+messages=[
+{
+"role": "system",
+"content":
+f"{PROMPT}\n\n{REGOLE[categoria]}",
+},
+{
+"role": "user",
+"content": contenuto,
+},
+],
+response_format=RispostaNLI,
+)
+\end{lstlisting}
+Each request contains three distinct fields: the question, the finalized representation used as the premise, and one hypothesis. The caption and foil are never evaluated jointly. Instead, two independent calls are performed using the same premise and question context:
+\begin{lstlisting}[language=Python]
+nli_caption = classifica(
+premessa,
+row["domanda"],
+row["categoria"],
+row["caption"],
+)
+
+nli_foil = classifica(
+premessa,
+row["domanda"],
+row["categoria"],
+row["foil"],
+)
+\end{lstlisting}
+The system prompt explicitly restricts the judge to the information contained in the premise. External knowledge, completion of missing information, and plausibility-based reasoning are excluded. Incomplete, weak, or ambiguous evidence must be classified as \texttt{neutro}. Additional constraints are introduced according to the question category: spatial relations cannot be inferred from simple co-occurrence, temporal relations cannot be inferred from the textual order of events, and causal relations cannot be established from temporal succession alone.
+The model response is constrained through a Pydantic schema rather than parsed from unrestricted natural-language output:
+\begin{lstlisting}[language=Python]
+class RispostaNLI(BaseModel):
+etichetta: Literal[
+"implicazione",
+"contraddizione",
+"neutro",
+]
+\end{lstlisting}
+This design restricts each inference to one of the three admissible NLI labels, preventing the judge from generating explanations or free-form answers. A missing or structurally invalid classification raises an error rather than being converted into an evaluation decision.
+Pair-level proficiency is subsequently computed through a deterministic rule implemented outside GPT-4o:
+\begin{lstlisting}[language=Python]
+def valuta_coppia(caption, foil):
+return (
+"PASS"
+if caption == "implicazione"
+and foil == "contraddizione"
+else "NOT PASS"
+)
+\end{lstlisting}
+GPT-4o's role is thus limited to assigning the two NLI labels, and it does not directly decide whether a proficiency test is passed. The binary outcome is derived programmatically, receiving \texttt{PASS} only when the finalized representation entails the caption and contradicts the corresponding foil. All other label combinations result in \texttt{NOT PASS}.
+Results are written incrementally to a model-specific checkpoint in the \texttt{nli} subdirectory. Before evaluating a pair, the script checks whether its identifier has already been processed, allowing interrupted executions to resume without repeating completed API calls. Each stored row contains the model, pair identifier, video, category, question, caption, foil, the two NLI classifications, and the resulting pair-level outcome.
+Once all model-specific evaluations have been completed, pair-level records are concatenated into \texttt{nli\_risultati.csv}. Question-level proficiency is then computed by grouping results according to model, video, category, and question:
+\begin{lstlisting}[language=Python]
+df = risultati.groupby(
+[
+"modello",
+"video_id",
+"categoria",
+"domanda",
+]
+).agg(
+totale_coppie=("esito", "size"),
+coppie_pass=("pass", "sum"),
+).reset_index()
+
+df["proficiency"] = [
+"PASS" if passate == totale else "NOT PASS"
+for passate, totale in zip(
+df["coppie_pass"],
+df["totale_coppie"],
+)
+]
+\end{lstlisting}
+The aggregation adopts the same conservative principle used at pair level: proficiency is assigned only when every caption--foil pair associated with the question is passed. Since the experimental data contain four pairs for each question, this corresponds to the required $4/4$ criterion, and a single \texttt{NOT PASS} is sufficient to classify the question as \texttt{NOT PASS}. The script additionally stores the number of evaluated pairs, the number of successful pairs, and their ratio in \texttt{question\_proficiency.csv}.
+The implementation keeps the responsibilities of the two components distinct: the finalized JSON representation remains unchanged and functions solely as the visual premise, GPT-4o performs constrained NLI classification over each caption and foil, and the final proficiency decision is produced by deterministic aggregation rules rather than by an additional generative judgment.
