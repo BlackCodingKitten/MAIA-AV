@@ -113,13 +113,13 @@ The transition to semantic extraction relies strictly on \textit{ordered dense f
 Building upon the defined temporal windows, the pipeline proceeds with semantic representation extraction. This stage generates a structured semantic description for each window, processing every window independently. The extraction procedure is repeated across all four evaluated models. Although the models employ distinct architectures and inference modalities, each receives identical inputs and is constrained to produce a standardized representation adhering to a common schema, as shown in Table~\ref{tab:semantic_representation}. Consequently, performance differences can be attributed directly to model capabilities rather than annotation formatting.
 For each window, the representation spans seven semantic categories:
 \begin{description}
-  \item[\textbf{entities}]: Operating at the most fundamental descriptive level, each entity receives a local identifier, a concise label, visually observable attributes, and its role within the scene when discernible. The representation tracks the temporal occurrence of the entity and the specific frames providing visual evidence. These local identifiers enable consistent references across other descriptive categories within the same segment.
-  \item[\textbf{actions}]: Actions represent visually observable occurrences, specifying the performing agent and target object whenever feasible.
-  \item[\textbf{events}]: Events denote broader semantic units linked to one or more participants across a given temporal span. This distinction separates the detection of an isolated action from the broader event context in which it occurs.
-  \item[\textbf{spatial\_relations}]: Spatial configurations between entities or scene elements are defined using a subject-relation-object structure. Permissible relations include configurations such as \textit{in front of}, \textit{behind}, \textit{above}, \textit{below}, \textit{inside}, \textit{outside}, \textit{left of}, \textit{right of}, \textit{near}, and \textit{on}. These spatial descriptors are temporally localized, meaning a spatial configuration observed in one segment is not assumed to hold throughout the video.
-  \item[\textbf{state\_changes}]: State changes capture observable transformations affecting an entity. By contrasting a prior state with a subsequent state, this structure represents temporal variations within a segment. This level is essential when answering a question requires tracking changes in an entity's properties, position, or condition over time.
-  \item[\textbf{temporal\_relations}]: The model describes temporal links such as \textit{before}, \textit{after}, \textit{overlaps}, \textit{during}, \textit{starts}, \textit{finishes}, and \textit{simultaneous}. These relations, however, remain strictly localized to the current window: global video temporal structure is not reconstructed at this stage, nor are event correspondences across different segments systematically resolved.
-  \item[\textbf{causal\_hypotheses}]: Causal candidate relations are explicitly separated from directly observed facts. The framework requires causal hypotheses to be flagged as inferred evidence, preventing temporal precedence from being automatically interpreted as a cause-and-effect relationship, and keeping a clear boundary between observed evidence and model inference.
+\item[\textbf{entities}]: Operating at the most fundamental descriptive level, each entity receives a local identifier, a concise label, visually observable attributes, and its role within the scene when discernible. The representation tracks the temporal occurrence of the entity and the specific frames providing visual evidence. These local identifiers enable consistent references across other descriptive categories within the same segment.
+\item[\textbf{actions}]: Actions represent visually observable occurrences, specifying the performing agent and target object whenever feasible.
+\item[\textbf{events}]: Events denote broader semantic units linked to one or more participants across a given temporal span. This distinction separates the detection of an isolated action from the broader event context in which it occurs.
+\item[\textbf{spatial\_relations}]: Spatial configurations between entities or scene elements are defined using a subject-relation-object structure. Permissible relations include configurations such as \textit{in front of}, \textit{behind}, \textit{above}, \textit{below}, \textit{inside}, \textit{outside}, \textit{left of}, \textit{right of}, \textit{near}, and \textit{on}. These spatial descriptors are temporally localized, meaning a spatial configuration observed in one segment is not assumed to hold throughout the video.
+\item[\textbf{state\_changes}]: State changes capture observable transformations affecting an entity. By contrasting a prior state with a subsequent state, this structure represents temporal variations within a segment. This level is essential when answering a question requires tracking changes in an entity's properties, position, or condition over time.
+\item[\textbf{temporal\_relations}]: The model describes temporal links such as \textit{before}, \textit{after}, \textit{overlaps}, \textit{during}, \textit{starts}, \textit{finishes}, and \textit{simultaneous}. These relations, however, remain strictly localized to the current window: global video temporal structure is not reconstructed at this stage, nor are event correspondences across different segments systematically resolved.
+\item[\textbf{causal\_hypotheses}]: Causal candidate relations are explicitly separated from directly observed facts. The framework requires causal hypotheses to be flagged as inferred evidence, preventing temporal precedence from being automatically interpreted as a cause-and-effect relationship, and keeping a clear boundary between observed evidence and model inference.
 \end{description}
 The distinction between observed and inferred evidence is preserved through the \textit{evidence\_type} field, accompanied by a confidence score between 0 and 1. Each element also includes an \textit{evidence\_frames} list identifying supporting frames. During output normalization, frame references are retained only if they fall within the processed window, and generated temporal intervals are similarly bounded by segment limits, keeping semantic representations strictly aligned with their supporting visual evidence.
 Categories may remain empty if a model detects insufficient evidence within a segment. At the segment level, the pipeline preserves \textit{segment\_id}, \textit{start\_time}, \textit{end\_time}, and \textit{input\_frames}.
@@ -486,21 +486,20 @@ Inference is guided by a standardized prompt that instructs the model to rely so
 \begin{lstlisting}[language=Python]
 
 * usa esclusivamente gli eventi e le relazioni
-  temporali presenti nell'input
+temporali presenti nell'input
 * non usare domande, caption, foil o altre
-  informazioni esterne
-* la semplice successione temporale NON implica
-  causalità
+informazioni esterne
+* la semplice successione temporale NON implica causalita'
 * crea una relazione soltanto quando il contenuto
-  degli eventi supporta una dipendenza causa-effetto,
-  una condizione abilitante, una motivazione oppure
-  una prevenzione
+degli eventi supporta una dipendenza causa-effetto,
+una condizione abilitante, una motivazione oppure
+una prevenzione
 * cause_event ed effect_event devono essere ID
-  di eventi presenti nell'input
+di eventi presenti nell'input
 * non inventare eventi, oggetti, intenzioni o cause
-  non ricavabili dalla rappresentazione fornita
+non ricavabili dalla rappresentazione fornita
 * se non esiste evidenza sufficiente, restituisci
-  causal_relations come lista vuota
+causal_relations come lista vuota
 \end{lstlisting}
 Within this schema, relationships are classified by epistemic confidence: \texttt{direct} for explicit physical or state-change interactions, \texttt{inferred} for contextual or intentional deductions, and \texttt{uncertain} for weakly supported cues. Output formatting enforces the same structured JSON schema used elsewhere in the pipeline:
 \begin{lstlisting}[language=Python]
