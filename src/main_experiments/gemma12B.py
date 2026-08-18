@@ -21,7 +21,7 @@ import os
 #   GPU fisica 4 -> cuda:0 nel processo
 #   GPU fisica 6 -> cuda:1 nel processo
 #
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3,2"
 
 
 # ------------------------------------------------------------------------------
