@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1,2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3,5"
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 os.environ["VLLM_HOST_IP"] = "127.0.0.1"
 os.environ["VLLM_NO_USAGE_STATS"] = "1"

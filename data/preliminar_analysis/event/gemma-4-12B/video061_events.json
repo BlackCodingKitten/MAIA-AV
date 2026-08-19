@@ -1,0 +1,226 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "transizione da segnale di test a ripresa della porta",
+      "start_time": 0.0,
+      "end_time": 1.5,
+      "participants": [
+        "e3",
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "interazione tra bambine",
+      "start_time": 3.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0003",
+      "description": "interazione tra due ragazze sul divano",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "interazione fisica tra le due bambine sul divano",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0005",
+      "description": "la bambina interagisce con lo smartphone rotto",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0006",
+      "description": "reazione emotiva della bambina allo smartphone rotto",
+      "start_time": 16.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0007",
+      "description": "bambina che parla e gesticola",
+      "start_time": 20.75,
+      "end_time": 21.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0008",
+      "description": "episodio di pianto",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0009",
+      "description": "interazione tra mano e viso della bambina",
+      "start_time": 24.0,
+      "end_time": 27.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0010",
+      "description": "chiudere gli occhi",
+      "start_time": 24.0,
+      "end_time": 25.0,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0011",
+      "description": "aprire gli occhi",
+      "start_time": 25.25,
+      "end_time": 27.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0008"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0012",
+      "description": "interazione tra una mano e la bambina",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0013",
+      "description": "punta il dito verso il viso",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0014",
+      "description": "guarda la telecamera",
+      "start_time": 27.0,
+      "end_time": 29.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0001",
+      "relation": "before",
+      "second_event": "E0002",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0002",
+      "relation": "overlaps",
+      "second_event": "E0003",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0"
+    }
+  ],
+  "id_video": "video061",
+  "model": "google/gemma-4-12B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma-4-12B/video061_semantic.json"
+}
