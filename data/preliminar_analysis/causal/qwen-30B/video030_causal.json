@@ -1,0 +1,54 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "sedersi sul bordo della piscina abilita la preparazione all'ingresso in piscina.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0008",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0007"
+      ],
+      "explanation": "la bambina che guarda la piscina (E0007) mostra attenzione verso l'acqua, motivando l'arrivo dell'altra bambina sul bordo della piscina (E0008).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la posizione di chinamento verso la piscina abilita l'arrampicata sulla piscina.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'arrampicata sulla piscina abilita la successiva posizione di appoggio al bordo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'appoggio al bordo della piscina abilita l'ingresso e l'uscita dalla piscina.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video030",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video030_events.json"
+}

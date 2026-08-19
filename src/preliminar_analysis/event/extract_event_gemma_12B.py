@@ -45,6 +45,7 @@ MAX_RETRIES = 3
 SAFETY_MARGIN = 512
 CHUNK_OVERLAP = 1
 
+
 SEMANTIC_FIELDS = (
     "entities",
     "actions",
@@ -61,7 +62,11 @@ class EngineFatalError(RuntimeError):
 
 
 def read_json(path: Path) -> dict[str, Any]:
-    data = json.loads(path.read_text(encoding="utf-8"))
+    data = json.loads(
+        path.read_text(
+            encoding="utf-8"
+        )
+    )
 
     if not isinstance(data, dict):
         raise ValueError(
@@ -71,12 +76,20 @@ def read_json(path: Path) -> dict[str, Any]:
     return data
 
 
-def write_json(path: Path, data: dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
+def write_json(
+    path: Path,
+    data: dict[str, Any],
+) -> None:
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
-    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    tmp = path.with_suffix(
+        path.suffix + ".tmp"
+    )
 
-    tmp_path.write_text(
+    tmp.write_text(
         json.dumps(
             data,
             ensure_ascii=False,
@@ -85,18 +98,22 @@ def write_json(path: Path, data: dict[str, Any]) -> None:
         encoding="utf-8",
     )
 
-    tmp_path.replace(path)
+    tmp.replace(path)
 
 
-def is_engine_dead_exception(exc: BaseException) -> bool:
+def is_engine_dead_exception(
+    exc: BaseException,
+) -> bool:
     current: BaseException | None = exc
     visited: set[int] = set()
 
     while current is not None:
-        if id(current) in visited:
+        current_id = id(current)
+
+        if current_id in visited:
             break
 
-        visited.add(id(current))
+        visited.add(current_id)
 
         name = current.__class__.__name__
         message = str(current)
@@ -110,14 +127,21 @@ def is_engine_dead_exception(exc: BaseException) -> bool:
         ):
             return True
 
-        current = current.__cause__ or current.__context__
+        current = (
+            current.__cause__
+            or current.__context__
+        )
 
     return False
 
 
-def extract_json_from_text(text: str) -> dict[str, Any]:
+def extract_json_from_text(
+    text: str,
+) -> dict[str, Any]:
     if not text or not text.strip():
-        raise ValueError("Risposta vuota dall'LLM.")
+        raise ValueError(
+            "Risposta vuota dall'LLM."
+        )
 
     cleaned = (
         text
@@ -145,10 +169,12 @@ def extract_json_from_text(text: str) -> dict[str, Any]:
         )
 
     if end >= start:
+        candidate = cleaned[
+            start:end + 1
+        ]
+
         try:
-            result = json.loads(
-                cleaned[start:end + 1]
-            )
+            result = json.loads(candidate)
 
             if isinstance(result, dict):
                 return result
@@ -164,12 +190,14 @@ def extract_json_from_text(text: str) -> dict[str, Any]:
             "JSON non valido e json_repair non installato."
         ) from exc
 
-    repaired = repair_json(
-        cleaned[start:]
-    )
-
     try:
-        result = json.loads(repaired)
+        repaired = repair_json(
+            cleaned[start:]
+        )
+
+        result = json.loads(
+            repaired
+        )
 
     except Exception as exc:
         raise ValueError(
@@ -187,67 +215,156 @@ def extract_json_from_text(text: str) -> dict[str, Any]:
 def normalize_list_field(
     value: Any,
     field_name: str,
-) -> list[dict[str, Any]]:
+) -> tuple[list[dict[str, Any]], list[str]]:
+    warnings: list[str] = []
+
     if value is None:
-        return []
+        return [], warnings
 
     if isinstance(value, dict):
-        value = [value]
+        return [value], warnings
 
-    elif isinstance(value, str):
-        stripped = value.strip()
+    if isinstance(value, str):
+        text = value.strip()
 
-        if not stripped or stripped.lower() == "null":
-            return []
+        if not text or text.lower() == "null":
+            return [], warnings
 
         try:
-            parsed = json.loads(stripped)
-        except json.JSONDecodeError as exc:
-            raise ValueError(
-                f"'{field_name}' è una stringa non interpretabile "
-                "come JSON."
-            ) from exc
+            parsed = json.loads(text)
 
-        if isinstance(parsed, dict):
-            value = [parsed]
-
-        elif isinstance(parsed, list):
-            value = parsed
-
-        else:
-            raise ValueError(
-                f"'{field_name}' contiene un tipo non valido."
+        except json.JSONDecodeError:
+            warnings.append(
+                f"{field_name}: stringa non strutturata scartata: "
+                f"{text!r}"
             )
+            return [], warnings
 
-    if not isinstance(value, list):
-        raise ValueError(
-            f"'{field_name}' ha tipo non valido: "
-            f"{type(value).__name__}."
+        return normalize_list_field(
+            parsed,
+            field_name,
         )
 
+    if not isinstance(value, list):
+        warnings.append(
+            f"{field_name}: tipo non valido "
+            f"{type(value).__name__}, valore scartato."
+        )
+        return [], warnings
+
+    normalized: list[dict[str, Any]] = []
+
     for index, item in enumerate(value):
-        if not isinstance(item, dict):
-            raise ValueError(
-                f"'{field_name}[{index}]' non è un oggetto JSON."
+        if item is None:
+            continue
+
+        if isinstance(item, dict):
+            normalized.append(item)
+            continue
+
+        if isinstance(item, list):
+            nested, nested_warnings = normalize_list_field(
+                item,
+                field_name,
             )
 
-    return value
+            normalized.extend(
+                nested
+            )
+
+            warnings.extend(
+                nested_warnings
+            )
+
+            continue
+
+        if isinstance(item, str):
+            text = item.strip()
+
+            if not text or text.lower() == "null":
+                continue
+
+            try:
+                parsed = json.loads(
+                    text
+                )
+
+            except json.JSONDecodeError:
+                warnings.append(
+                    f"{field_name}[{index}]: "
+                    f"stringa non strutturata scartata: "
+                    f"{text!r}"
+                )
+                continue
+
+            nested, nested_warnings = normalize_list_field(
+                parsed,
+                field_name,
+            )
+
+            normalized.extend(
+                nested
+            )
+
+            warnings.extend(
+                nested_warnings
+            )
+
+            continue
+
+        warnings.append(
+            f"{field_name}[{index}]: "
+            f"tipo {type(item).__name__} scartato."
+        )
+
+    return normalized, warnings
 
 
 def normalize_result(
     result: dict[str, Any],
 ) -> dict[str, Any]:
-    result["events"] = normalize_list_field(
+    events, event_warnings = normalize_list_field(
         result.get("events"),
         "events",
     )
 
-    result["temporal_relations"] = normalize_list_field(
+    temporal_relations, relation_warnings = normalize_list_field(
         result.get("temporal_relations"),
         "temporal_relations",
     )
 
+    result["events"] = events
+    result["temporal_relations"] = temporal_relations
+
+    warnings = (
+        event_warnings
+        + relation_warnings
+    )
+
+    if warnings:
+        result["_normalization_warnings"] = warnings
+    else:
+        result.pop(
+            "_normalization_warnings",
+            None,
+        )
+
     return result
+
+
+def core_result(
+    result: dict[str, Any],
+) -> dict[str, Any]:
+    return {
+        "events": result.get(
+            "events",
+            [],
+        ),
+        "temporal_relations": result.get(
+            "temporal_relations",
+            [],
+        ),
+    }
 
 
 def save_failed_raw(
@@ -256,8 +373,15 @@ def save_failed_raw(
     attempt: int,
     raw_text: str,
 ) -> Path:
-    failed_dir = out_dir / "_failed_raw"
-    failed_dir.mkdir(parents=True, exist_ok=True)
+    failed_dir = (
+        out_dir
+        / "_failed_raw"
+    )
+
+    failed_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     path = (
         failed_dir
@@ -302,8 +426,7 @@ class Inferencer:
 
         if self.max_input_tokens <= 0:
             raise ValueError(
-                "La configurazione non lascia spazio "
-                "per il prompt."
+                "La configurazione non lascia spazio per il prompt."
             )
 
         print(
@@ -361,12 +484,12 @@ class Inferencer:
             prompt_text
         )
 
-        return len(
-            self.processor.tokenizer.encode(
-                formatted,
-                add_special_tokens=False,
-            )
+        encoded = self.processor.tokenizer.encode(
+            formatted,
+            add_special_tokens=False,
         )
+
+        return len(encoded)
 
     def fits(
         self,
@@ -381,25 +504,32 @@ class Inferencer:
         self,
         prompt_text: str,
     ) -> str:
+        formatted = self.format_prompt(
+            prompt_text
+        )
+
         outputs = self.llm.generate(
-            [
-                self.format_prompt(
-                    prompt_text
-                )
-            ],
+            [formatted],
             sampling_params=self.sampling,
             use_tqdm=False,
         )
 
-        if (
-            not outputs
-            or not outputs[0].outputs
-        ):
+        if not outputs:
             raise RuntimeError(
-                "vLLM non ha restituito alcuna generazione."
+                "vLLM non ha restituito risultati."
             )
 
-        return outputs[0].outputs[0].text.strip()
+        if not outputs[0].outputs:
+            raise RuntimeError(
+                "vLLM non ha restituito una generazione."
+            )
+
+        return (
+            outputs[0]
+            .outputs[0]
+            .text
+            .strip()
+        )
 
 
 def build_prompt(
@@ -423,10 +553,16 @@ def build_prompt(
         "l'input contiene esplicitamente un'inferenza;\n"
         "- assegna gli ID E0001, E0002, ... "
         "in ordine temporale;\n"
-        "- events deve essere sempre un array JSON, "
-        "anche quando contiene zero o un solo evento;\n"
-        "- temporal_relations deve essere sempre un array JSON, "
-        "anche quando contiene zero o una sola relazione;\n"
+        "- events deve essere sempre un array JSON;\n"
+        "- ogni elemento di events deve essere "
+        "un oggetto JSON;\n"
+        "- temporal_relations deve essere sempre "
+        "un array JSON;\n"
+        "- ogni elemento di temporal_relations deve essere "
+        "un oggetto JSON con first_event, relation, "
+        "second_event e confidence;\n"
+        "- non rappresentare eventi o relazioni "
+        "come stringhe libere;\n"
         "- restituisci esclusivamente JSON valido.\n\n"
 
         "Schema:\n"
@@ -467,6 +603,11 @@ def build_merge_prompt(
     video_id: str,
     partial_results: list[dict[str, Any]],
 ) -> str:
+    clean_results = [
+        core_result(result)
+        for result in partial_results
+    ]
+
     return (
         "Fondi le analisi parziali degli eventi dello stesso "
         "video in una singola rappresentazione cronologica.\n\n"
@@ -482,14 +623,22 @@ def build_merge_prompt(
         "- assegna nuovamente ID E0001, E0002, ...;\n"
         "- aggiorna le relazioni temporali con i nuovi ID;\n"
         "- events deve essere sempre un array JSON;\n"
-        "- temporal_relations deve essere sempre un array JSON;\n"
+        "- ogni elemento di events deve essere "
+        "un oggetto JSON;\n"
+        "- temporal_relations deve essere sempre "
+        "un array JSON;\n"
+        "- ogni elemento di temporal_relations deve essere "
+        "un oggetto JSON con first_event, relation, "
+        "second_event e confidence;\n"
+        "- non usare stringhe testuali per rappresentare "
+        "eventi o relazioni;\n"
         "- restituisci esclusivamente JSON valido.\n\n"
 
         f"VIDEO:\n{video_id}\n\n"
 
         "INPUT:\n"
         + json.dumps(
-            partial_results,
+            clean_results,
             ensure_ascii=False,
             separators=(",", ":"),
         )
@@ -507,15 +656,25 @@ def compact_payload(
     if segments is None:
         segments = []
 
-    if not isinstance(segments, list):
+    if not isinstance(
+        segments,
+        list,
+    ):
         raise ValueError(
             "'segments' non è una lista."
         )
 
-    compact_segments = []
+    compact_segments: list[
+        dict[str, Any]
+    ] = []
 
-    for index, segment in enumerate(segments):
-        if not isinstance(segment, dict):
+    for index, segment in enumerate(
+        segments
+    ):
+        if not isinstance(
+            segment,
+            dict,
+        ):
             raise ValueError(
                 f"segments[{index}] non è un oggetto."
             )
@@ -543,7 +702,9 @@ def compact_payload(
             ):
                 item[field] = value
 
-        compact_segments.append(item)
+        compact_segments.append(
+            item
+        )
 
     return {
         "id_video": payload.get(
@@ -566,24 +727,37 @@ def create_payload_chunks(
         "id_video"
     )
 
-    chunks = []
-    current = []
+    chunks: list[
+        dict[str, Any]
+    ] = []
+
+    current: list[
+        dict[str, Any]
+    ] = []
 
     for segment in segments:
         candidate = {
             "id_video": video_id,
-            "segments": current + [segment],
+            "segments": (
+                current
+                + [segment]
+            ),
         }
 
         if infer.fits(
-            build_prompt(candidate)
+            build_prompt(
+                candidate
+            )
         ):
-            current.append(segment)
+            current.append(
+                segment
+            )
             continue
 
         if not current:
             raise ValueError(
-                f"Il segmento {segment.get('segment_id')} "
+                f"Il segmento "
+                f"{segment.get('segment_id')} "
                 "supera da solo la context window."
             )
 
@@ -600,7 +774,10 @@ def create_payload_chunks(
             else []
         )
 
-        current = overlap + [segment]
+        current = (
+            overlap
+            + [segment]
+        )
 
         candidate = {
             "id_video": video_id,
@@ -608,9 +785,13 @@ def create_payload_chunks(
         }
 
         if not infer.fits(
-            build_prompt(candidate)
+            build_prompt(
+                candidate
+            )
         ):
-            current = [segment]
+            current = [
+                segment
+            ]
 
         candidate = {
             "id_video": video_id,
@@ -618,10 +799,13 @@ def create_payload_chunks(
         }
 
         if not infer.fits(
-            build_prompt(candidate)
+            build_prompt(
+                candidate
+            )
         ):
             raise ValueError(
-                f"Il segmento {segment.get('segment_id')} "
+                f"Il segmento "
+                f"{segment.get('segment_id')} "
                 "supera da solo la context window."
             )
 
@@ -651,28 +835,20 @@ def generate_with_retry(
         raw = ""
 
         print(
-            f"    Tentativo {attempt}/{MAX_RETRIES}",
+            f"    Tentativo "
+            f"{attempt}/{MAX_RETRIES}",
             flush=True,
         )
 
         try:
-            raw = infer.generate(prompt)
-
-            result = normalize_result(
-                extract_json_from_text(raw)
+            raw = infer.generate(
+                prompt
             )
-
-            print(
-                f"    JSON valido ({len(raw)} chars)"
-                f" | eventi={len(result['events'])}"
-                f" | relazioni={len(result['temporal_relations'])}",
-                flush=True,
-            )
-
-            return result
 
         except Exception as exc:
-            if is_engine_dead_exception(exc):
+            if is_engine_dead_exception(
+                exc
+            ):
                 raise EngineFatalError(
                     "EngineCore vLLM terminato. "
                     "La stessa istanza non può essere riutilizzata."
@@ -681,7 +857,9 @@ def generate_with_retry(
             last_error = exc
 
             print(
-                f"    [WARN] {type(exc).__name__}: {exc}",
+                f"    [WARN] "
+                f"{type(exc).__name__}: "
+                f"{exc}",
                 flush=True,
             )
 
@@ -693,13 +871,76 @@ def generate_with_retry(
             )
 
             print(
-                f"    RAW salvato in: {failed_path}",
+                f"    RAW salvato in: "
+                f"{failed_path}",
                 flush=True,
             )
 
+            continue
+
+        try:
+            parsed = extract_json_from_text(
+                raw
+            )
+
+            result = normalize_result(
+                parsed
+            )
+
+        except Exception as exc:
+            last_error = exc
+
+            print(
+                f"    [WARN] "
+                f"{type(exc).__name__}: "
+                f"{exc}",
+                flush=True,
+            )
+
+            failed_path = save_failed_raw(
+                out_dir,
+                name,
+                attempt,
+                raw,
+            )
+
+            print(
+                f"    RAW salvato in: "
+                f"{failed_path}",
+                flush=True,
+            )
+
+            continue
+
+        warnings = result.get(
+            "_normalization_warnings",
+            [],
+        )
+
+        print(
+            f"    JSON valido "
+            f"({len(raw)} chars)"
+            f" | eventi="
+            f"{len(result['events'])}"
+            f" | relazioni="
+            f"{len(result['temporal_relations'])}",
+            flush=True,
+        )
+
+        for warning in warnings:
+            print(
+                f"    [NORMALIZE] "
+                f"{warning}",
+                flush=True,
+            )
+
+        return result
+
     raise RuntimeError(
-        f"Fallito dopo {MAX_RETRIES} tentativi. "
-        f"Ultimo errore: {last_error}"
+        f"Fallito dopo "
+        f"{MAX_RETRIES} tentativi. "
+        f"Ultimo errore: "
+        f"{last_error}"
     )
 
 
@@ -721,59 +962,89 @@ def merge_hierarchical(
     current_results = results
     level = 1
 
-    while len(current_results) > 1:
-        groups = []
-        current_group = []
+    while len(
+        current_results
+    ) > 1:
+        groups: list[
+            list[dict[str, Any]]
+        ] = []
+
+        current_group: list[
+            dict[str, Any]
+        ] = []
 
         for result in current_results:
-            candidate = current_group + [result]
+            candidate = (
+                current_group
+                + [result]
+            )
+
+            prompt = build_merge_prompt(
+                video_id,
+                candidate,
+            )
 
             if infer.fits(
-                build_merge_prompt(
-                    video_id,
-                    candidate,
-                )
+                prompt
             ):
-                current_group.append(result)
+                current_group.append(
+                    result
+                )
                 continue
 
             if not current_group:
                 raise ValueError(
-                    f"Un risultato parziale di {video_id} "
-                    "supera da solo la context window."
+                    f"Un risultato parziale "
+                    f"di {video_id} supera "
+                    "da solo la context window."
                 )
 
-            groups.append(current_group)
-            current_group = [result]
+            groups.append(
+                current_group
+            )
+
+            current_group = [
+                result
+            ]
 
         if current_group:
-            groups.append(current_group)
+            groups.append(
+                current_group
+            )
 
         if (
-            len(groups) == len(current_results)
+            len(groups)
+            == len(current_results)
             and all(
                 len(group) == 1
                 for group in groups
             )
         ):
             raise ValueError(
-                f"Impossibile ridurre il merge per {video_id}: "
-                "ogni risultato occupa un gruppo indipendente."
+                f"Impossibile ridurre "
+                f"il merge per {video_id}: "
+                "ogni risultato occupa "
+                "un gruppo indipendente."
             )
 
-        next_results = []
+        next_results: list[
+            dict[str, Any]
+        ] = []
 
         for group_idx, group in enumerate(
             groups,
             start=1,
         ):
             if len(group) == 1:
-                next_results.append(group[0])
+                next_results.append(
+                    group[0]
+                )
                 continue
 
             print(
                 f"  Merge livello {level}, "
-                f"gruppo {group_idx}/{len(groups)}",
+                f"gruppo "
+                f"{group_idx}/{len(groups)}",
                 flush=True,
             )
 
@@ -791,9 +1062,14 @@ def merge_hierarchical(
                 ),
             )
 
-            next_results.append(merged)
+            next_results.append(
+                merged
+            )
 
-        current_results = next_results
+        current_results = (
+            next_results
+        )
+
         level += 1
 
     return current_results[0]
@@ -809,8 +1085,26 @@ def empty_result(
         "temporal_relations": [],
         "id_video": video_id,
         "model": model,
-        "source_semantic_file": str(source),
+        "source_semantic_file": str(
+            source
+        ),
     }
+
+
+def collect_warnings(
+    results: list[dict[str, Any]],
+) -> list[str]:
+    warnings: list[str] = []
+
+    for result in results:
+        warnings.extend(
+            result.get(
+                "_normalization_warnings",
+                [],
+            )
+        )
+
+    return warnings
 
 
 def process_video(
@@ -820,7 +1114,9 @@ def process_video(
     index: int,
     total: int,
 ) -> bool:
-    payload = read_json(path)
+    payload = read_json(
+        path
+    )
 
     video_id = (
         payload.get("id_video")
@@ -839,17 +1135,22 @@ def process_video(
         and not args.overwrite
     ):
         print(
-            f"[{index}/{total}] SKIP {video_id}",
+            f"[{index}/{total}] "
+            f"SKIP {video_id}",
             flush=True,
         )
+
         return False
 
     print(
-        f"\n[{index}/{total}] {video_id}",
+        f"\n[{index}/{total}] "
+        f"{video_id}",
         flush=True,
     )
 
-    semantic = compact_payload(payload)
+    semantic = compact_payload(
+        payload
+    )
 
     if not semantic["segments"]:
         write_json(
@@ -862,7 +1163,8 @@ def process_video(
         )
 
         print(
-            f"  Salvato: {output_path.name}"
+            f"  Salvato: "
+            f"{output_path.name}"
             " | Eventi: 0",
             flush=True,
         )
@@ -875,34 +1177,47 @@ def process_video(
     )
 
     print(
-        f"  Segmenti: {len(semantic['segments'])}"
-        f" | Chunk elaborati: {len(chunks)}",
+        f"  Segmenti: "
+        f"{len(semantic['segments'])}"
+        f" | Chunk elaborati: "
+        f"{len(chunks)}",
         flush=True,
     )
 
-    partial_results = []
+    partial_results: list[
+        dict[str, Any]
+    ] = []
 
     for chunk_idx, chunk in enumerate(
         chunks,
         start=1,
     ):
         print(
-            f"  Chunk {chunk_idx}/{len(chunks)} "
+            f"  Chunk "
+            f"{chunk_idx}/{len(chunks)} "
             f"({len(chunk['segments'])} segs)",
             flush=True,
         )
 
-        partial_results.append(
-            generate_with_retry(
-                infer,
-                build_prompt(chunk),
-                args.output_directory,
-                (
-                    f"{video_id}"
-                    f"_chunk_{chunk_idx:02d}"
-                ),
-            )
+        partial = generate_with_retry(
+            infer,
+            build_prompt(
+                chunk
+            ),
+            args.output_directory,
+            (
+                f"{video_id}"
+                f"_chunk_{chunk_idx:02d}"
+            ),
         )
+
+        partial_results.append(
+            partial
+        )
+
+    partial_warnings = collect_warnings(
+        partial_results
+    )
 
     final_result = merge_hierarchical(
         video_id,
@@ -915,11 +1230,35 @@ def process_video(
         final_result
     )
 
+    all_warnings = (
+        partial_warnings
+        + final_result.get(
+            "_normalization_warnings",
+            [],
+        )
+    )
+
+    if all_warnings:
+        final_result[
+            "_normalization_warnings"
+        ] = list(
+            dict.fromkeys(
+                all_warnings
+            )
+        )
+    else:
+        final_result.pop(
+            "_normalization_warnings",
+            None,
+        )
+
     final_result.update(
         {
             "id_video": video_id,
             "model": args.model,
-            "source_semantic_file": str(path),
+            "source_semantic_file": str(
+                path
+            ),
         }
     )
 
@@ -929,10 +1268,14 @@ def process_video(
     )
 
     print(
-        f"  Salvato: {output_path.name}"
-        f" | Eventi: {len(final_result['events'])}"
+        f"  Salvato: "
+        f"{output_path.name}"
+        f" | Eventi: "
+        f"{len(final_result['events'])}"
         f" | Relazioni: "
-        f"{len(final_result['temporal_relations'])}",
+        f"{len(final_result['temporal_relations'])}"
+        f" | Warning: "
+        f"{len(final_result.get('_normalization_warnings', []))}",
         flush=True,
     )
 
@@ -1004,8 +1347,8 @@ def main() -> None:
 
     if not files:
         parser.error(
-            "Nessun file *_semantic.json trovato in "
-            f"{args.semantic_directory}"
+            "Nessun file *_semantic.json "
+            f"trovato in {args.semantic_directory}"
         )
 
     args.output_directory.mkdir(
@@ -1063,6 +1406,7 @@ def main() -> None:
             )
 
             traceback.print_exc()
+
             sys.exit(2)
 
         except Exception:

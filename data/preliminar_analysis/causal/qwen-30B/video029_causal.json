@@ -1,0 +1,58 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0010",
+      "relation": "causes",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0011"
+      ],
+      "explanation": "L'ingresso del cliente in negozio e la sua reazione di sorpresa (E0010) causano la sua successiva espressione di sorpresa durante la conversazione (E0015), supportata dall'evento in cui il commesso prende un prodotto (E0011).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "causes",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il commesso mostra rabbia e parla (E0017), causando il successivo urlo (E0018), in quanto l'urlo è un'escalation diretta della rabbia.",
+      "confidence": 0.95
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "causes",
+      "effect_event": "E0019",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'urlo del commesso (E0018) causa la reazione di sorpresa del cliente (E0019), poiché l'urlo è un evento inaspettato che provoca sorpresa.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0007"
+      ],
+      "explanation": "La conversazione tra e1 e e2 (E0005) abilita la successiva conversazione tra due uomini (E0006), poiché entrambe coinvolgono gli stessi partecipanti e si susseguono in modo coerente.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0005"
+      ],
+      "explanation": "Il fatto che e2 stia parlando al telefono (E0007) potrebbe motivare la conversazione tra due uomini (E0006), poiché suggerisce un contesto di comunicazione che si estende a più interazioni.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video029",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video029_events.json"
+}

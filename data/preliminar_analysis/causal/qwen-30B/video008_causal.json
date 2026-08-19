@@ -1,0 +1,112 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "Il venditore prende un salume dalla vetrina, abilitando la successiva azione di mostrare un prodotto al cliente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "Il venditore estrae un prodotto dalla vetrina, abilitando la successiva azione di mostrare il prodotto al cliente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "motivates",
+      "effect_event": "E0017",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "Il venditore mostra un prodotto al cliente, motivando una successiva conversazione tra le due parti.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0022",
+      "relation": "motivates",
+      "effect_event": "E0023",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo prende una lattina da uno scaffale, motivando la successiva azione di mostrarla alla donna.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0023",
+      "relation": "motivates",
+      "effect_event": "E0024",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'uomo mostra una lattina alla donna, motivando un'azione aggressiva successiva.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0024",
+      "relation": "causes",
+      "effect_event": "E0025",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo afferra la donna per il collo, causando l'intervento di un altro uomo che la afferra per separarli.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0025",
+      "relation": "causes",
+      "effect_event": "E0027",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo in maglietta nera afferra la donna per il collo, causando l'intervento di un uomo in giacca grigia per separare le due persone.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0028",
+      "relation": "causes",
+      "effect_event": "E0029",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo afferra la donna per il collo, causando la sua reazione di paura e lotta.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0033",
+      "relation": "causes",
+      "effect_event": "E0034",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo in giacca grigia afferra la donna, causando il successivo spinta.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0034",
+      "relation": "causes",
+      "effect_event": "E0035",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo spinge la donna, causando la sua caduta a terra.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0035",
+      "relation": "enables",
+      "effect_event": "E0036",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La donna cade a terra, abilitando il successivo allontanamento dell'uomo.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video008",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video008_events.json"
+}

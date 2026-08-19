@@ -1,0 +1,49 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0009"
+      ],
+      "explanation": "La bambina deve tenere la palla (E0001) per poterla successivamente lanciare (E0010).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "Il lancio della palla (E0013) comporta che un'altra bambina la prenda (E0011).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "motivates",
+      "effect_event": "E0018",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0016"
+      ],
+      "explanation": "La persona lancia la palla (E0016), e la ragazza sorride e si prepara a prenderla (E0017), motivando il lancio diretto a lei (E0018).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0023",
+      "relation": "enables",
+      "effect_event": "E0022",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Giocare a lanciare e ricevere la palla (E0023) abilita il lancio specifico da una bambina all'altra (E0022).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video034",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video034_events.json"
+}

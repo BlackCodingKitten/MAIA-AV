@@ -1,0 +1,70 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'annusare il sacchetto permette al commesso di mostrare il contenuto, rendendo possibile l'evento successivo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il lancio e la raccolta della banana preparano il commesso per l'imballaggio successivo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'imballaggio della banana rende possibile mostrare la borsa al cliente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Mostrare la borsa al cliente abilita la consegna successiva.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La consegna della borsa permette la vendita del pacchetto.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "motivates",
+      "effect_event": "E0017",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La vendita completa motiva i clienti a lasciare il negozio.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "motivates",
+      "effect_event": "E0018",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La vendita completa motiva il negoziante a girarsi verso i clienti.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video028",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video028_events.json"
+}

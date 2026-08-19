@@ -1,0 +1,82 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'arrivo del ladro con l'ascia ha causato l'urlo della persona con gli occhiali.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'aggressione del ladro ha portato il farmacista ad agitare l'ascia davanti al cliente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'agitazione dell'ascia ha permesso al cliente di parlare, probabilmente in risposta alla minaccia.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "motivates",
+      "effect_event": "E0022",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0015",
+        "E0016"
+      ],
+      "explanation": "l'aggressione del ladro ha motivato il farmacista a tenere uno strumento lungo, probabilmente per difesa.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "motivates",
+      "effect_event": "E0023",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0015",
+        "E0016"
+      ],
+      "explanation": "l'aggressione del ladro ha motivato il cliente a parlare e gesticolare, probabilmente per reagire alla minaccia.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "motivates",
+      "effect_event": "E0024",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0015",
+        "E0016"
+      ],
+      "explanation": "l'aggressione del ladro ha motivato il farmacista ad ascoltare il cliente, probabilmente per valutare la situazione.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "motivates",
+      "effect_event": "E0025",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0015",
+        "E0016"
+      ],
+      "explanation": "l'aggressione del ladro ha motivato il cliente a parlare con il farmacista, probabilmente per chiedere aiuto o chiarire.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video001",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video001_events.json"
+}

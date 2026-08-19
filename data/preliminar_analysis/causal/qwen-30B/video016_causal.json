@@ -1,0 +1,108 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "L'aggiunta degli ingredienti sulla carne abilita la preparazione successiva della carne.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La preparazione della carne abilita il successivo tocco della carne.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il tocco della carne abilita la manipolazione successiva della carne.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La manipolazione della carne abilita l'aggiunta successiva delle spezie.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggiunta del sale abilita l'aggiunta simultanea del pepe.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggiunta del sale abilita l'aggiunta simultanea dell'aglio.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il taglio delle cipolle abilita la successiva raccolta delle verdure.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il prelievo del sedano abilita il successivo taglio del sedano.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il taglio del sedano abilita il successivo taglio del cetriolo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il taglio del cetriolo abilita il successivo taglio del cetriolo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il taglio del cetriolo abilita il successivo taglio del cetriolo.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video016",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video016_events.json"
+}

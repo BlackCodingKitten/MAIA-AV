@@ -1,0 +1,85 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0004"
+      ],
+      "explanation": "L'osservazione che uomo e donna si guardano e stanno insieme in un vicolo abilita il bacio sulla guancia.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0001",
+        "E0004"
+      ],
+      "explanation": "Il bacio sulla guancia motiva la risposta emotiva della donna, che sorride.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0015"
+      ],
+      "explanation": "L'uomo che parla al telefono mentre cammina abilita l'abbraccio della donna.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0015"
+      ],
+      "explanation": "La donna che tiene il braccio dell'uomo abilita l'abbraccio reciproco.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0020",
+      "relation": "enables",
+      "effect_event": "E0021",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0019"
+      ],
+      "explanation": "L'abbraccio reciproco abilita il bacio sulla guancia.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0028",
+      "relation": "enables",
+      "effect_event": "E0029",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0026"
+      ],
+      "explanation": "L'uomo che parla al telefono mentre cammina abilita il successivo sguardo al telefono.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0030",
+      "relation": "enables",
+      "effect_event": "E0029",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0026"
+      ],
+      "explanation": "La donna che tiene il braccio dell'uomo abilita il successivo sguardo al telefono.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video002",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video002_events.json"
+}

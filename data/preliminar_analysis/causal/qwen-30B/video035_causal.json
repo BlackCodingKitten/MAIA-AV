@@ -1,0 +1,88 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona che parla e gesticola (E0001) è in posizione seduta, il che abilita l'evento successivo in cui è ancora seduta (E0002).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona che è seduta (E0002) deve alzarsi per camminare via (E0003), quindi la condizione di essere seduta abilita il successivo alzarsi.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona che si alza e cammina via (E0003) lascia il bancone, permettendo all'impiegato di trovarsi in piedi dietro il bancone (E0004).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cliente che è in piedi davanti al bancone (E0008) è la condizione necessaria affinché una persona possa camminare verso il bancone (E0009).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'impiegato che si appoggia al bancone (E0010) è un'azione che abilita il mantenimento della posizione in piedi dietro il bancone (E0011).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'addetto al bancone che si trova dietro il bancone (E0012) abilita la presenza del cliente davanti al bancone (E0013).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'addetto al bancone che si trova dietro il bancone (E0012) abilita la possibilità di guardare verso il cliente (E0014).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'impiegato che si sposta verso il bancone (E0016) abilita l'allungamento delle mani verso il bancone (E0017).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "enables",
+      "effect_event": "E0019",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'impiegato che si avvicina al bancone (E0018) abilita la preparazione a servire il cliente (E0019).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video035",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video035_events.json"
+}

@@ -1,0 +1,58 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La presenza delle uova nella ciotola è necessaria affinché lo zucchero possa essere versato insieme a esse, rendendo possibile l'evento E0004.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uso del mixer elettrico per mescolare uova e zucchero (E0005) abilita il successivo mescolamento di una miscela gialla con la frusta elettrica (E0006), poiché entrambi gli eventi coinvolgono lo stesso strumento elettrico per la miscelazione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "La presenza di farina nel bicchiere (E0009) abilita il successivo versamento della farina nella ciotola (E0012), poiché la farina deve essere prima nel bicchiere per poter essere versata.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La miscelazione iniziale con il mixer (E0011) abilita il successivo versamento della farina nella ciotola (E0012), poiché l'impasto deve essere già in corso di preparazione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0013"
+      ],
+      "explanation": "Il versamento della farina nella ciotola (E0012) abilita il successivo impasto con l'impastatrice (E0014), poiché la farina deve essere presente prima di essere impastata.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video013",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video013_events.json"
+}

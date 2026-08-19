@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la persona tiene una pianta con il terriccio attaccato alle radici, il che abilita l'azione di piantare la pianta nel terreno.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "dopo aver piantato la pianta nel terreno, la persona può toccare il terreno e raccogliere i semi.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la persona tocca il terreno e raccoglie i semi, il che abilita l'azione di tenere un guscio in mano.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "prevents",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la persona toglie una pianta dal terreno, il che impedisce di piantare una pianta nel terreno nello stesso momento.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video014",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video014_events.json"
+}

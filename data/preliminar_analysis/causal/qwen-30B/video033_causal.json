@@ -1,0 +1,65 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0011"
+      ],
+      "explanation": "l'accovacciamento (E0011) abilita il tuffo (E0012), poiché è una posizione preparatoria necessaria per eseguire il tuffo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "l'accovacciamento (E0011) abilita il tuffo (E0013), poiché è una posizione preparatoria necessaria per eseguire il tuffo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "causes",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "il tuffo nella neve (E0012) causa l'essere sepolto nella neve (E0014), poiché il tuffo porta direttamente a questa condizione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "il tuffo nella neve (E0013) causa l'essere sepolto nella neve (E0015), poiché il tuffo porta direttamente a questa condizione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'essere sepolto nella neve (E0014) abilita il nuotare nella neve (E0016), poiché la posizione iniziale permette di iniziare a muoversi.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'essere sepolto nella neve (E0015) abilita il nuotare nella neve (E0016), poiché la posizione iniziale permette di iniziare a muoversi.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video033",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video033_events.json"
+}

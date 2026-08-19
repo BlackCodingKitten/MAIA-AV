@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0019",
+      "relation": "causes",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona porge una fotografia a un uomo, il che causa l'atto di guardare la fotografia.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0020",
+      "relation": "causes",
+      "effect_event": "E0021",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo guarda una fotografia, il che causa il suo sorriso.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0021",
+      "relation": "causes",
+      "effect_event": "E0022",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo sorride guardando la fotografia, il che causa la donna a guardarlo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0022",
+      "relation": "causes",
+      "effect_event": "E0023",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La donna guarda l'uomo, il che causa la persona a sorridere.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0026",
+      "relation": "causes",
+      "effect_event": "E0027",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona guarda una foto di un bambino, il che causa il suo sguardo verso l'orizzonte.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video017",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video017_events.json"
+}

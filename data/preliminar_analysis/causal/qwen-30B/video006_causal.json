@@ -1,0 +1,88 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Premere il pulsante dell'interfono abilita l'attesa davanti all'interfono, poiché l'attesa segue immediatamente dopo e richiede che il pulsante sia stato premuto.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "motivates",
+      "effect_event": "E0005",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'osservazione dell'interfono motiva la persona a muoversi verso la porta, poiché l'evento successivo è l'avvicinamento alla porta in un ambiente buio.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona si china e mette la mano nella borsa, abilitando il successivo atto di prendere la scatola di pizza.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Prendere la scatola di pizza dalla borsa abilita la consegna successiva.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La consegna della scatola di pizza abilita la consegna successiva, poiché l'evento è ripetuto in sequenza.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La consegna della scatola di pizza abilita la consegna successiva, poiché l'evento è ripetuto in sequenza.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La consegna della scatola abilita la successiva chiusura della porta, poiché l'evento è immediatamente precedente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La chiusura della porta abilita l'osservazione successiva della porta, poiché l'evento è immediatamente precedente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "motivates",
+      "effect_event": "E0013",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'osservazione della porta motiva la persona a girarsi, poiché l'evento successivo è il giro della persona.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video006",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video006_events.json"
+}

@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'evento E0001 rappresenta il prelievo del prodotto cosmetico, che è una condizione abilitante per l'applicazione successiva descritta in E0002.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'applicazione dell'ombretto con la spazzola (E0004) precede e abilita la chiusura della paletta (E0005), poiché la paletta viene chiusa dopo l'applicazione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La chiusura della paletta (E0005) è un'azione che precede l'applicazione successiva di ombretto (E0006), suggerendo che la paletta è stata riaperta per l'applicazione successiva.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'apertura della paletta (E0010) è una condizione abilitante per l'applicazione successiva di ombretto (E0011).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il prelievo di ombretto con la spazzola (E0013) abilita l'applicazione successiva di ombretto (E0012).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video012",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video012_events.json"
+}

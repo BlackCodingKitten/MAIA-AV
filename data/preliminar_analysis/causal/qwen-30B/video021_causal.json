@@ -1,0 +1,78 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0001",
+        "E0004"
+      ],
+      "explanation": "La vicinanza della donna all'uomo (E0002) abilita l'interazione verbale (E0003), poiché la comunicazione richiede una posizione ravvicinata.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0001",
+        "E0002",
+        "E0003"
+      ],
+      "explanation": "L'interazione in un negozio (E0004) abilita il fatto che l'uomo guardi la donna (E0005), poiché il contesto sociale favorisce l'interazione visiva.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0005"
+      ],
+      "explanation": "La donna che parla con l'uomo (E0006) abilita l'interazione reciproca (E0007), poiché la comunicazione richiede risposte da entrambe le parti.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0009"
+      ],
+      "explanation": "La conversazione tra l'uomo e la donna (E0010) abilita la donna che parla a un uomo (E0011), poiché la conversazione richiede che entrambi parlino.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "enables",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0015",
+        "E0016"
+      ],
+      "explanation": "La conversazione tra l'uomo e la donna (E0017) abilita il fatto che l'uomo guardi verso il basso (E0018), poiché durante le conversazioni le persone possono distogliere lo sguardo.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0021",
+      "relation": "enables",
+      "effect_event": "E0022",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0019",
+        "E0020"
+      ],
+      "explanation": "L'uomo e la donna che si guardano e parlano (E0021) abilita la donna che parla con un uomo (E0022), poiché l'interazione reciproca favorisce la comunicazione.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video021",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video021_events.json"
+}

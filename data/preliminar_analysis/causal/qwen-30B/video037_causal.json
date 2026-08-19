@@ -1,0 +1,55 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona deve prima mettere il telefono nel cestino affinché possa successivamente prenderlo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0007",
+        "E0008"
+      ],
+      "explanation": "Dopo aver ripreso il telefono, la persona indossa un cappello da festa e parla, suggerendo che l'azione di riprendere il telefono sia motivata da un evento festivo.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "causes",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La donna raccoglie i rifiuti da terra, il che implica che si alza in piedi per farlo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona che entra nel campo visivo da destra permette che la famiglia sia osservata insieme a lei nel parco.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0025",
+      "relation": "prevents",
+      "effect_event": "E0024",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il radunamento del gruppo di persone avviene prima della bambina che cammina verso il cestino, suggerendo che il radunamento impedisca o ritardi tale azione.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video037",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video037_events.json"
+}

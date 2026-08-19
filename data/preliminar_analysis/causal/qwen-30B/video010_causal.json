@@ -1,0 +1,63 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "causes",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "La pioggia intensa con vento (E0001) causa la pioggia che cade su alberi (E0003), poiché E0002 è un evento intermedio che mostra la pioggia in azione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "causes",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il soffitto danneggiato in un corridoio (E0006) causa il pavimento bagnato con detriti (E0007), poiché il danno al soffitto implica perdite che raggiungono il pavimento.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il soffitto è rotto e mostra cavi elettrici (E0009) causa il soffitto è rotto e mostra i cavi elettrici (E0010), poiché E0010 è una ripetizione o rafforzamento di E0009.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Lo stato di degrado del corridoio (E0005) abilita il danneggiamento del soffitto (E0006), poiché il degrado rende il soffitto più vulnerabile.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "causes",
+      "effect_event": "E0008",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il pavimento bagnato con detriti (E0007) causa il pavimento sporco con macchie di liquido (E0008), poiché il bagnato e i detriti portano a macchie.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il pavimento sporco con macchie di liquido (E0008) abilita il soffitto rotto con cavi elettrici (E0009), poiché il degrado del pavimento suggerisce un deterioramento generale.",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video010",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video010_events.json"
+}

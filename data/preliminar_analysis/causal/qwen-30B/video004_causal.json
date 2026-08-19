@@ -1,0 +1,83 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "Il cane cammina verso la telecamera (E0001) e si muove su un prato (E0002). Il movimento iniziale (E0001) abilita il successivo spostamento sul prato (E0002), con E0003 che mostra la transizione di direzione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "causes",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane cammina sul prato (E0008) porta direttamente al rotolamento (E0009), indicando una causa-effetto diretta.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane sdraiato sull'erba (E0010) abilita l'azione di leccarsi il muso (E0011), poiché questa azione richiede una posizione sdraiata.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane sdraiato sull'erba (E0012) abilita il leccarsi il naso (E0013), poiché questa azione richiede una posizione stabile.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane sdraiato sull'erba (E0012) abilita il leccarsi il naso (E0014), poiché questa azione richiede una posizione stabile.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane sdraiato sull'erba (E0012) abilita l'apertura della bocca (E0015), poiché questa azione richiede una posizione stabile.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il cane sdraiato sull'erba (E0012) abilita la presenza della persona che cammina (E0016), poiché entrambi gli eventi si verificano contemporaneamente in uno stesso contesto.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "motivates",
+      "effect_event": "E0018",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0016"
+      ],
+      "explanation": "La persona cammina (E0016) e il cane si avvicina (E0017), suggerendo che la presenza della persona motivi il cane a muoversi verso di lei.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video004",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video004_events.json"
+}
