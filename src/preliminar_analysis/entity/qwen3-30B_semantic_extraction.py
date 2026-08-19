@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 # Configurazione prima di importare torch/vLLM.
 os.environ["CUDA_VISIBLE_DEVICES"] = "5,6,1,2"
-os.environ["VLLM_USE_FLASHINFER_SAMPLING"] = "0"
+os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
 os.environ["VLLM_USE_FLASHINFER"] = "0"
 os.environ["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
 os.environ["NCCL_P2P_DISABLE"] = "1"
