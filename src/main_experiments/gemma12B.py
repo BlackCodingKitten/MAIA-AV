@@ -234,7 +234,10 @@ class Model:
             # - trascrizione aggiuntiva
             # ==================================================================
 
-            if mode == "no_input":
+            if mode in ("no_input", "only_transcription"):
+                # no_input: solo prompt caption/foil.
+                # only_transcription: la trascrizione è già incorporata nel prompt
+                # da common.py, quindi non si caricano immagini o audio.
                 pass
 
             # ==================================================================
