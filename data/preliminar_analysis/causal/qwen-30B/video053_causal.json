@@ -1,0 +1,45 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "La consegna della chiave (E0007) abilita la consegna dell'oggetto (E0014), poiché la chiave è un prerequisito per il completamento della procedura di check-out.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "motivates",
+      "effect_event": "E0013",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La consegna dell'oggetto (E0014) motiva l'ospite a allontanarsi dal bancone (E0013), poiché il compito è stato completato.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "causes",
+      "effect_event": "E0019",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il tocco dell'uomo sulla donna (E0018) causa il suo allontanamento (E0019), poiché l'evento successivo è un movimento di ritirata.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0019",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'allontanamento dell'uomo (E0019) abilita l'azione successiva di spingere la donna e entrare nella stanza (E0020), poiché crea lo spazio necessario.",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video053",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video053_events.json"
+}

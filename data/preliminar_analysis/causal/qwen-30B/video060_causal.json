@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la bambina si china verso l'asciugamano (E0005) abilita il successivo contatto con esso (E0007)",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "motivates",
+      "effect_event": "E0010",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "la bambina che parla in ginocchio (E0009) suggerisce un'azione successiva di rimanere in ginocchio (E0010), motivata dalla conversazione",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la posizione in ginocchio (E0010) abilita il contatto con l'asciugamano (E0011)",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "causes",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la bambina che si alza e si china (E0016) causa l'azione di raccogliere e lasciare scivolare la sabbia (E0017)",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "causes",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "raccogliere e lasciare scivolare la sabbia (E0017) porta a mostrare le mani coperte di sabbia (E0018)",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video060",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video060_events.json"
+}

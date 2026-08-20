@@ -1,0 +1,94 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona giace a terra, il che rende possibile che un'altra persona si chini su di lei.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La persona a terra richiede attenzione, motivando l'osservazione da parte di un'altra persona.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0005",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La persona a terra richiede attenzione, motivando l'osservazione da parte di un'altra persona.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La persona a terra richiede attenzione, motivando l'osservazione da parte di un'altra persona.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona si alza da terra, rendendo possibile la sua discesa da un aereo.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il gruppo di persone corre verso l'aereo, abilitando la successiva affollamento per salire.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La folla si affolla per salire, rendendo possibile che una persona in costume salga.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La folla si affolla per salire, rendendo possibile che una persona salga.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0019",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La folla si affolla per salire, rendendo possibile che altre persone aspettino.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video091",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video091_events.json"
+}

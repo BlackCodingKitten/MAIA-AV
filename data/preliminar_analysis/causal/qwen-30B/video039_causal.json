@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il fatto che due uomini si siedano a un tavolo (E0004) abilita la possibilità che una cameriera si avvicini con un menu (E0005), poiché il tavolo è ora occupato e pronto per il servizio.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La cameriera mostra il menu ai clienti (E0005), il che abilita i clienti a esaminarlo (E0007).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Dopo che la cameriera serve i clienti (E0006), i clienti possono esaminare il menu (E0007), poiché il servizio ha reso disponibili i menu.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il comportamento di leggere il menu (E0008) suggerisce che l'uomo ha bisogno di una migliore visibilità, motivando l'azione di mettersi gli occhiali (E0009).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo si mette gli occhiali (E0009), abilitando la sua capacità di leggere il menu, il che rende possibile che i due uomini e la donna leggano i menu insieme (E0010).",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video039",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video039_events.json"
+}

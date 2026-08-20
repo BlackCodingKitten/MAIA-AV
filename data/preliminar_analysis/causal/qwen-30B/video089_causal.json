@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'oratore che tiene in mano un pesce e parla in un microfono (E0004) abilita la reazione dei due osservatori seduti che sorridono (E0005), poiché l'evento E0004 è osservato contemporaneamente a E0005 e il contenuto del discorso con l'oggetto insolito potrebbe motivare il sorriso.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'oratore che tiene in alto un pesce durante un discorso (E0006) potrebbe motivare l'evento successivo in cui l'oratore tiene in mano un pesce e parla in un microfono (E0007), poiché l'evento E0006 potrebbe aver introdotto un tema o un oggetto che viene ripreso in E0007.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'oratore che tiene un pesce e parla in un microfono (E0008) potrebbe motivare l'evento successivo in cui l'oratore tiene in mano un pesce durante un discorso (E0009), poiché l'evento E0008 potrebbe aver introdotto un tema o un oggetto che viene ripreso in E0009.",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video089",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video089_events.json"
+}

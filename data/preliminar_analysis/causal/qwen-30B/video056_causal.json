@@ -1,0 +1,106 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003",
+        "E0004"
+      ],
+      "explanation": "La pulizia del divano con il tovagliolo (E0002) porta a un tovagliolo sporco, che successivamente viene gettato nel cestino (E0005). L'uso del tovagliolo è una condizione abilitante per il suo gettare nel cestino.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0010",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0009"
+      ],
+      "explanation": "La persona tiene in mano un pezzo di salamino (E0008), il che suggerisce un'azione di mangiare; ciò motiva l'evento di mangiare uno spuntino (E0010), che include anche l'uso di una patatina (E0009).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Prendere una patatina (E0009) è una condizione abilitante per mangiare uno spuntino (E0010), poiché l'evento E0010 include l'uso di uno spuntino come patatina.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La bambina mangia un frutto rosso (E0007), il che motiva l'evento di mangiare un pezzo di frutta (E0006), poiché entrambi riguardano il consumo di frutta.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0011",
+        "E0012",
+        "E0013"
+      ],
+      "explanation": "La bambina è seduta a un tavolo con del cibo (E0014), il che abilita l'evento di guardare la telecamera (E0015), poiché l'ambiente del tavolo con cibo è un contesto in cui si verifica l'osservazione.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza del cibo sul tavolo (E0014) abilita la possibilità che la bambina faccia una smorfia (E0016), probabilmente a causa del sapore o dell'esperienza del cibo.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La bambina è seduta a un tavolo con del cibo (E0014), il che abilita l'evento di chiudere gli occhi (E0017), come reazione a un sapore o esperienza intensa.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "enables",
+      "effect_event": "E0019",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La bambina è seduta a un tavolo all'aperto (E0018), il che abilita l'evento di guardare verso l'alto (E0019), poiché l'ambiente all'aperto consente tale azione.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La bambina è seduta a un tavolo all'aperto (E0018), il che abilita l'evento di sorridere (E0020), poiché l'ambiente all'aperto favorisce un'atmosfera positiva.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0021",
+      "relation": "enables",
+      "effect_event": "E0022",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La bambina guarda la telecamera (E0021), il che abilita l'evento di fare una smorfia (E0022), poiché l'osservazione diretta favorisce espressioni facciali.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video056",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video056_events.json"
+}

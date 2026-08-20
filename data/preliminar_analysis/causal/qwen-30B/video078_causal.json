@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "causes",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0001",
+        "E0003"
+      ],
+      "explanation": "La persona legge qualcosa nella cartella (E0004), che si sovrappone al sorriso (E0002), suggerendo che il contenuto letto abbia causato l'espressione positiva.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0005"
+      ],
+      "explanation": "La lettura da una cartella (E0006) precede l'uso del telefono (E0007), indicando che la lettura potrebbe aver abilitato o preparato l'azione successiva.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "motivates",
+      "effect_event": "E0008",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0006"
+      ],
+      "explanation": "La persona tiene il telefono e sorride (E0007), seguito da una situazione in cui sorride guardando il telefono (E0008), suggerendo che l'evento precedente ha motivato l'azione successiva.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0007"
+      ],
+      "explanation": "La persona è seduta al tavolo e sorride guardando il telefono (E0008), che precede l'azione di sorridere tenendo il telefono (E0009), indicando una motivazione per l'azione successiva.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video078",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video078_events.json"
+}

@@ -1,0 +1,142 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La mescolatura delle carte (E0011) è una condizione abilitante per la successiva distribuzione delle carte (E0012), poiché le carte devono essere mescolate prima di poter essere distribuite.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "causes",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La distribuzione delle carte (E0012) causa l'azione di prendere le carte (E0013), poiché le carte devono essere distribuite prima che qualcuno le prenda.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presa delle carte (E0013) precede e causa l'azione di mostrare un fascio di carte (E0014), poiché la persona deve prima prendere le carte per poterle mostrare.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "motivates",
+      "effect_event": "E0015",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La dimostrazione delle carte (E0014) motiva il giocatore a indicare ripetutamente una carta sul tavolo (E0015), poiché mostra le carte disponibili e induce a fare scelte.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "causes",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'indicazione ripetuta di una carta (E0015) causa il sollevamento della mano (E0016), poiché l'azione di indicare richiede il movimento della mano.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il sollevamento della mano (E0016) abilita il giocatore a parlare e gesticolare (E0017), poiché il movimento della mano è parte della gesticolazione durante il parlare.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "enables",
+      "effect_event": "E0018",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La conversazione e la gesticolazione (E0017) abilitano il giocatore a tenere le carte a ventaglio (E0018), poiché la gestualità è parte dell'esposizione delle carte durante la partita.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Tenere le carte a ventaglio (E0018) abilita il giocatore a prendere una carta dal mazzo (E0020), poiché mostra le carte disponibili e facilita la scelta.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0019",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Puntare il dito (E0019) abilita il giocatore a prendere una carta (E0020), poiché indica la carta scelta e guida l'azione di prenderla.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0020",
+      "relation": "causes",
+      "effect_event": "E0021",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Prendere una carta dal mazzo (E0020) causa l'azione di mostrare una carta (E0021), poiché la carta deve essere presa prima di poter essere mostrata.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0021",
+      "relation": "causes",
+      "effect_event": "E0022",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Mostrare una carta (E0021) causa l'azione di tenere una carta in posizione verticale (E0022), poiché mostrare la carta richiede di tenerla in modo visibile.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0022",
+      "relation": "enables",
+      "effect_event": "E0023",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Tenere una carta in posizione verticale (E0022) abilita il giocatore a fare un gesto con la mano (E0023), poiché la posizione della carta facilita l'uso della mano per gesti.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0023",
+      "relation": "causes",
+      "effect_event": "E0024",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Fare un gesto con la mano (E0023) causa il gesto del pollice in su (E0024), poiché il pollice in su è un tipo specifico di gesto.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0024",
+      "relation": "enables",
+      "effect_event": "E0025",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il gesto del pollice in su (E0024) abilita il giocatore a tenere una carta in mano (E0025), poiché il gesto indica approvazione e permette di continuare a tenere la carta.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0025",
+      "relation": "causes",
+      "effect_event": "E0026",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Tenere una carta in mano (E0025) causa il gesto con la mano (E0026), poiché la presenza della carta richiede un gesto per manipolarla.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video098",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video098_events.json"
+}

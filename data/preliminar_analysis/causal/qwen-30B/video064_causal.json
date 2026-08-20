@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0005",
+      "relation": "causes",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "l'evento E0005 mostra una persona che colpisce un'altra con un cuscino, seguito immediatamente da E0006 in cui la persona colpita si alza dal divano, indicando un effetto fisico diretto.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la persona porge un peluche a un'altra, il che abilita la successiva azione di alzarsi dal divano, probabilmente come conseguenza di un gesto di riconciliazione o attenzione.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la persona riceve un peluche, il che abilita la successiva azione di sdraiarsi sul divano, probabilmente come conseguenza di un gesto di riconciliazione o attenzione.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "causes",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la persona si appoggia su un cuscino, seguito da alzarsi da esso, indicando un effetto fisico diretto.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video064",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video064_events.json"
+}

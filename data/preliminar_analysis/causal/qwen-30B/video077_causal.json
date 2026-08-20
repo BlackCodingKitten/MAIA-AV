@@ -1,0 +1,54 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona è distesa sul pavimento (E0006), il che abilita la possibilità che il bambino sia disteso sul pavimento con un giocattolo (E0007).",
+      "confidence": 0.95
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona è distesa sul pavimento (E0006), il che abilita la possibilità che il bambino sia disteso sul pavimento (E0008).",
+      "confidence": 0.95
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "motivates",
+      "effect_event": "E0011",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "Il bambino gioca con un giocattolo (E0009) e successivamente è disteso sul pavimento (E0010), il che suggerisce che l'attività di gioco possa motivare il successivo stato di sonno (E0011).",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "causes",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il bambino dorme sul pavimento (E0011), il che causa il fatto che un bambino dorma sul pavimento (E0012), poiché si tratta dello stesso evento con una descrizione leggermente diversa.",
+      "confidence": 0.95
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "causes",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Un bambino dorme sul pavimento (E0012), il che causa il fatto che una persona dorma sul pavimento (E0013), poiché il bambino è una persona.",
+      "confidence": 0.95
+    }
+  ],
+  "id_video": "video077",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video077_events.json"
+}

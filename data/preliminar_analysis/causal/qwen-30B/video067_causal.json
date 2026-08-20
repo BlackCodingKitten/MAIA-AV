@@ -1,0 +1,54 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0001"
+      ],
+      "explanation": "Il tocco del braccio da parte dell'uomo in cappello (E0003) abilita la sua reazione (E0002) durante la conversazione iniziata da E0001.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0009",
+        "E0010"
+      ],
+      "explanation": "Il tocco del braccio da parte dell'uomo in cappello (E0013) abilita la conversazione (E0014) tra i due uomini.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0035",
+      "relation": "enables",
+      "effect_event": "E0036",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0033",
+        "E0034"
+      ],
+      "explanation": "Il tocco del braccio da parte dell'uomo in cappello (E0035) abilita la risposta fisica dell'uomo in abito grigio (E0036) durante la conversazione.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0037",
+      "relation": "motivates",
+      "effect_event": "E0038",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0033",
+        "E0034"
+      ],
+      "explanation": "Il tocco della mano da parte dell'uomo in cappello (E0037) suggerisce un gesto di riconciliazione o conclusione, motivando la continuazione della conversazione (E0038).",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video067",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video067_events.json"
+}

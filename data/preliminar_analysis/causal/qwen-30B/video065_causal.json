@@ -1,0 +1,61 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La cerimonia di consegna del documento (E0005) è un evento formale che abilita la successiva apparizione di una donna che parla in un microfono (E0006), poiché il contesto richiede un intervento orale.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La donna che parla in un microfono (E0006) motiva l'applauso del pubblico (E0008), poiché l'applauso è una risposta comune a un discorso o presentazione.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La donna che tiene un discorso in un'aula (E0009) abilita la successiva visualizzazione di cappelli da laurea (E0010), poiché il contesto suggerisce un evento accademico come una laurea.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo che parla in un microfono (E0011) abilita l'ascolto da parte di una donna (E0012), poiché l'ascolto richiede che qualcuno stia parlando.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo che sta tenendo un discorso (E0013) abilita l'evento in cui un uomo parla in un microfono (E0014), poiché il discorso richiede l'uso del microfono.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo che sta tenendo un discorso (E0013) abilita l'ascolto da parte di una donna (E0015), poiché l'ascolto richiede che qualcuno stia parlando.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video065",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video065_events.json"
+}

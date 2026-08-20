@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'evento E0003 mostra una mano che tiene una bottiglia, che probabilmente è un gonfiabile; questo supporta l'evento E0004 in cui la persona tiene una piscina gonfiabile, suggerendo che il primo evento abilita il secondo.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona è seduta con le gambe piegate (E0005) prima di nuotare (E0006), il che suggerisce che questa posizione potrebbe aver preparato o abilitato il passaggio al nuoto.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "motivates",
+      "effect_event": "E0010",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'evento E0009 mostra una persona con un braccialetto gonfiabile, che potrebbe motivare l'azione di alzarsi dalla sedia (E0010) per entrare in acqua o partecipare a un'attività acquatica.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'alzarsi dalla sedia (E0010) precede e probabilmente abilita la successiva azione di chinarsi verso un oggetto (E0012), poiché richiede un cambiamento di posizione.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video086",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video086_events.json"
+}

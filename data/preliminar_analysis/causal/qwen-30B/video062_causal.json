@@ -1,0 +1,46 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0019",
+      "relation": "causes",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'evento E0019 mostra una donna che estrae una scatola dai jeans, seguito immediatamente da E0020 dove la stessa donna parla e guarda verso l'alto, suggerendo che l'estrazione della scatola abbia causato il suo gesto di parlare e guardare in alto.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'evento E0016 mostra la donna che esamina jeans e una scatola, il che abilita l'evento successivo E0017 in cui mette la scatola in una borsa, poiché la scatola deve essere già stata esaminata o individuata prima di poter essere inserita.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'evento E0014 mostra una mano che porge una scatola a una donna, il che abilita l'evento successivo E0015 in cui la donna esamina un prodotto, poiché la scatola deve essere stata consegnata prima di poter essere esaminata.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "prevents",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003",
+        "E0004"
+      ],
+      "explanation": "L'evento E0006 mostra la donna che mette giù i jeans, e successivamente E0009 mostra la stessa donna che si prova un paio di jeans. L'evento E0006 implica che il paio di jeans precedentemente esaminato non è stato acquistato o tenuto, prevenendo così la possibilità di provarlo in seguito, sebbene non sia esplicito che il gesto di metterli giù abbia causato direttamente l'evitare di provarli.",
+      "confidence": 0.6
+    }
+  ],
+  "id_video": "video062",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video062_events.json"
+}

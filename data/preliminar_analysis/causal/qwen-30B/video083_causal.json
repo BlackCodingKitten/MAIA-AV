@@ -1,0 +1,28 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "causes",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0006",
+        "E0007"
+      ],
+      "explanation": "La persona versa crema su un piatto (E0001), successivamente tiene un piatto verde sopra una bambina (E0006) mentre la bambina è seduta su un cuscino (E0007), portando alla situazione in cui la bambina ha la faccia sporca di crema (E0008).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La bambina ha la faccia sporca di crema (E0008), il che probabilmente motiva l'azione di togliersi la crema dal viso (E0009).",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video083",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video083_events.json"
+}

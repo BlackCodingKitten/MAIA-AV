@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La visita veterinaria (E0003) fornisce il contesto e l'accesso necessari per procedere con l'esame clinico (E0004).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La visita veterinaria (E0005) abilita l'esecuzione del trattamento veterinario (E0006).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'esame clinico del gatto (E0008) è la condizione necessaria per determinare la visita o il trattamento successivo (E0009).",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La visita o il trattamento del gatto (E0009) porta direttamente alla prestazione medica veterinaria (E0010).",
+      "confidence": 0.85
+    }
+  ],
+  "id_video": "video005",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video005_events.json"
+}

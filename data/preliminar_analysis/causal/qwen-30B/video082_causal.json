@@ -1,0 +1,97 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo seduto parla con l'uomo in piedi, il che abilita l'osservazione reciproca.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "causes",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo seduto si alza dalla panchina, causando il successivo atto di chinarsi per allacciare i lacci.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo in ginocchio lega il laccio della scarpa dell'altro, causando il successivo alzarsi in piedi.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo in ginocchio si alza in piedi, abilitando il successivo tocco sulla spalla.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "motivates",
+      "effect_event": "E0016",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il tocco sulla spalla potrebbe motivare l'inizio di una nuova conversazione.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La conversazione tra i due uomini abilita la successiva conversazione in strada.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "enables",
+      "effect_event": "E0021",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La conversazione in strada è abilitata dalla precedente conversazione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0021",
+      "relation": "enables",
+      "effect_event": "E0022",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La conversazione in strada abilita la successiva conversazione in strada.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0022",
+      "relation": "enables",
+      "effect_event": "E0024",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La conversazione in strada abilita la successiva conversazione in strada.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0024",
+      "relation": "enables",
+      "effect_event": "E0026",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La conversazione in strada abilita la successiva conversazione in un parcheggio.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video082",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video082_events.json"
+}

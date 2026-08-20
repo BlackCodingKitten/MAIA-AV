@@ -1,0 +1,117 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "La mano dell'uomo che si avvicina alla donna (E0003) abilita la sua reazione di voltarsi verso di lui (E0004), dopo essersi appoggiata al balcone (E0002).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La donna che si volta verso l'uomo (E0004) abilita il suo avvicinamento (E0005), poiché la sua attenzione è rivolta verso di lui.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "causes",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0004"
+      ],
+      "explanation": "L'avvicinamento dell'uomo alla donna (E0005) causa l'abbraccio e il bacio (E0006), che seguono immediatamente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0007"
+      ],
+      "explanation": "Il fatto che l'uomo stia già portando la donna lungo un ponte (E0007) abilita il successivo trasporto verso la carrozza (E0009), poiché la donna è già in movimento.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0008"
+      ],
+      "explanation": "Il trasporto della donna verso la carrozza (E0009) abilita l'aiuto per farla salire (E0010), poiché richiede l'assistenza di più persone.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0009"
+      ],
+      "explanation": "L'aiuto per far salire la donna nella carrozza (E0010) abilita il suo ingresso (E0011), poiché è necessario per completare l'azione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "L'ingresso della persona nella carrozza (E0011) abilita la sua posizione seduta e lo sguardo all'interno (E0012), poiché è una conseguenza logica.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0011"
+      ],
+      "explanation": "La persona seduta e che guarda dentro la carrozza (E0012) abilita il successivo appoggio alla carrozza (E0013), poiché è un'azione logica successiva.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "enables",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0012"
+      ],
+      "explanation": "L'appoggio alla carrozza (E0013) abilita l'azione del cocchiere (E0014), poiché richiede la presenza di una persona vicino alla carrozza.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0014",
+      "relation": "enables",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0013"
+      ],
+      "explanation": "L'occupazione del cocchiere della carrozza (E0014) abilita il successivo gesto di toccare il tetto (E0015), poiché è un'azione che segue logicamente.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video070",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video070_events.json"
+}

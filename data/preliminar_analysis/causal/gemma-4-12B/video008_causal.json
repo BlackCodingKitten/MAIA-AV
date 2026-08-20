@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "causes",
+      "effect_event": "E0002",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La conversazione iniziale tra i due uomini nel negozio di salumi sembra degenerare in un alterco fisico.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "causes",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'alterco fisico porta direttamente a una lotta o interazione fisica tra i due uomini.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0022",
+      "relation": "causes",
+      "effect_event": "E0023",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo in abito grigio afferra e spinge la donna, causando la sua caduta a terra.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0023",
+      "relation": "motivates",
+      "effect_event": "E0024",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La caduta della donna sembra motivare l'uomo in abito grigio ad allontanarsi da lei.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video008",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video008_events.json"
+}

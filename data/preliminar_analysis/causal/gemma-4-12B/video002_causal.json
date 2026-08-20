@@ -1,0 +1,37 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "motivates",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'uomo guarda la donna prima di baciarla sulla guancia, suggerendo un'intenzione o un'attenzione diretta.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "causes",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il bacio sulla guancia dell'uomo provoca il sorriso della donna.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0023",
+      "relation": "enables",
+      "effect_event": "E0026",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0025",
+        "E0027"
+      ],
+      "explanation": "L'interazione durante la telefonata e il fatto che la donna guardi l'uomo mentre lui parla creano il contesto per il bacio finale.",
+      "confidence": 0.75
+    }
+  ],
+  "id_video": "video002",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video002_events.json"
+}

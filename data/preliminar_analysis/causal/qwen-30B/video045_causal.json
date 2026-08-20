@@ -1,0 +1,82 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003",
+        "E0004",
+        "E0005"
+      ],
+      "explanation": "La presenza di una folla intorno all'auto della polizia (E0002) e l'interazione tra civili e agenti (E0003, E0004) creano un contesto che abilita l'attacco successivo (E0006).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003",
+        "E0004",
+        "E0005"
+      ],
+      "explanation": "La folla radunata (E0002) e le interazioni tra civili e agenti (E0003, E0004) abilitano l'attacco all'auto civile (E0007).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0005"
+      ],
+      "explanation": "L'attacco all'auto della polizia (E0006) potrebbe motivare l'attacco successivo all'auto civile (E0007) come parte di un'azione collettiva.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0018",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0017"
+      ],
+      "explanation": "La folla radunata intorno a un'auto civile (E0017) abilita l'azione di colpire il finestrino (E0018).",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "enables",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza di una folla intorno a un'auto civile (E0017) permette direttamente l'azione di colpire il finestrino (E0018).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0019",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza di un carabiniere che cammina tra la folla (E0019) abilita l'azione di colpirlo (E0020).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0020",
+      "relation": "causes",
+      "effect_event": "E0021",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggressione al carabiniere (E0020) causa direttamente la lotta fisica (E0021).",
+      "confidence": 0.95
+    }
+  ],
+  "id_video": "video045",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video045_events.json"
+}

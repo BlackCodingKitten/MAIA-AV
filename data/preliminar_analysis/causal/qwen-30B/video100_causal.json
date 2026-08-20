@@ -1,0 +1,60 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "causes",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "la spinta sulla porta ha causato l'apertura della porta",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0019"
+      ],
+      "explanation": "sedersi al tavolo abilita l'azione di disegnare sul libro",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0021",
+      "relation": "enables",
+      "effect_event": "E0020",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0018"
+      ],
+      "explanation": "tenere una matita abilita l'azione di disegnare sul libro",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0024",
+      "relation": "motivates",
+      "effect_event": "E0028",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0027"
+      ],
+      "explanation": "il disegno del personaggio motiva la persona a guardare il disegno e sorridere",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0030",
+      "relation": "enables",
+      "effect_event": "E0031",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0032"
+      ],
+      "explanation": "alzarsi dalla sedia abilita la persona a girarsi verso la scrivania",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video100",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video100_events.json"
+}

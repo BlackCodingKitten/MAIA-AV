@@ -1,0 +1,25 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'interazione con il letto e il telecomando prepara lo spazio e il contesto per il movimento della bambina verso il letto.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "causes",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il movimento verso il letto culmina nell'azione di sdraiarsi sul letto.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video007",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video007_events.json"
+}

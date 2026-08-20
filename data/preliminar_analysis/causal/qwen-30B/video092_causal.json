@@ -1,0 +1,56 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0005",
+      "relation": "causes",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0007"
+      ],
+      "explanation": "La persona in maglione rosso punta il dito e parla con la persona in cappello bianco, causando quest'ultima a guardare in alto.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "causes",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0005"
+      ],
+      "explanation": "La persona in maglione rosso parla con la persona in cappello bianco, causando quest'ultima a guardare in alto.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0016",
+      "relation": "enables",
+      "effect_event": "E0017",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona con cappello bianco e camicia a fiori si gira di scatto verso destra mentre la guida turistica tiene una presentazione, indicando che l'evento di presentazione abilita il movimento.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0018",
+      "relation": "causes",
+      "effect_event": "E0019",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona con cappello bianco e camicia a fiori si gira di scatto verso destra, seguita da un movimento verso sinistra, indicando una relazione causale diretta.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0020",
+      "relation": "motivates",
+      "effect_event": "E0021",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La guida turistica sta tenendo una presentazione, motivando l'evento successivo in cui una persona parla a un gruppo di persone sedute.",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video092",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video092_events.json"
+}

@@ -1,0 +1,81 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "L'arrampicata sulle parallele (E0001) permette alle ginnaste di raggiungere e aggrapparsi alla sbarra alta (E0003), con E0002 come evento intermedio che mostra l'aggrappamento.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il mantenimento della posizione sulla sbarra alta (E0003) consente alle ginnaste di stare in piedi sul pavimento (E0004), probabilmente come parte di un esercizio di transizione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "motivates",
+      "effect_event": "E0005",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La posizione in piedi sul pavimento (E0004) potrebbe motivare una ginnasta a toccarsi la testa (E0005), ad esempio per un gesto di espressione o di regolazione.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'esercizio sulla sbarra alta (E0006) abilita le ginnaste a osservare le compagne che si esercitano (E0007), poiché entrambi gli eventi avvengono contemporaneamente.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggrappamento alla barra orizzontale (E0008) abilita l'esercizio sulla stessa barra (E0009), poiché l'esercizio richiede la presa.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'aggrappamento alla barra orizzontale (E0008) abilita il salto per afferrare la barra (E0010), poiché il salto richiede la presa come condizione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'essere sospesi alla sbarra parallela (E0011) abilita il mantenimento della stessa posizione (E0012), poiché l'evento successivo è una continuazione della condizione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'essere sospesi alla sbarra parallela (E0012) abilita il mantenimento della posizione sulla stessa barra (E0013), poiché l'evento successivo è una continuazione della condizione.",
+      "confidence": 1.0
+    }
+  ],
+  "id_video": "video097",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video097_events.json"
+}

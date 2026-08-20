@@ -1,0 +1,92 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La bambina tiene l'acqua (E0004), il che abilita la persona a tenerla (E0005).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona tiene l'acqua (E0005), il che abilita la bambina a chinarsi nell'acqua (E0006).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La bambina si china nell'acqua (E0006), il che suggerisce che l'uomo si alza in piedi (E0007) per interagire o sorvegliare.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "motivates",
+      "effect_event": "E0008",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La bambina si china nell'acqua (E0006), il che suggerisce che due uomini camminano nell'acqua (E0008) per partecipare o sorvegliare.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "enables",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "La bambina si alza (E0011), il che abilita due bambine a giocare con le pistole ad acqua (E0012).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "enables",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Due bambine giocano nell'acqua (E0017), il che abilita un uomo a nuotare (E0018).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0021",
+      "relation": "enables",
+      "effect_event": "E0022",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Una bambina corre nell'acqua (E0021), il che abilita la stessa bambina a galleggiare (E0022).",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0023",
+      "relation": "motivates",
+      "effect_event": "E0024",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Un uomo lancia una palla (E0023), il che suggerisce che una bambina cammina nell'acqua (E0024) per raggiungerla.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0023",
+      "relation": "motivates",
+      "effect_event": "E0025",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Un uomo lancia una palla (E0023), il che suggerisce che una bambina nuota nell'acqua (E0025) per raggiungerla.",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video055",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video055_events.json"
+}

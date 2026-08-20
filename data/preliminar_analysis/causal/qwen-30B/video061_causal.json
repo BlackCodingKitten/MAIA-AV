@@ -1,0 +1,54 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0012"
+      ],
+      "explanation": "La persona e2 mostra un telefono con lo schermo rotto, il che abilita la persona e1 a vedere lo stesso oggetto e reagire coprendosi il viso.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "motivates",
+      "effect_event": "E0012",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La persona e1 si copre il viso dopo aver visto lo schermo rotto, il che potrebbe motivare la persona e2 a mostrare segni di ansia come mordersi le unghie.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0014",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona maggiore si morde le unghie contemporaneamente alla persona minore che piange, suggerendo che il comportamento della persona maggiore possa causare o intensificare l'ansia della persona minore.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0015",
+      "relation": "causes",
+      "effect_event": "E0016",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona e1 si morde le unghie immediatamente prima di coprirsi il viso, indicando che il primo comportamento potrebbe causare il secondo.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0017",
+      "relation": "enables",
+      "effect_event": "E0018",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La persona e2 indica la bambina seduta sul divano, abilitando la successiva interazione in cui una mano si avvicina al suo viso.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video061",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video061_events.json"
+}

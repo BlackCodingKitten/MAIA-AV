@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La radunata in riva al mare con costumi e cappelli da Babbo Natale (E0003) abilita la successiva immersione in acqua (E0004), poiché rappresenta la preparazione diretta per l'evento acquatico.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La presenza di persone in acqua (E0004) abilita la partecipazione collettiva al bagno di Capodanno in mare (E0005), poiché l'evento acquatico è una condizione necessaria per la sua realizzazione.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "motivates",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La partecipazione al bagno di Capodanno in mare (E0005) motiva l'uomo a farsi una foto con il telefono (E0006), poiché l'evento festivo è un contesto comune per la documentazione personale.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "motivates",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La partecipazione collettiva al bagno di Capodanno in mare (E0005) motiva il gruppo a fare il bagno insieme (E0007), poiché l'evento congiunto crea un contesto sociale per l'azione collettiva.",
+      "confidence": 0.8
+    }
+  ],
+  "id_video": "video041",
+  "model": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "source_event_file": "data/preliminar_analysis/event/qwen-30B/video041_events.json"
+}
