@@ -1,232 +1,328 @@
 from pathlib import Path
 from typing import Literal
 import json
-import os
-import re
 
 import pandas as pd
 from openai import OpenAI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 MODEL = "gpt-4o-2024-08-06"
 
-FINAL_DIR = Path("data/preliminar_analysis/final_results")
-NLI_DIR = FINAL_DIR / "nli"
+ROOT = Path("data/preliminar_analysis/final_results")
+QUESTIONS = Path("data/vsv/question_classification.csv")
+NLI_DIR = Path("data/preliminar_analysis/final_results/nli")
+MODELS = ("gemma", "gemma-4-12B", "qwen", "qwen-30B")
 
-QUESTIONS_FILE = Path("data/vsv/question_classification.csv")
-CAPTION_FOIL_FILE = Path("data/vsv/caption-foil/caption_foil.csv")
-
-OUTPUT_RESULTS = FINAL_DIR / "nli_risultati.csv"
-OUTPUT_PROFICIENCY = FINAL_DIR / "question_proficiency.csv"
-
-EXPECTED_MODELS = (
-    "gemma",
-    "gemma-4-12B",
-    "qwen",
-    "qwen-30B",
-)
-
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+client = OpenAI()
 
 
-PROMPT = """Sei un valutatore di Natural Language Inference.
+PROMPT = """
+Sei un valutatore diagnostico della comprensione visuale di un modello multimodale.
+
+Non devi rispondere alla domanda.
+
+Devi stabilire quanto delle informazioni NECESSARIE per poter rispondere alla
+domanda sia stato effettivamente recuperato dal modello attraverso la sola
+analisi dei frame del video.
 
 Riceverai:
-- una DOMANDA;
-- una PREMESSA, cioè la rappresentazione strutturata estratta da un video;
-- una IPOTESI.
 
-Devi classificare la relazione tra PREMESSA e IPOTESI usando esclusivamente le informazioni contenute nella PREMESSA.
+DOMANDA
+La domanda originale.
 
-Usa soltanto una delle seguenti etichette:
+REQUISITI DELLA DOMANDA
+Una descrizione strutturata di ciò che sarebbe necessario recuperare dal video:
+- entity: entità, referenti o attributi necessari
+- event: eventi, stati o ancore temporali necessari
+- inference: operazione inferenziale necessaria
+- principal_label e auxiliary_labels: tipo di ragionamento richiesto
+- objective_criterion: criterio operativo della domanda
+- evidence_scope ed evidence_units: quantità e distribuzione dell'evidenza
+  necessaria
 
-- implicazione: la PREMESSA contiene informazioni sufficienti per sostenere chiaramente l'IPOTESI;
-- contraddizione: la PREMESSA contiene informazioni chiaramente incompatibili con l'IPOTESI;
-- neutro: la PREMESSA non contiene informazioni sufficienti per sostenere o contraddire chiaramente l'IPOTESI.
+ANALISI DEL MODELLO
+La rappresentazione prodotta esclusivamente dai frame:
+- semantic_analysis: entità, attributi, azioni, relazioni spaziali,
+  cambiamenti di stato e osservazioni locali
+- event_analysis: eventi consolidati e relazioni temporali
+- causal_analysis: relazioni causali o motivazionali inferite
 
-Regole:
-- usa esclusivamente la PREMESSA come fonte di evidenza;
-- la DOMANDA serve soltanto a indicare quale informazione è rilevante;
-- non usare conoscenza esterna;
-- non completare informazioni mancanti;
-- non considerare la plausibilità dell'IPOTESI come evidenza;
-- se l'evidenza è incompleta, debole, ambigua o richiede un'inferenza non chiaramente supportata, scegli neutro;
-- in caso di dubbio scegli sempre neutro;
-- non produrre spiegazioni."""
+Il tuo obiettivo NON è verificare se nella rappresentazione compare
+letteralmente il testo della domanda.
+
+Devi effettuare un confronto semantico e inferenziale.
+
+Valuta tre aspetti.
+
+1. ENTITÀ
+Quanto sono state recuperate le entità, i referenti, gli oggetti, gli attributi
+o le localizzazioni richieste dal campo entity.
+
+2. EVENTI
+Quanto sono stati recuperati gli eventi, stati, azioni o ancore temporali
+richiesti dal campo event.
+
+3. INFERENZA
+Quanto la rappresentazione disponibile permette di eseguire l'operazione
+descritta dal campo inference.
+
+Per l'inferenza puoi combinare coerentemente informazioni provenienti dai
+diversi livelli dell'analisi.
+
+Esempi:
+- una relazione spaziale può derivare da entità + spatial_relations;
+- una relazione prima/dopo può essere ricostruita da eventi, timestamp e
+  temporal_relations;
+- un cambiamento può essere ricostruito confrontando stati in intervalli diversi;
+- una relazione causale può essere supportata da causal_analysis o da una
+  catena di eventi sufficientemente esplicita.
+
+REGOLE
+
+- Accetta sinonimi, parafrasi e descrizioni semanticamente equivalenti.
+- Non richiedere corrispondenza lessicale esatta.
+- Gli ID delle entità possono cambiare tra segmenti: ragiona sul loro significato.
+- Informazioni distribuite in segmenti differenti possono essere integrate.
+- Usa timestamp e intervalli quando sono rilevanti.
+- La semplice successione temporale non implica causalità.
+- Non usare conoscenza esterna per inventare informazioni mancanti.
+- Non attribuire dialoghi, intenzioni, cause o stati mentali che non siano
+  supportati dall'analisi.
+- Un elemento con confidence 0 non costituisce evidenza utile.
+- Una confidence alta aumenta l'affidabilità dell'elemento ma non sostituisce
+  la coerenza semantica.
+- Informazioni irrilevanti non aumentano il punteggio.
+- Non penalizzare una domanda perché è strutturalmente complessa:
+  valuta soltanto quanto dei suoi requisiti specifici è stato recuperato.
+- Non cercare di indovinare la risposta corretta alla domanda.
+
+SCORE
+
+Assegna score_entita, score_eventi e score_inferenza da 0 a 100.
+
+0 significa che il requisito non è stato recuperato.
+100 significa che il requisito è completamente e chiaramente disponibile.
+
+Assegna poi score_comprensione da 0 a 100.
+
+Lo score_comprensione rappresenta quanto il modello abbia complessivamente
+costruito una rappresentazione visuale sufficiente per affrontare la domanda.
+
+Usa come riferimento:
+
+0-19:
+quasi nessun requisito utile recuperato.
+
+20-39:
+riconosciuto il contesto generale o alcune entità, ma mancano elementi
+fondamentali.
+
+40-59:
+copertura parziale sostanziale, ma manca almeno un prerequisito decisivo.
+
+60-79:
+quasi tutti i prerequisiti sono disponibili, con alcune lacune o incertezze.
+
+80-94:
+la rappresentazione contiene informazioni sufficienti per affrontare
+seriamente la domanda.
+
+95-100:
+tutti i prerequisiti rilevanti sono chiaramente recuperati e coerenti.
+
+Lo score complessivo NON deve essere una semplice media meccanica.
+Un requisito decisivo mancante deve ridurre lo score anche se gli altri
+elementi sono presenti.
+
+Classifica infine la domanda come:
+
+- insufficiente
+- parziale
+- sufficiente
+- completa
+
+Fornisci una motivazione breve basata esclusivamente sui requisiti recuperati
+e mancanti.
+"""
 
 
-REGOLE = {
-    "spaziale": "Per le relazioni spaziali, non inferire una relazione dalla sola presenza simultanea o vicinanza generica di due entità. La relazione deve essere chiaramente supportata dalla PREMESSA.",
-    "temporale": "Per le relazioni temporali, non inferire prima o dopo dal semplice ordine con cui gli eventi sono scritti. Usa soltanto timestamp, intervalli o relazioni temporali presenti nella PREMESSA.",
-    "causale": "Per le relazioni causali, la successione temporale non implica causalità. Non inventare cause, effetti, intenzioni, motivazioni o condizioni abilitanti non chiaramente supportate dalla PREMESSA.",
-}
+class Valutazione(BaseModel):
+    score_entita: int = Field(ge=0, le=100)
+    score_eventi: int = Field(ge=0, le=100)
+    score_inferenza: int = Field(ge=0, le=100)
+    score_comprensione: int = Field(ge=0, le=100)
+
+    livello: Literal[
+        "insufficiente",
+        "parziale",
+        "sufficiente",
+        "completa",
+    ]
+
+    evidenza_recuperata: list[str]
+    evidenza_mancante: list[str]
+    motivazione: str
 
 
-class RispostaNLI(BaseModel):
-    etichetta: Literal["implicazione", "contraddizione", "neutro"]
+def clean(x):
+    if isinstance(x, dict):
+        if float(x.get("confidence", 1) or 0) == 0:
+            return None
+
+        return {
+            k: y
+            for k, v in x.items()
+            if k not in {
+                "input_frames",
+                "evidence_frames",
+                "configuration",
+                "errors",
+                "source_semantic_file",
+                "source_event_file",
+            }
+            and (y := clean(v)) not in (None, [], {})
+        }
+
+    if isinstance(x, list):
+        return [
+            y
+            for v in x
+            if (y := clean(v)) not in (None, [], {})
+        ]
+
+    return x
 
 
-def normalizza_video(value):
-    numero = re.search(r"\d+", str(value))
-    if not numero:
-        raise ValueError(f"ID video non riconosciuto: {value}")
-    return f"video{int(numero.group()):03d}"
+def load_model(model):
+    data = json.loads((ROOT / f"{model}.json").read_text(encoding="utf-8"))
+    return {x["video_id"]: clean(x) for x in data["videos"]}
 
 
-def normalizza_categoria(value):
-    categoria = str(value).strip().lower()
-    return {"spatial": "spaziale", "temporal": "temporale", "causal": "causale"}.get(categoria, categoria)
+def evaluate(question, analysis):
+    fields = [
+        "question_text",
+        "principal_dimension",
+        "diagnostic_label",
+        "complexity_level",
+        "principal_label",
+        "auxiliary_labels",
+        "entity",
+        "event",
+        "inference",
+        "objective_criterion",
+        "evidence_scope",
+        "evidence_units",
+        "information_explicitness",
+        "temporal_dependency",
+        "dimension_combination",
+    ]
 
+    requirements = {
+        key: question[key]
+        for key in fields
+        if pd.notna(question[key])
+    }
 
-def carica_domande():
-    df = pd.read_csv(QUESTIONS_FILE, sep=None, engine="python", encoding="utf-8-sig")
-    df["video_id"] = df["video_name"].map(normalizza_video)
-    df["categoria"] = df["principal_dimension"].map(normalizza_categoria)
-    return df[["video_id", "categoria", "question_text"]].rename(columns={"question_text": "domanda"})
-
-
-def carica_coppie(domande):
-    df = pd.read_csv(CAPTION_FOIL_FILE, sep=None, engine="python", encoding="utf-8-sig")
-    df["video_id"] = df["video_id"].map(normalizza_video)
-    df["categoria"] = df["question_category"].map(normalizza_categoria)
-    return df[["id", "video_id", "categoria", "caption", "foil"]].merge(domande, on=["video_id", "categoria"], how="inner", validate="many_to_one")
-
-
-def carica_finalizzazioni(path):
-    data = json.loads(path.read_text(encoding="utf-8"))
-
-    if isinstance(data, list):
-        return {normalizza_video(item.get("video_id") or item.get("id_video")): item for item in data}
-
-    if isinstance(data.get("videos"), list):
-        return {normalizza_video(item.get("video_id") or item.get("id_video")): item for item in data["videos"]}
-
-    if isinstance(data.get("results"), list):
-        return {normalizza_video(item.get("video_id") or item.get("id_video")): item for item in data["results"]}
-
-    if "video_id" in data or "id_video" in data:
-        return {normalizza_video(data.get("video_id") or data.get("id_video")): data}
-
-    return {normalizza_video(video_id): risultato for video_id, risultato in data.items() if isinstance(risultato, dict)}
-
-
-def classifica(premessa, domanda, categoria, ipotesi):
-    contenuto = json.dumps({"domanda": domanda, "premessa": premessa, "ipotesi": ipotesi}, ensure_ascii=False)
-
-    risposta = client.chat.completions.parse(
+    response = client.chat.completions.parse(
         model=MODEL,
         temperature=0,
         messages=[
-            {"role": "system", "content": f"{PROMPT}\n\n{REGOLE[categoria]}"},
-            {"role": "user", "content": contenuto},
+            {"role": "system", "content": PROMPT},
+            {
+                "role": "user",
+                "content": json.dumps(
+                    {
+                        "requisiti_domanda": requirements,
+                        "analisi_modello": analysis,
+                    },
+                    ensure_ascii=False,
+                ),
+            },
         ],
-        response_format=RispostaNLI,
+        response_format=Valutazione,
     )
 
-    risultato = risposta.choices[0].message.parsed
-
-    if risultato is None:
-        raise RuntimeError("Il modello non ha restituito una classificazione NLI valida.")
-
-    return risultato.etichetta
-
-
-def valuta_coppia(caption, foil):
-    return "PASS" if caption == "implicazione" and foil == "contraddizione" else "NOT PASS"
-
-
-def valuta_modello(path, coppie):
-    modello = path.stem
-    finalizzazioni = carica_finalizzazioni(path)
-    checkpoint = NLI_DIR / f"{modello}_nli.csv"
-
-    risultati = pd.read_csv(checkpoint) if checkpoint.exists() else pd.DataFrame()
-    completati = set(risultati["id"]) if not risultati.empty else set()
-
-    for i, row in coppie.iterrows():
-        if row["id"] in completati:
-            continue
-
-        if row["video_id"] not in finalizzazioni:
-            raise ValueError(f"Finalizzazione mancante per {row['video_id']} nel modello {modello}.")
-
-        print(f"[{modello}] {i + 1}/{len(coppie)} - {row['id']}")
-
-        premessa = finalizzazioni[row["video_id"]]
-        nli_caption = classifica(premessa, row["domanda"], row["categoria"], row["caption"])
-        nli_foil = classifica(premessa, row["domanda"], row["categoria"], row["foil"])
-
-        risultato = {
-            "modello": modello,
-            "id": row["id"],
-            "video_id": row["video_id"],
-            "categoria": row["categoria"],
-            "domanda": row["domanda"],
-            "caption": row["caption"],
-            "foil": row["foil"],
-            "nli_caption": nli_caption,
-            "nli_foil": nli_foil,
-            "esito": valuta_coppia(nli_caption, nli_foil),
-        }
-
-        pd.DataFrame([risultato]).to_csv(checkpoint, mode="a", header=not checkpoint.exists(), index=False)
-        completati.add(row["id"])
-
-    return pd.read_csv(checkpoint)
-
-
-def crea_proficiency(risultati):
-    risultati["pass"] = (risultati["esito"] == "PASS").astype(int)
-
-    df = risultati.groupby(["modello", "video_id", "categoria", "domanda"]).agg(
-        totale_coppie=("esito", "size"),
-        coppie_pass=("pass", "sum"),
-    ).reset_index()
-
-    df["tasso_pass"] = df["coppie_pass"] / df["totale_coppie"]
-    df["proficiency"] = ["PASS" if passate == totale else "NOT PASS" for passate, totale in zip(df["coppie_pass"], df["totale_coppie"])]
-
-    return df
-
+    return response.choices[0].message.parsed
 
 def main():
     NLI_DIR.mkdir(parents=True, exist_ok=True)
 
-    final_files = [
-        FINAL_DIR / f"{model}.json"
-        for model in EXPECTED_MODELS
-    ]
+    questions = pd.read_csv(
+        QUESTIONS,
+        sep=None,
+        engine="python",
+        encoding="utf-8-sig",
+    )
 
-    mancanti = [
-        path.name
-        for path in final_files
-        if not path.exists()
-    ]
+    for model in MODELS:
+        analyses = load_model(model)
+        output = NLI_DIR / f"{model}.csv"
 
-    if mancanti:
-        raise RuntimeError(
-            "Mancano i file di finalizzazione attesi in "
-            f"{FINAL_DIR}: {', '.join(mancanti)}"
-        )
+        risultati = pd.read_csv(output) if output.exists() else pd.DataFrame()
 
-    domande = carica_domande()
-    coppie = carica_coppie(domande)
+        completati = set(
+            zip(
+                risultati["video_id"],
+                risultati["question_order"],
+            )
+        ) if not risultati.empty else set()
 
-    print(f"Domande: {len(domande)}")
-    print(f"Coppie caption-foil: {len(coppie)}")
-    print(f"Modelli: {len(final_files)}")
+        for i, q in questions.iterrows():
+            video_id = Path(q["video_name"]).stem
+            key = (video_id, q["question_order"])
 
-    risultati = pd.concat([valuta_modello(path, coppie) for path in final_files], ignore_index=True)
-    risultati.to_csv(OUTPUT_RESULTS, index=False)
+            if key in completati:
+                continue
 
-    proficiency = crea_proficiency(risultati)
-    proficiency.to_csv(OUTPUT_PROFICIENCY, index=False)
+            print(
+                f"[{model}] "
+                f"{i + 1}/{len(questions)} "
+                f"{video_id} Q{q['question_order']}"
+            )
 
-    print(f"Risultati NLI salvati in: {OUTPUT_RESULTS}")
-    print(f"Proficiency salvata in: {OUTPUT_PROFICIENCY}")
-    print(f"File intermedi salvati in: {NLI_DIR}")
+            result = evaluate(
+                q,
+                analyses[video_id],
+            )
 
+            row = {
+                "model": model,
+                "video_id": video_id,
+                "question_order": q["question_order"],
+                "question": q["question_text"],
+                "principal_dimension": q["principal_dimension"],
+                "principal_label": q["principal_label"],
+                "diagnostic_label": q["diagnostic_label"],
+                "complexity_level": q["complexity_level"],
 
+                "entity_required": q["entity"],
+                "event_required": q["event"],
+                "inference_required": q["inference"],
+
+                "objective_criterion": q["objective_criterion"],
+                "evidence_scope": q["evidence_scope"],
+                "evidence_units": q["evidence_units"],
+                "information_explicitness": q["information_explicitness"],
+                "temporal_dependency": q["temporal_dependency"],
+                "dimension_combination": q["dimension_combination"],
+
+                **result.model_dump(),
+            }
+
+            pd.DataFrame([row]).to_csv(
+                output,
+                mode="a",
+                header=not output.exists(),
+                index=False,
+                encoding="utf-8-sig",
+            )
+
+            completati.add(key)
+
+        print(f"[OK] {output}")
+        
+        
+        
 if __name__ == "__main__":
     main()
