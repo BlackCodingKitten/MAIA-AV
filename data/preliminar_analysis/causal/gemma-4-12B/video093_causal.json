@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0007",
+      "relation": "motivates",
+      "effect_event": "E0008",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La scelta di una bevanda motiva l'interazione successiva con il distributore automatico.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "causes",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'interazione con il distributore automatico porta la bambina a mostrare stupore o sorpresa.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'esitazione o riflessione mentre guarda le bevande precede e permette l'osservazione focalizzata delle bevande nel distributore.",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video093",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video093_events.json"
+}

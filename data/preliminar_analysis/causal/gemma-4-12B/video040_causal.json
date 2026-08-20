@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'intreccio iniziale dei capelli della bambina permette l'aggiunta successiva di fili colorati.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "causes",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'inserimento dei fili colorati porta alla definizione dell'acconciatura finale.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La dimostrazione di intreccio dei fili motiva la creazione del braccialetto.",
+      "confidence": 0.75
+    }
+  ],
+  "id_video": "video040",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video040_events.json"
+}

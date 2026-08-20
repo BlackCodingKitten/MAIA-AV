@@ -1,0 +1,27 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "La presenza della bambina con il pallone (E0001) e l'interazione iniziale (E0002) rendono possibile il gioco di lancio e ricezione (E0003).",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0002",
+      "relation": "causes",
+      "effect_event": "E0003",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'interazione tra la bambina e la ragazza porta direttamente all'inizio del gioco di lancio e ricezione della palla.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video034",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video034_events.json"
+}

@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La posizione di attesa del lavoratore rende possibile l'interazione successiva con il cliente.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il lavoratore trovarsi in piedi dietro il bancone è la condizione che permette lo svolgimento del lavoro dietro il bancone.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'attività di lavoro dietro il bancone porta direttamente alla preparazione degli ordini.",
+      "confidence": 0.85
+    }
+  ],
+  "id_video": "video035",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video035_events.json"
+}

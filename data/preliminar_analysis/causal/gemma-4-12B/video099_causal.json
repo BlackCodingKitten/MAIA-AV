@@ -1,0 +1,27 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "causes",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0001"
+      ],
+      "explanation": "Il salto fuori dall'acqua dell'animale (E0003) durante l'attività di pesca (E0001) porta alla cattura del pesce (E0002).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La curvatura della canna da pesca (E0009) indica la presenza di una trazione che avviene durante l'azione di pesca (E0010).",
+      "confidence": 0.85
+    }
+  ],
+  "id_video": "video099",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video099_events.json"
+}

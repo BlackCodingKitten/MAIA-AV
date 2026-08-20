@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il trasporto di attrezzatura rende possibile l'inizio dei lavori di verniciatura.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0004",
+      "relation": "enables",
+      "effect_event": "E0005",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "I lavori di verniciatura preparano la superficie per la pittura della parete.",
+      "confidence": 0.75
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La pittura della parete è una condizione necessaria per i lavori di finitura della parete.",
+      "confidence": 0.85
+    }
+  ],
+  "id_video": "video049",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video049_events.json"
+}

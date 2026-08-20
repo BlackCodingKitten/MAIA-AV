@@ -1,0 +1,52 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0002",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'espansione della conversazione a un gruppo più numeroso (e3, e4, e5, e6) rende possibile l'azione collettiva di scattare una foto di gruppo.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "motivates",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Lo scatto di una foto di gruppo precede e motiva l'azione specifica di scattare un selfie di gruppo.",
+      "confidence": 0.6
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La posa per una foto di gruppo è la condizione necessaria che abilita lo scatto del selfie di gruppo.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "causes",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Lo scatto del selfie porta naturalmente il gruppo a guardare lo smartphone per visualizzare il risultato.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Lo scatto di un ulteriore selfie causa l'azione successiva di guardare insieme lo smartphone.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video080",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video080_events.json"
+}

@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0005",
+      "relation": "causes",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il passaggio della donna con la scopa (E0005) provoca la reazione dell'uomo che si gira e si rivolge alla telecamera (E0006).",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'uomo che si rivolge alla telecamera e parla (E0006) prepara il contesto per l'interazione successiva tra i personaggi (E0007).",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "causes",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'interazione tra i due personaggi (E0007) sfocia direttamente nella scena di dialogo comico (E0008).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il dialogo comico (E0008) funge da introduzione o parte integrante della scena di intrattenimento/spettacolo (E0009).",
+      "confidence": 0.75
+    }
+  ],
+  "id_video": "video092",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video092_events.json"
+}

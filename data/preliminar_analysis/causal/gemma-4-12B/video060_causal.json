@@ -1,0 +1,36 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il fatto che la bambina si chini verso la sabbia rende possibile il contatto fisico con essa.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "causes",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il tocco della sabbia con le mani precede e permette l'azione di scavare nella sabbia.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "causes",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0014"
+      ],
+      "explanation": "L'azione di scavare nella sabbia causa il fatto che la mano della bambina risulti coperta di sabbia.",
+      "confidence": 0.95
+    }
+  ],
+  "id_video": "video060",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video060_events.json"
+}

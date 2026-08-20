@@ -1,0 +1,36 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0003",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0002"
+      ],
+      "explanation": "La sessione di istruzione sportiva iniziale fornisce le basi e le indicazioni per la successiva sessione di allenamento fisico.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0009",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La conversazione tra istruttore e allievo alla fine dell'attività porta al saluto formale con stretta di mano.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il saluto con stretta di mano funge da transizione sociale che porta alla conversazione finale tra i due uomini.",
+      "confidence": 0.85
+    }
+  ],
+  "id_video": "video069",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video069_events.json"
+}

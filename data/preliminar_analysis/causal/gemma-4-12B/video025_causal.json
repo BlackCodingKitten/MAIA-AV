@@ -1,0 +1,43 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il gioco generale sulla spiaggia fornisce il contesto e il materiale necessario per la costruzione del castello di sabbia.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0010",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'attività generale sulla spiaggia porta alla specifica azione della bambina che esplora il buco di sabbia.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0011",
+      "relation": "causes",
+      "effect_event": "E0012",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'esplorazione iniziale del buco di sabbia porta alla continuazione dell'esplorazione dello stesso.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "causes",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'esplorazione del buco nella sabbia porta la bambina ad avvicinarsi e scendere in un buco d'acqua.",
+      "confidence": 0.9
+    }
+  ],
+  "id_video": "video025",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video025_events.json"
+}

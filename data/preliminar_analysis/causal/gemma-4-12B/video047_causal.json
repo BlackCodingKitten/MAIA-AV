@@ -1,0 +1,25 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0008",
+      "relation": "causes",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'intervista televisiva (E0008) è l'attività che causa o richiede l'azione di parlare (E0009) da parte del partecipante.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "causes",
+      "effect_event": "E0010",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'atto di parlare (E0009) durante l'intervista motiva o accompagna la gestualità con la mano (E0010).",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video047",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video047_events.json"
+}

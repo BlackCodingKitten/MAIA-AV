@@ -1,0 +1,45 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "motivates",
+      "effect_event": "E0002",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La preparazione generale per la giornata motiva l'azione specifica di sistemarsi i capelli.",
+      "confidence": 0.7
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "L'interazione iniziale tra le due donne nella camera da letto rende possibile il passaggio a un'interazione più intima.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "La conversazione tra le due donne sul letto precede e facilita l'interazione fisica successiva.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0011",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "La conversazione tra uomo e donna, insieme al dialogo generale, prepara il contesto per il momento intimo finale.",
+      "confidence": 0.75
+    }
+  ],
+  "id_video": "video073",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video073_events.json"
+}

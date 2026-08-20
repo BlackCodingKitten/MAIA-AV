@@ -1,0 +1,226 @@
+{
+  "events": [
+    {
+      "event_id": "E0001",
+      "description": "presenza del biglietto sulla porta",
+      "start_time": 0.0,
+      "end_time": 3.75,
+      "participants": [],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0002",
+      "description": "la mano si avvicina al biglietto",
+      "start_time": 3.0,
+      "end_time": 3.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0000"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0003",
+      "description": "muovere la mano verso la porta",
+      "start_time": 3.0,
+      "end_time": 6.0,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0004",
+      "description": "afferrare la maniglia",
+      "start_time": 6.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0005",
+      "description": "apertura della porta",
+      "start_time": 6.0,
+      "end_time": 6.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0001"
+      ],
+      "evidence_type": "inferred",
+      "confidence": 0.8
+    },
+    {
+      "event_id": "E0006",
+      "description": "attività di disegno",
+      "start_time": 6.0,
+      "end_time": 9.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0002"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0007",
+      "description": "sessione di disegno e interazione con la telecamera",
+      "start_time": 9.0,
+      "end_time": 12.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0003"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0008",
+      "description": "presentazione di un disegno",
+      "start_time": 12.0,
+      "end_time": 15.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0004"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0009",
+      "description": "presentazione di disegni",
+      "start_time": 15.0,
+      "end_time": 18.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0005"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0010",
+      "description": "la ragazza mostra con orgoglio il suo disegno",
+      "start_time": 18.0,
+      "end_time": 21.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0006"
+      ],
+      "evidence_type": "inferred",
+      "confidence": 0.8
+    },
+    {
+      "event_id": "E0011",
+      "description": "attività di disegno",
+      "start_time": 21.0,
+      "end_time": 24.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0007"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0012",
+      "description": "sessione di disegno collaborativo",
+      "start_time": 27.0,
+      "end_time": 30.75,
+      "participants": [
+        "e1",
+        "e2"
+      ],
+      "evidence_segments": [
+        "segment_0009"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    },
+    {
+      "event_id": "E0013",
+      "description": "sessione di disegno",
+      "start_time": 30.0,
+      "end_time": 33.75,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0010"
+      ],
+      "evidence_type": "observed",
+      "confidence": 0.9
+    },
+    {
+      "event_id": "E0014",
+      "description": "la ragazza parla e gesticola mentre si muove vicino alla scrivania",
+      "start_time": 33.0,
+      "end_time": 35.5,
+      "participants": [
+        "e1"
+      ],
+      "evidence_segments": [
+        "segment_0011"
+      ],
+      "evidence_type": "observed",
+      "confidence": 1.0
+    }
+  ],
+  "temporal_relations": [
+    {
+      "first_event": "E0002",
+      "relation": "after",
+      "second_event": "E0001",
+      "confidence": 0.9
+    },
+    {
+      "first_event": "E0003",
+      "relation": "before",
+      "second_event": "E0004",
+      "confidence": 1.0
+    },
+    {
+      "first_event": "E0004",
+      "relation": "simultaneous",
+      "second_event": "E0005",
+      "confidence": 0.8
+    },
+    {
+      "first_event": "E0006",
+      "relation": ""
+    }
+  ],
+  "id_video": "video100",
+  "model": "google/gemma-4-12B-it",
+  "source_semantic_file": "data/preliminar_analysis/entity/gemma-4-12B/video100_semantic.json"
+}

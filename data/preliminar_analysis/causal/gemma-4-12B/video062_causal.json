@@ -1,0 +1,55 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'attività di shopping nel mercato all'aperto rende possibile l'interazione commerciale tra i partecipanti.",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "causes",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0009",
+        "E0010"
+      ],
+      "explanation": "L'interazione tra cliente e venditore porta specificamente alla discussione tra la donna e l'uomo riguardo alla scatola.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "motivates",
+      "effect_event": "E0011",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "La discussione riguardo alla scatola motiva la donna a esaminarla più da vicino.",
+      "confidence": 0.8
+    },
+    {
+      "cause_event": "E0012",
+      "relation": "enables",
+      "effect_event": "E0013",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'attività di shopping nel mercato permette alla donna di prendere i jeans.",
+      "confidence": 0.85
+    },
+    {
+      "cause_event": "E0013",
+      "relation": "causes",
+      "effect_event": "E0015",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "Il fatto di prendere i jeans porta direttamente all'azione di esaminarli.",
+      "confidence": 0.95
+    }
+  ],
+  "id_video": "video062",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video062_events.json"
+}

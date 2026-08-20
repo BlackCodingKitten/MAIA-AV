@@ -1,0 +1,34 @@
+{
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0007",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'applicazione della schiuma sul piatto (E0001) fornisce il materiale necessario affinché la ragazza possa giocare con la schiuma (E0007).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [],
+      "explanation": "L'applicazione della schiuma (E0001) rende possibile la posa per il video con schiuma sul viso (E0008).",
+      "confidence": 0.9
+    },
+    {
+      "cause_event": "E0006",
+      "relation": "causes",
+      "effect_event": "E0007",
+      "evidence_type": "inferred",
+      "supporting_events": [],
+      "explanation": "Il lavaggio del viso (E0006) precede e prepara l'azione di giocare con la schiuma (E0007).",
+      "confidence": 0.7
+    }
+  ],
+  "id_video": "video083",
+  "model": "google/gemma-4-12B-it",
+  "source_event_file": "data/preliminar_analysis/event/gemma-4-12B/video083_events.json"
+}
