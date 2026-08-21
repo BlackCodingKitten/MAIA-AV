@@ -912,8 +912,7 @@ FIELDS = [
 Results are written to model-specific output files for the \textit{No Input} condition. Existing item identifiers are cached prior to execution, allowing interrupted runs to resume seamlessly without recomputing completed instances. Outputs are flushed immediately after writing to prevent data loss.
 Inference is executed deterministically across all adapters by disabling stochastic sampling. Disabling sampling is particularly crucial in the \textit{No Input} condition to eliminate output variance unrelated to the underlying linguistic representations.
 Overall, model-specific code is strictly limited to weight loading, chat template formatting, and generation execution. Prompt construction, decision formatting, output parsing, correctness evaluation, error handling, and serialization remain completely standardized. This ensures that performance variations in the \textit{No Input} condition reflect differences in model capability rather than inconsistencies in the experimental protocol.
-\subsubsection*{Linguistic and Structural Bias Assessment under Zero-Input}
-The \textit{No Input} condition requires distinct analytical treatment compared to other performance metrics. Its primary purpose is to measure the extent to which the task can be solved without perceptual stimuli, making it unsuitable for direct inclusion in standard performance comparisons. Instead, dedicated metrics are employed to quantify \textbf{linguistic and structural shortcuts}.
+
 \subsubsection*{Audio-only Condition}
 In the \textit{Audio Only} condition, the model exclusively receives the raw acoustic signal, with no visual frames or textual transcriptions provided. This setting allows us to identify which caption-foil pairs can be resolved based on spoken content, environmental sounds, background noise, music, or prosodic speech characteristics. Furthermore, comparing performance in this condition against other experimental configurations reveals whether acoustic information retains its independent utility when combined with visual input, or if its contribution is diminished or overshadowed by another dominant modality. \paragraph{Implementation Details}
 The \textit{Audio-Only} condition was implemented as a controlled unimodal setting designed to isolate the contribution of the acoustic channel. For each VSV item, the model receives the raw audio associated with the corresponding video together with the two minimally contrastive textual alternatives. No visual frames, video representations, or audio-derived transcriptions are provided. The original question is retained solely as dataset metadata and is omitted from the inference prompt. Consequently, the model must discriminate between caption and foil by relying on acoustic evidence and the linguistic content of the two candidate statements.
@@ -1178,8 +1177,8 @@ The common system instruction is:
 \texttt{Sei un assistente binario per un task di Visual Statement Verification.}\\
 \texttt{Rispondi esclusivamente con 0 oppure 1.}
 \end{quote}
-\footnote{English translation: ``You are a binary assistant for a Visual
-Statement Verification task. Respond exclusively with either 0 or 1.''}
+\footnote{English translation: You are a binary assistant for a Visual
+Statement Verification task. Respond exclusively with either 0 or 1.}
 
 The condition-specific prompt is defined as follows:
 
@@ -1353,7 +1352,746 @@ visual channel.
 
 
 \subsubsection*{The Audio-Visual (AV) Condition}
+The \textit{Audiovisual} condition represents the natural configuration of information available to the model, comprising both the visual sequence and the native acoustic signal from the original video. Unlike the \textit{Video + Transcription} condition described below, the input is provided as a single integrated stream. This serves as the core configuration for verifying whether the simultaneous presence of multiple modalities yields an advantage over unimodal conditions or leads to a \textit{unimodal collapse} phenomenon. Its analytical value extends beyond absolute performance, as it enables item-level observation of whether the acoustic channel repairs errors made in the \textit{Video Only} condition or, in the worst-case scenario, introduces new incorrect decisions.
+\paragraph{Implementation Details}
+The \textit{Audio + Video} condition represents the complete perceptual configuration of the experimental framework. For each VSV item, the model receives both the visual and acoustic information associated with the corresponding original video, together with the two minimally contrastive textual alternatives. Unlike the unimodal ablations, neither perceptual channel is removed. No audio-derived transcription is included in this condition. The original question is retained as dataset metadata and is not presented to the model during inference.
+This configuration is designed to evaluate the model when the two perceptual sources naturally available in the original stimulus are simultaneously accessible. More specifically, it provides the reference condition for investigating whether acoustic information contributes additional evidence when visual information is already present. Its comparison with \textit{Video-Only} therefore isolates the effect of introducing the acoustic channel, while its comparison with \textit{Audio-Only} shows how performance changes when visual evidence is added to the acoustic signal.
+As in the remaining experimental configurations, prompt construction and evaluation are centralized in the common pipeline and are independent of the specific model architecture. The system instruction remains unchanged:
+\begin{quote}
+\small
+\texttt{Sei un assistente binario per un task di Visual Statement Verification.}\\
+\texttt{Rispondi esclusivamente con 0 oppure 1.}
+\end{quote}
+\footnote{English translation: You are a binary assistant for a Visual Statement Verification task. Respond exclusively with either 0 or 1.}
+The condition-specific prompt is defined as follows:
+\begin{quote}
+\small
+\texttt{Osserva il video e ascolta il relativo audio.}\\
+\texttt{Scegli quale delle due descrizioni è corretta sulla base}\\
+\texttt{dell'insieme delle informazioni visive e acustiche disponibili.}\\[0.5em]
+\texttt{0: \{answer1\}}\\
+\texttt{1: \{answer2\}}\\[0.5em]
+\texttt{Rispondi esclusivamente con 0 oppure 1.}
+\end{quote}
+\footnote{English translation: Observe the video and listen to its audio. Choose which of the two descriptions is correct based on the combined visual and acoustic information available. 0: \{answer1\}. 1: \{answer2\}. Respond exclusively with either 0 or 1.}
+
+The two alternatives correspond to the same minimally contrastive caption--foil pair used in all experimental conditions. The numerical position of the true caption is not fixed and is specified by the target label stored for each item. Consequently, the transition from a unimodal to a multimodal condition does not modify the decision problem itself. Only the perceptual evidence available to support that decision changes.
+
+The common pipeline resolves three media resources for each item:
+
+\begin{lstlisting}[language=Python]
+def paths(row):
+    stem = Path(row["video_name"]).stem
+    return {
+        "audio": AUDIO_DIR / f"{stem}.mp3",
+        "mute": MUTE_DIR / f"{stem}.mp4",
+        "video": VIDEO_DIR / f"{stem}.mp4",
+    }
+\end{lstlisting}
+
+Unlike the \textit{Video-Only} condition, which relies on the muted version, the \textit{Audio + Video} condition uses the original audiovisual file identified by \texttt{paths["video"]}. This distinction ensures that both modalities originate from the same source stimulus.
+
+When the architecture requires the acoustic stream to be supplied separately, the audio waveform is extracted directly from the same original MP4 file used for the visual channel. Audio extraction is centralized in the common pipeline:
+
+\begin{lstlisting}[language=Python]
+def extract_audio(video):
+    out = (
+        Path(tempfile.gettempdir())
+        / "maia_av_audio_cache"
+        / f"{video.stem}.wav"
+    )
+
+    out.parent.mkdir(exist_ok=True)
+
+    if not out.exists():
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-loglevel", "error",
+                "-y",
+                "-i", str(video),
+                "-vn",
+                "-ac", "1",
+                "-ar", "16000",
+                str(out),
+            ],
+            check=True,
+        )
+
+    return out
+\end{lstlisting}
+
+The audio stream is therefore converted to a mono waveform sampled at \(16\,\mathrm{kHz}\). Importantly, the waveform is not obtained from an independent textual representation or from a different recording: it is extracted from the same audiovisual file used as the source of the visual content. This preserves the correspondence between the two modalities at the stimulus level.
+
+The general multimodal preparation performed by the model adapters can be abstracted as follows:
+
+\begin{lstlisting}[language=Python]
+if mode == "video_audio":
+    video = load_video(paths["video"])
+
+    audio = load_audio(
+        extract_audio(paths["video"])
+    )
+\end{lstlisting}
+
+For adapters that explicitly decode the visual stream, the video is represented using a fixed budget of 32 frames distributed over the complete duration of the clip:
+
+\begin{lstlisting}[language=Python]
+N_FRAMES = 32
+
+frame_indices = np.unique(
+    np.linspace(
+        0,
+        total_frames - 1,
+        min(N_FRAMES, total_frames),
+        dtype=int,
+    )
+)
+\end{lstlisting}
+
+Uniform sampling is used so that the visual representation covers the complete temporal extent of the stimulus rather than concentrating the available visual budget in a single segment. When fewer than 32 frames are available, all valid frames are retained.
+
+The multimodal request then contains both perceptual streams. In adapters where the modalities are explicitly exposed to the inference backend, the general structure is:
+
+\begin{lstlisting}[language=Python]
+multi_modal_data = {}
+
+if video is not None:
+    multi_modal_data["video"] = video
+
+if audio is not None:
+    multi_modal_data["audio"] = (
+        audio,
+        AUDIO_SAMPLE_RATE,
+    )
+
+request["multi_modal_data"] = multi_modal_data
+\end{lstlisting}
+
+The exact representation passed to the model remains architecture-dependent. Some models accept the visual sequence and the acoustic waveform as two explicit multimodal inputs, while models providing native audiovisual video processing can recover the acoustic stream directly from the original video. These differences are confined to the model-specific adapters and do not alter the experimental condition: in every case, both visual and acoustic evidence originate from the same original stimulus and are jointly available during inference.
+
+This distinction can be represented at adapter level through modality flags:
+
+\begin{lstlisting}[language=Python]
+use_video = mode in {
+    "only_video",
+    "video_audio",
+    "transcript_video",
+}
+
+use_audio = mode in {
+    "only_audio",
+    "video_audio",
+}
+\end{lstlisting}
+
+Thus, \texttt{video\_audio} is the only condition in which both flags are simultaneously active. This provides a direct implementation-level distinction between the joint audiovisual configuration and the corresponding unimodal ablations.
+
+Prompt construction remains unchanged with respect to the remaining conditions:
+
+\begin{lstlisting}[language=Python]
+def prompt(row, mode, transcript=""):
+    return PROMPTS[mode].format(
+        answer1=row["answer1"],
+        answer2=row["answer2"],
+        transcript=transcript,
+    )
+\end{lstlisting}
+
+No transcription is retrieved for \texttt{video\_audio}. The textual component of the request therefore contains exclusively the task instruction and the two candidate statements, while all additional evidence is supplied through the raw perceptual modalities.
+
+The common evaluation loop subsequently delegates multimodal inference to the corresponding model adapter:
+
+\begin{lstlisting}[language=Python]
+raw = infer(
+    mode,
+    row,
+    prompt(row, mode, transcript),
+    paths(row),
+)
+
+pred = prediction(raw)
+\end{lstlisting}
+
+All models are required to return the same binary decision independently of their internal multimodal interface. The resulting generation is normalized through the common parser:
+
+\begin{lstlisting}[language=Python]
+def prediction(text):
+    m = re.search(
+        r"(?<!\d)[01](?!\d)",
+        str(text),
+    )
+    return int(m.group()) if m else None
+\end{lstlisting}
+
+The first isolated occurrence of \texttt{0} or \texttt{1} is interpreted as the model prediction. If neither label can be extracted, the response is classified as invalid. Valid predictions are compared with the target label using the same procedure adopted across the entire experimental framework:
+
+\begin{lstlisting}[language=Python]
+result = (
+    "correct"
+    if pred == int(row["target"])
+    else "wrong"
+    if pred is not None
+    else "invalid"
+)
+\end{lstlisting}
+
+Inference is performed deterministically, with stochastic sampling disabled in the model-specific generation adapters. For every item, the common pipeline stores the raw output, parsed binary prediction, expected target, correctness status, model identifier, experimental mode, and possible execution errors. Results are stored in the dedicated \texttt{video\_audio} output directory using a separate CSV file for each model.
+
+The \textit{Audio + Video} condition is therefore not treated as an independent task, but as the joint-modality counterpart of the two unimodal ablations. The caption--foil decision, target labels, prompt structure, prediction parser, and evaluation procedure remain fixed. The experimental manipulation concerns only the perceptual evidence made available to the model. In particular, comparison with \textit{Video-Only} provides a controlled measure of whether the addition of raw acoustic information improves, preserves, or interferes with decisions already supported by visual evidence. Conversely, comparison with the textualized audiovisual condition allows the contribution of native acoustic processing to be distinguished from the contribution of the linguistic information preserved in an audio transcription.
 \subsubsection*{The Vision-Language (VL) Configuration}
-\subsection*{}
+The \textit{Video + Transcription} condition combines the visual component with a textual representation of speech. This serves as a second multimodal configuration, allowing us to compare direct audiovisual integration against textualized linguistic information. Comparing this setting with the \textit{Audiovisual} condition enables us to verify whether the informative content of the acoustic track is leveraged more efficiently when transformed into text. Furthermore, comparison with \textit{Video Only} clarifies the benefit derived from audio-based linguistic information when visual context is already available.
+\paragraph{Implementation Details}
+
+The \textit{Audio + Video} condition represents the complete perceptual configuration of the experimental framework. For each VSV item, the model receives both the visual and acoustic information associated with the corresponding original video, together with the two minimally contrastive textual alternatives. Unlike the unimodal ablations, neither perceptual channel is removed. No audio-derived transcription is included in this condition. The original question is retained as dataset metadata and is not presented to the model during inference.
+
+This configuration is designed to evaluate the model when the two perceptual sources naturally available in the original stimulus are simultaneously accessible. More specifically, it provides the reference condition for investigating whether acoustic information contributes additional evidence when visual information is already present. Its comparison with \textit{Video-Only} therefore isolates the effect of introducing the acoustic channel, while its comparison with \textit{Audio-Only} shows how performance changes when visual evidence is added to the acoustic signal.
+
+As in the remaining experimental configurations, prompt construction and evaluation are centralized in the common pipeline and are independent of the specific model architecture. The system instruction remains unchanged:
+
+\begin{quote}
+\small
+\texttt{Sei un assistente binario per un task di Visual Statement Verification.}\\
+\texttt{Rispondi esclusivamente con 0 oppure 1.}
+\end{quote}
+\footnote{English translation: ``You are a binary assistant for a Visual Statement Verification task. Respond exclusively with either 0 or 1.''}
+
+The condition-specific prompt is defined as follows:
+
+\begin{quote}
+\small
+\texttt{Osserva il video e ascolta il relativo audio.}\\
+\texttt{Scegli quale delle due descrizioni è corretta sulla base}\\
+\texttt{dell'insieme delle informazioni visive e acustiche disponibili.}\\[0.5em]
+\texttt{0: \{answer1\}}\\
+\texttt{1: \{answer2\}}\\[0.5em]
+\texttt{Rispondi esclusivamente con 0 oppure 1.}
+\end{quote}
+\footnote{English translation: ``Observe the video and listen to its audio. Choose which of the two descriptions is correct based on the combined visual and acoustic information available. 0: \{answer1\}. 1: \{answer2\}. Respond exclusively with either 0 or 1.''}
+
+The two alternatives correspond to the same minimally contrastive caption--foil pair used in all experimental conditions. The numerical position of the true caption is not fixed and is specified by the target label stored for each item. Consequently, the transition from a unimodal to a multimodal condition does not modify the decision problem itself. Only the perceptual evidence available to support that decision changes.
+
+The common pipeline resolves three media resources for each item:
+
+\begin{lstlisting}[language=Python]
+def paths(row):
+    stem = Path(row["video_name"]).stem
+    return {
+        "audio": AUDIO_DIR / f"{stem}.mp3",
+        "mute": MUTE_DIR / f"{stem}.mp4",
+        "video": VIDEO_DIR / f"{stem}.mp4",
+    }
+\end{lstlisting}
+
+Unlike the \textit{Video-Only} condition, which relies on the muted version, the \textit{Audio + Video} condition uses the original audiovisual file identified by \texttt{paths["video"]}. This distinction ensures that both modalities originate from the same source stimulus.
+
+When the architecture requires the acoustic stream to be supplied separately, the audio waveform is extracted directly from the same original MP4 file used for the visual channel. Audio extraction is centralized in the common pipeline:
+
+\begin{lstlisting}[language=Python]
+def extract_audio(video):
+    out = (
+        Path(tempfile.gettempdir())
+        / "maia_av_audio_cache"
+        / f"{video.stem}.wav"
+    )
+
+    out.parent.mkdir(exist_ok=True)
+
+    if not out.exists():
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-loglevel", "error",
+                "-y",
+                "-i", str(video),
+                "-vn",
+                "-ac", "1",
+                "-ar", "16000",
+                str(out),
+            ],
+            check=True,
+        )
+
+    return out
+\end{lstlisting}
+
+The audio stream is therefore converted to a mono waveform sampled at \(16\,\mathrm{kHz}\). Importantly, the waveform is not obtained from an independent textual representation or from a different recording: it is extracted from the same audiovisual file used as the source of the visual content. This preserves the correspondence between the two modalities at the stimulus level.
+
+The general multimodal preparation performed by the model adapters can be abstracted as follows:
+
+\begin{lstlisting}[language=Python]
+if mode == "video_audio":
+    video = load_video(paths["video"])
+
+    audio = load_audio(
+        extract_audio(paths["video"])
+    )
+\end{lstlisting}
+
+For adapters that explicitly decode the visual stream, the video is represented using a fixed budget of 32 frames distributed over the complete duration of the clip:
+
+\begin{lstlisting}[language=Python]
+N_FRAMES = 32
+
+frame_indices = np.unique(
+    np.linspace(
+        0,
+        total_frames - 1,
+        min(N_FRAMES, total_frames),
+        dtype=int,
+    )
+)
+\end{lstlisting}
+
+Uniform sampling is used so that the visual representation covers the complete temporal extent of the stimulus rather than concentrating the available visual budget in a single segment. When fewer than 32 frames are available, all valid frames are retained.
+
+The multimodal request then contains both perceptual streams. In adapters where the modalities are explicitly exposed to the inference backend, the general structure is:
+
+\begin{lstlisting}[language=Python]
+multi_modal_data = {}
+
+if video is not None:
+    multi_modal_data["video"] = video
+
+if audio is not None:
+    multi_modal_data["audio"] = (
+        audio,
+        AUDIO_SAMPLE_RATE,
+    )
+
+request["multi_modal_data"] = multi_modal_data
+\end{lstlisting}
+
+The exact representation passed to the model remains architecture-dependent. Some models accept the visual sequence and the acoustic waveform as two explicit multimodal inputs, while models providing native audiovisual video processing can recover the acoustic stream directly from the original video. These differences are confined to the model-specific adapters and do not alter the experimental condition: in every case, both visual and acoustic evidence originate from the same original stimulus and are jointly available during inference.
+
+This distinction can be represented at adapter level through modality flags:
+
+\begin{lstlisting}[language=Python]
+use_video = mode in {
+    "only_video",
+    "video_audio",
+    "transcript_video",
+}
+
+use_audio = mode in {
+    "only_audio",
+    "video_audio",
+}
+\end{lstlisting}
+
+Thus, \texttt{video\_audio} is the only condition in which both flags are simultaneously active. This provides a direct implementation-level distinction between the joint audiovisual configuration and the corresponding unimodal ablations.
+
+Prompt construction remains unchanged with respect to the remaining conditions:
+
+\begin{lstlisting}[language=Python]
+def prompt(row, mode, transcript=""):
+    return PROMPTS[mode].format(
+        answer1=row["answer1"],
+        answer2=row["answer2"],
+        transcript=transcript,
+    )
+\end{lstlisting}
+
+No transcription is retrieved for \texttt{video\_audio}. The textual component of the request therefore contains exclusively the task instruction and the two candidate statements, while all additional evidence is supplied through the raw perceptual modalities.
+
+The common evaluation loop subsequently delegates multimodal inference to the corresponding model adapter:
+
+\begin{lstlisting}[language=Python]
+raw = infer(
+    mode,
+    row,
+    prompt(row, mode, transcript),
+    paths(row),
+)
+
+pred = prediction(raw)
+\end{lstlisting}
+
+All models are required to return the same binary decision independently of their internal multimodal interface. The resulting generation is normalized through the common parser:
+
+\begin{lstlisting}[language=Python]
+def prediction(text):
+    m = re.search(
+        r"(?<!\d)[01](?!\d)",
+        str(text),
+    )
+    return int(m.group()) if m else None
+\end{lstlisting}
+
+The first isolated occurrence of \texttt{0} or \texttt{1} is interpreted as the model prediction. If neither label can be extracted, the response is classified as invalid. Valid predictions are compared with the target label using the same procedure adopted across the entire experimental framework:
+
+\begin{lstlisting}[language=Python]
+result = (
+    "correct"
+    if pred == int(row["target"])
+    else "wrong"
+    if pred is not None
+    else "invalid"
+)
+\end{lstlisting}
+
+Inference is performed deterministically, with stochastic sampling disabled in the model-specific generation adapters. For every item, the common pipeline stores the raw output, parsed binary prediction, expected target, correctness status, model identifier, experimental mode, and possible execution errors. Results are stored in the dedicated \texttt{video\_audio} output directory using a separate CSV file for each model.
+
+The \textit{Audio + Video} condition is therefore not treated as an independent task, but as the joint-modality counterpart of the two unimodal ablations. The caption--foil decision, target labels, prompt structure, prediction parser, and evaluation procedure remain fixed. The experimental manipulation concerns only the perceptual evidence made available to the model. In particular, comparison with \textit{Video-Only} provides a controlled measure of whether the addition of raw acoustic information improves, preserves, or interferes with decisions already supported by visual evidence. Conversely, comparison with the textualized audiovisual condition allows the contribution of native acoustic processing to be distinguished from the contribution of the linguistic information preserved in an audio transcription.
+\subsection*{Metrics Selection and Aggregation Strategy }
+\subsubsection*{Linguistic and Structural Bias Assessment under Zero-Input}
+The \textit{No Input} condition requires distinct analytical treatment compared to other performance metrics. Its primary purpose is to measure the extent to which the task can be solved without perceptual stimuli, making it unsuitable for direct inclusion in standard performance comparisons. Instead, dedicated metrics are employed to quantify \textbf{linguistic and structural shortcuts}.
+The \textit{No Input} condition is designed to quantify the extent to which a model can solve the VSV task without access to perceptual evidence. Since neither visual nor acoustic information is available, performance in this setting cannot be interpreted as evidence of multimodal understanding. Instead, the analysis focuses on whether the model can exploit linguistic regularities, structural properties of the alternatives, or systematic biases in the dataset.
+
+Let \(N\) denote the number of evaluated items. For each item \(i\), let \(y_i \in \{0,1\}\) be the target label and \(\hat{y}_i \in \{0,1\}\) the prediction produced by the model.
+\begin{description}
+    \item[Raw Accuracy]\\
+The first measure is \textit{Raw Accuracy}, defined as the proportion of items for which the predicted label corresponds to the target:
+\begin{equation}
+\operatorname{Acc}_{\text{NoInput}} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I}\left(\hat{y}_i = y_i\right),
+\end{equation}
+where \(\mathbb{I}(\cdot)\) is the indicator function, equal to \(1\) when the condition is satisfied and \(0\) otherwise.
+Because each item requires a binary choice between two alternatives, a model selecting one of the two options uniformly at random has expected accuracy
+\begin{equation}
+\mathbb{E}\left[\operatorname{Acc}_{\text{random}}\right] = \frac{1}{2} = 0.5.
+\end{equation}
+An accuracy close to \(0.5\) is therefore compatible with behavior close to random guessing. Conversely, a substantially higher value indicates that the model can identify the target more frequently than expected by chance despite the absence of perceptual evidence. This suggests that some information contained in the linguistic form of the alternatives may be predictive of the correct answer.
+Raw Accuracy must not be interpreted as a measure of language comprehension. The model is not required to understand the underlying video event and does not have access to the evidence necessary to perform grounded reasoning. The metric only measures its ability to recover the target from the two textual alternatives available in the \textit{No Input} condition.
+\item[Language-Only Advantage]\\
+To express the deviation from the random baseline more directly, we compute the \textit{Language-Only Advantage} (LOA). It is obtained by subtracting the expected binary chance level from the observed \textit{No Input} accuracy:
+\begin{equation}
+\operatorname{LOA} = \operatorname{Acc}_{\text{NoInput}} - 0.5.
+\end{equation}
+The transformation can be derived directly from the decomposition
+\begin{equation}
+\operatorname{Acc}_{\text{NoInput}} = 0.5 + \operatorname{LOA}.
+\end{equation}
+Hence, \(\operatorname{LOA}=0\) indicates performance exactly at the random baseline. Positive values indicate performance above chance:
+\begin{equation}
+\operatorname{LOA} > 0 \quad \Longrightarrow \quad \operatorname{Acc}_{\text{NoInput}} > 0.5,
+\end{equation}
+while negative values indicate performance below chance:
+\begin{equation}
+\operatorname{LOA} < 0 \quad \Longrightarrow \quad \operatorname{Acc}_{\text{NoInput}} < 0.5.
+\end{equation}
+The main advantage of this transformation is interpretability. Rather than reporting the complete accuracy value, LOA directly expresses the amount of performance exceeding the expected random level. It can therefore be used as a compact indicator of the potential contribution of linguistic or structural shortcuts.
+A positive LOA does not identify the nature of the shortcut. It only establishes that the textual alternatives contain sufficient regularities for the model to perform above chance. Additional diagnostics are therefore required to determine which properties may contribute to this effect.
+\item[Matthews Correlation Coefficient]\\
+Accuracy alone can conceal degenerate decision strategies. For example, a model may develop a systematic preference for one output label and still obtain a non-negligible accuracy, particularly when the observed predictions are not evenly distributed across the two positions.
+For this reason, the analysis also includes the \textit{Matthews Correlation Coefficient} (MCC). For the binary task, predictions can be summarized through the four entries of the confusion matrix: true positives (\(\mathrm{TP}\)), true negatives (\(\mathrm{TN}\)), false positives (\(\mathrm{FP}\)), and false negatives (\(\mathrm{FN}\)). MCC is defined as
+\begin{equation}
+\operatorname{MCC} = \frac{\mathrm{TP} \cdot \mathrm{TN} - \mathrm{FP} \cdot \mathrm{FN}}{\sqrt{(\mathrm{TP}+\mathrm{FP})(\mathrm{TP}+\mathrm{FN})(\mathrm{TN}+\mathrm{FP})(\mathrm{TN}+\mathrm{FN})}}.
+\end{equation}
+The numerator compares concordant and discordant predictions. Correct positive and negative decisions contribute through \(\mathrm{TP} \cdot \mathrm{TN}\), while the two types of error contribute through \(\mathrm{FP} \cdot \mathrm{FN}\). The denominator normalizes this difference according to the marginal distributions of targets and predictions.
+MCC ranges between \(-1\) and \(1\):
+\begin{equation}
+-1 \leq \operatorname{MCC} \leq 1.
+\end{equation}
+A value close to \(1\) indicates strong agreement between predictions and targets. A value close to \(0\) indicates little or no association. A negative value indicates a systematic inverse association.
+MCC complements Raw Accuracy because it evaluates the overall correspondence between predictions and targets while taking all four components of the confusion matrix into account. It is therefore useful for distinguishing genuine target-sensitive performance from apparently successful behavior produced by strongly unbalanced prediction strategies.
+\item[Position Bias]\\
+The \textit{Position Bias} analysis directly measures whether the model systematically prefers one of the two candidate positions independently of their content.
+Let
+\begin{equation}
+p_0 = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I}\left(\hat{y}_i = 0\right)
+\end{equation}
+denote the empirical probability of selecting the first alternative, and
+\begin{equation}
+p_1 = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I}\left(\hat{y}_i = 1\right) = 1-p_0
+\end{equation}
+the probability of selecting the second alternative.
+Under perfectly balanced selection behavior,
+\begin{equation}
+p_0 = p_1 = 0.5.
+\end{equation}
+We therefore define the magnitude of the positional deviation as
+\begin{equation}
+\operatorname{PB} = \left|p_0 - 0.5\right|.
+\end{equation}
+Because \(p_1=1-p_0\), the same quantity can equivalently be written as
+\begin{equation}
+\operatorname{PB} = \left|p_1 - 0.5\right|.
+\end{equation}
+The preferred position is defined as
+\begin{equation}
+\operatorname{PreferredPosition} = \operatorname*{argmax}_{j \in \{0,1\}} p_j.
+\end{equation}
+A Position Bias equal to \(0\) indicates perfectly balanced selection frequencies. The maximum possible value is \(0.5\), obtained when the model always selects the same position:
+\begin{equation}
+0 \leq \operatorname{PB} \leq 0.5.
+\end{equation}
+This diagnostic is required because above-chance Raw Accuracy does not by itself demonstrate the exploitation of meaningful linguistic information. Part of the observed result may instead originate from a systematic preference for the first or second alternative. Position Bias therefore provides a direct measure of this potential confound.
+\item[Lexical Attraction]\\
+The \textit{Lexical Attraction} analysis evaluates whether the model preferentially selects the alternative that is lexically more similar to the original question.
+For each item \(i\), let \(q_i\) denote the question and let \(a_{i0}\) and \(a_{i1}\) denote the two textual alternatives. Each text is represented as a TF--IDF vector. The cosine similarity between the question and alternative \(j\) is defined as
+\begin{equation}
+s_{ij} = \cos \left(\mathbf{v}_{q_i}, \mathbf{v}_{a_{ij}}\right) = \frac{\mathbf{v}_{q_i}^{\top} \mathbf{v}_{a_{ij}}}{\left\|\mathbf{v}_{q_i}\right\|_2 \left\|\mathbf{v}_{a_{ij}}\right\|_2}, \qquad j \in \{0,1\},
+\end{equation}
+where \(\mathbf{v}_{q_i}\) and \(\mathbf{v}_{a_{ij}}\) are the corresponding TF--IDF representations.
+The lexically closest alternative is then identified as
+\begin{equation}
+\ell_i = \operatorname*{argmax}_{j \in \{0,1\}} s_{ij}.
+\end{equation}
+The \textit{Lexical Attraction Rate} measures how frequently the model selects this alternative:
+\begin{equation}
+\operatorname{LAR} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I} \left(\hat{y}_i = \ell_i\right).
+\end{equation}
+A high value indicates that the model tends to prefer the candidate sharing greater lexical similarity with the question.
+However, this behavioral tendency does not establish that lexical overlap represents a dataset bias. To evaluate the structural relationship between lexical similarity and the target, a second quantity is computed:
+\begin{equation}
+\operatorname{LTA} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I} \left(y_i = \ell_i\right),
+\end{equation}
+where \(\operatorname{LTA}\) denotes the \textit{Lexical Target Alignment}. It measures how frequently the correct alternative is also the one with the highest lexical similarity to the question.
+The two measures therefore capture different phenomena:
+\begin{align}
+\operatorname{LAR} &\rightarrow \text{model behavior}, \\
+\operatorname{LTA} &\rightarrow \text{dataset structure}.
+\end{align}
+This distinction is essential. A high Lexical Attraction Rate means that the model follows lexical similarity, but this strategy is only useful if lexical similarity is correlated with the target. Conversely, a high Lexical Target Alignment indicates that such a shortcut is available in the dataset, even if a specific model does not exploit it systematically.
+The interaction between the two quantities can therefore be interpreted as follows:
+\begin{equation}
+\operatorname{LAR} \gg 0.5 \quad \text{and} \quad \operatorname{LTA} \gg 0.5
+\end{equation}
+provides evidence for both the availability of a lexical shortcut and the tendency of the model to exploit it.
+\item[Length Bias]\\
+A parallel analysis is performed for the length of the two alternatives. Let \(L(a_{ij})\) denote the length assigned to alternative \(j\) for item \(i\), according to the length representation adopted in the implementation. The longer candidate is identified as
+\begin{equation}
+h_i = \operatorname*{argmax}_{j \in \{0,1\}} L(a_{ij}).
+\end{equation}
+The model's preference for longer alternatives is measured through the \textit{Length Attraction Rate}:
+\begin{equation}
+\operatorname{LenAR} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I} \left(\hat{y}_i = h_i\right).
+\end{equation}
+This quantity describes a behavioral property of the model. Values substantially above \(0.5\) indicate a tendency to select the longer alternative.
+As for lexical similarity, a separate measure is required to determine whether this heuristic could actually be rewarded by the dataset. We therefore compute the \textit{Length Target Alignment}:
+\begin{equation}
+\operatorname{LenTA} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I} \left(y_i = h_i\right).
+\end{equation}
+This metric measures how frequently the correct alternative is also the longer one.
+The distinction again separates model behavior from dataset structure:
+\begin{align}
+\operatorname{LenAR} &\rightarrow \text{preference of the model for longer alternatives}, \\
+\operatorname{LenTA} &\rightarrow \text{association between alternative length and the target}.
+\end{align}
+A model may prefer longer alternatives even when length contains no useful information about the correct label. Conversely, the dataset may contain a correlation between length and correctness that is not exploited by a particular model. Considering both quantities prevents these two cases from being conflated.
+\item[No-Input Category Breakdown]\\
+The main \textit{No Input} diagnostics are additionally computed separately for each reasoning category. Let \(c\) denote a category and let
+\begin{equation}
+I_c = \left\{i \mid \operatorname{category}(i)=c\right\}
+\end{equation}
+be the subset of items belonging to that category, with \(N_c = |I_c|\).
+Category-specific Raw Accuracy is therefore
+\begin{equation}
+\operatorname{Acc}_{c} = \frac{1}{N_c} \sum_{i \in I_c} \mathbb{I} \left(\hat{y}_i = y_i\right),
+\end{equation}
+and the corresponding Language-Only Advantage becomes
+\begin{equation}
+\operatorname{LOA}_{c} = \operatorname{Acc}_{c} - 0.5.
+\end{equation}
+MCC and Position Bias are computed analogously by restricting the confusion matrix and the prediction frequencies to the subset \(I_c\). In particular,
+\begin{equation}
+p_{0,c} = \frac{1}{N_c} \sum_{i \in I_c} \mathbb{I} \left(\hat{y}_i=0\right),
+\end{equation}
+with category-specific Position Bias
+\begin{equation}
+\operatorname{PB}_{c} = \left|p_{0,c}-0.5\right|.
+\end{equation}
+\end{description}
+This decomposition makes it possible to determine whether \textit{No Input} solvability varies systematically across reasoning categories.
+A higher \textit{No Input} accuracy for a given category must not be interpreted as evidence that the model is more competent at the corresponding reasoning process. In this experimental condition, the perceptual evidence required to perform spatial, temporal, causal, or other forms of grounded reasoning is unavailable. Category-level differences instead indicate that some groups of items may expose stronger linguistic or structural regularities than others.
+This distinction is particularly important when the \textit{No Input} results are later compared with performance under perceptual conditions. For example, differences observed between spatial, temporal, and causal questions should not automatically be attributed to multimodal reasoning ability. Part of the variation may already be present before any perceptual modality is introduced. The category breakdown therefore provides a necessary baseline for separating genuine grounding effects from differences induced by the linguistic structure of the task.
+\subsubsection*{}
+
+
+
 %Non Corretto 
 
+
+
+
+
+
+
+
+
+
+
+
+
+% %BOZZA IN ITALIANO 
+% Performance Metrics
+% Item Accuracy
+% L'Item Accuracy costituisce la misura di performance più granulare per le condizioni nelle quali viene fornita informazione percettiva o trascritta. Essa corrisponde alla percentuale di singole decisioni caption–foil risolte correttamente.
+% Questa metrica descrive la probabilità che il modello individui l'alternativa corretta su un singolo item. È inoltre la base utilizzata per i successivi confronti paired, nei quali viene osservato il cambiamento della medesima decisione tra due condizioni.
+% Aggregate or Pool Accuracy
+% La Pool Accuracy introduce un criterio più severo. Nell'attuale protocollo, un pool viene considerato valido soltanto quando contiene tutti e quattro gli item attesi. Il pool viene poi classificato come corretto esclusivamente se tutte le decisioni al suo interno sono corrette:
+% [
+% PoolCorrect = 1
+% \quad \Longleftrightarrow \quad
+% \forall i \in pool,\ correct_i = 1
+% ]
+% Una singola risposta errata rende quindi errato l'intero pool.
+% Questa metrica misura una forma di consistenza più forte rispetto all'Item Accuracy. Una domanda non viene considerata risolta sulla base di un successo parziale. Il modello deve mantenere una decisione corretta attraverso tutte le verifiche associate alla stessa unità concettuale.
+% Modality Contribution Metrics
+% Conditional Modality Gain
+% Il Conditional Modality Gain misura la variazione di performance prodotta dall'aggiunta di una nuova sorgente informativa. I confronti principali sono Video Only → Audio + Video e Video Only → Video + Transcription.
+% Per una modalità aggiunta (M), il gain è definito come:
+% [
+% \Delta_M = Accuracy_{new} - Accuracy_{base}
+% ]
+% La metrica viene calcolata sugli stessi item disponibili in entrambe le condizioni. Il suo significato non consiste soltanto nel verificare se una configurazione multimodale presenti un'accuracy maggiore. Il confronto misura quanto cambino le decisioni quando alla stessa evidenza di base viene aggiunta una nuova modalità.
+% Questo rappresenta uno dei punti di continuità più diretti con il principio sperimentale adottato in Lost in Transcription.
+% Repair Rate
+% Il Repair Rate considera esclusivamente gli item errati nella condizione di base e misura la proporzione di quelli che diventano corretti dopo l'aggiunta della nuova modalità:
+% [
+% RepairRate = P(New=1 \mid Base=0)
+% ]
+% La metrica identifica quindi i casi nei quali l'informazione aggiuntiva svolge una funzione correttiva.
+% Questo comportamento è particolarmente rilevante per l'analisi della complementarità multimodale. Se il modello fallisce con la sola visione e riesce dopo l'introduzione dell'audio, la nuova modalità ha modificato positivamente una decisione precedentemente errata. Tale dinamica fornisce un'evidenza più informativa del semplice incremento medio di accuracy.
+% Damage Rate
+% Il Damage Rate rappresenta il comportamento opposto:
+% [
+% DamageRate = P(New=0 \mid Base=1)
+% ]
+% La metrica considera gli item corretti nella condizione di base e misura quanti diventino errati dopo l'aggiunta della nuova sorgente.
+% Questo fenomeno permette di osservare forme di cross-modal interference. Una modalità supplementare può contenere informazione non pertinente, ambigua o difficile da integrare e può quindi compromettere una decisione precedentemente corretta.
+% Per questa ragione il gain netto non è sufficiente a descrivere il comportamento del modello. Dieci repair accompagnati da dieci damage producono un delta complessivo nullo, ma rappresentano una dinamica molto diversa rispetto a una situazione nella quale nessuna decisione cambia. L'analisi viene quindi completata distinguendo stable correct, repair, damage e stable wrong.
+% Audio-Video Interaction Effect
+% Factorial Interaction Analysis
+% L'interazione tra audio e video viene analizzata attraverso un design fattoriale (2 \times 2):
+
+% [
+% \begin{array}{c|cc}
+% & V=0 & V=1\
+% \hline
+% A=0 & No\ Input & Video\ Only\
+% A=1 & Audio\ Only & Audio+Video
+% \end{array}
+% ]
+
+% In questo contesto No Input viene reintrodotto per una ragione strettamente statistica. Non rappresenta una condizione di comprensione multimodale, ma la cella necessaria a descrivere la situazione nella quale né audio né video sono presenti.
+
+% La probabilità di una risposta corretta viene modellata attraverso:
+
+% [
+% logit(P(correct)) =
+% \beta_0 +
+% \beta_A A +
+% \beta_V V +
+% \beta_{AV}(A \times V)
+% ]
+
+% L'interesse principale riguarda il coefficiente (\beta_{AV}). Il termine quantifica se l'effetto prodotto dalla presenza simultanea di audio e video differisca da quanto atteso considerando separatamente i contributi delle due modalità.
+
+% Un'interazione diversa da zero suggerisce che la combinazione audiovisiva non possa essere descritta come una semplice somma di effetti indipendenti. In presenza di un'interazione positiva, l'effetto congiunto risulta superiore a quanto previsto dai contributi separati. Un'interazione negativa indica invece una combinazione meno efficace rispetto all'attesa additiva sul piano del logit.
+
+% L'analisi riporta coefficiente, standard error, statistica (z), (p)-value, intervallo di confidenza al 95%, odds ratio e relativo intervallo. Gli errori standard vengono calcolati in forma cluster-robust a livello di pool_id. Vengono inclusi soltanto gli item disponibili in tutte e quattro le celle del design, così da preservare la comparabilità paired necessaria all'interpretazione dell'interazione.
+
+% Joint-Modality Evaluation
+% Joint-Modality Accuracy
+
+% La Joint-Modality Accuracy utilizza la classificazione delle domande per concentrare l'analisi sugli item nei quali una specifica combinazione di modalità è stata identificata come necessaria.
+
+% L'accuracy generale di Audio + Video risponde alla domanda relativa alla performance complessiva della configurazione audiovisiva. La Joint-Modality Accuracy considera invece soltanto gli item classificati come dipendenti congiuntamente da audio e visione. Un principio analogo viene applicato agli item associati alla combinazione video e trascrizione.
+
+% La differenza è metodologicamente importante. Un'elevata performance multimodale su item risolvibili con una sola modalità non dimostra capacità di integrazione. Concentrando la valutazione sui casi nei quali entrambe le sorgenti sono richieste, la metrica si avvicina maggiormente all'oggetto scientifico centrale dell'analisi.
+
+% Alignment Sensitivity
+
+% L'infrastruttura delle metriche prevede anche la possibilità di confrontare condizioni multimodali correttamente allineate con configurazioni nelle quali audio e video, oppure video e trascrizione, non corrispondono allo stesso contenuto.
+
+% La Alignment Sensitivity è definita come:
+
+% [
+% AlignmentSensitivity =
+% Accuracy_{aligned} -
+% Accuracy_{misaligned}
+% ]
+
+% La misura permetterebbe di distinguere la semplice disponibilità simultanea di più modalità dalla capacità di utilizzare la loro corretta corrispondenza. Un modello realmente sensibile all'allineamento dovrebbe mostrare una degradazione quando le sorgenti vengono associate in modo scorretto.
+
+% Questa analisi deve però essere inclusa nei main experiments soltanto nel caso in cui le condizioni misaligned siano state effettivamente eseguite nel protocollo finale. Se tali condizioni rimangono soltanto supportate dall'infrastruttura software, è più corretto presentare l'Alignment Sensitivity come estensione sperimentale possibile e non come parte dei risultati principali.
+
+% Integration with the Preliminary Analysis
+% Independent Visual-Evidence Estimation
+
+% La preliminary analysis svolge una funzione distinta dai main experiments. La sua costruzione è indipendente dalle decisioni sperimentali e parte dal solo contenuto visivo. L'obiettivo è ottenere una rappresentazione strutturata di ciò che il modello riesce a estrarre dal video prima di confrontare tale rappresentazione con le informazioni richieste dagli item.
+
+% La pipeline analizza progressivamente entità, eventi e relazioni inferenziali. L'informazione estratta viene poi confrontata con il contenuto necessario alla domanda attraverso una fase di Natural Language Inference. Il risultato costituisce una stima indipendente della disponibilità dell'evidenza visiva.
+
+% Questa analisi non stabilisce direttamente se il modello risponderà correttamente nel task VSV. Stabilisce piuttosto se la rappresentazione ottenuta dal solo video contenga gli elementi necessari per affrontare la domanda. La distinzione tra disponibilità dell'informazione e comportamento osservato costituisce il fondamento della successiva integrazione.
+
+% Mapping Preliminary and Experimental Outcomes
+
+% I risultati della preliminary analysis vengono associati agli item dei main experiments attraverso gli identificativi condivisi. In questo modo, per ogni domanda è possibile mettere in relazione tre livelli di informazione.
+
+% Il primo riguarda la disponibilità dell'evidenza visiva stimata indipendentemente. Il secondo riguarda la possibilità di risolvere il task senza percepire lo stimolo, misurata attraverso No Input. Il terzo corrisponde alla risposta effettivamente prodotta dal modello nelle diverse configurazioni modali.
+
+% Le classi S0, S1 e le eventuali ulteriori classi definite dalla tassonomia rappresentano quindi una variabile di stratificazione della performance. Non sono derivate dalla correttezza del main experiment e possono essere utilizzate per interpretare la natura della decisione osservata.
+
+% Diagnostic Rationale
+% Why Preliminary Analysis and Main Experiments Must Be Combined
+
+% L'accuracy da sola non consente di determinare la causa di una risposta corretta. Un modello può selezionare l'alternativa appropriata perché ha identificato l'evidenza richiesta nel video, perché ha sfruttato un pattern linguistico, perché ha prodotto un'inferenza plausibile oppure per effetto del caso.
+
+% La preliminary analysis introduce una stima indipendente della presenza dell'evidenza visiva. No Input introduce una seconda diagnostica relativa alla risolvibilità dell'item in assenza dello stimolo. I main experiments mostrano invece il comportamento effettivo del sistema quando cambia l'informazione disponibile.
+
+% L'integrazione delle tre componenti permette quindi di passare da una valutazione puramente prestazionale a una lettura diagnostica del comportamento. La correttezza diventa un dato da interpretare alla luce dell'evidenza teoricamente disponibile e degli shortcut osservabili.
+
+% Interpretive Behavioural Patterns
+% Visually Sufficient and Video-Only Correct
+
+% Quando la preliminary analysis indica che l'informazione visiva è sufficiente e il modello risponde correttamente in Video Only, il comportamento è coerente con un'ipotesi di visual grounding. La risposta non dimostra direttamente il processo interno seguito dal modello, ma esiste una corrispondenza tra informazione disponibile e comportamento osservato.
+
+% Visually Insufficient and No-Input Correct
+
+% Quando l'evidenza visiva risulta insufficiente e il modello risponde correttamente anche in No Input, la decisione costituisce un forte candidato a una spiegazione basata su plausibilità linguistica o shortcut strutturali. In questo caso una risposta corretta in Video Only non può essere utilizzata come prova sufficiente di comprensione visiva.
+
+% Visually Insufficient, Video-Only Wrong and Audio-Video Correct
+
+% Questo pattern rappresenta uno dei casi più informativi. La preliminary analysis suggerisce che la sola visione non contenga evidenza sufficiente. Il modello fallisce effettivamente in Video Only e passa alla risposta corretta quando viene aggiunto l'audio.
+
+% La sequenza è compatibile con un vero multimodal repair, poiché la nuova modalità interviene precisamente in una situazione nella quale l'evidenza visiva risulta carente.
+
+% Video-Only Correct and Audio-Video Wrong
+
+% Una risposta corretta con il solo video seguita da un errore dopo l'introduzione dell'audio costituisce un caso di possibile cross-modal interference. L'aggiunta della modalità non produce soltanto un mancato beneficio, ma altera negativamente una decisione già corretta.
+
+% Visually Sufficient and Video-Only Wrong
+
+% Se la preliminary analysis indica la presenza di evidenza sufficiente ma il modello fallisce in Video Only, l'errore non può essere spiegato semplicemente con l'assenza dell'informazione. Il contenuto necessario risultava teoricamente recuperabile, ma il modello non è riuscito a utilizzarlo efficacemente nel task.
+
+% Questa configurazione permette di distinguere un limite di disponibilità dell'evidenza da un limite di sfruttamento dell'evidenza disponibile.
+
+% Visually Insufficient, Video-Only Correct and No-Input Wrong
+
+% Questo caso richiede un'interpretazione più prudente. Il modello risponde correttamente attraverso il video, ma la preliminary analysis non identifica evidenza sufficiente e No Input non offre una spiegazione linguistica immediata.
+
+% La risposta può indicare la presenza di informazione visiva residua non catturata dalla pipeline preliminare. Può anche derivare da una strategia non descritta dalle diagnostiche disponibili. Il caso deve quindi essere considerato informativo proprio perché segnala una discrepanza tra i diversi livelli di analisi.
+
+% Visually Insufficient, Video-Only Correct and No-Input Correct
+
+% Quando sia Video Only sia No Input producono la risposta corretta nonostante una stima di insufficienza visiva, la correttezza nella condizione visuale non costituisce una prova affidabile di grounding. La spiegazione linguistica rimane compatibile con l'outcome osservato.
+
+% Questi pattern mostrano perché la sola accuratezza non sia sufficiente per valutare l'integrazione multimodale. Una risposta corretta assume un significato diverso a seconda della disponibilità indipendente dell'evidenza e della possibilità di risolvere l'item senza percepire lo stimolo.
+
+% Stratified Evaluation
+% Preliminary-Analysis-Based Metrics
+
+% L'integrazione tra preliminary analysis e main experiments consente di stratificare le metriche sperimentali secondo le classi di sufficienza definite dalla pipeline.
+
+% Per ciascuna classe possono essere calcolate Item Accuracy e Pool Accuracy. Gli stessi gruppi possono essere utilizzati per stimare Conditional Modality Gain, Repair Rate e Damage Rate. È inoltre possibile osservare la distribuzione delle classi nelle categorie spatial, temporal e causal e verificare se la Joint-Modality Accuracy cambi in funzione della disponibilità dell'evidenza visiva.
+
+% Questa stratificazione permette di formulare una domanda più informativa rispetto al semplice confronto tra Audio + Video e Video Only. L'interesse non consiste soltanto nel verificare se la configurazione multimodale migliori mediamente la performance. Diventa possibile verificare se il miglioramento avvenga precisamente negli item nei quali una stima indipendente suggerisce che la sola visione non fornisca informazione sufficiente.
+
+% Un aumento concentrato in tali casi fornirebbe un'evidenza più forte a favore della complementarità multimodale rispetto a un incremento distribuito indiscriminatamente sull'intero dataset.
+
+% Methods and Results Separation
+% Methodological Scope
+
+% La sezione Materials and Methods deve descrivere la funzione delle condizioni sperimentali, la modalità con cui vengono implementate, le metriche utilizzate, i confronti previsti e i criteri di inclusione degli item. Deve inoltre formalizzare il rapporto tra preliminary analysis, No Input e main experiments.
+
+% I risultati numerici e le differenze osservate tra modelli devono rimanere separati. Affermazioni relative alla superiorità di un modello, alla maggiore performance di una categoria o all'entità di un gain appartengono alla sezione Results.
+
+% È possibile introdurre aspettative teoriche quando utili alla motivazione del protocollo. Tali aspettative devono però essere formulate come ipotesi e mantenute chiaramente distinte dai risultati empirici.
+
+% Overall Methodological Structure
+
+% La struttura metodologica risultante segue una progressione precisa. No Input verifica se il task possa essere risolto senza percepire lo stimolo. La Preliminary Analysis stima se l'informazione richiesta sia recuperabile dal solo contenuto visivo. I Main Experiments osservano ciò che il modello effettivamente fa quando vengono rese disponibili differenti sorgenti di evidenza. La Cross-Analysis mette infine in relazione questi livelli per stabilire se una risposta corretta sia compatibile con grounding unimodale, integrazione multimodale o sfruttamento di shortcut.
+
+% In questa prospettiva, MAIA-AV non viene ridotto a un confronto tra accuracy ottenute in sei condizioni. L'oggetto dell'analisi diventa il modo in cui la disponibilità dell'informazione modifica la decisione del modello. Il passaggio metodologico segue quindi una sequenza che procede da bias a evidence availability, da questa all'observed behaviour, fino alla valutazione della multimodal integration. Tale organizzazione permette di distinguere la presenza di informazione dalla capacità di utilizzarla e, soprattutto, impedisce di assumere che una risposta corretta costituisca automaticamente una prova di grounding.
