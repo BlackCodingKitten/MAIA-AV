@@ -1,3 +1,4 @@
+
 \section{Overview of the Evaluated Models}
 \subsection*{Qwen Family}
 The Qwen models considered in this work share an omnimodal architecture designed to process heterogeneous information within a unified computational framework. Both Qwen2.5-Omni and Qwen3-Omni accept textual, visual, and acoustic inputs, with modality-specific encoders transforming raw signals into representations compatible with a shared language-model backbone. Multimodal integration takes place after perceptual encoding, and particular attention is paid throughout the family to the temporal coordination of audio and video \cite{qwen25omni,qwen3omni}.
@@ -691,5 +692,87 @@ df["totale_coppie"],
 )
 ]
 \end{lstlisting}
-The aggregation adopts the same conservative principle used at pair level: proficiency is assigned only when every caption--foil pair associated with the question passes. Since the experimental data contain four pairs for each question, this corresponds to the required $4/4$ criterion, and a single \texttt{NOT PASS} is sufficient to classify the question as \texttt{NOT PASS}. The script additionally stores the number of evaluated pairs, the number of successful pairs, and their ratio in \texttt{question\_proficiency.csv}.
-The implementation keeps the responsibilities of the two components distinct: the finalized JSON representation remains unchanged and functions solely as the visual premise, GPT-4o performs constrained NLI classification over each caption and foil, and the final proficiency decision is produced by deterministic aggregation rules rather than by an additional generative judgment.
+The aggregation adopts the same conservative principle used at pair level: proficiency is assigned only when every caption--foil pair associated with the question passes. Since the experimental data contain four pairs for each question, this corresponds to the required $4/4$ criterion, and a single \texttt{NOT PASS} is sufficient to classify the question as \texttt{NOT PASS}. The script additionally stores the number of evaluated pairs, the number of successful pairs, and their ratio in \texttt{question\_proficiency.csv}. The implementation keeps the responsibilities of the two components distinct: the finalized JSON representation remains unchanged and functions solely as the visual premise, GPT-4o performs constrained NLI classification over each caption and foil, and the final proficiency decision is produced by deterministic aggregation rules rather than by an additional generative judgment.
+
+\section{Core Reasoning Assessment Framework}
+\subsection*{Experimental Logic and Hypotheses}
+The experimental design of MAIA-AV extends beyond a simple comparative evaluation of model accuracy. Its primary objective is to analyze the role played by individual modalities in the decision-making process and verify whether correct answers are effectively derived from input evidence.
+Experiments are structured around a \textbf{Modality-Ablation Design}. By holding the test item constant while systematically varying the input modalities, it is possible to observe how predictions shift when a specific information source is added or removed. This experimental control enables \textbf{paired comparisons}, allowing behavioral variance to be attributed more precisely to the selected modality configuration.
+Furthermore, this setup establishes a clear distinction between \textbf{Modality Sufficiency} and \textbf{Modality Necessity}. A modality is defined as sufficient when it independently contains all the information required to solve the task. However, sufficiency does not imply that the modality is uniquely useful, nor does it preclude the utility of additional sources. Conversely, supplementing a sufficient modality with another does not guarantee performance gains; the added input may be redundant, introduce irrelevant noise, or, in the worst-case scenario, interfere with a previously correct prediction.
+Our experimental setup thus shifts the focus from assessing overall model capability toward evaluating how effectively a system integrates available modalities and whether distinct modality preferences emerge. From this perspective arise the concepts of \textbf{Modality Dominance}, \textbf{Modality Gain, Repair, Damage}, and \textbf{Cross-Modal Interaction}, which are formally defined as evaluation metrics in subsequent sections.
+This methodological framework is rooted in the principle of \textbf{controlled information removal} established in \textit{Lost in Transcription}~\cite{deodati2026lost}. In both paradigms, the underlying task remains constant while the input information accessible to the model is systematically varied. This setup allows us to directly evaluate whether an added modality compensates for the absence of another or provides an advantage when partial evidence is already available. In \textit{Lost in Transcription}, analysis was primarily oriented toward assessing acoustic contributions within a benchmark built around visual evidence. The main focus was verifying whether the acoustic/textual signal could compensate for absent visual evidence and how this contribution shifted as visual evidence is added.
+With MAIA-AV, we extend this paradigm through a more articulated manipulation of input modalities. The framework comprises the following unimodal and baseline conditions: complete absence of input, isolation of the acoustic signal, isolation of visual information, and isolation of audio transcriptions. These initial conditions establish how much relevant information can be retrieved from a single modality alone. We then introduce two multimodal configurations: video with native audio (the full audiovisual clip) and video with audio transcriptions (muted video paired with text transcriptions).
+In these multimodal settings, the focus extends beyond whether audio merely assists a primarily visual decision. Instead, the goal is to comprehend how the availability and representation of information across different modalities reshape the model's overall reasoning. This setup transforms the core question from a simplistic inquiry---\textit{does audio help?}---into a broader investigation of how distinct information sources jointly contribute to multimodal reasoning.
+
+\subsection*{Visual Statement Verification}
+All experimental conditions adopt an identical task formulation: \textbf{Visual Statement Verification} (VSV). Each decision is evaluated on a pair consisting of a caption (a correct description) and a foil (a minimally contrastive false description). These two alternatives are presented to the model as a binary choice, and the system must return exclusively 0 or 1 depending on its selection. This constrained formulation minimizes confounding factors associated with open-ended text generation, enabling a direct comparison across models and input configurations.
+Consequently, the exact same experimental unit can be observed across different multimodal configurations without introducing variations in prompt structure or evaluation criteria. This task structure allows us to distinguish two analytical levels. The first corresponds to single caption-foil choices, designated as \textbf{Item-Level Decisions}. The second is \textbf{Aggregate Accuracy}, which evaluates sets of items linked to the same underlying conceptual category to assess whether the model maintains consistent behavior across different formulations. These metrics are formally defined in subsequent sections.
+\begin{table}[h]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.35}
+
+    \begin{tabularx}{\linewidth}{|X|X|}
+        \hline
+
+        % ================= ITALIANO =================
+
+        \rowcolor{EcoForestGreen!55}
+        \multicolumn{2}{|c|}{
+            \textcolor{white}{\textbf{Domanda}}
+        } \\
+        \hline
+
+        \multicolumn{2}{|c|}{
+            \parbox{0.94\linewidth}{
+                \centering
+                Dove cammina la bambina alla fine della scena?
+            }
+        } \\
+        \hline
+
+        \textbf{\textcolor{EcoForestGreen}{Caption}} &
+        \textbf{\textcolor{EcoForestGreen}{Foil}} \\
+        \hline
+
+        Alla fine della scena, la bambina cammina
+        \textbf{su un tappeto}. &
+        Alla fine della scena, la bambina cammina
+        \textbf{su un sentiero}. \\
+        \hline
+        % ================= ENGLISH =================
+
+        \rowcolor{EcoForestGreen!55}
+        \multicolumn{2}{|c|}{
+            \textcolor{white}{\textbf{Question}}
+        } \\
+        \hline
+
+        \multicolumn{2}{|c|}{
+            \parbox{0.94\linewidth}{
+                \centering
+                Where does the little girl walk at the end of the scene?
+            }
+        } \\
+        \hline
+
+        \textbf{\textcolor{EcoForestGreen}{Caption}} &
+        \textbf{\textcolor{EcoForestGreen}{Foil}} \\
+        \hline
+
+        At the end of the scene, the little girl walks
+        \textbf{on a carpet}. &
+        At the end of the scene, the little girl walks
+        \textbf{on a path}. \\
+        \hline
+
+    \end{tabularx}
+
+    \caption{Example of a minimally contrastive caption--foil pair, reported in Italian with its English translation.}
+    \label{tab:minimal-contrastive-pair}
+\end{table}
+
+
+\subsection*{Experimental Setup}
+%Non Corretto 
+ 
