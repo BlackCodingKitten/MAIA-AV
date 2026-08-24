@@ -35,6 +35,7 @@ Multimodal integration accordingly takes place directly inside the decoder-only 
 The 12B model is dense and combines local and global self-attention, with five local attention blocks per global block. Local layers use RoPE, while global layers use $p$-RoPE with $p=0.25$; the architecture also reuses keys as values in global attention layers, reducing the memory footprint of the global KV
 
 \section{Preliminary Analysis as a Diagnostic Tool for Multimodal Assessment}
+\label{sec:pa}
 The preliminary analysis aims to determine which information relevant to the subsequent resolution of \textit{MAIA-AV} questions can be autonomously recovered by each model from the visual content of the video alone. The analysis is accordingly conducted in a \textit{question-independent} setting: the model receives solely the video input, with no access to the questions, corresponding answers, audio streams, or transcriptions. The output is a structured and temporally grounded representation of the visual content, which is only later compared with the informational requirements of individual questions.
 This separation distinguishes the model's capacity to extract visual information from its ability to retrieve relevant evidence when guided by a linguistic query. While the preliminary analysis does not directly measure performance on the \acs{VSV} task, its purpose is to characterize what the model can represent prior to the introduction of a specific question-answering objective.
 Isolating these two abilities addresses a key limitation of evaluations based solely on final accuracy. A correct prediction does not guarantee that the model has correctly identified relevant entities, reconstructed events, or established the relations necessary to support its output. Conversely, an incorrect answer fails to reveal which stage of the process caused the failure. The preliminary analysis thus introduces an intermediate diagnostic layer between the raw video content and the final task outcome.
@@ -1086,7 +1087,7 @@ if audio is not None:
 request["multi_modal_data"] = multi_modal_data
 \end{lstlisting}
 Results are written to a dedicated \texttt{video\_audio} directory, one file per model. This condition is best understood not as an independent task but as the joint-modality counterpart of the two unimodal ablations: comparison with video-only provides a controlled measure of whether adding raw acoustic information improves, preserves, or interferes with decisions already supported by vision, while comparison with the transcription-based multimodal condition below distinguishes the contribution of native acoustic processing from that of the linguistic information preserved in a transcription.
-\subsubsection*{The Vision-Language (VL) Configuration}
+\subsubsection*{The Visual-Language (VL) Configuration}
 The video-plus-transcription condition combines the visual component with a textual representation of speech. This is the second multimodal configuration, allowing direct audiovisual integration to be compared against textualized linguistic information: comparison with the audiovisual condition tests whether the informative content of the acoustic track is exploited more effectively once converted to text, while comparison with video-only clarifies the benefit of audio-derived linguistic information when visual context is already available.
 \paragraph{Implementation Details}
 Only \texttt{use\_video} is active, since this condition does not expose the raw acoustic signal. The model receives the muted video resolved via \texttt{paths(row)["mute"]}, together with the transcript retrieved via \texttt{transcriptions()} and the two textual alternatives. The condition-specific prompt combines the visual instruction with the transcription:
@@ -1200,3 +1201,554 @@ p_{0,c} = \frac{1}{N_c} \sum_{i \in I_c} \mathbb{I} \left(\hat{y}_i=0\right), \q
 \end{equation}
 This decomposition makes it possible to determine whether no-input solvability varies systematically across reasoning categories, without treating a higher category-level accuracy as evidence that the model is more competent at the corresponding reasoning process: since no perceptual evidence is available in this condition, such differences instead indicate that some groups of items expose stronger linguistic or structural regularities than others. This distinction matters directly when no-input results are later compared against performance under perceptual conditions, since differences observed between spatial, temporal, and causal questions should not be attributed automatically to multimodal reasoning ability when part of the variation may already be present before any perceptual modality is introduced. The category breakdown therefore provides the baseline needed to separate genuine grounding effects from differences rooted in the linguistic structure of the task.
 \end{description}
+\subsubsection*{Item-Aligned Modality Influence Metrics}
+Let \(c\) denote an experimental condition and \(C_i^{(c)} \in \{0,1\}\) indicate whether the model answers item \(i\) correctly under condition \(c\):
+\begin{equation}
+C_i^{(c)}
+=
+\mathbb{I}
+\left(
+\hat{y}_i^{(c)} = y_i
+\right),
+\end{equation}
+where \(y_i\) is the target label and \(\hat{y}_i^{(c)}\) the prediction obtained under \(c\).
+For every comparison between a baseline condition \(b\) and a condition \(n\) obtained by adding a new modality, only items available in both are retained, giving the paired evaluation set
+\begin{equation}
+\mathcal{I}_{b,n}
+=
+\mathcal{I}_{b}
+\cap
+\mathcal{I}_{n},
+\qquad
+N_{b,n}
+=
+\left|
+\mathcal{I}_{b,n}
+\right|.
+\end{equation}
+All modality-contribution metrics are computed on this common subset, which preserves item-level comparability and keeps differences in data availability from affecting the estimated contribution of the added modality.
+\paragraph{Conditional Modality Gain}
+The \textit{Conditional Modality Gain} measures the change in performance produced by adding a new source of information to a fixed baseline, for the two primary comparisons
+\begin{equation}
+\text{Video Only}
+\rightarrow
+\text{Audio + Video}
+\qquad \text{and} \qquad
+\text{Video Only}
+\rightarrow
+\text{Video + Transcription}.
+\end{equation}
+Let \(b\) denote the baseline condition and \(n\) the condition after the additional modality has been introduced. Accuracy on the paired subset is
+\begin{equation}
+\mathrm{Acc}_{b}
+=
+\frac{1}{N_{b,n}}
+\sum_{i \in \mathcal{I}_{b,n}}
+C_i^{(b)},
+\qquad
+\mathrm{Acc}_{n}
+=
+\frac{1}{N_{b,n}}
+\sum_{i \in \mathcal{I}_{b,n}}
+C_i^{(n)},
+\end{equation}
+and the Conditional Modality Gain is their difference, which, since both accuracies are computed on the same items, can equivalently be written as an item-level average:
+\begin{equation}
+\Delta_{b \rightarrow n}
+=
+\mathrm{Acc}_{n}
+-
+\mathrm{Acc}_{b}
+=
+\frac{1}{N_{b,n}}
+\sum_{i \in \mathcal{I}_{b,n}}
+\left(
+C_i^{(n)}
+-
+C_i^{(b)}
+\right).
+\end{equation}
+This second formulation makes the paired nature of the metric explicit. Each item contributes \(+1\) when the additional modality turns an incorrect response into a correct one, \(-1\) when it turns a correct response into an incorrect one, and \(0\) when correctness is unchanged, so \(\Delta_{b \rightarrow n} > 0\) indicates a positive net contribution of the added modality and \(\Delta_{b \rightarrow n} < 0\) an overall detrimental effect.
+For the two main comparisons, the corresponding gains are
+\begin{equation}
+\Delta_{\mathrm{Audio}\mid\mathrm{Video}}
+=
+\mathrm{Acc}_{\mathrm{Audio+Video}}
+-
+\mathrm{Acc}_{\mathrm{VideoOnly}},
+\qquad
+\Delta_{\mathrm{Transcription}\mid\mathrm{Video}}
+=
+\mathrm{Acc}_{\mathrm{Video+Transcription}}
+-
+\mathrm{Acc}_{\mathrm{VideoOnly}}.
+\end{equation}
+These quantities measure the marginal contribution of acoustic or transcribed information when visual evidence is already available, directly extending the controlled information-addition principle adopted in \textit{Lost in Transcription}.
+\paragraph{Repair Rate}
+Aggregate gain does not reveal how individual decisions change. The \textit{Repair Rate} isolates items answered incorrectly in the baseline condition and measures how often the additional modality converts them into correct predictions:
+\begin{equation}
+N_{\mathrm{repair}}
+=
+\sum_{i \in \mathcal{I}_{b,n}}
+\mathbb{I}
+\left(
+C_i^{(b)}=0
+\land
+C_i^{(n)}=1
+\right),
+\qquad
+N_{\mathrm{base\ error}}
+=
+\sum_{i \in \mathcal{I}_{b,n}}
+\mathbb{I}
+\left(
+C_i^{(b)}=0
+\right),
+\end{equation}
+\begin{equation}
+\mathrm{RepairRate}_{b \rightarrow n}
+=
+\frac{
+N_{\mathrm{repair}}
+}{
+N_{\mathrm{base\ error}}
+}
+=
+P
+\left(
+C^{(n)}=1
+\mid
+C^{(b)}=0
+\right).
+\end{equation}
+The metric conditions exclusively on baseline failures, measuring the corrective contribution of the newly available modality rather than its effect on the complete item set. For audio added to visual evidence,
+\begin{equation}
+\mathrm{RepairRate}_{A\mid V}
+=
+P
+\left(
+C^{(AV)}=1
+\mid
+C^{(V)}=0
+\right),
+\end{equation}
+where a high value indicates that acoustic evidence frequently resolves decisions that cannot be solved from visual evidence alone.
+\paragraph{Damage Rate}
+The \textit{Damage Rate} captures the opposite transition, the proportion of baseline-correct items that become incorrect once the additional modality is introduced:
+\begin{equation}
+N_{\mathrm{damage}}
+=
+\sum_{i \in \mathcal{I}_{b,n}}
+\mathbb{I}
+\left(
+C_i^{(b)}=1
+\land
+C_i^{(n)}=0
+\right),
+\qquad
+N_{\mathrm{base\ correct}}
+=
+\sum_{i \in \mathcal{I}_{b,n}}
+\mathbb{I}
+\left(
+C_i^{(b)}=1
+\right),
+\end{equation}
+\begin{equation}
+\mathrm{DamageRate}_{b \rightarrow n}
+=
+\frac{
+N_{\mathrm{damage}}
+}{
+N_{\mathrm{base\ correct}}
+}
+=
+P
+\left(
+C^{(n)}=0
+\mid
+C^{(b)}=1
+\right).
+\end{equation}
+For the addition of audio to video,
+\begin{equation}
+\mathrm{DamageRate}_{A\mid V}
+=
+P
+\left(
+C^{(AV)}=0
+\mid
+C^{(V)}=1
+\right),
+\end{equation}
+a transition that provides a direct behavioral measure of cross-modal interference: the additional source does not merely fail to contribute useful information, it actively overturns a previously correct decision.
+Conditional Modality Gain alone cannot distinguish repair from damage. When \(N_{\mathrm{repair}} = N_{\mathrm{damage}}\), the net gain \(\Delta_{b \rightarrow n} = 0\) even though a substantial fraction of individual predictions has changed, a situation fundamentally different from \(N_{\mathrm{repair}} = N_{\mathrm{damage}} = 0\), where the additional modality produces no change in correctness at all.
+Paired decisions are accordingly partitioned into four mutually exclusive transition classes:
+\begin{equation}
+\begin{aligned}
+N_{\mathrm{stable\ correct}}
+&=
+\sum_i
+\mathbb{I}
+\left(
+C_i^{(b)}=1
+\land
+C_i^{(n)}=1
+\right),\\
+N_{\mathrm{repair}}
+&=
+\sum_i
+\mathbb{I}
+\left(
+C_i^{(b)}=0
+\land
+C_i^{(n)}=1
+\right),\\
+N_{\mathrm{damage}}
+&=
+\sum_i
+\mathbb{I}
+\left(
+C_i^{(b)}=1
+\land
+C_i^{(n)}=0
+\right),\\
+N_{\mathrm{stable\ wrong}}
+&=
+\sum_i
+\mathbb{I}
+\left(
+C_i^{(b)}=0
+\land
+C_i^{(n)}=0
+\right),
+\end{aligned}
+\end{equation}
+satisfying
+\begin{equation}
+N_{b,n}
+=
+N_{\mathrm{stable\ correct}}
++
+N_{\mathrm{repair}}
++
+N_{\mathrm{damage}}
++
+N_{\mathrm{stable\ wrong}},
+\end{equation}
+the item-level decomposition underlying the aggregate gain.
+
+\subsubsection*{Modality Interdependence Analysis}
+\paragraph{Factorial Modality Interaction Analysis}
+The joint contribution of audio and video is analyzed through a \(2 \times 2\) factorial design, with \(A \in \{0,1\}\) indicating the availability of the acoustic modality and \(V \in \{0,1\}\) the availability of the visual modality:
+\begin{equation}
+\begin{array}{c|cc}
+ & V=0 & V=1 \\
+\hline
+A=0 & \text{No Input} & \text{Video Only} \\
+A=1 & \text{Audio Only} & \text{Audio + Video}
+\end{array}
+\end{equation}
+The \textit{No Input} condition is included solely to complete the factorial structure, representing the cell \((A,V)=(0,0)\) in which neither perceptual modality is present, without implying that it constitutes a multimodal comprehension condition.
+Let \(Y_i \in \{0,1\}\) indicate whether item \(i\) is answered correctly. Correctness probability is modeled through logistic regression,
+\begin{equation}
+\mathrm{logit}
+\left[
+P(Y_i=1)
+\right]
+=
+\beta_0
++
+\beta_A A_i
++
+\beta_V V_i
++
+\beta_{AV}
+\left(
+A_i V_i
+\right),
+\qquad
+\mathrm{logit}(p)
+=
+\log
+\left(
+\frac{p}{1-p}
+\right).
+\end{equation}
+Writing \(p_{av} = P\left(Y=1 \mid A=a,V=v\right)\) for the four cell probabilities, the coefficients admit a direct interpretation:
+\begin{equation}
+\beta_0
+=
+\mathrm{logit}(p_{00}),
+\qquad
+\beta_A
+=
+\mathrm{logit}(p_{10})
+-
+\mathrm{logit}(p_{00}),
+\qquad
+\beta_V
+=
+\mathrm{logit}(p_{01})
+-
+\mathrm{logit}(p_{00}),
+\end{equation}
+\begin{equation}
+\begin{split}
+\beta_{AV}
+&=
+\mathrm{logit}(p_{11})
+-
+\mathrm{logit}(p_{10})
+-
+\mathrm{logit}(p_{01})
++
+\mathrm{logit}(p_{00}) \\
+&=
+\left[
+\mathrm{logit}(p_{11})
+-
+\mathrm{logit}(p_{01})
+\right]
+-
+\left[
+\mathrm{logit}(p_{10})
+-
+\mathrm{logit}(p_{00})
+\right].
+\end{split}
+\end{equation}
+The interaction thus measures whether the effect of audio changes as a function of visual availability. Under the null hypothesis \(H_0: \beta_{AV}=0\), the joint audiovisual configuration is compatible with additive modality effects on the logit scale, while \(\beta_{AV}>0\) indicates a joint effect stronger than the separate modality contributions predict and \(\beta_{AV}<0\) a joint effect weaker than that additive expectation.
+On the odds-ratio scale, \(\mathrm{OR}_{AV} = \exp\left(\beta_{AV}\right)\), so that \(\mathrm{OR}_{AV}>1\) corresponds to positive interaction and \(\mathrm{OR}_{AV}<1\) to negative interaction.
+For the estimated coefficient \(\hat{\beta}_{AV}\), the Wald statistic
+\begin{equation}
+z
+=
+\frac{
+\hat{\beta}_{AV}
+}{
+\mathrm{SE}
+\left(
+\hat{\beta}_{AV}
+\right)
+}
+\end{equation}
+yields the two-sided \(p\)-value \(p = 2\left[1-\Phi\left(|z|\right)\right]\), where \(\Phi(\cdot)\) is the cumulative distribution function of the standard normal distribution. The \(95\%\) confidence interval for the interaction coefficient is
+\begin{equation}
+\mathrm{CI}_{95\%}
+\left(
+\beta_{AV}
+\right)
+=
+\hat{\beta}_{AV}
+\pm
+1.96
+\,
+\mathrm{SE}
+\left(
+\hat{\beta}_{AV}
+\right),
+\end{equation}
+and its odds-ratio counterpart is obtained through exponentiation,
+\begin{equation}
+\mathrm{CI}_{95\%}
+\left(
+\mathrm{OR}_{AV}
+\right)
+=
+\left[
+\exp
+\left(
+\hat{\beta}_{AV}
+-
+1.96\,\mathrm{SE}
+\left(
+\hat{\beta}_{AV}
+\right)
+\right),
+\,
+\exp
+\left(
+\hat{\beta}_{AV}
++
+1.96\,\mathrm{SE}
+\left(
+\hat{\beta}_{AV}
+\right)
+\right)
+\right].
+\end{equation}
+Standard errors are estimated using a cluster-robust covariance matrix at the \texttt{pool\_id} level, letting observations within the same pool be statistically dependent while treating different pools as independent clusters. Only items observed in all four factorial cells are retained, restricting the analysis to
+\begin{equation}
+\mathcal{I}_{2\times2}
+=
+\mathcal{I}_{00}
+\cap
+\mathcal{I}_{10}
+\cap
+\mathcal{I}_{01}
+\cap
+\mathcal{I}_{11},
+\end{equation}
+a complete-case restriction that preserves the paired structure required for a valid comparison of modality effects.
+\subsubsection*{Joint-Modality Evaluation}
+\paragraph{Joint-Modality Accuracy}
+Aggregate audiovisual accuracy does not distinguish items that genuinely require multiple modalities from items already solvable from a single source. The \textit{Joint-Modality Accuracy} restricts evaluation to items classified as requiring a specific combination of modalities.
+Let \(J_i^{AV} \in \{0,1\}\) indicate whether item \(i\) requires both audio and visual information, with \(\mathcal{J}_{AV} = \left\{i \mid J_i^{AV}=1\right\}\). Audio--Video Joint-Modality Accuracy is then
+\begin{equation}
+\mathrm{JMA}_{AV}
+=
+\frac{
+\sum_{i \in \mathcal{J}_{AV}}
+C_i^{(AV)}
+}{
+\left|
+\mathcal{J}_{AV}
+\right|
+}.
+\end{equation}
+For items requiring visual information together with an audio-derived transcription, the analogous definitions \(J_i^{VT} \in \{0,1\}\) and \(\mathcal{J}_{VT} = \left\{i \mid J_i^{VT}=1\right\}\) give
+\begin{equation}
+\mathrm{JMA}_{VT}
+=
+\frac{
+\sum_{i \in \mathcal{J}_{VT}}
+C_i^{(VT)}
+}{
+\left|
+\mathcal{J}_{VT}
+\right|
+}.
+\end{equation}
+
+This restriction changes the object being measured. General audiovisual accuracy is \(\mathrm{Acc}_{AV} = P\left(C^{(AV)}=1\right)\), whereas Joint-Modality Accuracy is \(\mathrm{JMA}_{AV} = P\left(C^{(AV)}=1 \mid J^{AV}=1\right)\). High performance on the first can arise from items solvable through a single modality, while high performance on the second requires successful predictions specifically within the subset for which joint information has been identified as necessary, making it a more selective estimate of multimodal integration.
+
+\subsubsection*{Alignment Sensitivity}
+
+\textit{Alignment Sensitivity} measures whether model performance depends on the correct correspondence between information sources. Let \(a\) denote the correctly aligned multimodal condition and \(m\) the corresponding misaligned condition, with evaluation restricted to \(\mathcal{I}_{a,m} = \mathcal{I}_{a} \cap \mathcal{I}_{m}\). Aligned and misaligned accuracies are
+\begin{equation}
+\mathrm{Acc}_{\mathrm{aligned}}
+=
+\frac{1}{|\mathcal{I}_{a,m}|}
+\sum_{i \in \mathcal{I}_{a,m}}
+C_i^{(a)},
+\qquad
+\mathrm{Acc}_{\mathrm{misaligned}}
+=
+\frac{1}{|\mathcal{I}_{a,m}|}
+\sum_{i \in \mathcal{I}_{a,m}}
+C_i^{(m)},
+\end{equation}
+and Alignment Sensitivity is their difference which, since both conditions are evaluated on the same items, can equivalently be written item by item:
+\begin{equation}
+\mathrm{AS}
+=
+\mathrm{Acc}_{\mathrm{aligned}}
+-
+\mathrm{Acc}_{\mathrm{misaligned}}
+=
+\frac{1}{|\mathcal{I}_{a,m}|}
+\sum_{i \in \mathcal{I}_{a,m}}
+\left(
+C_i^{(a)}
+-
+C_i^{(m)}
+\right).
+\end{equation}
+A positive value, \(\mathrm{AS}>0\), indicates that correct cross-modal correspondence improves performance relative to mismatched inputs, while a value near zero indicates limited sensitivity to the relationship between the modalities. For audiovisual inputs,
+\begin{equation}
+\mathrm{AS}_{AV}
+=
+\mathrm{Acc}_{AV}^{\mathrm{aligned}}
+-
+\mathrm{Acc}_{AV}^{\mathrm{misaligned}},
+\end{equation}
+and for video and transcription,
+\begin{equation}
+\mathrm{AS}_{VT}
+=
+\mathrm{Acc}_{VT}^{\mathrm{aligned}}
+-
+\mathrm{Acc}_{VT}^{\mathrm{misaligned}}.
+\end{equation}
+This metric enters the main experimental results only when the corresponding misaligned conditions are part of the executed protocol. If misaligned configurations are supported only by the evaluation infrastructure, \(\mathrm{AS}\) remains a formally defined extension rather than an observed main-experiment metric.
+
+\subsection*{Stratified Behavioral Analysis}
+
+\paragraph{Independent Visual-Evidence Estimation}
+
+The preliminary analysis provides an estimate of visual evidence availability that is independent of the VSV predictions produced in the main experiments.
+
+For each item \(i\), let \(R_i^{V}\) denote the structured representation extracted exclusively from the visual stream, obtained from the analysis of entities, events, and inferential relations, and let \(Q_i^{*}\) denote the information required to resolve the corresponding question. A Natural Language Inference stage compares \(R_i^{V}\) with \(Q_i^{*}\) and produces an evidence-availability variable
+\begin{equation}
+E_i^{V}
+=
+f_{\mathrm{NLI}}
+\left(
+R_i^{V},
+Q_i^{*}
+\right)
+\in
+\{0,1\},
+\end{equation}
+where \(E_i^{V}=1\) indicates that the visual representation contains sufficient information according to the adopted NLI criterion, and \(E_i^{V}=0\) indicates that the required information cannot be established from it.
+
+This variable is not defined from VSV correctness, \(E_i^{V} \neq C_i^{(V)}\): the two quantities sit at distinct analytical levels. \(E_i^{V}\) estimates whether the required information is available in the independently extracted visual representation, while \(C_i^{(V)}\) records whether the model actually produces the correct VSV decision under the video-only condition. Evidence availability, in short, is not the same thing as observed task success.
+
+\paragraph{Mapping Preliminary and Experimental Outcomes}
+
+Preliminary and main-experiment outputs are joined through their shared item identifiers. For each item \(i\), the resulting analytical representation contains at least the triplet
+\begin{equation}
+\left(
+E_i^{V},
+C_i^{(N)},
+C_i^{(m)}
+\right),
+\end{equation}
+where \(E_i^{V}\) is the independently estimated visual-evidence availability, \(C_i^{(N)}\) correctness in the \textit{No Input} condition, and \(C_i^{(m)}\) correctness under experimental modality configuration \(m\). The complete modality vector can be written as
+\begin{equation}
+\mathbf{C}_i
+=
+\left(
+C_i^{(N)},
+C_i^{(A)},
+C_i^{(V)},
+C_i^{(AV)},
+C_i^{(T)},
+C_i^{(VT)}
+\right),
+\end{equation}
+with \(N\), \(A\), \(V\), \(AV\), \(T\), and \(VT\) denoting \textit{No Input}, \textit{Audio Only}, \textit{Video Only}, \textit{Audio + Video}, \textit{Transcription Only}, and \textit{Video + Transcription}, respectively.
+
+The preliminary taxonomy assigns each item to an independently defined stratum \(S_i \in \left\{S_0, S_1, \ldots, S_K\right\}\), not derived from main-experiment correctness, \(S_i \not\equiv g\left(\mathbf{C}_i\right)\), but acting as an external stratification variable. Performance under condition \(m\) can therefore be computed separately for each class \(S_k\),
+\begin{equation}
+\mathrm{Acc}_{m,S_k}
+=
+\frac{
+\sum_{i}
+\mathbb{I}
+\left(
+S_i=S_k
+\right)
+C_i^{(m)}
+}{
+\sum_{i}
+\mathbb{I}
+\left(
+S_i=S_k
+\right)
+},
+\end{equation}
+with the corresponding difference between two modality conditions \(b\) and \(n\) within the same stratum given by
+\begin{equation}
+\Delta_{b \rightarrow n}^{(S_k)}
+=
+\mathrm{Acc}_{n,S_k}
+-
+\mathrm{Acc}_{b,S_k}.
+\end{equation}
+
+This stratification lets experimental behavior be interpreted jointly with independently estimated evidence availability. The pair \(\left(E_i^{V}=0, C_i^{(V)}=1\right)\) identifies an item solved correctly under the video-only condition despite the absence of sufficient evidence in the independently extracted visual representation, while \(\left(E_i^{V}=1, C_i^{(V)}=0\right)\) identifies a failure despite independently estimated visual evidence being available.
+
+The additional No-Input variable further separates perceptual from non-perceptual success. \(\left(E_i^{V}=0, C_i^{(N)}=1\right)\) is compatible with a decision supported by linguistic or structural regularities rather than by visual grounding, while \(\left(E_i^{V}=1, C_i^{(N)}=0, C_i^{(V)}=1\right)\) is consistent with a performance gain that emerges only once visual evidence becomes available.
+The preliminary classes \(S_0, S_1, \ldots, S_K\) thus provide an independent stratification layer for the modality-ablation results. Their role is analytical rather than evaluative: they allow observed VSV decisions to be interpreted against the information independently recoverable from the visual stream, without defining the classes from the same predictions that are subsequently analyzed against them.
