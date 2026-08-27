@@ -4,10 +4,65 @@
       "cause_event": "E0001",
       "relation": "enables",
       "effect_event": "E0002",
-      "evidence_type": "inferred",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La presenza di Persona visibile in un'area specifica a partire dal 0.0 al 3.75 consente la sua presenza a partire dal 3.0 al 6.75.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0003",
+      "relation": "enables",
+      "effect_event": "E0004",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0005"
+      ],
+      "explanation": "La presenza di Persona visibile in un'area specifica a partire dal 6.0 al 9.75 consente la sua presenza a partire dal 9.0 al 12.75.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0005",
+      "relation": "enables",
+      "effect_event": "E0006",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0007"
+      ],
+      "explanation": "La presenza di Persona visibile in un'area specifica a partire dal 12.0 al 15.75 consente la sua presenza a partire dal 15.0 al 18.75.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0007",
+      "relation": "enables",
+      "effect_event": "E0008",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0009"
+      ],
+      "explanation": "La presenza di Persona visibile in un'area specifica a partire dal 18.0 al 21.75 consente la sua presenza a partire dal 21.0 al 24.75.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0008",
+      "relation": "enables",
+      "effect_event": "E0009",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0010"
+      ],
+      "explanation": "La presenza di Persona visibile in un'area specifica a partire dal 21.0 al 24.75 consente la sua presenza a partire dal 24.0 al 27.75.",
+      "confidence": 1.0
+    },
+    {
+      "cause_event": "E0009",
+      "relation": "enables",
+      "effect_event": "E0010",
+      "evidence_type": "direct",
       "supporting_events": [],
-      "explanation": "La presenza di Persona e1 in una finestra di video prima di apparire in una finestra di video è un evento che supporta la causalità.",
-      "confidence": 0.0
+      "explanation": "La presenza di Persona visibile in un'area specifica a partire dal 24.0 al 27.75 consente la sua presenza a partire dal 27.0 al 30.75.",
+      "confidence": 1.0
     }
   ],
   "id_video": "video025",

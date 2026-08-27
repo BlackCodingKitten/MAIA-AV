@@ -24,7 +24,7 @@ class QwenInferencer:
         max_new_tokens: int,
         flash_attention: bool,
     ) -> None:
-        os.environ["CUDA_VISIBLE_DEVICES"] = device
+        os.environ["CUDA_VISIBLE_DEVICES"] = "5"
 
         try:
             import torch
@@ -149,11 +149,11 @@ def main() -> None:
     parser.add_argument(
         "output_directory",
         nargs="?",
-        default="data/preliminar_analysis/semantic_analysis/qwen",
+        default="data/preliminar_analysis/entity/qwen",
         type=Path,
     )
     parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--device", default="3")
+    parser.add_argument("--device", default="0")
     parser.add_argument(
         "--dtype",
         choices=["auto", "bfloat16", "float16"],
@@ -161,12 +161,12 @@ def main() -> None:
     )
     parser.add_argument("--window-seconds", type=float, default=4.0)
     parser.add_argument("--stride-seconds", type=float, default=3.0)
-    parser.add_argument("--max-frames", type=int, default=8)
+    parser.add_argument("--max-frames", type=int, default=32)
     parser.add_argument("--max-new-tokens", type=int, default=16384)
     parser.add_argument(
         "--limit-videos",
         type=int,
-        default=5,
+        default=0,
         help="Numero massimo di video per il pilot; 0 significa tutti.",
     )
     parser.add_argument("--flash-attention", action="store_true")
@@ -177,6 +177,8 @@ def main() -> None:
     video_directories = discover_video_directories(
         args.preprocessing_directory
     )
+    
+    video_directories = video_directories[72:]
     if args.limit_videos > 0:
         video_directories = video_directories[: args.limit_videos]
     if not video_directories:

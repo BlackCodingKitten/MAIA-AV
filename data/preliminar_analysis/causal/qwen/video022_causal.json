@@ -1,5 +1,17 @@
 {
-  "causal_relations": [],
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "enables",
+      "effect_event": "E0002",
+      "evidence_type": "inferred",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "La persona si alza la mano sinistra e destra prima di parlare, indicando che l'azione precedente è una condizione abilitante per l'azione successiva.",
+      "confidence": 1.0
+    }
+  ],
   "id_video": "video022",
   "model": "Qwen/Qwen2.5-Omni-3B",
   "source_event_file": "data/preliminar_analysis/event/qwen/video022_events.json"

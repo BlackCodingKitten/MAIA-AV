@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "6"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 import argparse
 import json

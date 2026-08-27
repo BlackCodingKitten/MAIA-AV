@@ -5,9 +5,11 @@
       "relation": "causes",
       "effect_event": "E0002",
       "evidence_type": "direct",
-      "supporting_events": [],
-      "explanation": "L'apertura della finestra causa la sua successiva chiusura.",
-      "confidence": 0.8
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "L'evento E0001 ha causato l'evento E0002, poiché l'evento E0003 è stato osservato immediatamente dopo l'evento E0002.",
+      "confidence": 0.0
     }
   ],
   "id_video": "video005",

@@ -1,5 +1,17 @@
 {
-  "causal_relations": [],
+  "causal_relations": [
+    {
+      "cause_event": "E0001",
+      "relation": "causes",
+      "effect_event": "E0002",
+      "evidence_type": "direct",
+      "supporting_events": [
+        "E0003"
+      ],
+      "explanation": "E0001 è un evento temporaneo che segue immediatamente E0002, indicando una causa-effetto chiaramente supportata dall'interazione.",
+      "confidence": 0.0
+    }
+  ],
   "id_video": "video010",
   "model": "Qwen/Qwen2.5-Omni-3B",
   "source_event_file": "data/preliminar_analysis/event/qwen/video010_events.json"
