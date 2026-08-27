@@ -1747,8 +1747,30 @@ with the corresponding difference between two modality conditions \(b\) and \(n\
 -
 \mathrm{Acc}_{b,S_k}.
 \end{equation}
-
 This stratification lets experimental behavior be interpreted jointly with independently estimated evidence availability. The pair \(\left(E_i^{V}=0, C_i^{(V)}=1\right)\) identifies an item solved correctly under the video-only condition despite the absence of sufficient evidence in the independently extracted visual representation, while \(\left(E_i^{V}=1, C_i^{(V)}=0\right)\) identifies a failure despite independently estimated visual evidence being available.
-
 The additional No-Input variable further separates perceptual from non-perceptual success. \(\left(E_i^{V}=0, C_i^{(N)}=1\right)\) is compatible with a decision supported by linguistic or structural regularities rather than by visual grounding, while \(\left(E_i^{V}=1, C_i^{(N)}=0, C_i^{(V)}=1\right)\) is consistent with a performance gain that emerges only once visual evidence becomes available.
 The preliminary classes \(S_0, S_1, \ldots, S_K\) thus provide an independent stratification layer for the modality-ablation results. Their role is analytical rather than evaluative: they allow observed VSV decisions to be interpreted against the information independently recoverable from the visual stream, without defining the classes from the same predictions that are subsequently analyzed against them.
+\section{Attention-Based Modality Analysis}
+\label{sec:attention_analysis}
+The attention analysis complements the behavioural experiments described above. Rather than asking only whether a modality's presence affects performance, it investigates how the model internally allocates attention across the available sources of information during generation.
+The design follows directly from the findings discussed earlier for \textit{Lost in Transcription} \cite{deodati2026lost}: the availability of multiple modalities does not by itself guarantee their effective integration, and behavioural comparisons alone cannot show how a model distributes its internal processing when several sources are available at once. A model may receive both video and audio while attending almost entirely to the visual representations, or a transcription may attract substantial decoder attention even where its addition barely changes task accuracy.
+For this reason, the attention analysis provides an internal counterpart to the behavioural modality-ablation experiments. The behavioural analysis addresses the question:
+\begin{quote}
+Does the availability of a given modality change model performance?
+\end{quote}
+The attention analysis instead addresses the complementary question:
+\begin{quote}
+When multiple modalities are available, how is attention distributed across them during answer generation?
+\end{quote}
+The distinction matters for questions of modality dominance and unimodal collapse. Strong performance under a multimodal configuration does not demonstrate that every available modality contributes meaningfully to the decision, since a model can reach a correct prediction by relying mainly on a dominant source while largely ignoring the rest. Comparing unimodal and multimodal conditions exposes this behaviour at the output level, but says nothing about whether the internal computation reflects the same imbalance. Tracing how much attention is directed toward visual, acoustic, and textual representations during generation provides that missing evidence, showing whether the dominance observed behaviourally is also reflected in the model's internal allocation.
+The comparison between the \textit{Audio + Video} and \textit{Video + Transcription} conditions is especially informative here. Both settings preserve the visual channel but carry the information associated with the audio track in different representational forms, native acoustic signal in one case, language in the other. Comparing the two allows us to ask whether linguistic reformulation makes audio-derived information more accessible to the language decoder, and whether this in turn changes the attention assigned to the video.
+The question connects directly to the observations made in \textit{Lost in Transcription}. If transcription-based input attracts substantially more attention than raw audio, this would help explain why multimodal models behave differently once acoustic information is converted into text. If instead the decoder keeps concentrating attention on visual representations in both conditions, that would point to persistent visual dominance regardless of how the acoustic content is represented.
+The analysis is thus meant to connect three complementary levels: input availability, which measures whether adding or removing a modality changes task performance, semantic accessibility, which evaluates whether the information required by the question can already be recovered from the visual stream alone, and internal allocation, which investigates how the model distributes attention across the available sources while producing the answer.
+\begin{equation}
+\begin{aligned}
+\mathrm{Modality\ Availability} &\rightarrow \mathrm{Behavioural\ Contribution} \\
+\mathrm{Visual\ Content} &\rightarrow \mathrm{Semantic\ Accessibility} \\
+\mathrm{Internal\ Attention} &\rightarrow \mathrm{Modality\ Allocation}
+\end{aligned}
+\end{equation}
+When examined together, the three levels provide a more comprehensive understanding of multimodal integration than considering each one individually. They help differentiate between a modality that is accessible but receives minimal attention, one that receives significant attention but offers little behavioral improvement, and one where both internal focus and performance shifts indicate a true multimodal contribution. Attention, in this context, is not viewed as a direct indicator of causal influence. A high level of attention doesn’t necessarily mean a modality determines the final outcome, just as a low level doesn’t imply its irrelevance. Instead, attention functions as an indicator of how resources are internally distributed, while causal insights continue to emerge from manipulating modalities in controlled settings and observing the resulting performance advantages. The analysis of attention serves as a supplement to the behavioral ablation framework, rather than a substitute for it.
