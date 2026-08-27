@@ -24,7 +24,7 @@ class QwenInferencer:
         max_new_tokens: int,
         flash_attention: bool,
     ) -> None:
-        os.environ["CUDA_VISIBLE_DEVICES"] = "5"
+        os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 
         try:
             import torch
@@ -178,7 +178,7 @@ def main() -> None:
         args.preprocessing_directory
     )
     
-    video_directories = video_directories[72:]
+    video_directories = video_directories[93:]
     if args.limit_videos > 0:
         video_directories = video_directories[: args.limit_videos]
     if not video_directories:
