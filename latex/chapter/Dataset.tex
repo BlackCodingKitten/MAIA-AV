@@ -3,10 +3,9 @@
 The dataset adopted in MAIA-AV builds upon the guidelines of \ac{MAIA}, comprising 100 short videos, approximately 30 seconds each, selected from YouTube Italia to represent everyday scenarios of Italian culture. Content domains include sports, culinary arts, urban life, and cultural activities, with a strong focus on human presence and highly informative scenes. In the original formulation, video selection and annotation were oriented strictly toward visual comprehension, completely omitting audio content.
 Building upon this initial set, we collected an additional 100 videos, each uniquely identified from \texttt{video001} to \texttt{video100}. These identifiers map each video to its corresponding audio stream and text transcriptions. Each video was precisely trimmed to extract targeted segments, creating a controlled corpus of clips. Particular attention was paid to the alignment between dialogue content and the elements appearing in the scene.
 This targeted selection of relevant dialogue enables a precise investigation of multimodal interactions. By prioritizing scenarios where spoken dialogue is semantically grounded in the visual content, we ensure that the audio signal plays a genuinely informative role in the multimodal instance.
-This distinction represents the core departure from the original dataset: \ac{MAIA}-AV is a benchmark engineered to combine and compare distributed evidence across visual, auditory, and textual modalities.
+This distinction represents the core departure from the original dataset: MAIA-AV-(AudioVisual) is a benchmark engineered to combine and compare distributed evidence across visual, auditory, and textual modalities.
 \paragraph{Implementation Details}
-The video acquisition pipeline relies on \texttt{yt\_dlp} to retrieve targeted temporal segments from selected YouTube videos. Rather than downloading complete sources for post-hoc editing, each clip is specified prior to acquisition via three parameters: source URL, start timestamp, and duration. These parameters configure a precise temporal interval directly governing the retrieval process.
-Timestamp conversion into seconds is handled by \texttt{parse\_time}, which reduces \texttt{HH:MM:SS} or \texttt{MM:SS} strings into integer values:
+The video acquisition pipeline leverages \texttt{yt\_dlp} to extract specific temporal segments from chosen YouTube Italia videos. Instead of downloading entire videos for later editing, each clip is identified before acquisition using three key parameters: the source URL, the start timestamp, and the duration. These parameters define an exact temporal interval, directly controlling the retrieval process. The conversion of timestamps into seconds is managed by \texttt{parse\_time}, which translates \texttt{HH:MM:SS} or \texttt{MM:SS} formatted strings into integer values.
 \begin{lstlisting}[language=Python, xleftmargin=2em]
 def parse_time(time_str):
     """Converts HH:MM:SS or MM:SS string to seconds."""
@@ -93,33 +92,29 @@ Execution is wrapped in exception handling blocks, logging errors and returning 
 try:
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
-    print(f"\nSuccessfully downloaded clip to {output}")
 except Exception as e:
     print(f"\nError: {str(e)}")
     sys.exit(1)
 \end{lstlisting}
-This setup allows \texttt{yt\_dlp} to coordinate format resolution, stream extraction, interval clipping, and FFmpeg transcoding within a single execution pass.
+
 \subsection*{Audio Conversion}
-In the MAIA-AV framework, the auditory element of each video is regarded as an autonomous source of information rather than a mere supplementary part of the visual narrative. Spoken language, ambient sounds, and acoustic phenomena offer significant evidence that enhances visual data and aids in scene interpretation. Isolating the audio allows this modality to be independently analyzed, ensuring its contribution is maintained throughout subsequent processing stages.
-For every video, the original audio track is extracted and archived as a separate file. This separation retains the identical temporal parameters and identifier associated with the corresponding audiovisual entity. Such a one-to-one mapping upholds alignment across modalities, enabling visual, acoustic, and textual representations to be traced back to the same foundational event.
-The resulting audio files function as direct inputs for further pipeline stages, including automatic speech transcription and specialized audio analyses. The extraction process neither generates a modified version of the original content nor alters it; instead, it separates the auditory channel, allowing independent processing while remaining completely synchronized with the originating video content.
+In the MAIA-AV framework, the auditory component of each video is conceptualized as an autonomous source of information, rather than a mere ancillary element to the visual narrative. Spoken language, ambient sounds, and acoustic phenomena provide substantial evidence, enhancing visual data and facilitating the interpretation of scenes. By isolating the audio, this modality can be independently scrutinized, ensuring its contribution remains integral through subsequent processing stages.
+For each video, the original audio track is meticulously extracted and archived as a separate file. This process preserves the identical temporal parameters and identifier linked to the corresponding audiovisual entity. Such a one-to-one mapping maintains alignment across modalities, enabling visual, acoustic, and textual representations to be traced back to the same foundational event.
+The extracted audio files serve as primary inputs for further stages in the processing pipeline, including automated speech transcription and specialized audio analyses. The extraction process neither alters nor modifies the original content, rather, it separates the auditory channel, permitting independent processing while maintaining complete synchronization with the originating video content.
 \paragraph{Implementation Details}
-The audio extraction stage converts each audiovisual dataset instance into a standalone acoustic representation while preserving multimodal alignment with the source video. Implemented via Python's \texttt{subprocess} module, the pipeline invokes FFmpeg to automate batch processing across the complete video collection.
-Input and output paths are declared explicitly at execution setup:
+The audio extraction stage transforms each audiovisual dataset instance into a standalone acoustic representation, maintaining multimodal alignment with the source video. This process is implemented using Python's \texttt{subprocess} module, which calls FFmpeg to automate batch processing across the entire video collection. Input and output paths are clearly specified during the execution setup:
 \begin{lstlisting}[language=Python, xleftmargin=2em]
 INPUT_FOLDER = Path("data/video")
 OUTPUT_FOLDER = Path("data/audio")
 VIDEO_EXTENSIONS = {".mp4"}
 \end{lstlisting}
-Decoupling input and output directories isolates raw video resources and establishes an aligned audio mirror directory. Restricting \texttt{VIDEO\_EXTENSIONS} to MP4 matches the output format produced by the preceding acquisition stage.
-The core conversion routine is encapsulated within \texttt{mp4\_to\_mp3}:
+Decoupling the input and output directories serves to isolate raw video resources while also setting up an aligned audio mirror directory. By restricting \texttt{VIDEO\_EXTENSIONS} to MP4, it ensures compatibility with the output format generated in the preceding acquisition stage. The main conversion process is encapsulated within \texttt{mp4\_to\_mp3}:\\
 \begin{lstlisting}[language=Python, xleftmargin=2em]
 def mp4_to_mp3(
     input_path: Union[str, Path],
     output_path: Optional[Union[str, Path]] = None,
     bitrate: str = "192k",
 ) -> Path:
-    """Extract the audio from an MP4 file and save it as MP3."""
 \end{lstlisting}
 When an explicit destination path is omitted, the function retains the base filename and replaces the container extension:
 \begin{lstlisting}[language=Python, xleftmargin=2em]
@@ -134,12 +129,12 @@ This mapping strategy guarantees cross-modal alignment across representations (e
 Prior to invoking FFmpeg, parent directory existence is enforced:
 \begin{lstlisting}[language=Python, xleftmargin=2em]
     output_path.parent.mkdir(
-        parents=True,
-        exist_ok=True,
+        parents = True,
+        exist_ok = True,
     )
 \end{lstlisting}
 This step allows nested input folder hierarchies to be automatically replicated within the output directory.
-Extraction is executed using a single \texttt{subprocess.run} call:
+\\Extraction is executed using a single \texttt{subprocess.run} call:
 \begin{lstlisting}[language=Python, xleftmargin=2em]
     subprocess.run(
         [
@@ -159,11 +154,7 @@ Extraction is executed using a single \texttt{subprocess.run} call:
 \end{lstlisting}
 The \texttt{-vn} flag discards video streams, ensuring that FFmpeg isolates the acoustic signal rather than performing generic media transcode operations.
 Acoustic streams are normalized using the \texttt{libmp3lame} codec at a constant target bitrate of 192 kbit/s (\texttt{-b:a 192k}). Passing \texttt{-y} overwrites pre-existing destination files without prompt interruption, facilitating seamless pipeline re-execution. Setting \texttt{check=True} ensures runtime errors raise a \texttt{CalledProcessError} rather than failing silently.
-Upon completion, the function returns the confirmed target path:
-\begin{lstlisting}[language=Python, xleftmargin=2em]
-    return output_path
-\end{lstlisting}
-Batch processing begins by recursively indexing and sorting compatible media files:
+Upon completion, the function returns the confirmed target path. Batch processing begins by recursively indexing and sorting compatible media files:
 \begin{lstlisting}[language=Python, xleftmargin=2em]
 def find_videos(folder: Path) -> list[Path]:
     """Return all supported video files found recursively."""
@@ -214,30 +205,16 @@ Another key representation in our dataset is the audio transcription, following 
 The overall transcription procedure aims to convert spoken dialogue into textual content that can be reliably recognized and processed by downstream models. This methodology represents an evolution compared to previous approaches on acoustic content analysis \cite{deodati2026lost}, which jointly employed \textit{Whisper-1} and \textit{GPT-4o-transcribe} to compare and align outputs for higher precision. In contrast, the current pipeline streamlines the transcription workflow by deploying a single, locally executed model, providing an efficient and reproducible framework.
 \paragraph{Implementation Details}
 The transcription stage was implemented as an independent component of the data preparation pipeline to associate each video with a textual representation of its spoken content. Powered by \texttt{Faster-Whisper} and the \texttt{large-v3} model executed locally on GPU, this setup ensures full reproducibility while eliminating dependencies on external cloud services.
-The execution environment explicitly configures a selected CUDA device and establishes a local cache for model files:
+The execution environment specifically configures a chosen CUDA device and sets up a local cache for model files. By using a local cache, model weights are confined to the working directory, which helps prevent repetitive downloads across different system locations.
+The transcription model is subsequently instantiated on CUDA using \texttt{float16} precision:
 \begin{lstlisting}[language=Python]
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
-    HF_CACHE = Path.cwd() / ".hf_cache"
-    HF_CACHE.mkdir(parents=True, exist_ok=True)
-
-    os.environ["HF_HOME"] = str(HF_CACHE)
-    os.environ["HF_HUB_CACHE"] = str(HF_CACHE / "hub")
-\end{lstlisting}
-Utilizing a local cache confines model weights to the working directory, preventing redundant downloads across system locations. The transcription model is subsequently instantiated on CUDA using \texttt{float16} precision:
-\begin{lstlisting}[language=Python]
-    MODEL_NAME = "large-v3"
-    LANGUAGE = "it"
-
     model = WhisperModel(
-        MODEL_NAME,
+        "large-v3", #MODEL_NAME
         device="cuda",
         device_index=0,
         compute_type="float16",
-        download_root=str(HF_CACHE / "hub"),
-    )
+        download_root=str(HF_CACHE / "hub"), )
 \end{lstlisting}
-Setting \texttt{language="it"} explicitly conditions decoding on Italian. This parameter bypasses automatic language identification and directly aligns model execution with the linguistic profile of the dataset.
 Prior to processing, the pipeline recursively retrieves and filters all \texttt{.mp4} files within the input directory, sorting the resulting collection to guarantee deterministic execution order:
 \begin{lstlisting}[language=Python]
     def find_videos(folder: Path) -> list[Path]:
@@ -252,12 +229,13 @@ The core transcription workflow relies on \texttt{model.transcribe()}. By direct
 \begin{lstlisting}[language=Python]
     segments, _ = model.transcribe(
         str(video_path),
-        language=LANGUAGE,
+        language="it",
         beam_size=5,
         vad_filter=True,
         condition_on_previous_text=False,
     )
 \end{lstlisting}
+Setting \texttt{language="it"} explicitly conditions decoding on Italian. This parameter bypasses automatic language identification and directly aligns model execution with the linguistic profile of the dataset.
 Three key hyperparameters govern decoding precision and stability:
 \begin{itemize}
     \item \texttt{beam\_size=5}: Activates beam-search decoding, evaluating multiple competing hypotheses during generation to balance accuracy and computational overhead.
@@ -287,7 +265,7 @@ The corpus is processed sequentially, using each video filename as a unique prim
         )
 \end{lstlisting}
 Robust error handling isolates processing failures on individual files, preventing execution halts and cleanly decoupling unvoiced media from runtime exceptions.
-Finally, extracted transcripts are exported to a structured CSV file indexed by \texttt{video\_name} and \texttt{transcription}:
+\\Finally, extracted transcripts are exported to a structured CSV file indexed by \texttt{video\_name} and \texttt{transcription}:\\
 \begin{lstlisting}[language=Python]
     writer = csv.DictWriter(
         csv_file,
@@ -309,15 +287,15 @@ Finally, extracted transcripts are exported to a structured CSV file indexed by 
 \end{lstlisting}
 
 \section{Expanding the Questions and Answers Dataset}
-
-The construction of linguistic data in MAIA-AV mirrors the methodological framework established in the original MAIA benchmark. The process retains the question as the foundational element for subsequent answer collection and the creation of an evaluation dataset. In the original MAIA benchmark, each video was associated with 2,400 questions. Expert annotators, operating under specific category guidelines, were responsible for generating these questions. The questions were designed in an open-ended format to preclude simple binary responses, such as yes or no. Given that the original benchmark was intended for models based solely on visual input, annotators were explicitly instructed to disregard all acoustic data during the question formulation phase.
-MAIA-AV extends the original framework by modifying the informational basis for question generation. This version includes a total of 300 questions, with each video offering three inquiries that delve into spatial, temporal, and causal dimensions of the presented information. These categories are aligned with the structure of the original MAIA benchmark. The spatial category focuses on identifying locations or entities, either visible or referenced, along with detailing the spatial relationships between them. The temporal category examines event sequences, identifying when specific occurrences take place and establishing temporal relationships such as preceding, succeeding, or simultaneous actions. The causal category investigates the reasons behind or consequences of actions, events, or behaviors observed within the video context.
-The primary distinction between the original MAIA and its successor, MAIA-AV, is the integration of audio information, which is crucial in the latter version. Certain questions are specifically designed to address audio elements of the video, including character dialogue, vocal commands to infotainment systems, and ambient sounds. This addition incorporates linguistic content that connects information across both visual and auditory channels.
-The process of acquiring answers adheres to the MAIA guidelines. For the newly devised set of 300 questions, data was gathered through a questionnaire distributed among four volunteers. These individuals are native speakers of Italian, each born in Italy, and possessing at least a high school diploma. These participants engaged with 100 videos, responding to the corresponding 300 questions, thus enabling the collection of independent responses and four distinct articulations of each answer. The structured approach remains intact: the videos operate as the multimodal information source, the questions identify the specific information to be extracted, and the human-generated answers provide the necessary linguistic reference for constructing subsequent components of the benchmark.
+The construction of linguistic data in MAIA-AV closely follows the methodological framework set by the original MAIA benchmark. The core process keeps the question as a fundamental element for collecting answers and creating an evaluation dataset. In the initial MAIA benchmark, each video had 2,400 questions. Expert annotators, working under specific category guidelines, generated these questions. They were crafted in an open-ended format to avoid simple yes or no answers. Since the original benchmark was designed for models based only on visual input, annotators were explicitly told to ignore all acoustic data during question formulation.
+MAIA-AV expands on the original framework by altering the informational foundation for question generation. This version includes a total of 300 questions, with each video offering three inquiries focusing on spatial, temporal, and causal aspects of the presented information. These categories align with the structure of the original MAIA benchmark. The spatial category centers on identifying locations or entities, whether visible or referenced, and detailing spatial relationships. The temporal category looks at event sequences, pinpointing when occurrences take place and establishing temporal relationships such as preceding, succeeding, or simultaneous actions. The causal category explores the reasons behind or consequences of actions, events, or behaviors observed in the video context.
+The main difference between the original MAIA and its follow-up, MAIA-AV, is the inclusion of audio information, which is essential in the latter version. Certain questions specifically target audio elements in the video, such as character dialogue, vocal commands to infotainment systems, and ambient sounds. This addition incorporates linguistic content that links information across both visual and auditory channels.
+The process for obtaining answers follows the MAIA guidelines. For the newly crafted set of 300 questions, data was gathered using a questionnaire given to four volunteers. These individuals are native Italian speakers, each born in Italy, with at least a high school diploma. They interacted with 100 videos and responded to the corresponding 300 questions, allowing for the collection of independent responses and four distinct versions of each answer. The structured approach remains unchanged: the videos serve as the multimodal information source, the questions specify what information needs extraction, and the human-generated answers provide the necessary linguistic reference for developing subsequent benchmark components.
 \subsection*{Caption-Foil Generation}
-Building upon the human-annotated responses, the construction of \textit{MAIA-AV} proceeds with the automated generation of \textit{caption--foil} pairs for the \ac{VSV} task. This procedure follows the methodology established in \textit{MAIA}: each question-answer pair is first converted into a declarative true statement (\textit{True Statement}, TS) and subsequently modified to create a minimally contrastive false statement (\textit{False Statement}, FS). Consequently, the caption and foil share maximum linguistic structure, differing primarily in question-relevant information.
-While the original benchmark collects eight human responses per question to yield eight TS--FS pairs, \textit{MAIA-AV} adopts a scaled-down approach: four independent responses per question yield four captions and four corresponding foils. With three questions per video (spatial, temporal, and causal), each video comprises twelve caption--foil pairs. The automated generation employs \texttt{GPT-4o-2024-08-06}, matching the exact model version used in the original \textit{MAIA} pipeline.
-Generation proceeds in two distinct stages. In the initial stage, the model receives only the question and a single human answer. Rather than generating novel content, the prompt directs the model to synthesize the question--answer pair into a single declarative statement preserving the original semantic content. The instructions mandate minimal alterations to annotators' phrasing while requiring the conversion of first-person expressions into an impersonal stance. Accordingly, phrases like ``I think that'' or ``I believe that'' are removed from the caption without discarding any underlying uncertainty. Restricting outputs to concise declarative sentences leverages natural annotator variance while avoiding reliance on the model for factual core generation.
+Building upon the human-annotated responses, the construction of \textit{MAIA-AV} involves the automated generation of \textit{caption--foil} pairs for the \ac{VSV} task. This process follows the methodology established in \textit{MAIA}: each question-answer pair is first converted into a declarative true statement (\textit{True Statement}, TS) and then modified to create a minimally contrastive false statement (\textit{False Statement}, FS). Consequently, the caption and foil share maximum linguistic structure, differing mainly in question-relevant information. 
+While the original benchmark collects eight human responses per question to yield eight TS--FS pairs, \textit{MAIA-AV} adopts a scaled-down approach: four independent responses per question yield four captions and four corresponding foils. With three questions per video (spatial, temporal, and causal), each video comprises twelve caption--foil pairs. The automated generation uses \texttt{GPT-4o-2024-08-06}, matching the exact model version used in the original \textit{MAIA} pipeline. Generation progresses in two distinct stages. In the first stage, the model receives only the question and a single human answer. 
+Instead of creating novel content, the prompt directs the model to synthesize the question--answer pair into a single declarative statement, preserving the original semantic content.
+The instructions mandate minimal alterations to annotators' phrasing while requiring the conversion of first-person expressions into an impersonal stance. As a result, phrases like "I think that" or "I believe that" are removed from the caption without discarding any underlying uncertainty. Restricting outputs to concise declarative sentences leverages natural annotator variance while avoiding reliance on the model for factual core generation.
 This initial phase employs the prompt used for True Statement generation in \textit{MAIA}:
 \begin{quote}
 \small
@@ -356,19 +334,7 @@ For \textbf{causal} questions, foil construction alters the cause-and-effect rel
 \end{quote}
 The provided example retains the principal action, such as a person beginning to run, while altering solely the underlying cause. This focuses the contrast on the causal link rather than arbitrary scene modifications. In the final task setup, option ordering is randomized, preventing positional bias and ensuring performance metrics reflect semantic comprehension rather than structural pattern exploitation.
 \paragraph{Implementation Details}
-The \textit{caption--foil} generation pipeline is implemented in \texttt{cap-\\tion\_foil.py}. The script relies on \texttt{pandas} for tabular data processing and the OpenAI Python client for model inference. Both caption and foil generation utilize \\\texttt{gpt-4o-2024-08-06}, with authentication managed via the \texttt{OPENAI\_API\_KEY} environment variable. Input and output paths, along with the expected annotation structure, are defined at initialization:
-\begin{lstlisting}[language=Python]
-MODEL = "gpt-4o-2024-08-06"
-RAW_ANSWERS_DIR = Path("data/vsv/raw_human_answers")
-QUESTIONS_FILE = Path("data/vsv/question_classification.csv")
-OUTPUT_DIR = Path("data/vsv/caption-foil")
-CHECKPOINT_FILE = OUTPUT_DIR / "caption_foil_checkpoint.csv"
-OUTPUT_FILE = OUTPUT_DIR / "caption_foil.csv"
-RANDOM_SEED = 42
-EXPECTED_MACROAREAS = {"spaziale", "temporale", "causale"}
-EXPECTED_ANNOTATORS = 4
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-\end{lstlisting}
+The \textit{caption--foil} generation pipeline is implemented in \texttt{cap-\\tion\_foil.py}. The script relies on \texttt{pandas} for tabular data processing and the OpenAI Python client for model inference. Both caption and foil generation utilize \\\texttt{gpt-4o-2024-08-06}, with authentication managed via the \texttt{OPENAI\_API\_KEY} environment variable. 
 Questions are loaded from \texttt{data/vsv/question\_classification.csv}. Only the video identifier, principal dimension, and question text are required for this stage:
 \begin{lstlisting}[language=Python]
 questions = pd.read_csv(
@@ -783,4 +749,4 @@ review_df.to_csv(
 \end{lstlisting}
 This file serves as the interface between automatic and human validation. Each flagged instance is manually inspected by comparing its caption, foil, question, and semantic category. Cases where the automatic validator is overly conservative but the contrast is in fact appropriate are retained unchanged. When inspection instead confirms that the foil modifies the wrong semantic property, remains compatible with the caption, introduces unrelated information, or otherwise fails to provide the intended minimal contrast, the foil is corrected by hand. Corrected instances are then re-evaluated through the same structural and NLI checks before being incorporated into the final dataset.
 The complete validation output retains the original metadata alongside \texttt{structural\_eval}, \texttt{nli\_eval}, and \texttt{validation\_status}. This preserves full traceability from each final \ac{VSV} item back to its generated caption, foil, question, annotator response, automatic validation decisions, and any manual correction.
-%Non Corretto
+%RIVISTO
