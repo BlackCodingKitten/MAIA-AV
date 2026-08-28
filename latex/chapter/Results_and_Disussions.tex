@@ -1,23 +1,829 @@
-\section{Preliminar Analysis Result}
-\subsection*{Expected Behaviour under the Preliminar Condition}
-Prior to examining the experimental outcomes, qualitative expectations are delineated regarding model performance under the frame-only condition, providing a methodological framework for interpreting distinctions across question categories without retrospectively deriving explanations from observed results.
-For questions related to spatial dimensions, it is anticipated that there will be a relatively high presence of visual evidence, due to the inherent visibility of entity locations, movements, object configurations, and spatial relationships within the visual stream. The complexity may increase, however, when it becomes necessary to reconstruct this information over multiple temporal intervals, such as when tracking an entity through a series of movements or elucidating a spatial configuration resulting from several sequential actions.
-Temporal questions are expected to display a more varied profile. Actions and event sequences that are visually distinctive can often be pinpointed through timestamp data and organized by the temporal structure produced during Event Analysis. However, not all temporal information may be fully recoverable from visual input alone. Some questions might involve events where interpretation is reliant on a linguistic context or on interrelations between moments that remain ambiguous when only visual information is available. The adequacy of the resulting representation thus hinges on both the quality of chronological reconstruction and the inherent characteristics of the events involved.
-Causal questions are anticipated to be the most challenging within the visual-only scenario. Although the visual stream can provide insights into event succession, interactions, and observable state alterations, the underlying reasons for these events may rely on spoken dialogue or remain indistinct from mere images. Motivations, intentions, and explanatory relationships are less likely to be directly supported by visual evidence on its own. This supposition also emphasizes the methodological distinction between temporal succession and causal interdependence, as the occurrence of one event preceding another should not be interpreted as evidence of causation alone.
-These expectations are crafted independently of empirical performance and serve exclusively as a qualitative reference for further investigation. There is no presumption concerning the degree of category-level differences or which category might eventually attain the highest proficiency scores.
-Subsequent to this, proficiency results are contrasted with downstream Visual Semantic Verification (VSV) performance in order to differentiate between evidence availability and task execution. Visual proficiency determines if the independently constructed representation contains sufficient information to distinguish between corresponding captions and their counterparts (foils). In contrast, VSV performance evaluates whether the model delivers the correct response when both the question and inputs specific to the experimental condition are directly accessible.
-Together, these two metrics provide a diagnostic perspective that surpasses task accuracy alone. A Pass proficiency result paired with a correct VSV response indicates a scenario where relevant visual evidence was both represented and successfully applied in the downstream task. Conversely, a Pass outcome linked to an incorrect response suggests that despite having adequate evidence in the preliminary representation, there was failure in the downstream task. Such a scenario points to potential issues with evidence selection, integration, or reasoning at a later stage.
-When both proficiency and VSV performance are negative, it suggests an inadequacy at the perceptual or representational level, as neither the preliminary representation provides sufficient evidence for proficiency nor does the downstream task succeed. However, this comparison alone does not pinpoint the exact source of failure.
-The most diagnostically informative configuration emerges when proficiency indicates Not Pass but the downstream VSV response is accurate. In such cases, correct answer selection occurs despite lacking a visual representation that meets predefined proficiency criteria. This could be attributed to utilizing partial cues, alternative evidence, parametric priors, shortcut strategies, or mere guessing; however, the comparison alone does not identify the specific mechanism responsible for deriving the answer.
-A joint analysis of visual proficiency and downstream performance thus enables differentiation of whether the requisite evidence for a question was already present before question exposure or whether the model ultimately executed the task successfully. This offers a richer diagnostic interpretation of VSV performance compared to assessing accuracy in isolation.
-\subsection*{Early Observations and Interpretation}
-As discussed in Section \ref{sec:pa}, the preliminary analysis serves to determine whether the visual content of a video alone allows the model to answer questions correctly. Crucially, it also acts as a diagnostic tool to verify that the newly created questions do not share the same limitation as MAIA \cite{testa2025maia} namely, a primary reliance on visual content that prevents a genuine assessment of cross-modal information integration.
-This analysis focuses on an earlier stage of the "\textit{cognitive process}", specifically the semantic construction of observed content. Through this approach, it is possible to verify whether models can independently extract the required information from video frames, thereby distinguishing knowledge genuinely grounded in visual evidence from responses influenced by linguistic priors.
-The obtained results partially confirm the expected hierarchy among different levels of visual understanding, showing that the difficulty of extracting task-relevant information increases when moving from direct perception toward higher-level semantic interpretation. 
-As anticipated, the analysis reveals that entity-level information is the most accessible from visual evidence, as the model only needs to establish a correspondence between visual elements and their semantic representations, mapping perceptual inputs to linguistic concepts. The results obtained from the two larger models confirm the expectation of a direct grounding mechanism between the visual signal and semantic entities. Qwen-30B and Gemma-12B achieve the highest proficiency values in entity-related information, with an \textbf{average entity-recovery score} of 34.47 and 33.77, respectively. This suggests that larger models possess a stronger ability to associate visual patterns with their corresponding conceptual categories.
-The smaller models present a more nuanced picture. While the same relative hierarchy is preserved, the absolute ability to recover visually grounded entities changes substantially across model families. For the smaller Gemma-E4B, the \textbf{average entity-recovery score} is 27.87, which is lower than that of Gemma-12B but still clearly above its own event and inference scores. For Qwen-3B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INSERIRE QUANDO FINISCE ANALISI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-From a linguistic standpoint, this behavior reflects the ability to establish referential grounding—namely, the connection between an observed entity and the lexical-semantic representation used to describe it. Even though smaller models obtain lower scores, referential grounding remains the most accessible component. Consequently, the models are able to answer questions concerning \textit{what is present} in the scene more reliably than questions requiring a deeper interpretation of the observed content.
+\section{Preliminary Analysis Results}
+\label{sec:preliminary_analysis_results}
+\subsection*{Expected Behaviour under the Preliminary Condition}
+\label{subsec:preliminary_expectations}
+Before examining the experimental outcomes, it is useful to lay out qualitative expectations for model performance under the frame-only condition. This provides a methodological anchor for interpreting distinctions across question categories, rather than deriving explanations retrospectively from the results themselves.
+For spatial questions, a relatively high presence of visual evidence is expected, given the inherent visibility of entity locations, movements, object configurations, and spatial relationships within the visual stream. Complexity may increase, however, when this information must be reconstructed across multiple temporal intervals, as when tracking an entity through a sequence of movements or deriving a spatial configuration that results from several successive actions.
+Temporal questions are expected to display a more varied profile. Visually distinctive actions and event sequences can often be pinpointed through timestamp data and organized by the temporal structure produced during Event Analysis, but not all temporal information is necessarily recoverable from visual input alone. Some questions may involve events whose interpretation depends on linguistic context, or on relations between moments that remain ambiguous from visual information alone. The adequacy of the resulting representation therefore hinges on the quality of chronological reconstruction as much as on the inherent nature of the events involved.
+Causal questions are anticipated to be the most demanding under the visual-only condition. The visual stream can capture event succession, interactions, and observable state changes, but the underlying reasons for these events often depend on spoken dialogue or remain simply indistinguishable from static imagery. Motivations, intentions, and explanatory relationships are less likely to be directly supported by visual evidence alone. This expectation also underlines a methodological distinction maintained throughout the analysis: temporal succession is not treated as evidence of causation.
+These expectations are formed independently of the empirical results and serve only as a qualitative reference. No claim is made about the magnitude of category-level differences or about which category will ultimately score highest.
+Proficiency results are then compared with downstream Visual Statement Verification (VSV) performance, in order to separate evidence availability from task execution. Visual proficiency asks whether the independently constructed representation contains enough information to distinguish a caption from its foil. VSV performance asks whether the model produces the correct response once the question and the condition-specific inputs are directly available. Together, the two measures offer a diagnostic view that plain task accuracy cannot provide on its own.
+A Pass proficiency result paired with a correct VSV response indicates that the relevant visual evidence was both represented and successfully used downstream. A Pass result paired with an incorrect response instead points to a failure occurring after the evidence was already available, in selection, integration, or later reasoning. When both proficiency and VSV performance are negative, the most plausible explanation is a perceptual or representational shortfall, though this comparison alone cannot pinpoint the exact locus of failure.
+The most diagnostically informative configuration is the opposite one: proficiency Not Pass paired with a correct downstream answer. Here, the model selects the correct alternative despite a visual representation that does not meet the proficiency criterion, which may reflect partial cues, alternative evidence, parametric priors, shortcut strategies, or simple guessing. The comparison alone cannot isolate which of these mechanisms is at play, but it does establish that correctness and evidence availability are not the same thing, a distinction the sections below return to repeatedly.
+\subsection*{Entity, Event, and Inference Recovery}
+\label{subsec:entity_event_inference}
+As discussed in Section~\ref{sec:pa}, the preliminary analysis asks whether the visual content of a video alone allows a model to answer a question correctly. It also serves a diagnostic role of its own, verifying that the newly constructed questions do not inherit the same limitation as the original MAIA benchmark \cite{testa2025maia}, namely a reliance on visual content so strong that it prevents a genuine assessment of cross-modal integration.
+The analysis targets an earlier stage of the process than VSV itself, the semantic construction of what has been observed. This makes it possible to check whether a model can independently extract the required information from video frames, separating knowledge that is genuinely grounded in visual evidence from responses shaped by linguistic priors.
+Table~\ref{tab:preliminar_global_scores} reports the aggregate scores for the three models currently available.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Model} &
+        \textbf{Entity} &
+        \textbf{Event} &
+        \textbf{Inference} &
+        \textbf{Comprehension} \\
+        \hline
+        Gemma &
+        27.87 &
+        23.13 &
+        16.48 &
+        20.46 \\
 
+        Gemma-4-12B &
+        33.77 &
+        30.07 &
+        21.48 &
+        25.90 \\
+
+        Qwen-30B &
+        \textbf{34.47} &
+        \textbf{31.53} &
+        \textbf{23.95} &
+        \textbf{27.75} \\
+        \hline
+    \end{tabular}
+    \caption{Average preliminary-analysis scores across entity recovery, event recovery, inference recovery, and overall comprehension.}
+    \label{tab:preliminar_global_scores}
+\end{table}
+Scores for Qwen-3B are not reported here, since the preliminary analysis for this model was not yet available at the time of the present evaluation.
+Entity-level information is the most accessible, since the model only needs to map a visual element onto its semantic representation, establishing referential grounding between an observed entity and the lexical concept used to describe it. The two larger models confirm a relatively direct grounding mechanism between the visual signal and semantic entities, with average entity-recovery scores of 34.47 for Qwen-30B and 33.77 for Gemma-4-12B, suggesting a stronger ability to associate visual patterns with the corresponding conceptual categories. The smaller Gemma model shows the same internal ordering at lower absolute values, 27.87 for entities against 23.13 for events and 16.48 for inference, indicating that even the most accessible component is far from fully recovered.
+The decline from entity to inference is present in every configuration and reflects increasing representational demands. Event recovery requires entities to be embedded into dynamic structures involving actions, participants, and state transitions, a predicate-argument composition that goes beyond simple referential grounding. Inference recovery adds a further layer in which the model must derive relations or interpretations that need not correspond to any directly observable perceptual pattern, extending beyond lexicalization into temporal ordering, causal interpretation, or relational dependencies between multiple observed states.
+Qwen-30B moves from 34.47 for entities to 31.53 for events and 23.95 for inferences. Gemma-4-12B follows the same pattern, from 33.77 to 30.07 to 21.48. Gemma shows the sharpest proportional drop, from 27.87 to 23.13 to 16.48. Model capacity therefore appears to raise the amount of recoverable information at every level without removing the structural difficulty tied to increasingly abstract representation. Correctly identifying a participant does not imply that the model also represents the event that participant is involved in, and correct event identification does not guarantee that the relation required by the question can subsequently be inferred.
+\subsection*{Category-Level Differences}
+\label{subsec:preliminary_category_differences}
+Splitting the results by reasoning dimension gives a finer view of what the visual stream actually supports. Tables~\ref{tab:preliminar_gemma_categories}, \ref{tab:preliminar_gemma12_categories}, and \ref{tab:preliminar_qwen30_categories} report the average scores for each model.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Dimension} &
+        \textbf{Entity} &
+        \textbf{Event} &
+        \textbf{Inference} &
+        \textbf{Comprehension} \\
+        \hline
+        Causal &
+        39.00 &
+        30.80 &
+        19.50 &
+        25.79 \\
+
+        Spatial &
+        29.10 &
+        26.10 &
+        22.60 &
+        25.00 \\
+
+        Temporal &
+        15.50 &
+        12.50 &
+        7.35 &
+        10.60 \\
+        \hline
+    \end{tabular}
+    \caption{Gemma preliminary-analysis scores across causal, spatial, and temporal questions.}
+    \label{tab:preliminar_gemma_categories}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Dimension} &
+        \textbf{Entity} &
+        \textbf{Event} &
+        \textbf{Inference} &
+        \textbf{Comprehension} \\
+        \hline
+        Causal &
+        45.30 &
+        37.60 &
+        25.70 &
+        31.75 \\
+
+        Spatial &
+        35.90 &
+        33.20 &
+        28.25 &
+        30.90 \\
+
+        Temporal &
+        20.10 &
+        19.40 &
+        10.50 &
+        15.05 \\
+        \hline
+    \end{tabular}
+    \caption{Gemma-4-12B preliminary-analysis scores across causal, spatial, and temporal questions.}
+    \label{tab:preliminar_gemma12_categories}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Dimension} &
+        \textbf{Entity} &
+        \textbf{Event} &
+        \textbf{Inference} &
+        \textbf{Comprehension} \\
+        \hline
+        Causal &
+        43.60 &
+        36.50 &
+        25.50 &
+        30.95 \\
+
+        Spatial &
+        \textbf{41.50} &
+        \textbf{40.50} &
+        \textbf{37.05} &
+        \textbf{38.85} \\
+
+        Temporal &
+        18.30 &
+        17.60 &
+        9.30 &
+        13.45 \\
+        \hline
+    \end{tabular}
+    \caption{Qwen-30B preliminary-analysis scores across causal, spatial, and temporal questions.}
+    \label{tab:preliminar_qwen30_categories}
+\end{table}
+The category breakdown only partly matches the qualitative expectations set out above. Spatial information is indeed comparatively accessible, particularly for Qwen-30B, but temporal questions produce the lowest scores across every model, while causal questions show relatively strong entity and event recovery despite the expected difficulty of causal inference itself. Each pattern is examined in turn below.
+\subsection*{Spatial Information}
+\label{subsec:preliminary_spatial}
+Spatial questions are the strongest category for Qwen-30B, which reaches an entity score of 41.50, an event score of 40.50, and an inference score of 37.05, for an overall comprehension of 38.85. The relatively small drop across these three levels is informative in itself. Once the relevant entities are recovered, Qwen-30B tends to preserve enough relational information to reconstruct the spatial configuration the question asks about, suggesting that spatial relations can often be supported by local, directly observable evidence.
+Gemma-4-12B follows the same pattern at lower values, 35.90 for entities, 33.20 for events, and 28.25 for inferences. Gemma reaches 29.10, 26.10, and 22.60 respectively. The category as a whole appears to benefit from the perceptual accessibility of its target relations: locations, relative positions, trajectories, and object configurations can frequently be identified within a restricted temporal interval, keeping the semantic relation the question asks about closely aligned with perceptual structure.
+Linguistically, spatial questions require associating lexicalized spatial concepts, location, direction, containment, proximity, movement, with geometric or relational properties in the scene, which depends on correctly identifying both the referents and the relation connecting them. Qwen-30B's stronger spatial scores indicate that its visual representation preserves these relational structures more effectively than those produced by the other two models. Even so, spatial grounding is not uniformly successful: overall comprehension stays below 40 even for Qwen-30B, and the presence of a visible object does not guarantee recovery of the specific relation the question targets, particularly when that relation depends on tracking an entity across different moments of the video.
+\subsection*{Temporal Information}
+\label{subsec:preliminary_temporal}
+Temporal questions show the clearest degradation of any category, for every model evaluated. Gemma reaches an overall comprehension of 10.60, Gemma-4-12B 15.05, and Qwen-30B 13.45. The drop is not confined to the inference level. Gemma's entity and event scores are already low, 15.50 and 12.50, Gemma-4-12B reaches 20.10 and 19.40, and Qwen-30B 18.30 and 17.60. Inference scores fall further still, to 7.35, 10.50, and 9.30 respectively.
+Temporal difficulty, in other words, does not emerge only at the final reasoning step. The preliminary representations frequently fail to recover one or more of the entities and events needed to establish the temporal relation in the first place. A temporal question typically depends on at least two event anchors, both of which must be represented with sufficient specificity and then positioned relative to one another. If one event is missing from the representation, the temporal relation cannot be reconstructed even when the other event was correctly recognized. This pattern surfaces directly in the qualitative annotations: the model often identifies the relevant participants but fails to recover one of the required actions, or fails to anchor it to a sufficiently precise temporal interval, leaving the representation unable to support relations such as \textit{before}, \textit{after}, \textit{first}, or \textit{second}.
+Temporal interpretation, from a linguistic standpoint, needs more than lexical grounding. Events must be represented as structured semantic units and then ordered within a shared temporal frame, and the low inference scores show that this ordering step is rarely supported when the underlying event representations are themselves incomplete. This is consistent with the original MAIA findings, where temporal phenomena remained particularly difficult under visual-only evaluation \cite{testa2025maia}, and with the broader motivation behind benchmarks such as VILMA, which treat temporal grounding as a capability that cannot be reduced to static visual recognition.
+\subsection*{Causal Information}
+\label{subsec:preliminary_causal}
+The causal category produces a more differentiated pattern than the initial expectations suggested. Causal questions do not obtain the lowest scores. Gemma and Gemma-4-12B in fact reach their highest comprehension values here, 25.79 and 31.75 respectively, and Qwen-30B reaches 30.95, only slightly below its spatial score.
+This should not be read as evidence that causal inference is visually easy. The internal score distribution tells a different story: Gemma-4-12B reaches an entity score of 45.30 and an event score of 37.60, while its inference score drops to 25.70. Qwen-30B shows a similar profile, 43.60, 36.50, and 25.50. Gemma shows the steepest proportional fall, from 39.00 for entities to 30.80 for events and 19.50 for inference. The visual stream, in short, often supplies enough to identify the participants and observable actions in a causal scenario, but the difficulty increases sharply once the representation must encode \textit{why} an event occurs rather than simply \textit{what} occurs.
+This gap matters linguistically because causal interpretation is a relation between propositions, or between event representations, not a property of a single event. A model can correctly lexicalize an action and identify its participants without representing the explanatory dependency linking that action to an antecedent state, an intention, or a motivation, especially when that dependency was conveyed through spoken explanation rather than anything visually explicit. In such cases the visual representation may contain the observable consequence while offering no support for the corresponding causal interpretation. The results therefore separate \textit{causal event availability} from \textit{causal relation recovery}: the comparatively high entity and event scores show that causal questions frequently concern visually observable situations, while the much lower inference scores show that the dependency needed to actually answer the question stays largely out of reach.
+\subsection*{Qualitative Distribution of Comprehension Levels}
+\label{subsec:preliminary_qualitative_levels}
+The continuous proficiency scores are complemented by a qualitative classification into four levels, \textit{insufficient}, \textit{partial}, \textit{sufficient}, and \textit{complete}. Table~\ref{tab:preliminar_levels_global} reports the global distribution.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Model} &
+        \textbf{Insufficient} &
+        \textbf{Partial} &
+        \textbf{Sufficient} &
+        \textbf{Complete} \\
+        \hline
+        Gemma &
+        70.0\% &
+        21.3\% &
+        4.7\% &
+        4.0\% \\
+
+        Gemma-4-12B &
+        60.7\% &
+        25.7\% &
+        7.7\% &
+        6.0\% \\
+
+        Qwen-30B &
+        61.7\% &
+        21.0\% &
+        8.7\% &
+        8.7\% \\
+        \hline
+    \end{tabular}
+    \caption{Distribution of qualitative comprehension levels in the preliminary analysis.}
+    \label{tab:preliminar_levels_global}
+\end{table}
+The majority of question-specific evidence is classified as insufficient for every model, from 70.0\% for Gemma down to 60.7\% for Gemma-4-12B and 61.7\% for Qwen-30B. Complete representations remain rare even for the strongest configuration, with Qwen-30B reaching 8.7\%, ahead of Gemma-4-12B's 6.0\% and Gemma's 4.0\%. Scale therefore increases the frequency of near-complete representations, but the prevalence of insufficient cases stays substantial even at the top end. This is a meaningful result precisely because the representation is built independently of the downstream question, with no explicit guidance toward the entities or events that will later matter. What it measures is spontaneous recoverability of task-relevant evidence, not question-conditioned retrieval.
+The category breakdown, reported in Table~\ref{tab:preliminar_levels_categories}, sharpens this picture considerably.
+\begin{table}[ht]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llrrrr}
+        \hline
+        \textbf{Model} &
+        \textbf{Dimension} &
+        \textbf{Insufficient} &
+        \textbf{Partial} &
+        \textbf{Sufficient} &
+        \textbf{Complete} \\
+        \hline
+        Gemma &
+        Causal &
+        58\% & 37\% & 5\% & 0\% \\
+
+        Gemma &
+        Spatial &
+        66\% & 15\% & 7\% & 12\% \\
+
+        Gemma &
+        Temporal &
+        86\% & 12\% & 2\% & 0\% \\
+        \hline
+        Gemma-4-12B &
+        Causal &
+        48\% & 37\% & 14\% & 1\% \\
+
+        Gemma-4-12B &
+        Spatial &
+        55\% & 22\% & 7\% & 16\% \\
+
+        Gemma-4-12B &
+        Temporal &
+        79\% & 18\% & 2\% & 1\% \\
+        \hline
+        Qwen-30B &
+        Causal &
+        51\% & 34\% & 14\% & 1\% \\
+
+        Qwen-30B &
+        Spatial &
+        52\% & 12\% & 12\% & 24\% \\
+
+        Qwen-30B &
+        Temporal &
+        82\% & 17\% & 0\% & 1\% \\
+        \hline
+    \end{tabular}}
+    \caption{Distribution of qualitative comprehension levels by model and principal question dimension.}
+    \label{tab:preliminar_levels_categories}
+\end{table}
+Temporal questions carry the highest concentration of insufficient representations across the board, 86\% for Gemma, 79\% for Gemma-4-12B, 82\% for Qwen-30B, and complete temporal representations are almost nonexistent, none for Gemma, only 1\% for the other two. Spatial questions look markedly different: Qwen-30B reaches complete comprehension in 24\% of spatial cases and sufficient in a further 12\%, against 16\% and 7\% for Gemma-4-12B and 12\% and 7\% for Gemma. The causal category sits between the two, marked by a comparatively large share of partial representations, 37\% for both Gemma and Gemma-4-12B and 34\% for Qwen-30B, consistent with the score-level pattern already discussed: the models frequently recover some of the relevant participants and observable actions without ever completing the causal dependency the question actually asks for.
+\subsection*{Model Scale and Visual Representation}
+\label{subsec:preliminary_model_scale}
+Scale produces a general improvement in preliminary performance, though its magnitude varies by dimension. Gemma-4-12B consistently outperforms the smaller Gemma model, with overall comprehension rising from 20.46 to 25.90, entity recovery from 27.87 to 33.77, event recovery from 23.13 to 30.07, and inference recovery from 16.48 to 21.48.
+Qwen-30B reaches the highest global scores, 27.75 overall comprehension against 25.90 for Gemma-4-12B, though the margin at the aggregate level is comparatively narrow. The category breakdown shows why this advantage is not uniform: Qwen-30B's improvement is concentrated in spatial representation, where its comprehension score of 38.85 clearly exceeds Gemma-4-12B's 30.90, while Gemma-4-12B slightly outperforms Qwen-30B on both temporal comprehension, 15.05 against 13.45, and causal comprehension, 31.75 against 30.95.
+A larger parameter count therefore does not translate into a uniform gain across every form of visual-semantic reasoning. Model family and representation architecture appear to shape which relational structures are preserved most effectively, a pattern the next section returns to when comparing these preliminary results against the main experiment, where model scale again produces markedly uneven effects depending on which kind of evidence is at stake.
+\section{Experimental Results and Discussion}
+\label{sec:experimental_results_discussion}
+The experimental conditions provide a controlled view of how linguistic, visual, auditory, and transcription-derived information contribute to Visual Statement Verification. Rather than reading multimodal performance only in terms of absolute accuracy, the analysis below treats each condition as evidence about the informational resources available to the model and about its ability to exploit them consistently, and draws throughout on the preliminary analysis in Section~\ref{sec:preliminary_analysis_results} to separate what a model can perceive from what it can do once perception is paired with a question.
+The comparison is particularly relevant against the original MAIA results \cite{testa2025maia} and against the experimental setting introduced in \textit{Lost in Transcription} \cite{deodati2026lost}. MAIA was designed as a visually grounded benchmark, in which the distinction between a true statement and its minimally contrastive foil is expected to depend primarily on information extracted from the video. The original evaluation showed that increasing visual evidence generally improves performance, though gains vary considerably across reasoning categories and temporal phenomena remain particularly difficult. \textit{Lost in Transcription} extended this setting to audio and transcription, finding that raw audio contributed substantially when visual evidence was absent but became almost neutral once dense visual information was available, and that adding textualized audio in the transcription-based setting even produced a small but systematic degradation.
+The present results paint a different, more heterogeneous picture across model families and scales.
+\subsection*{Overall Performance Across Experimental Conditions}
+\label{subsec:overall_performance}
+Table~\ref{tab:overall_condition_performance} reports item-level accuracy across the five conditions involving perceptual or transcription-derived evidence. All models benefit from the availability of multimodal information, although the relative contribution of each channel varies substantially.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccccc}
+        \hline
+        \textbf{Model} &
+        \textbf{Audio Only} &
+        \textbf{Transcription Only} &
+        \textbf{Video Only} &
+        \textbf{Audio + Video} &
+        \textbf{Video + Transcription} \\
+        \hline
+        Gemma &
+        74.58\% &
+        70.25\% &
+        69.83\% &
+        \textbf{77.17\%} &
+        75.08\% \\
+        
+        Gemma-4-12B &
+        75.92\% &
+        69.25\% &
+        73.08\% &
+        80.50\% &
+        \textbf{84.75\%} \\
+        
+        Qwen &
+        73.50\% &
+        66.50\% &
+        72.50\% &
+        \textbf{78.92\%} &
+        75.50\% \\
+        
+        Qwen-30B &
+        79.17\% &
+        77.00\% &
+        73.25\% &
+        83.17\% &
+        \textbf{84.08\%} \\
+        \hline
+    \end{tabular}
+    \caption{Item-level accuracy across unimodal and multimodal experimental conditions. Bold values indicate the best-performing multimodal configuration for each model.}
+    \label{tab:overall_condition_performance}
+\end{table}
+Whether these differences reflect systematic behaviour rather than descriptive fluctuation was tested directly. Each model was evaluated on 1,200 items distributed across 300 pools, and since predictions under different conditions refer to the same underlying items, all comparisons below treat the six conditions as paired observations. An omnibus Cochran's $Q$ test, applied separately to each model, confirms a statistically significant effect of experimental condition in every case, both at item level and at the stricter pool level defined by MAIA's Aggregate Accuracy criterion.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Model} &
+        \textbf{Item-level $Q$} &
+        \textbf{$p$} &
+        \textbf{Pool-level $Q$} &
+        \textbf{$p$} \\
+        \hline
+        Gemma       & 194.45 & $<.001$ & 113.63 & $<.001$ \\
+        Gemma-4-12B & 361.29 & $<.001$ & 217.78 & $<.001$ \\
+        Qwen        & 392.89 & $<.001$ & 193.52 & $<.001$ \\
+        Qwen-30B    & 349.32 & $<.001$ & 195.28 & $<.001$ \\
+        \hline
+    \end{tabular}
+    \caption{Cochran's $Q$ tests comparing performance across all six experimental conditions, at item level and at pool level.}
+    \label{tab:cochran_conditions}
+\end{table}
+The null hypothesis of equal performance across conditions is therefore rejected for every model configuration. This confirms that modality availability systematically affects predictions and licenses the pairwise comparisons developed throughout the rest of this section, each tested with the exact McNemar test and Holm-corrected for multiple comparisons within each model.
+A first descriptive observation concerns the relatively limited variability of the video-only condition, ranging from 69.83\% for Gemma to 73.25\% for Qwen-30B, a spread of only 3.42 points. The two Qwen configurations differ by even less, 72.50\% against 73.25\%. This compressed range contrasts sharply with the larger differences observed once linguistic or auditory information becomes available, and is compatible with the hypothesis, developed further in Section~\ref{subsec:video_only}, that video-only performance is partly constrained by the perceptual representation itself rather than by the capacity of the language backbone. This interpretation is consistent with the original MAIA analysis, where larger models generally benefited from a 32-frame configuration but continued to show weaknesses in visually demanding categories, particularly temporal duration and other phenomena involving distributed evidence \cite{testa2025maia}. The present results extend this observation by showing that model capacity has a far clearer effect once an additional linguistic or auditory source becomes available, a pattern examined in detail below.
+\subsection*{No-Input Condition and Linguistic Plausibility}
+\label{subsec:no_input}
+The no-input condition isolates the contribution of linguistic information contained in the question and answer alternatives. Since no video, raw audio, or transcription is provided, performance above chance cannot be attributed to perceptual grounding.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lc}
+        \hline
+        \textbf{Model} & \textbf{No-Input Accuracy} \\
+        \hline
+        Gemma & 57.42\% \\
+        Gemma-4-12B & 59.25\% \\
+        Qwen & 50.83\% \\
+        Qwen-30B & \textbf{61.00\%} \\
+        \hline
+    \end{tabular}
+    \caption{Accuracy in the no-input condition. Chance performance is 50\%.}
+    \label{tab:no_input_accuracy}
+\end{table}
+Three models perform clearly above chance, Qwen-30B at 61.00\%, Gemma-4-12B at 59.25\%, Gemma at 57.42\%, indicating that a non-negligible part of the decision space can be addressed through linguistic plausibility alone. This should not be read as evidence that the questions themselves encode their answers. More plausibly, the model exploits lexical compatibility, semantic plausibility, world knowledge, or distributional regularities learned between a question and its two candidate statements. The no-input condition, in this sense, provides a behavioural estimate of how far linguistic competence can substitute for perceptual evidence.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Model} &
+        \textbf{Causal} &
+        \textbf{Spatial} &
+        \textbf{Temporal} \\
+        \hline
+        Gemma & 68.25\% & 55.50\% & 48.50\% \\
+        Gemma-4-12B & 68.00\% & 57.75\% & 52.00\% \\
+        Qwen & 51.25\% & 50.50\% & 50.75\% \\
+        Qwen-30B & 64.75\% & 62.75\% & 55.50\% \\
+        \hline
+    \end{tabular}
+    \caption{No-input accuracy across the three analyzed reasoning categories.}
+    \label{tab:no_input_categories}
+\end{table}
+Causal questions show the strongest linguistic-only performance for Gemma, Gemma-4-12B, and Qwen-30B, reaching 68.25\%, 68.00\%, and 64.75\% respectively. Causal interpretation activates knowledge about event structure, selectional preferences, typical causal relations, and commonsense schemas, so a statement describing a conventional relation between an event and its likely cause can receive strong support from the language model independently of any visual evidence. This behavioural pattern is corroborated directly by the preliminary analysis in Section~\ref{subsec:preliminary_causal}, where causal inference-recovery scores were comparatively low, 19.50 for Gemma, 25.70 for Gemma-4-12B, 25.50 for Qwen-30B, despite entity and event scores in the same category being among the highest observed. Read together, the two results indicate that causal VSV decisions are particularly susceptible to linguistic and world-knowledge priors, since the visual-only representation typically supplies the participants and observable actions involved in a scenario without encoding the explanatory dependency the question actually asks about. This does not mean causal VSV performance is exclusively language-driven, only that linguistic priors offer a strong alternative source of support whenever the visual representation stops short of the causal relation itself.
+Temporal questions display the opposite tendency, with no-input accuracy of 48.50\% for Gemma, 52.00\% for Gemma-4-12B, and 55.50\% for Qwen-30B, close to chance throughout. Relative temporal information is far less recoverable from general semantic knowledge, since it typically depends on the actual ordering or duration of events within a specific video rather than on anything a language model could infer from priors alone. Here too the preliminary analysis offers a direct explanation: temporal comprehension scores in Section~\ref{subsec:preliminary_temporal} were the lowest of any category, 10.60, 15.05, and 13.45 for the three models. Temporal relations are strongly episode-dependent, so when the preliminary representation fails to recover one of the two event anchors a temporal question depends on, linguistic plausibility offers comparatively little room for compensation. Temporal questions therefore face a double difficulty, weak recovery of the relevant evidence from the video itself, and a linguistic prior too generic to substitute for it, which helps explain why temporal grounding remains one of the most persistent weaknesses across video-language benchmarks, consistent with the original MAIA findings \cite{testa2025maia}.
+Qwen represents a special case. Its no-input accuracy of 50.83\% looks close to chance, but the model selects the first answer in 99\% of its valid predictions. Chance-level accuracy therefore does not correspond to an unbiased decision process here: the model follows an extreme positional preference that happens to yield an approximately balanced overall accuracy only because the correct answer is itself balanced across positions. Accuracy alone cannot distinguish genuine uncertainty from a deterministic shortcut whose success rate happens to approximate chance, which is precisely why the no-input analysis needs to report both linguistic competence and response strategy rather than accuracy in isolation.
+\subsection*{Audio-Only Performance}
+\label{subsec:audio_only}
+One of the most notable results concerns the audio-only condition. As shown in Table~\ref{tab:audio_vs_video}, raw audio outperforms video-only input for every model.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Model} &
+        \textbf{Audio Only} &
+        \textbf{Video Only} &
+        \textbf{Difference} \\
+        \hline
+        Gemma & 74.58\% & 69.83\% & +4.75 \\
+        Gemma-4-12B & 75.92\% & 73.08\% & +2.83 \\
+        Qwen & 73.50\% & 72.50\% & +1.00 \\
+        Qwen-30B & 79.17\% & 73.25\% & +5.92 \\
+        \hline
+    \end{tabular}
+    \caption{Comparison between audio-only and video-only item accuracy. Differences are expressed in percentage points.}
+    \label{tab:audio_vs_video}
+\end{table}
+This result matters because MAIA was originally developed as a visually grounded benchmark. Its audio track played no role in constructing the questions and statements, so strong audio-only performance does not show that the benchmark is intrinsically audio-based, only that the acoustic stream carries information strongly correlated with the events and situations it queries. Raw audio can supply several complementary sources of evidence at once, spoken language that explicitly identifies objects, actions, locations, intentions, or causal relations, environmental sounds that signal ongoing events, and acoustic dynamics that offer temporal cues about occurrence or transition.
+The linguistic component of speech is likely central to this advantage. Once speech is successfully encoded, its semantic representation interfaces naturally with the language backbone responsible for comparing the two candidate statements, narrowing part of the representational gap that separates visual patterns from linguistic propositions. The result is therefore best read as evidence of high \textit{informational accessibility} of the acoustic channel rather than of audio being inherently richer than vision. A visual scene may well contain more information overall while still being harder for the architecture to convert into a representation aligned with the linguistic decision the VSV task requires.
+The pattern differs markedly from \textit{Lost in Transcription}, where Qwen2.5-Omni-7B obtained 82.70\% with 32 visual frames and 82.68\% once raw audio was added, a negligible $-0.02$ point difference, and where raw audio became beneficial mainly once visual evidence was removed entirely, raising black-frame accuracy from 67.40\% to 73.19\% \cite{deodati2026lost}. The present results reveal a substantially stronger role for audio across the evaluated architectures. This may reflect model-family effects, differences in the reasoning categories considered here, or stronger audio exploitation in more recent omnimodal architectures, and the available results support the behavioural difference without by themselves isolating its architectural cause.
+\subsection*{Transcription-Only Performance}
+\label{subsec:transcription_only}
+
+Comparing raw audio against its transcription gives a more direct view of the distinction between acoustic and linguistic information.
+
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Model} &
+        \textbf{Audio Only} &
+        \textbf{Transcription Only} &
+        \textbf{Difference} \\
+        \hline
+        Gemma & 74.58\% & 70.25\% & +4.33 \\
+        Gemma-4-12B & 75.92\% & 69.25\% & +6.67 \\
+        Qwen & 73.50\% & 66.50\% & +7.00 \\
+        Qwen-30B & 79.17\% & 77.00\% & +2.17 \\
+        \hline
+    \end{tabular}
+    \caption{Comparison between raw audio and transcription-only accuracy. Positive differences indicate an advantage for raw audio.}
+    \label{tab:audio_vs_transcription}
+\end{table}
+Raw audio outperforms transcription for every model, from 7.00 points for Qwen down to 2.17 for Qwen-30B, which shows that the contribution of audio cannot be reduced to a simple speech-to-text transformation. Transcription preserves lexical and propositional content but strips out, or compresses, non-verbal sound, prosody, overlapping speakers, temporal acoustic events, background activity, and other properties of speech delivery, and the transcription pipeline can itself introduce recognition errors or drop uncertain material. The textual representation is, in short, a lossy transformation of the original signal.
+The gap between the small and large Qwen configurations adds a further, linguistically informative pattern. Qwen reaches 66.50\% with transcription alone, Qwen-30B reaches 77.00\%, a gap considerably larger than the 0.75-point difference the same two models show in video-only input. Increased model capacity appears especially beneficial once information is already represented in linguistic form, where a larger backbone can exploit lexical semantics, discourse relations, event descriptions, and contextual associations more effectively than a smaller one, so scaling gains look more pronounced in language-mediated reasoning than in isolated visual grounding. This fits the more general distinction between perceptual encoding and linguistic inference: once evidence has been converted to text, what remains is largely semantic selection and integration, whereas visual evidence must first be turned into an appropriate linguistic-semantic representation before the same kind of reasoning can even begin.
+The present results also contrast with \textit{Lost in Transcription}, where Qwen2.5-VL-7B reached 68.72\% in the linguistic-only baseline but only 63.98\% with transcription alone, meaning transcription failed to outperform the model's own linguistic prior \cite{deodati2026lost}. The present models instead gain substantially from transcription relative to their no-input baselines, particularly Qwen-30B, suggesting that the ability to convert auxiliary textual evidence into useful task information is not a stable property of an architecture but varies with scale.
+\subsection*{Video-Only Performance and the Visual Bottleneck}
+\label{subsec:video_only}
+Video-only accuracy ranges from 69.83\% to 73.25\%, as already shown in Table~\ref{tab:overall_condition_performance}. All four models extract substantial task-relevant evidence from the sampled frames, yet the narrow range across architectures suggests that visual processing constitutes a shared bottleneck rather than a scale-dependent one. Increasing model size from Qwen to Qwen-30B produces only a 0.75-point gain in video-only accuracy, against a 10.50-point gap between the same two models in transcription-only accuracy. Linguistic scale, in other words, primarily improves operations performed once relevant semantic information is already accessible, lexical comparison, semantic compatibility assessment, integration of explicit contextual evidence, and reasoning over propositions, without producing an equivalent improvement in low-level or temporally distributed visual extraction.
+This distinction becomes considerably sharper once video-only accuracy is set against the preliminary analysis of Section~\ref{sec:preliminary_analysis_results}. Overall visual comprehension there reached only 20.46 for Gemma, 25.90 for Gemma-4-12B, and 27.75 for Qwen-30B, well below the 69.83\%, 73.08\%, and 73.25\% these same models achieve in video-only VSV. The discrepancy is not a contradiction between the two evaluations, but a reflection of the different informational regimes each one operates under. The preliminary analysis constructs a representation with no access to the downstream question, asking whether the required entities, events, and relations are already present in a question-independent description of the video. The VSV condition instead gives the model the question together with two minimally contrastive alternatives, allowing visual processing to become explicitly conditioned on the linguistic target of the task, directing attention toward particular entities, actions, or relations, while the contrastive alternatives themselves narrow the decision space enough that a full, exhaustive semantic representation of the video is not strictly necessary to choose correctly. A low preliminary score therefore shows that the relevant evidence is not reliably present in a model's spontaneous visual representation, not that the same evidence can never be recovered once the question identifies what to look for. The distinction can be summarised as one between \textit{question-independent representation} and \textit{question-conditioned retrieval}, the former measuring what is represented before any task-specific linguistic guidance, the latter measuring what the question itself can pull out of the visual input once it acts as a retrieval constraint.
+The original MAIA study offers a useful external reference point. With 32 frames, Qwen2.5-VL-7B obtained a pool-based VSV accuracy of 0.44, and Qwen2.5-VL-72B reached 0.54 \cite{testa2025maia}, a clear scaling advantage that nonetheless fell well short of full consistency, with categories such as Spatial Total, Causal, and Implicit Total improving strongly with richer visual evidence while temporal reasoning remained comparatively weak. Direct numerical comparison with the present models must stay cautious, since the current evaluation covers a different category subset and different architectures, but the qualitative pattern is the same: visual evidence improves performance substantially, yet stronger language-model capacity alone does not eliminate the difficulty of grounding temporally and relationally complex information, a difficulty the preliminary analysis locates specifically at the level of what gets extracted from the frames in the first place.
+\subsection*{Audio--Visual Integration}
+\label{subsec:audio_video}
+Adding raw audio to video improves item-level accuracy for every model.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Model} &
+        \textbf{Video Only} &
+        \textbf{Audio + Video} &
+        $\boldsymbol{\Delta_{\mathrm{audio}}}$ \\
+        \hline
+        Gemma & 69.83\% & 77.17\% & +7.33 \\
+        Gemma-4-12B & 73.08\% & 80.50\% & +7.42 \\
+        Qwen & 72.50\% & 78.92\% & +6.42 \\
+        Qwen-30B & 73.25\% & 83.17\% & +9.92 \\
+        \hline
+    \end{tabular}
+    \caption{Conditional gain produced by adding raw audio to the video-only condition.}
+    \label{tab:audio_video_gain}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llrrrrc}
+        \hline
+        \textbf{Model} &
+        \textbf{Comparison} &
+        \textbf{Base Acc.} &
+        \textbf{New Acc.} &
+        $\boldsymbol{\Delta}$ &
+        \textbf{95\% CI} &
+        \textbf{Holm $p$} \\
+        \hline
+        Gemma &
+        Video $\rightarrow$ Audio+Video &
+        69.83\% & 77.17\% & +7.33 &
+        [4.75, 10.00] & $<.001$ \\
+
+        Gemma-4-12B &
+        Video $\rightarrow$ Audio+Video &
+        73.08\% & 80.50\% & +7.42 &
+        [4.67, 10.25] & $<.001$ \\
+
+        Qwen &
+        Video $\rightarrow$ Audio+Video &
+        72.50\% & 78.92\% & +6.42 &
+        [3.33, 9.42] & $<.001$ \\
+
+        Qwen-30B &
+        Video $\rightarrow$ Audio+Video &
+        73.25\% & 83.17\% & +9.92 &
+        [7.25, 12.58] & $<.001$ \\
+        \hline
+    \end{tabular}}
+    \caption{Exact McNemar comparisons between the video-only condition and the audio-visual condition. Accuracy differences are in percentage points. Confidence intervals were obtained through cluster bootstrap resampling at the pool level, and reported $p$-values are Holm-corrected.}
+    \label{tab:mcnemar_video_multimodal}
+\end{table}
+The descriptive gains, from 6.42 points for Qwen to 9.92 for Qwen-30B, are all statistically robust: every confidence interval excludes zero and every Holm-corrected test remains significant. Raw audio is therefore not simply ignored once visual evidence is present, a pattern that differs from the 32-frame results in \textit{Lost in Transcription}, where Qwen2.5-Omni-7B showed virtually identical accuracy with and without raw audio \cite{deodati2026lost}.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lcc}
+        \hline
+        \textbf{Model} &
+        \textbf{Repair Rate} &
+        \textbf{Damage Rate} \\
+        \hline
+        Gemma & 44.75\% & 8.83\% \\
+        Gemma-4-12B & 48.92\% & 7.87\% \\
+        Qwen & 46.97\% & 8.97\% \\
+        Qwen-30B & \textbf{49.84\%} & \textbf{4.66\%} \\
+        \hline
+    \end{tabular}
+    \caption{Repair and damage rates when raw audio is added to video input. Repair Rate measures the proportion of video-only errors corrected by audio. Damage Rate measures the proportion of video-only correct predictions that become incorrect after adding audio.}
+    \label{tab:audio_repair_damage}
+\end{table}
+Between 44.75\% and 49.84\% of video-only errors are corrected once raw audio is introduced, indicating that the acoustic stream frequently carries information capable of resolving insufficient or ambiguous visual evidence, while damage rates stay below 9\% for every model. Qwen-30B shows the strongest asymmetry, a Repair Rate of 49.84\% against a Damage Rate of only 4.66\%, meaning its audio-visual improvement is not the product of generic prediction instability but of the additional modality converting incorrect visual decisions into correct multimodal ones. The underlying McNemar contingency counts make the direction of this effect explicit: for Qwen-30B, adding raw audio repairs 160 video-only errors while introducing only 41 new ones. Linguistically, this kind of repair is consistent with the acoustic modality supplying a semantic representation that resolves underspecified visual evidence, spoken descriptions lexicalizing events difficult to infer from sparse frames, or environmental sounds disambiguating between competing event interpretations, which the language backbone can then use to judge which candidate statement is better supported.
+The reciprocal question, whether vision still adds anything once audio is already available, receives a more mixed answer.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrc}
+        \hline
+        \textbf{Model} &
+        \textbf{Audio Only} &
+        \textbf{Audio+Video} &
+        $\boldsymbol{\Delta}$ &
+        \textbf{Holm $p$} \\
+        \hline
+        Gemma       & 74.58\% & 77.17\% & +2.58 & .153 \\
+        Gemma-4-12B & 75.92\% & 80.50\% & +4.58 & .002 \\
+        Qwen        & 73.50\% & 78.92\% & +5.42 & $<.001$ \\
+        Qwen-30B    & 79.17\% & 83.17\% & +4.00 & $<.001$ \\
+        \hline
+    \end{tabular}
+    \caption{Exact McNemar comparisons between audio-only and audio--video conditions.}
+    \label{tab:mcnemar_audio_video}
+\end{table}
+Vision significantly improves on audio-only performance for Gemma-4-12B, Qwen, and Qwen-30B, but not for Gemma, whose +2.58 point gain does not survive Holm correction ($p=.153$). For this model, raw audio already captures a large share of the evidence that determines the final prediction, and adding vision produces no statistically robust item-level advantage, a pattern compatible with a degree of modality dominance in which the acoustic channel alone accounts for most of what the task requires. The other three models instead show clear, significant benefits from the joint availability of both channels, evidence that vision continues to contribute even once audio is already on the table.
+\subsection*{Video and Transcription Integration}
+\label{subsec:video_transcription}
+The effect of transcription becomes markedly dependent on model scale once visual information is already available.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Model} &
+        \textbf{Video Only} &
+        \textbf{Video + Transcription} &
+        $\boldsymbol{\Delta_{\mathrm{transcription}}}$ \\
+        \hline
+        Gemma & 69.83\% & 75.08\% & +5.25 \\
+        Gemma-4-12B & 73.08\% & 84.75\% & +11.67 \\
+        Qwen & 72.50\% & 75.50\% & +3.00 \\
+        Qwen-30B & 73.25\% & 84.08\% & +10.83 \\
+        \hline
+    \end{tabular}
+    \caption{Conditional gain produced by adding transcription to the video-only condition.}
+    \label{tab:transcription_video_gain}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llrrrrc}
+        \hline
+        \textbf{Model} &
+        \textbf{Comparison} &
+        \textbf{Base Acc.} &
+        \textbf{New Acc.} &
+        $\boldsymbol{\Delta}$ &
+        \textbf{95\% CI} &
+        \textbf{Holm $p$} \\
+        \hline
+        Gemma &
+        Video $\rightarrow$ Video+Transcription &
+        69.83\% & 75.08\% & +5.25 &
+        [2.25, 8.25] & $<.001$ \\
+
+        Gemma-4-12B &
+        Video $\rightarrow$ Video+Transcription &
+        73.08\% & 84.75\% & +11.67 &
+        [8.25, 15.17] & $<.001$ \\
+
+        Qwen &
+        Video $\rightarrow$ Video+Transcription &
+        72.50\% & 75.50\% & +3.00 &
+        [0.25, 5.75] & $.023$ \\
+
+        Qwen-30B &
+        Video $\rightarrow$ Video+Transcription &
+        73.25\% & 84.08\% & +10.83 &
+        [8.17, 13.58] & $<.001$ \\
+        \hline
+    \end{tabular}}
+    \caption{Exact McNemar comparisons between the video-only condition and the video-plus-transcription condition.}
+    \label{tab:mcnemar_video_transcription}
+\end{table}
+Gemma and Qwen gain 5.25 and 3.00 points respectively, Gemma-4-12B and Qwen-30B gain 11.67 and 10.83, and every one of these differences remains significant after Holm correction, including Qwen's comparatively small gain ($p=.023$), so even the weakest effect in this comparison cannot be dismissed as noise. The contribution of linguistic auxiliary information clearly increases in the larger configurations. A transcription is already expressed in the representational domain where the language backbone is strongest, but exploiting it well still requires identifying the portions semantically related to the question, suppressing irrelevant discourse, resolving references, and integrating textual evidence with the visual representation, operations the larger models appear considerably better at performing. Increased capacity may therefore add not just richer linguistic knowledge but stronger contextual filtering and semantic alignment between heterogeneous, language-compatible sources of evidence.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrc}
+        \hline
+        \textbf{Model} &
+        \textbf{Transcription Only} &
+        \textbf{Video+Transcription} &
+        $\boldsymbol{\Delta}$ &
+        \textbf{Holm $p$} \\
+        \hline
+        Gemma       & 70.25\% & 75.08\% & +4.83 & .011 \\
+        Gemma-4-12B & 69.25\% & 84.75\% & +15.50 & $<.001$ \\
+        Qwen        & 66.50\% & 75.50\% & +9.00 & $<.001$ \\
+        Qwen-30B    & 77.00\% & 84.08\% & +7.08 & $<.001$ \\
+        \hline
+    \end{tabular}
+    \caption{Exact McNemar comparisons between transcription-only and video-plus-transcription conditions.}
+    \label{tab:mcnemar_transcription_video}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lcc}
+        \hline
+        \textbf{Model} &
+        \textbf{Repair Rate} &
+        \textbf{Damage Rate} \\
+        \hline
+        Gemma & 43.65\% & 11.34\% \\
+        Gemma-4-12B & \textbf{64.09\%} & 7.64\% \\
+        Qwen & 41.21\% & 11.49\% \\
+        Qwen-30B & 50.78\% & \textbf{3.75\%} \\
+        \hline
+    \end{tabular}
+    \caption{Repair and damage rates when transcription is added to video input.}
+    \label{tab:transcription_repair_damage}
+\end{table}
+Unlike the raw-audio comparison of Section~\ref{subsec:audio_video}, vision significantly improves on transcription-only performance in every model, and the effect is largest precisely where the video-plus-transcription gain was largest, Gemma-4-12B, where 15.50 additional points correspond to 238 items moving from incorrect to correct against only 52 moving the other way, for a Repair Rate of 64.09\% and a Damage Rate of just 7.64\%. Qwen-30B shows a similarly stable, asymmetric pattern, a Repair Rate of 50.78\% and the lowest Damage Rate observed in any transcription-based comparison, 3.75\%. The magnitude and direction of this asymmetry indicate that transcription and visual content carry genuinely complementary information rather than one substituting for the other, since a model relying purely on textualized audio and ignoring the video would show no such systematic, one-sided correction pattern.
+This behaviour is the opposite of what \textit{Lost in Transcription} reported, where Qwen2.5-VL-7B decreased from 80.67\% with 32 frames alone to 78.78\% with video and transcription combined, a 1.89 point drop that item-level McNemar analysis found to be systematic, with correct predictions converted into errors more often than incorrect ones were repaired \cite{deodati2026lost}. The current models instead find transcription beneficial rather than interfering, particularly at larger scale, which suggests that transcription-based multimodal integration is not a stable property of the task alone, but depends substantially on model architecture, scale, and the language backbone's ability to regulate auxiliary textual evidence.
+\subsection*{Raw Audio and Transcription as Complementary Representations}
+\label{subsec:audio_vs_textualized_audio}
+The purely descriptive ranking between the two multimodal conditions suggests a split by model size. For Gemma and Qwen, raw audio gives the strongest multimodal configuration, 77.17\% against 75.08\% for Gemma and 78.92\% against 75.50\% for Qwen. For the larger configurations the ranking flips, 84.75\% against 80.50\% for Gemma-4-12B and 84.08\% against 83.17\% for Qwen-30B.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Model} &
+        \textbf{Audio+Video} &
+        \textbf{Video+Transcription} &
+        $\boldsymbol{\Delta_{\mathrm{VT-AV}}}$ &
+        \textbf{Holm $p$} \\
+        \hline
+        Gemma       & 77.17\% & 75.08\% & -2.08 & .153 \\
+        Gemma-4-12B & 80.50\% & 84.75\% & +4.25 & .001 \\
+        Qwen        & 78.92\% & 75.50\% & -3.42 & .009 \\
+        Qwen-30B    & 83.17\% & 84.08\% & +0.92 & .351 \\
+        \hline
+    \end{tabular}
+    \caption{Direct comparison between native audio--video input and video enriched with transcription. Positive differences favour transcription, negative differences favour raw audio.}
+    \label{tab:mcnemar_audio_vs_transcription}
+\end{table}
+Once tested directly, this small-versus-large story does not hold up cleanly. Gemma's numerical advantage for raw audio and Qwen-30B's numerical advantage for transcription both fail to reach significance ($p=.153$ and $p=.351$), so for these two models the item-level data cannot statistically distinguish between the two multimodal representations. A significant, representation-dependent preference emerges only for the remaining two models, and not in a way that lines up neatly with scale, Gemma-4-12B performs significantly better with transcription-derived linguistic information ($\Delta=+4.25$ points, $p=.001$), while Qwen shows the opposite pattern, native raw audio outperforming transcription by 3.42 points ($p=.009$). The data therefore do not support a general claim that smaller models systematically prefer raw audio and larger models systematically prefer transcription, only that the advantage of one representation over the other is model-dependent, likely reflecting the specific interaction between a model's modality-specific encoders and the linguistic reasoning capacity of its backbone, rather than a property of scale on its own.
+This also clarifies why transcription should not be treated as a simple stand-in for audio. Raw audio preserves acoustic and temporal information at the cost of requiring cross-modal representation alignment, while transcription discards part of that information in exchange for direct access to lexical and propositional structure, and which of the two wins out for a given model depends on the balance it strikes between perceptual richness and linguistic accessibility, a balance that this analysis shows is architecture-specific rather than governed by parameter count alone.
+\subsection*{Aggregate Accuracy and Prediction Consistency}
+\label{subsec:aggregate_accuracy}
+Item-level accuracy does not reveal whether a model behaves consistently across the several minimally contrastive realizations tied to the same underlying question. Aggregate Accuracy, which counts a pool as correct only when every one of its items is answered correctly, gives a stricter estimate of robustness.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccccc}
+        \hline
+        \textbf{Model} &
+        \textbf{Audio Only} &
+        \textbf{Transcription Only} &
+        \textbf{Video Only} &
+        \textbf{Audio + Video} &
+        \textbf{Video + Transcription} \\
+        \hline
+        Gemma &
+        41.67\% &
+        37.67\% &
+        34.00\% &
+        49.00\% &
+        42.67\% \\
+        
+        Gemma-4-12B &
+        47.00\% &
+        36.00\% &
+        42.00\% &
+        55.33\% &
+        \textbf{64.00\%} \\
+        
+        Qwen &
+        40.33\% &
+        31.33\% &
+        38.33\% &
+        50.00\% &
+        44.33\% \\
+        
+        Qwen-30B &
+        55.67\% &
+        52.00\% &
+        41.33\% &
+        60.67\% &
+        \textbf{63.33\%} \\
+        \hline
+    \end{tabular}
+    \caption{Aggregate Accuracy across experimental conditions. A pool is counted as correct only when the model correctly resolves all minimally contrastive items associated with it.}
+    \label{tab:aggregate_accuracy}
+\end{table}
+The gap between item-level and aggregate performance is substantial for every model, confirming that isolated correct predictions do not necessarily correspond to stable semantic discrimination. Multimodal conditions improve consistency as well as raw correctness, Gemma-4-12B rises from 42.00\% Aggregate Accuracy in video-only to 64.00\% with video and transcription, Qwen-30B from 41.33\% to 63.33\%. This connects directly to MAIA's own evaluation philosophy, which treats visually grounded competence as unproven by isolated correct decisions if semantically equivalent reformulations produce inconsistent predictions \cite{testa2025maia}. The original 32-frame VSV results reached 0.44 pool accuracy for Qwen2.5-VL-7B and 0.54 for Qwen2.5-VL-72B \cite{testa2025maia}, while the present multimodal conditions push above 0.60 for the larger models, though direct comparison remains limited by the different model families and category subsets involved.
+Repeating the paired significance tests at pool level largely confirms these item-level results while also exposing an important exception in prediction consistency.
+\begin{table}[ht]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llrrrc}
+        \hline
+        \textbf{Model} &
+        \textbf{Comparison} &
+        \textbf{Base AA} &
+        \textbf{New AA} &
+        $\boldsymbol{\Delta}$ &
+        \textbf{Holm $p$} \\
+        \hline
+        Gemma &
+        Video $\rightarrow$ Audio+Video &
+        34.00\% & 49.00\% & +15.00 & $<.001$ \\
+
+        Gemma &
+        Video $\rightarrow$ Video+Transcription &
+        34.00\% & 42.67\% & +8.67 & .019 \\
+
+        Gemma-4-12B &
+        Video $\rightarrow$ Audio+Video &
+        42.00\% & 55.33\% & +13.33 & $<.001$ \\
+
+        Gemma-4-12B &
+        Video $\rightarrow$ Video+Transcription &
+        42.00\% & 64.00\% & +22.00 & $<.001$ \\
+
+        Qwen &
+        Video $\rightarrow$ Audio+Video &
+        38.33\% & 50.00\% & +11.67 & $<.001$ \\
+
+        Qwen &
+        Video $\rightarrow$ Video+Transcription &
+        38.33\% & 44.33\% & +6.00 & .071 \\
+
+        Qwen-30B &
+        Video $\rightarrow$ Audio+Video &
+        41.33\% & 60.67\% & +19.33 & $<.001$ \\
+
+        Qwen-30B &
+        Video $\rightarrow$ Video+Transcription &
+        41.33\% & 63.33\% & +22.00 & $<.001$ \\
+        \hline
+    \end{tabular}}
+    \caption{Exact McNemar comparisons at pool level using Aggregate Accuracy.}
+    \label{tab:mcnemar_aggregate}
+\end{table}
+Adding raw audio to video significantly improves Aggregate Accuracy for every model. Transcription produces a significant pool-level gain for Gemma, Gemma-4-12B, and Qwen-30B, but not for Qwen, whose item-level improvement from 72.50\% to 75.50\% (Section~\ref{subsec:video_transcription}, $p=.023$) does not carry over to its Aggregate Accuracy gain from 38.33\% to 44.33\% ($p=.071$). For this model, transcription improves local, item-level decisions without providing corrections systematic enough to raise the number of fully consistent pools to a statistically robust degree, an effect detectable in isolated predictions but too weak to survive the stricter, semantic-consistency criterion MAIA is specifically designed to enforce. Gemma-4-12B and Qwen-30B, by contrast, both gain 22 percentage points in Aggregate Accuracy from transcription, remaining highly significant after correction, indicating that for these two models the additional linguistic evidence improves not just how many decisions are correct but how stable those decisions are across minimally different formulations of the same content.
+\subsection*{Audio--Video Interaction Effect}
+\label{subsec:interaction_effect}
+Positive multimodal gains do not by themselves imply that audio and video combine independently. A logistic interaction analysis over the $2\times2$ factorial design of no-input, audio-only, video-only, and audio-visual conditions returns a negative interaction coefficient for every model.
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Model} &
+        $\boldsymbol{\beta_{A \times V}}$ &
+        \textbf{$p$-value} &
+        \textbf{Odds Ratio} \\
+        \hline
+        Gemma &
+        $-0.399$ &
+        $< .001$ &
+        0.671 \\
+        
+        Gemma-4-12B &
+        $-0.355$ &
+        .001 &
+        0.701 \\
+        
+        Qwen &
+        $-0.636$ &
+        $< .001$ &
+        0.529 \\
+        
+        Qwen-30B &
+        $-0.298$ &
+        .011 &
+        0.743 \\
+        \hline
+    \end{tabular}
+    \caption{Audio--video interaction coefficients estimated from the factorial comparison between no-input, audio-only, video-only, and audio--video conditions. Negative coefficients indicate a sub-additive interaction.}
+    \label{tab:audio_video_interaction}
+\end{table}
+
+All four coefficients are negative and statistically significant, Qwen showing the strongest interaction at $\beta_{A \times V}=-0.636$ and Qwen-30B the weakest at $-0.298$. A negative coefficient does not mean combining audio and video reduces absolute performance, since audio-visual accuracy is higher than video-only accuracy for every model, as already established by the significant McNemar comparisons in Section~\ref{subsec:audio_video}. It means instead that the joint gain is smaller than an additive model of independent modality contributions would predict, pointing to partial informational redundancy or competition between the two channels, some of what audio contributes may already be recoverable from the video, and the model may fail to preserve the full benefit of each source once both compete within a shared representational or attentional space.
+
+Read together, these two results, a significant audio-visual improvement over video alone, and a significant sub-additive interaction, describe two distinct properties of multimodal behaviour rather than contradicting one another. The pairwise tests establish that audio provides useful additional evidence whenever video is available. The interaction coefficient establishes that this additional evidence is not combined with the visual channel as an independent, additive source. Audio and video are complementary, in that both improve performance, but part of their informational content overlaps or is not fully preserved during integration, which is exactly the distinction between \textit{multimodal benefit} and \textit{multimodal integration} that this thesis has argued for throughout. The models clearly benefit from multiple channels. Their interaction coefficients show that those channels are not combined as independent additive sources of evidence.
+
+This result is compatible with the modality-balancing problem already identified in \textit{Lost in Transcription}, where Qwen2.5-Omni dynamically reduced attention to audio as visual information increased, without the attention still allocated to audio necessarily translating into corresponding gains in reasoning performance \cite{deodati2026lost}. The present behavioural results extend this observation across different architectures: additional modalities are used, but their informational contribution stays partly redundant, and their combination falls short of a fully additive effect.
+
+\subsection*{Model Scale and Linguistic Integration}
+\label{subsec:model_scale_linguistic}
+
+Model scale affects the different input modalities unevenly. Its weakest effect appears in the video-only condition, where Qwen and Qwen-30B differ by only 0.75 points, and its strongest effect appears in transcription-based conditions, where Qwen-30B exceeds Qwen by 10.50 points with transcription alone and by 8.58 points with video plus transcription. The Gemma family shows the same tendency, a 3.25-point advantage for Gemma-4-12B over Gemma in video-only input widening to 9.67 points in video plus transcription.
+
+Scaling, in other words, disproportionately improves the exploitation of linguistically structured contextual evidence. A larger language backbone can encode finer lexical distinctions, maintain longer discourse dependencies, resolve referential relations more effectively, and evaluate semantic compatibility between the question, the transcription, and the candidate statements, all of which matter once acoustic information has already been converted into text. Visual input poses a different problem: before any of that linguistic reasoning can apply, the model has to derive a sufficiently informative semantic representation from perceptual evidence in the first place, and increasing language-model capacity offers no guarantee that the relevant entities, events, spatial relations, or temporal dependencies were correctly extracted to begin with.
+
+This asymmetry is directly supported by the preliminary analysis in Section~\ref{subsec:preliminary_model_scale}, where scale raised entity, event, and inference recovery scores but never removed the underlying entity-event-inference hierarchy, and where the video-only bottleneck discussed in Section~\ref{subsec:video_only} traced this same limitation back to what the visual representation itself contains, independently of any linguistic reasoning applied afterward. The original MAIA results point in the same direction: Qwen2.5-VL-72B substantially outperformed Qwen2.5-VL-7B in the 32-frame pool-based evaluation, 0.54 against 0.44 \cite{testa2025maia}, yet continued to report weak performance on temporally demanding categories despite this scaling advantage, suggesting that increased overall capacity does not uniformly resolve perceptual grounding limitations.
+
+Taken together, the present results sharpen this picture considerably. Scaling is especially effective once evidence is already available in linguistic form, while gains on isolated visual input stay comparatively constrained, an asymmetry consistent with an account of multimodal performance resting on at least two separable capacities, extracting task-relevant evidence from a given modality, and reasoning over that evidence once it has been mapped into a semantically accessible representation. The preliminary analysis in Section~\ref{sec:preliminary_analysis_results} speaks primarily to the first capacity, the experimental results discussed in this section speak primarily to the second, and it is the interaction between the two, rather than either taken alone, that determines how well a given model ultimately integrates audio, video, and language in Visual Statement Verification.
 
 % Non Corretto
 
