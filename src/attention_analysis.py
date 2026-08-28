@@ -55,6 +55,11 @@ from transformers.integrations.sdpa_attention import (
 N_FRAMES = 32
 MAX_NEW_TOKENS = 64
 
+VIDEOS_DIR = Path("data/input/video")
+TRANSCRIPTIONS_FILE = Path("data/input/transcription/transcription.csv")
+QUESTIONS_FILE = Path("data/vsv/question_classification.csv")
+OUTPUT_DIR = Path("data/attention_analysis")
+
 
 # Exact sequence requested.
 #
@@ -71,7 +76,7 @@ MODELS = {
     "gemma-12B": {
         "model_id": "google/gemma-3-12b-it",
         "family": "gemma3",
-        "supports_audio": False,
+        "supports_audio": True,
     },
 
     "qwen-30B": {
@@ -888,6 +893,12 @@ def load_video_frames(
         for index in indexes
     ]
 
+def normalize_video_id(value: Any) -> int:
+    match = re.search(r"\d+", Path(str(value)).stem)
+    if not match:
+        raise ValueError(f"Cannot extract video id from: {value}")
+    return int(match.group())
+
 
 # ============================================================
 # AUDIO EXTRACTION
@@ -938,151 +949,38 @@ def extract_audio(
 # CSV LOADING
 # ============================================================
 
-def first_existing_column(
-    dataframe: pd.DataFrame,
-    candidates: list[str],
-) -> str:
-
-    for column in candidates:
-
-        if column in dataframe.columns:
-            return column
-
-    raise ValueError(
-        "None of these columns exists: "
-        f"{candidates}\n"
-        f"Available columns: "
-        f"{list(dataframe.columns)}"
+def load_transcriptions(path: Path) -> dict[int, str]:
+    df = pd.read_csv(
+        path,
+        sep=";",
+        usecols=["video_name", "transcription"],
+        encoding="utf-8-sig",
     )
+    df["video_id"] = df["video_name"].map(normalize_video_id)
+    return dict(zip(df["video_id"], df["transcription"].fillna("").astype(str).str.strip()))
 
 
-def load_transcriptions(
-    path: Path,
-) -> dict[int, str]:
-
-    dataframe = pd.read_csv(
-        path
+def load_questions(path: Path) -> dict[int, list[dict[str, Any]]]:
+    df = pd.read_csv(
+        path,
+        sep=";",
+        usecols=["video_name", "question_order", "question_text"],
+        encoding="utf-8-sig",
     )
+    df["video_id"] = df["video_name"].map(normalize_video_id)
+    df = df.sort_values(["video_id", "question_order"])
 
-    video_column = first_existing_column(
-        dataframe,
-        [
-            "video_id",
-            "video",
-            "id_video",
-            "video_number",
-            "id",
-        ],
-    )
-
-    transcription_column = (
-        first_existing_column(
-            dataframe,
-            [
-                "transcription",
-                "transcript",
-                "trascrizione",
-                "text",
-            ],
-        )
-    )
-
-    result = {}
-
-    for _, row in (
-        dataframe.iterrows()
-    ):
-
-        video_id = int(
-            row[video_column]
-        )
-
-        value = row[
-            transcription_column
+    return {
+        int(video_id): [
+            {
+                "row_index": int(index),
+                "question_order": int(row.question_order),
+                "question": str(row.question_text).strip(),
+            }
+            for index, row in group.iterrows()
         ]
-
-        if pd.isna(value):
-            value = ""
-
-        result[video_id] = str(
-            value
-        ).strip()
-
-    return result
-
-
-def load_questions(
-    path: Path,
-) -> dict[int, list[dict[str, Any]]]:
-
-    dataframe = pd.read_csv(
-        path
-    )
-
-    video_column = first_existing_column(
-        dataframe,
-        [
-            "video_id",
-            "video",
-            "id_video",
-            "video_number",
-            "id",
-        ],
-    )
-
-    question_column = first_existing_column(
-        dataframe,
-        [
-            "question",
-            "domanda",
-        ],
-    )
-
-    results: dict[
-        int,
-        list[dict[str, Any]],
-    ] = defaultdict(list)
-
-    for index, row in (
-        dataframe.iterrows()
-    ):
-
-        video_id = int(
-            row[video_column]
-        )
-
-        question = str(
-            row[question_column]
-        ).strip()
-
-        item = {
-            "row_index": int(index),
-            "question": question,
-        }
-
-        # Preserve any useful classification columns.
-        for optional in [
-            "category",
-            "macro_category",
-            "schema",
-            "entity",
-            "event",
-            "causal",
-            "spatial",
-            "temporal",
-        ]:
-
-            if optional in dataframe.columns:
-
-                item[optional] = row[
-                    optional
-                ]
-
-        results[
-            video_id
-        ].append(item)
-
-    return results
+        for video_id, group in df.groupby("video_id", sort=False)
+    }
 
 
 # ============================================================
@@ -2190,8 +2088,11 @@ def create_summaries(
         return
 
     data = pd.read_csv(
-        detail_path
-    )
+    detail_path,
+    sep=None,
+    engine="python",
+    encoding="utf-8-sig",
+)
 
     if data.empty:
         return
@@ -2342,31 +2243,13 @@ def main() -> None:
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument(
-        "--videos-dir",
-        type=Path,
-        required=True,
-    )
+    parser.add_argument("--videos-dir", type=Path, default=VIDEOS_DIR)
 
-    parser.add_argument(
-        "--transcriptions",
-        type=Path,
-        required=True,
-    )
+    parser.add_argument("--transcriptions", type=Path, default=TRANSCRIPTIONS_FILE)
 
-    parser.add_argument(
-        "--questions",
-        type=Path,
-        required=True,
-    )
+    parser.add_argument("--questions", type=Path, default=QUESTIONS_FILE)
 
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=Path(
-            "data/attention_analysis"
-        ),
-    )
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
 
     parser.add_argument(
         "--models",

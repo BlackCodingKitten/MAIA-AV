@@ -8,11 +8,11 @@ from pydantic import BaseModel, Field
 
 
 MODEL = "gpt-4o-2024-08-06"
+ANALYZED_MODEL = "qwen"
 
 ROOT = Path("data/preliminar_analysis/final_results")
 QUESTIONS = Path("data/vsv/question_classification.csv")
-NLI_DIR = Path("data/preliminar_analysis/final_results/nli")
-MODELS = ("gemma", "gemma-4-12B", "qwen", "qwen-30B")
+NLI_DIR = ROOT / "nli"
 
 client = OpenAI()
 
@@ -165,15 +165,15 @@ class Valutazione(BaseModel):
     motivazione: str
 
 
-def clean(x):
-    if isinstance(x, dict):
-        if float(x.get("confidence", 1) or 0) == 0:
+def clean(value):
+    if isinstance(value, dict):
+        if float(value.get("confidence", 1) or 0) == 0:
             return None
 
         return {
-            k: y
-            for k, v in x.items()
-            if k not in {
+            key: cleaned
+            for key, item in value.items()
+            if key not in {
                 "input_frames",
                 "evidence_frames",
                 "configuration",
@@ -181,25 +181,39 @@ def clean(x):
                 "source_semantic_file",
                 "source_event_file",
             }
-            and (y := clean(v)) not in (None, [], {})
+            and (cleaned := clean(item)) not in (None, [], {})
         }
 
-    if isinstance(x, list):
+    if isinstance(value, list):
         return [
-            y
-            for v in x
-            if (y := clean(v)) not in (None, [], {})
+            cleaned
+            for item in value
+            if (cleaned := clean(item)) not in (None, [], {})
         ]
 
-    return x
+    return value
 
 
-def load_model(model):
-    data = json.loads((ROOT / f"{model}.json").read_text(encoding="utf-8"))
-    return {x["video_id"]: clean(x) for x in data["videos"]}
+def load_analysis() -> dict[str, dict]:
+    path = ROOT / f"{ANALYZED_MODEL}.json"
+
+    data = json.loads(
+        path.read_text(
+            encoding="utf-8"
+        )
+    )
+
+    return {
+        video["video_id"]: clean(video)
+        for video in data["videos"]
+    }
 
 
-def evaluate(question, analysis):
+def evaluate(
+    question: pd.Series,
+    analysis: dict,
+) -> Valutazione:
+
     fields = [
         "question_text",
         "principal_dimension",
@@ -219,16 +233,20 @@ def evaluate(question, analysis):
     ]
 
     requirements = {
-        key: question[key]
-        for key in fields
-        if pd.notna(question[key])
+        field: question[field]
+        for field in fields
+        if field in question
+        and pd.notna(question[field])
     }
 
     response = client.chat.completions.parse(
         model=MODEL,
         temperature=0,
         messages=[
-            {"role": "system", "content": PROMPT},
+            {
+                "role": "system",
+                "content": PROMPT,
+            },
             {
                 "role": "user",
                 "content": json.dumps(
@@ -245,8 +263,12 @@ def evaluate(question, analysis):
 
     return response.choices[0].message.parsed
 
+
 def main():
-    NLI_DIR.mkdir(parents=True, exist_ok=True)
+    NLI_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     questions = pd.read_csv(
         QUESTIONS,
@@ -255,74 +277,102 @@ def main():
         encoding="utf-8-sig",
     )
 
-    for model in MODELS:
-        analyses = load_model(model)
-        output = NLI_DIR / f"{model}.csv"
+    analyses = load_analysis()
 
-        risultati = pd.read_csv(output) if output.exists() else pd.DataFrame()
+    output = NLI_DIR / f"{ANALYZED_MODEL}.csv"
 
-        completati = set(
+    results = (
+        pd.read_csv(output)
+        if output.exists()
+        else pd.DataFrame()
+    )
+
+    completed = (
+        set(
             zip(
-                risultati["video_id"],
-                risultati["question_order"],
+                results["video_id"].astype(str),
+                results["question_order"],
             )
-        ) if not risultati.empty else set()
+        )
+        if not results.empty
+        else set()
+    )
 
-        for i, q in questions.iterrows():
-            video_id = Path(q["video_name"]).stem
-            key = (video_id, q["question_order"])
+    for index, question in questions.iterrows():
 
-            if key in completati:
-                continue
+        video_id = Path(
+            question["video_name"]
+        ).stem
 
+        question_order = question[
+            "question_order"
+        ]
+
+        key = (
+            video_id,
+            question_order,
+        )
+
+        if key in completed:
+            continue
+
+        if video_id not in analyses:
             print(
-                f"[{model}] "
-                f"{i + 1}/{len(questions)} "
-                f"{video_id} Q{q['question_order']}"
+                f"[SKIP] "
+                f"{video_id}: "
+                f"analisi non trovata"
             )
+            continue
 
-            result = evaluate(
-                q,
-                analyses[video_id],
-            )
+        print(
+            f"[{ANALYZED_MODEL}] "
+            f"{index + 1}/{len(questions)} "
+            f"{video_id} "
+            f"Q{question_order}"
+        )
 
-            row = {
-                "model": model,
-                "video_id": video_id,
-                "question_order": q["question_order"],
-                "question": q["question_text"],
-                "principal_dimension": q["principal_dimension"],
-                "principal_label": q["principal_label"],
-                "diagnostic_label": q["diagnostic_label"],
-                "complexity_level": q["complexity_level"],
+        result = evaluate(
+            question,
+            analyses[video_id],
+        )
 
-                "entity_required": q["entity"],
-                "event_required": q["event"],
-                "inference_required": q["inference"],
+        row = {
+            "model": ANALYZED_MODEL,
+            "video_id": video_id,
+            "question_order": question_order,
+            "question": question["question_text"],
+            "principal_dimension": question["principal_dimension"],
+            "principal_label": question["principal_label"],
+            "diagnostic_label": question["diagnostic_label"],
+            "complexity_level": question["complexity_level"],
+            "entity_required": question["entity"],
+            "event_required": question["event"],
+            "inference_required": question["inference"],
+            "objective_criterion": question["objective_criterion"],
+            "evidence_scope": question["evidence_scope"],
+            "evidence_units": question["evidence_units"],
+            "information_explicitness": question["information_explicitness"],
+            "temporal_dependency": question["temporal_dependency"],
+            "dimension_combination": question["dimension_combination"],
+            **result.model_dump(),
+        }
 
-                "objective_criterion": q["objective_criterion"],
-                "evidence_scope": q["evidence_scope"],
-                "evidence_units": q["evidence_units"],
-                "information_explicitness": q["information_explicitness"],
-                "temporal_dependency": q["temporal_dependency"],
-                "dimension_combination": q["dimension_combination"],
+        pd.DataFrame(
+            [row]
+        ).to_csv(
+            output,
+            mode="a",
+            header=not output.exists(),
+            index=False,
+            encoding="utf-8-sig",
+        )
 
-                **result.model_dump(),
-            }
+        completed.add(key)
 
-            pd.DataFrame([row]).to_csv(
-                output,
-                mode="a",
-                header=not output.exists(),
-                index=False,
-                encoding="utf-8-sig",
-            )
+    print(
+        f"[OK] {output}"
+    )
 
-            completati.add(key)
 
-        print(f"[OK] {output}")
-        
-        
-        
 if __name__ == "__main__":
     main()
