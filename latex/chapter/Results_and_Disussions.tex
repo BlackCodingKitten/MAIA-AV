@@ -156,9 +156,13 @@ A Pass proficiency result paired with a correct VSV response indicates that the 
 The most diagnostically informative configuration is the opposite one: proficiency Not Pass paired with a correct downstream answer. Here, the model selects the correct alternative despite a visual representation that does not meet the proficiency criterion, which may reflect partial cues, alternative evidence, parametric priors, shortcut strategies, or simple guessing. The comparison alone cannot isolate which of these mechanisms is at play, but it does establish that correctness and evidence availability are not the same thing, a distinction the sections below return to repeatedly.
 \subsection*{Entity, Event, and Inference Recovery}
 \label{subsec:entity_event_inference}
-As discussed in Section~\ref{sec:pa}, the preliminary analysis asks whether the visual content of a video alone allows a model to answer a question correctly. It also serves a diagnostic role of its own, verifying that the newly constructed questions do not inherit the same limitation as the original MAIA benchmark \cite{testa2025maia}, namely a reliance on visual content so strong that it prevents a genuine assessment of cross-modal integration.
-The analysis targets an earlier stage of the process than VSV itself, the semantic construction of what has been observed. This makes it possible to check whether a model can independently extract the required information from video frames, separating knowledge that is genuinely grounded in visual evidence from responses shaped by linguistic priors.
-Table~\ref{tab:preliminar_global_scores} reports the aggregate scores for the three models currently available.
+
+As discussed in Section~\ref{sec:pa}, the preliminary analysis asks whether the visual content of a video alone allows a model to recover the information required to answer a question correctly. It also serves an independent diagnostic role by verifying that the newly constructed questions do not inherit the same limitation as the original MAIA benchmark \cite{testa2025maia}, namely a dependence on visual information strong enough to reduce the possibility of assessing genuine cross-modal integration.
+
+The analysis targets an earlier stage of the reasoning process than VSV itself, namely the semantic construction of what has been observed. This makes it possible to determine whether a model can independently extract from the video the entities, events, and inferential relations required by the question. The resulting representation separates information grounded in visual evidence from answers that may instead be supported by linguistic priors.
+
+Table~\ref{tab:preliminar_global_scores} reports the aggregate scores for the four evaluated models.
+
 \begin{table}[ht]
     \centering
     \small
@@ -175,13 +179,19 @@ Table~\ref{tab:preliminar_global_scores} reports the aggregate scores for the th
         23.13 &
         16.48 &
         20.46 \\
-
+        
         Gemma-4-12B &
         33.77 &
         30.07 &
         21.48 &
         25.90 \\
-
+        
+        Qwen-3B &
+        2.77 &
+        2.07 &
+        0.95 &
+        2.18 \\
+        
         Qwen-30B &
         \textbf{34.47} &
         \textbf{31.53} &
@@ -192,13 +202,26 @@ Table~\ref{tab:preliminar_global_scores} reports the aggregate scores for the th
     \caption{Average preliminary-analysis scores across entity recovery, event recovery, inference recovery, and overall comprehension.}
     \label{tab:preliminar_global_scores}
 \end{table}
-Scores for Qwen-3B are not reported here, since the preliminary analysis for this model was not yet available at the time of the present evaluation.
-Entity-level information is the most accessible, since the model only needs to map a visual element onto its semantic representation, establishing referential grounding between an observed entity and the lexical concept used to describe it. The two larger models confirm a relatively direct grounding mechanism between the visual signal and semantic entities, with average entity-recovery scores of 34.47 for Qwen-30B and 33.77 for Gemma-4-12B, suggesting a stronger ability to associate visual patterns with the corresponding conceptual categories. The smaller Gemma model shows the same internal ordering at lower absolute values, 27.87 for entities against 23.13 for events and 16.48 for inference, indicating that even the most accessible component is far from fully recovered.
-The decline from entity to inference is present in every configuration and reflects increasing representational demands. Event recovery requires entities to be embedded into dynamic structures involving actions, participants, and state transitions, a predicate-argument composition that goes beyond simple referential grounding. Inference recovery adds a further layer in which the model must derive relations or interpretations that need not correspond to any directly observable perceptual pattern, extending beyond lexicalization into temporal ordering, causal interpretation, or relational dependencies between multiple observed states.
-Qwen-30B moves from 34.47 for entities to 31.53 for events and 23.95 for inferences. Gemma-4-12B follows the same pattern, from 33.77 to 30.07 to 21.48. Gemma shows the sharpest proportional drop, from 27.87 to 23.13 to 16.48. Model capacity therefore appears to raise the amount of recoverable information at every level without removing the structural difficulty tied to increasingly abstract representation. Correctly identifying a participant does not imply that the model also represents the event that participant is involved in, and correct event identification does not guarantee that the relation required by the question can subsequently be inferred.
+
+Entity-level information remains the most accessible representational component for all four models. At this level, the model primarily needs to associate a perceptually available element with its semantic representation, establishing referential grounding between an observed entity and the lexical concept used to describe it. The two larger models obtain the strongest results, with entity-recovery scores of 34.47 for Qwen-30B and 33.77 for Gemma-4-12B. The smaller Gemma model follows the same pattern at a lower absolute level, reaching 27.87.
+
+Qwen-3B represents a clear outlier. Its entity score reaches only 2.77, followed by 2.07 for events and 0.95 for inference, resulting in an overall comprehension score of 2.18. The model therefore remains close to the lower bound of the evaluation despite preserving the same entity--event--inference ordering observed in the other architectures. This result indicates that only a very limited portion of the question-relevant visual information is recovered by its preliminary representation.
+
+The decline from entity recovery to inference recovery is visible in every model and reflects increasing representational demands. Event recovery requires individually detected entities to be integrated into dynamic structures involving actions, participants, and state transitions. This introduces a predicate--argument structure that extends beyond simple referential grounding. Inference recovery requires an additional transformation, since the model must derive relations or interpretations that do not necessarily correspond to a directly observable perceptual pattern. These may involve temporal ordering, causal interpretation, state dependencies, or relations connecting multiple observed events.
+
+Qwen-30B moves from 34.47 for entities to 31.53 for events and 23.95 for inferences. Gemma-4-12B follows a similar pattern, decreasing from 33.77 to 30.07 and then to 21.48. Gemma decreases from 27.87 to 23.13 and finally to 16.48. The same hierarchy is present in Qwen-3B, although at substantially lower values, moving from 2.77 to 2.07 and finally to 0.95.
+
+The comparison therefore suggests two complementary effects. First, increasing representational complexity systematically reduces the amount of recoverable information. Correct entity identification does not imply that the corresponding event has also been represented, and event recovery does not guarantee successful reconstruction of the relation required by the question. Second, the larger variants of both model families recover substantially more information than their smaller counterparts. This difference is especially pronounced within the Qwen family. However, the extremely low Qwen-3B values should be interpreted cautiously, since model size is not the only factor that can affect the quality and completeness of the intermediate structured representation.
+
 \subsection*{Category-Level Differences}
 \label{subsec:preliminary_category_differences}
-Splitting the results by reasoning dimension gives a finer view of what the visual stream actually supports. Tables~\ref{tab:preliminar_gemma_categories}, \ref{tab:preliminar_gemma12_categories}, and \ref{tab:preliminar_qwen30_categories} report the average scores for each model.
+
+Splitting the results by reasoning dimension provides a finer view of the information supported by the visual stream. Tables~\ref{tab:preliminar_gemma_categories},
+\ref{tab:preliminar_gemma12_categories},
+\ref{tab:preliminar_qwen3_categories}, and
+\ref{tab:preliminar_qwen30_categories}
+report the average scores obtained by each model.
+
 \begin{table}[ht]
     \centering
     \small
@@ -215,13 +238,13 @@ Splitting the results by reasoning dimension gives a finer view of what the visu
         30.80 &
         19.50 &
         25.79 \\
-
+        
         Spatial &
         29.10 &
         26.10 &
         22.60 &
         25.00 \\
-
+        
         Temporal &
         15.50 &
         12.50 &
@@ -249,13 +272,13 @@ Splitting the results by reasoning dimension gives a finer view of what the visu
         37.60 &
         25.70 &
         31.75 \\
-
+        
         Spatial &
         35.90 &
         33.20 &
         28.25 &
         30.90 \\
-
+        
         Temporal &
         20.10 &
         19.40 &
@@ -279,17 +302,51 @@ Splitting the results by reasoning dimension gives a finer view of what the visu
         \textbf{Comprehension} \\
         \hline
         Causal &
+        \textbf{4.50} &
+        \textbf{3.80} &
+        \textbf{1.35} &
+        \textbf{3.68} \\
+        
+        Spatial &
+        2.00 &
+        1.60 &
+        1.00 &
+        1.55 \\
+        
+        Temporal &
+        1.80 &
+        0.80 &
+        0.50 &
+        1.30 \\
+        \hline
+    \end{tabular}
+    \caption{Qwen-3B preliminary-analysis scores across causal, spatial, and temporal questions.}
+    \label{tab:preliminar_qwen3_categories}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \hline
+        \textbf{Dimension} &
+        \textbf{Entity} &
+        \textbf{Event} &
+        \textbf{Inference} &
+        \textbf{Comprehension} \\
+        \hline
+        Causal &
         43.60 &
         36.50 &
         25.50 &
         30.95 \\
-
+        
         Spatial &
         \textbf{41.50} &
         \textbf{40.50} &
         \textbf{37.05} &
         \textbf{38.85} \\
-
+        
         Temporal &
         18.30 &
         17.60 &
@@ -300,7 +357,10 @@ Splitting the results by reasoning dimension gives a finer view of what the visu
     \caption{Qwen-30B preliminary-analysis scores across causal, spatial, and temporal questions.}
     \label{tab:preliminar_qwen30_categories}
 \end{table}
-The category breakdown only partly matches the qualitative expectations set out above. Spatial information is indeed comparatively accessible, particularly for Qwen-30B, but temporal questions produce the lowest scores across every model, while causal questions show relatively strong entity and event recovery despite the expected difficulty of causal inference itself. Each pattern is examined in turn below.
+The category breakdown only partly matches the qualitative expectations introduced above. Spatial information is particularly accessible to Qwen-30B, for which it produces the highest scores at every representational level, including a comprehension score of 38.85. In contrast, both Gemma models achieve their highest overall scores on causal questions, with comprehension values of 25.79 and 31.75 respectively. Qwen-3B follows this second pattern, although at values close to the lower bound, reaching 3.68 for causal questions compared with 1.55 for spatial questions.
+Temporal questions constitute the most consistent difficulty across architectures. They produce the lowest comprehension score for every model, with values of 10.60 for Gemma, 15.05 for Gemma-4-12B, 1.30 for Qwen-3B, and 13.45 for Qwen-30B. The weakness is particularly evident at the inference level, where the corresponding scores fall to 7.35, 10.50, 0.50, and 9.30. This regularity indicates that extracting individual visual elements is not sufficient for reconstructing the temporal structure required by the questions.
+Causal questions display a different profile. Entity and event recovery remain comparatively high for the three stronger configurations, while inference recovery decreases substantially. This distinction is important because a causal question may involve visually accessible entities and events even when the causal relation connecting them is not directly observable. High entity or event recovery therefore does not imply successful causal reasoning. The preliminary analysis separates these stages and shows that much of the difficulty emerges precisely when the model must move from perceptual description to relational interpretation.
+Overall, the category-level results reinforce the distinction between perceptual availability and structured reasoning. Spatial configurations can often be recovered directly from visual evidence, especially by Qwen-30B. Temporal relations require the integration of information distributed across multiple moments and remain systematically difficult. Causal questions often provide sufficiently salient entities and events, but the inferential link between them remains substantially less recoverable. Qwen-3B reproduces the same general hierarchy at markedly lower absolute values, indicating that the structure of the task remains visible even when the amount of successfully recovered information is minimal.
 \subsection*{Spatial Information}
 \label{subsec:preliminary_spatial}
 Spatial questions are the strongest category for Qwen-30B, which reaches an entity score of 41.50, an event score of 40.50, and an inference score of 37.05, for an overall comprehension of 38.85. The relatively small drop across these three levels is informative in itself. Once the relevant entities are recovered, Qwen-30B tends to preserve enough relational information to reconstruct the spatial configuration the question asks about, suggesting that spatial relations can often be supported by local, directly observable evidence.
@@ -590,15 +650,15 @@ The original MAIA study offers a useful external reference point. With 32 frames
 \subsection*{Joint Analysis of Preliminary Representation and Video-Only Performance}
 \label{subsec:preliminary_video_only}
 
-To investigate the relationship between the information recovered during the preliminary analysis and downstream VSV performance, a paired comparison was conducted between the question-independent visual representation and the corresponding \textit{video-only} condition.
+To examine whether the information recovered during the preliminary analysis is associated with successful downstream reasoning, the question-independent visual representation was compared with performance in the corresponding \textit{video-only} VSV condition.
 
-The analysis was performed at two complementary levels. First, results were aggregated at the video level. For each video, the preliminary scores associated with the causal, spatial, and temporal questions were averaged and compared with the corresponding VSV performance obtained from the same video. Second, the analysis was repeated at the question level, preserving the alignment between each preliminary representation and its corresponding VSV pool.
+The comparison was conducted at two complementary levels. At the video level, preliminary scores associated with causal, spatial, and temporal questions were averaged for each video and related to the corresponding VSV performance. At the question level, each preliminary representation was directly aligned with the VSV pool generated from the same question. This second analysis preserves the semantic correspondence between the evidence evaluated during the preliminary stage and the downstream decision.
 
-At the video level, the following preliminary dimensions were considered: entity recovery, event recovery, inference recovery, and overall comprehension. VSV performance was measured both through item-level accuracy and through pool-level Aggregate Accuracy. Since preliminary scores are continuous and bounded, while video-level VSV accuracy is discrete and not normally distributed, Spearman's rank correlation was adopted as the primary association measure.
+The preliminary representation was characterized through entity recovery, event recovery, inference recovery, and overall comprehension. Downstream performance was measured using both item-level accuracy and Aggregate Accuracy. Since preliminary scores are bounded continuous variables while video-level VSV scores are discrete, Spearman's rank correlation was adopted as the primary measure of association.
 
 \subsubsection*{Video-Level Correlation}
 
-Table~\ref{tab:preliminary_video_correlation} reports the correlation between average preliminary comprehension and downstream \textit{video-only} performance.
+Table~\ref{tab:preliminary_video_correlation} reports the relationship between average preliminary comprehension and downstream \textit{video-only} performance.
 
 \begin{table}[ht]
     \centering
@@ -623,6 +683,12 @@ Table~\ref{tab:preliminary_video_correlation} reports the correlation between av
         \textbf{0.254} &
         \textbf{.0107} \\
 
+        Qwen &
+        -0.077 &
+        .446 &
+        0.021 &
+        .834 \\
+
         Qwen-30B &
         0.113 &
         .262 &
@@ -630,87 +696,176 @@ Table~\ref{tab:preliminary_video_correlation} reports the correlation between av
         .269 \\
         \hline
     \end{tabular}
-    \caption{Spearman correlations between average preliminary comprehension and downstream video-only VSV performance at the video level. Item Accuracy is computed over all VSV items associated with each video. Pool Accuracy measures the proportion of fully correct semantic pools within the video.}
+
+    \caption{Spearman correlations between average preliminary comprehension and downstream video-only VSV performance at the video level. Item Accuracy is computed over all VSV items associated with each video, while Pool Accuracy measures the proportion of fully correct semantic pools.}
     \label{tab:preliminary_video_correlation}
 \end{table}
 
-The relationship between preliminary comprehension and downstream performance is positive for all models, but generally weak.
+The relationship between preliminary comprehension and downstream performance is generally weak and varies across models.
 
-Gemma-4-12B presents the clearest association. Average preliminary comprehension correlates significantly with both item-level accuracy and pool-level accuracy. The correlation with item-level performance is
+Gemma-4-12B presents the clearest association. Its preliminary comprehension correlates significantly with both item-level accuracy,
+
 \[
-\rho = 0.280, \qquad p = .0048,
+\rho = 0.280,
+\qquad
+p = .0048,
 \]
-while the corresponding association with Aggregate Accuracy is
+
+and pool-level accuracy,
+
 \[
-\rho = 0.254, \qquad p = .0107.
+\rho = 0.254,
+\qquad
+p = .0107.
 \]
 
-Videos for which Gemma-4-12B constructs a richer question-independent representation therefore tend to be the same videos for which the model achieves stronger downstream VSV performance.
+Videos for which Gemma-4-12B constructs a richer question-independent representation therefore tend to correspond to videos in which downstream VSV performance is also stronger.
 
-The magnitude of the association remains limited. Preliminary comprehension does not account for most of the variation observed in downstream accuracy. This indicates that the availability of information in the initial visual representation contributes to task success but does not fully determine it.
+The magnitude of this association remains moderate. Preliminary comprehension is related to downstream success, but it does not determine it. A substantial proportion of the variance in VSV performance must therefore depend on processes occurring after the initial question-independent representation has been constructed.
 
-Gemma and Qwen-30B exhibit the same positive tendency, although their correlations do not reach statistical significance. For Gemma, the correlation between preliminary comprehension and item accuracy is $\rho = 0.156$, while Qwen-30B reaches only $\rho = 0.113$.
+Gemma and Qwen-30B show weak positive correlations, although neither reaches statistical significance. Gemma obtains $\rho=0.156$ for item-level accuracy, while Qwen-30B obtains $\rho=0.113$.
 
-The Qwen-30B result is particularly informative. This model obtains the highest average preliminary comprehension among the evaluated systems and also reaches the highest video-only accuracy. Nevertheless, the videos on which Qwen-30B produces its strongest preliminary representations are not systematically the same videos on which it achieves the highest VSV performance.
+Qwen exhibits a different pattern. Its preliminary comprehension is weakly negatively associated with item-level accuracy,
 
-This weak correspondence suggests that downstream performance cannot be interpreted as a direct consequence of the amount of information spontaneously recovered before question exposure.
+\[
+\rho = -0.077,
+\qquad
+p = .446,
+\]
 
-\subsubsection*{Contribution of Entity, Event, and Inference Recovery}
+while its relationship with pool-level performance is effectively absent,
 
-The preliminary representation was subsequently decomposed into its three principal dimensions in order to identify which level of semantic information is most strongly associated with downstream VSV performance.
+\[
+\rho = 0.021,
+\qquad
+p = .834.
+\]
 
-For Gemma-4-12B, event recovery and inference recovery show the strongest correlations with item-level accuracy.
+No systematic video-level association can therefore be identified for Qwen.
+
+This result must be interpreted in light of the distribution of its preliminary scores. Qwen's representations are concentrated almost entirely at the lower end of the proficiency scale. This pronounced floor effect restricts the variability available for correlation analysis and limits the discriminative power of the preliminary measure for this model.
+
+\subsubsection*{Entity, Event, and Inference Recovery}
+
+To determine whether different levels of semantic recovery are differently related to downstream performance, the preliminary representation was decomposed into entity recovery, event recovery, inference recovery, and overall comprehension.
 
 \begin{table}[ht]
     \centering
     \small
-    \begin{tabular}{lrrr}
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llrrr}
         \hline
+        \textbf{Model} &
         \textbf{Preliminary Component} &
         \textbf{$\rho$} &
         \textbf{$p$} &
         \textbf{Holm $p$} \\
         \hline
+
+        Gemma &
         Entity Recovery &
-        0.174 &
-        .084 &
-        .084 \\
+        0.164 & .103 & .411 \\
 
+        Gemma &
         Event Recovery &
-        \textbf{0.291} &
-        .0033 &
-        \textbf{.013} \\
+        0.162 & .107 & .411 \\
 
+        Gemma &
         Inference Recovery &
-        \textbf{0.288} &
-        .0036 &
-        \textbf{.013} \\
+        0.154 & .125 & .411 \\
 
+        Gemma &
         Overall Comprehension &
-        \textbf{0.280} &
-        .0048 &
-        \textbf{.013} \\
+        0.156 & .120 & .411 \\
         \hline
-    \end{tabular}
-    \caption{Spearman correlations between preliminary-analysis components and video-only item accuracy for Gemma-4-12B. Holm-corrected $p$-values account for multiple comparisons.}
-    \label{tab:gemma12_preliminary_components}
+
+        Gemma-4-12B &
+        Entity Recovery &
+        0.174 & .084 & .084 \\
+
+        Gemma-4-12B &
+        Event Recovery &
+        \textbf{0.291} & .0033 & \textbf{.013} \\
+
+        Gemma-4-12B &
+        Inference Recovery &
+        \textbf{0.288} & .0036 & \textbf{.013} \\
+
+        Gemma-4-12B &
+        Overall Comprehension &
+        \textbf{0.280} & .0048 & \textbf{.013} \\
+        \hline
+
+        Qwen &
+        Entity Recovery &
+        -0.078 & .442 & 1.000 \\
+
+        Qwen &
+        Event Recovery &
+        -0.067 & .506 & 1.000 \\
+
+        Qwen &
+        Inference Recovery &
+        -0.007 & .948 & 1.000 \\
+
+        Qwen &
+        Overall Comprehension &
+        -0.077 & .446 & 1.000 \\
+        \hline
+
+        Qwen-30B &
+        Entity Recovery &
+        0.142 & .158 & .632 \\
+
+        Qwen-30B &
+        Event Recovery &
+        0.077 & .449 & .736 \\
+
+        Qwen-30B &
+        Inference Recovery &
+        0.117 & .245 & .736 \\
+
+        Qwen-30B &
+        Overall Comprehension &
+        0.113 & .262 & .736 \\
+        \hline
+    \end{tabular}}
+
+    \caption{Spearman correlations between preliminary-analysis components and video-only item accuracy. Holm correction is applied to the four comparisons performed within each model.}
+    \label{tab:preliminary_components_video}
 \end{table}
 
-Entity recovery alone does not show a statistically robust relationship with downstream accuracy after correction. By contrast, both event recovery and inference recovery remain significant.
+Gemma-4-12B is the only model for which higher-level preliminary components show a statistically robust association with downstream item accuracy. Event recovery reaches
 
-This distinction is consistent with the structure of the VSV task. The presence of a visually grounded entity does not necessarily provide enough information to discriminate between a caption and its foil. Correct resolution frequently depends on what the entity is doing, on the relation between multiple events, or on the higher-level inference targeted by the question.
+\[
+\rho = 0.291,
+\qquad
+p_{\mathrm{Holm}} = .013,
+\]
 
-The same pattern is visible at the pool level. Event recovery, inference recovery, and overall comprehension remain significantly associated with Aggregate Accuracy for Gemma-4-12B, while entity recovery provides a weaker contribution.
+while inference recovery reaches
 
-These results indicate that the diagnostic value of the preliminary representation increases as the extracted information approaches the semantic structure required by the downstream question.
+\[
+\rho = 0.288,
+\qquad
+p_{\mathrm{Holm}} = .013.
+\]
 
-\subsubsection*{Question-Level Pass and Downstream Success}
+Overall comprehension shows a comparable association, whereas entity recovery alone does not remain statistically significant.
 
-Video-level aggregation combines causal, spatial, and temporal questions within the same video. To preserve the direct relationship between the preliminary representation and each downstream question, a second analysis was conducted at the question level.
+This distinction is consistent with the semantic structure of VSV. Identifying the relevant entities does not necessarily provide enough evidence to distinguish a statement from its minimally contrastive alternative. Successful resolution often depends on identifying the event in which an entity participates or on reconstructing the relation targeted by the question.
 
-The qualitative preliminary labels were binarized into two conditions. \textit{Sufficient} and \textit{complete} representations were treated as \textit{Pass}, while \textit{partial} and \textit{insufficient} representations were treated as \textit{Not Pass}.
+Gemma and Qwen-30B show weak positive relationships across most preliminary dimensions, but none survives statistical correction.
 
-Table~\ref{tab:preliminary_pass_pool} reports the probability of obtaining a completely correct VSV pool under the two preliminary conditions.
+Qwen again presents coefficients close to zero. Its entity, event, inference, and overall comprehension scores are not significantly associated with downstream accuracy. The result is consistent with the restricted range of its preliminary representation scores and should therefore be interpreted together with the strong floor effect observed for this model.
+
+\subsubsection*{Question-Level Preliminary Proficiency and Downstream Success}
+
+Video-level aggregation combines different semantic dimensions within the same video. A second analysis was therefore conducted at question level in order to preserve the direct correspondence between each preliminary representation and its downstream VSV pool.
+
+The qualitative preliminary labels were divided into two groups. Representations classified as \textit{sufficient} or \textit{complete} were treated as \textit{Pass}, whereas \textit{partial} and \textit{insufficient} representations were treated as \textit{Not Pass}.
+
+Table~\ref{tab:preliminary_pass_pool} reports the probability of obtaining a completely correct VSV pool according to preliminary proficiency.
 
 \begin{table}[ht]
     \centering
@@ -723,6 +878,7 @@ Table~\ref{tab:preliminary_pass_pool} reports the probability of obtaining a com
         \textbf{Odds Ratio} &
         \textbf{$p$} \\
         \hline
+
         Gemma &
         32.5\% &
         50.0\% &
@@ -735,6 +891,12 @@ Table~\ref{tab:preliminary_pass_pool} reports the probability of obtaining a com
         \textbf{2.44} &
         \textbf{.010} \\
 
+        Qwen &
+        38.3\% &
+        -- &
+        -- &
+        -- \\
+
         Qwen-30B &
         35.9\% &
         67.3\% &
@@ -742,31 +904,40 @@ Table~\ref{tab:preliminary_pass_pool} reports the probability of obtaining a com
         \textbf{$<.001$} \\
         \hline
     \end{tabular}
-    \caption{Probability of obtaining a fully correct VSV pool as a function of preliminary-analysis proficiency. Pass includes sufficient and complete preliminary representations. Odds ratios quantify the increase in downstream pool success associated with a Pass representation.}
+
+    \caption{Probability of obtaining a fully correct VSV pool according to preliminary proficiency. Pass includes sufficient and complete representations. Qwen contains no Pass observations, preventing estimation of the corresponding odds ratio and significance test.}
     \label{tab:preliminary_pass_pool}
 \end{table}
 
-The relationship becomes substantially clearer when the analysis is performed at the question level.
+For Gemma-4-12B, a Pass preliminary representation is associated with a pool success rate of 61.0\%, compared with 39.0\% under the Not Pass condition. The corresponding odds ratio is
 
-For Gemma-4-12B, a Pass preliminary representation is associated with a pool success rate of 61.0\%, compared with 39.0\% when the representation is classified as Not Pass. The corresponding odds ratio is
 \[
-\mathrm{OR} = 2.44, \qquad p = .010.
+\mathrm{OR} = 2.44,
+\qquad
+p = .010.
 \]
 
-Qwen-30B exhibits an even stronger effect. Pool accuracy increases from 35.9\% in the Not Pass condition to 67.3\% in the Pass condition. The corresponding odds ratio is
+The effect is stronger for Qwen-30B. Its probability of obtaining a fully correct VSV pool increases from 35.9\% under Not Pass to 67.3\% under Pass. The corresponding odds ratio is
+
 \[
-\mathrm{OR} = 3.68, \qquad p < .001.
+\mathrm{OR} = 3.68,
+\qquad
+p < .001.
 \]
 
-A question for which Qwen-30B constructs a sufficient or complete preliminary representation therefore has more than three times the odds of producing a fully correct downstream pool compared with a question whose preliminary representation is insufficient or partial.
+For these models, the availability of sufficient question-independent visual evidence substantially increases the probability of downstream semantic consistency.
 
-Gemma exhibits the same directional tendency, although the effect does not reach statistical significance at the pool level.
+Gemma shows the same directional pattern, with pool accuracy increasing from 32.5\% to 50.0\%, although the corresponding association does not reach statistical significance.
 
-These results demonstrate that the preliminary analysis possesses genuine diagnostic value. When the information required by a question is already present at a sufficient level before question exposure, downstream performance becomes substantially more reliable.
+Qwen requires a different interpretation. Of its 300 preliminary representations, 297 are classified as \textit{insufficient} and 3 as \textit{partial}. No question reaches either the \textit{sufficient} or \textit{complete} level. All observations therefore belong to the Not Pass group.
+
+Despite this absence of Pass representations, Qwen still obtains a pool-level accuracy of 38.3\% in the video-only condition. Since the Pass group is empty, neither an odds ratio nor a significance test can be estimated.
+
+This pattern represents the strongest dissociation between question-independent representation and downstream VSV success among the evaluated models.
 
 \subsubsection*{Item-Level Accuracy under Pass and Not Pass Conditions}
 
-The same comparison was repeated using item-level VSV accuracy.
+The same relationship was examined using item-level VSV accuracy.
 
 \begin{table}[ht]
     \centering
@@ -778,6 +949,7 @@ The same comparison was repeated using item-level VSV accuracy.
         \textbf{Pass} &
         \textbf{$p$} \\
         \hline
+
         Gemma &
         68.8\% &
         \textbf{80.8\%} &
@@ -788,61 +960,194 @@ The same comparison was repeated using item-level VSV accuracy.
         \textbf{85.4\%} &
         .0027 \\
 
+        Qwen &
+        72.5\% &
+        -- &
+        -- \\
+
         Qwen-30B &
         70.3\% &
         \textbf{87.5\%} &
         $<.001$ \\
         \hline
     \end{tabular}
-    \caption{Video-only item accuracy according to preliminary-analysis proficiency. Pass corresponds to sufficient or complete preliminary representations.}
+
+    \caption{Video-only item accuracy according to preliminary-analysis proficiency. Pass corresponds to sufficient or complete preliminary representations. No Pass observations are available for Qwen.}
     \label{tab:preliminary_pass_item_accuracy}
 \end{table}
 
-The probability of producing a correct VSV response increases significantly when the preliminary representation satisfies the proficiency criterion. Gemma increases from 68.8\% to 80.8\%, Gemma-4-12B from 71.1\% to 85.4\%, and Qwen-30B from 70.3\% to 87.5\%. The effect is statistically significant for all three models.
+For models containing both proficiency groups, downstream item accuracy increases when the preliminary representation reaches the Pass threshold.
 
-The magnitude of the increase is particularly strong for Qwen-30B, where sufficient preliminary evidence is associated with an improvement of more than 17 percentage points.
+Gemma increases from 68.8\% to 80.8\%, Gemma-4-12B from 71.1\% to 85.4\%, and Qwen-30B from 70.3\% to 87.5\%. The differences are statistically significant in all three cases.
 
-The Not Pass condition is equally informative. Even when the preliminary analysis indicates that the question-independent representation does not contain sufficient evidence, video-only accuracy remains close to 70\% for all models.
+The result confirms that sufficient visual evidence recovered before question exposure is associated with substantially more reliable downstream predictions.
 
-This result shows that downstream correctness cannot be equated with complete prior availability of the required information.
+At the same time, the Not Pass condition remains highly informative. Even when the preliminary representation is classified as insufficient or partial, item-level accuracy remains close to or above 70\%.
 
-A model may still resolve the VSV item after receiving the question because the linguistic input constrains which portions of the visual stream should be inspected. The question can therefore function as a retrieval signal that directs the model toward entities, events, or relations that were not selected during the preliminary question-independent analysis.
+Qwen provides the clearest example. All 300 questions belong to the Not Pass group, yet the model reaches 72.5\% item accuracy in the video-only condition.
 
-Additional mechanisms may also contribute. Partial visual evidence may be sufficient to eliminate one of the alternatives. Linguistic plausibility and parametric world knowledge may support the comparison between minimally contrastive statements. The present analysis does not isolate the relative contribution of these mechanisms, but it demonstrates that successful task execution frequently occurs even when the required evidence was not sufficiently represented beforehand.
+The preliminary analysis therefore cannot be interpreted as a necessary condition for downstream correctness. A model may succeed in VSV even when the question-independent representation does not satisfy the predefined proficiency criterion.
+
+Several mechanisms may account for this difference. Once the question is provided, visual processing can become conditioned on the specific entities, events, or relations required by the task. Partial evidence may also be sufficient to discriminate between minimally contrastive alternatives. Linguistic plausibility and parametric knowledge can provide additional decision cues.
+
+The present comparison does not determine the relative contribution of these mechanisms. It demonstrates, however, that downstream success and prior evidence availability represent distinct properties.
 
 \subsubsection*{Category-Specific Associations}
 
-An exploratory category-level analysis was conducted to determine whether the relationship between preliminary comprehension and downstream performance differs across causal, spatial, and temporal questions.
+The relationship between preliminary comprehension and downstream item accuracy was also examined separately for causal, spatial, and temporal questions.
 
-For Gemma, the causal category shows a statistically significant positive correlation:
+\begin{table}[ht]
+    \centering
+    \small
+    \begin{tabular}{llrrr}
+        \hline
+        \textbf{Model} &
+        \textbf{Dimension} &
+        \textbf{$\rho$} &
+        \textbf{$p$} &
+        \textbf{Holm $p$} \\
+        \hline
+
+        Gemma &
+        Causal &
+        \textbf{0.284} &
+        .0042 &
+        \textbf{.0127} \\
+
+        Gemma &
+        Spatial &
+        0.124 &
+        .220 &
+        .439 \\
+
+        Gemma &
+        Temporal &
+        -0.016 &
+        .878 &
+        .878 \\
+        \hline
+
+        Gemma-4-12B &
+        Causal &
+        0.083 &
+        .412 &
+        .412 \\
+
+        Gemma-4-12B &
+        Spatial &
+        0.160 &
+        .111 &
+        .332 \\
+
+        Gemma-4-12B &
+        Temporal &
+        0.135 &
+        .180 &
+        .359 \\
+        \hline
+
+        Qwen &
+        Causal &
+        -0.176 &
+        .081 &
+        .242 \\
+
+        Qwen &
+        Spatial &
+        0.017 &
+        .863 &
+        .863 \\
+
+        Qwen &
+        Temporal &
+        0.103 &
+        .310 &
+        .620 \\
+        \hline
+
+        Qwen-30B &
+        Causal &
+        0.088 &
+        .382 &
+        .764 \\
+
+        Qwen-30B &
+        Spatial &
+        0.215 &
+        .032 &
+        .096 \\
+
+        Qwen-30B &
+        Temporal &
+        0.079 &
+        .436 &
+        .764 \\
+        \hline
+    \end{tabular}
+
+    \caption{Category-specific Spearman correlations between preliminary comprehension and video-only item accuracy. Holm correction is applied across the three dimensions within each model.}
+    \label{tab:preliminary_category_correlations}
+\end{table}
+
+Gemma presents the only category-specific association that remains significant after multiple-comparison correction. For causal questions,
+
 \[
-\rho = 0.284, \qquad p = .0042.
-\]
-The effect remains significant after Holm correction:
-\[
+\rho = 0.284,
+\qquad
 p_{\mathrm{Holm}} = .0127.
 \]
-No statistically significant association emerges for Gemma in the spatial or temporal categories.
 
-For Qwen-30B, spatial questions show a positive association:
+This indicates that, for Gemma, stronger recovery of question-relevant causal information is associated with better downstream video-only performance.
+
+Gemma-4-12B does not show a statistically significant association within any individual category, despite the significant relationship observed when information is aggregated at the video level. Its global effect therefore appears to be distributed across multiple semantic dimensions.
+
+Qwen shows no statistically significant association in any category. The causal category produces a weak negative coefficient,
+
 \[
-\rho = 0.215, \qquad p = .032.
+\rho = -0.176,
+\qquad
+p = .081,
 \]
-The effect does not remain significant after correction for the three category-level comparisons:
+
+but the effect does not survive Holm correction. Spatial and temporal associations remain close to zero.
+
+Qwen-30B shows a positive association for spatial questions,
+
+\[
+\rho = 0.215,
+\qquad
+p = .032,
+\]
+
+but the effect becomes non-significant after correction,
+
 \[
 p_{\mathrm{Holm}} = .096.
 \]
-Gemma-4-12B does not show a statistically significant correlation within any single category, despite presenting a significant association at the global video level. This suggests that the relationship between preliminary representation and downstream performance is distributed across different reasoning phenomena rather than being driven by a single category.
-The category-specific results should therefore be interpreted as exploratory. The strongest evidence concerns the global question-level distinction between Pass and Not Pass representations.
+
+The category-level results should therefore be treated as exploratory. The most robust evidence is found at the question level, where sufficient preliminary representations substantially increase downstream success for the models in which both Pass and Not Pass observations are available.
+
 \subsubsection*{Question-Independent Representation and Question-Conditioned Retrieval}
-The combined analysis reveals a clear distinction between the availability of visual evidence and successful downstream task execution.
-A sufficient preliminary representation substantially increases the probability of correct VSV performance. This demonstrates that the quality of the visual representation contributes directly to downstream success.
-At the same time, the relatively weak video-level correlations and the high VSV accuracy observed under Not Pass conditions show that preliminary proficiency is not a deterministic prerequisite for correct task execution.
-This distinction follows directly from the informational structure of the two settings. During preliminary analysis, the representation is constructed without access to the question. The model must therefore encode the scene without knowing which entities, events, or relations will subsequently become relevant.
-During the video-only VSV task, the model receives both the question and the minimally contrastive candidate statements. Linguistic information can guide visual attention toward the specific semantic content required for the decision.
-The preliminary analysis can therefore be interpreted as a measure of \textit{question-independent evidence availability}, whereas downstream video-only performance reflects a combination of perceptual grounding, question-conditioned retrieval, semantic comparison, and linguistic reasoning.
-The statistical results support this distinction. Preliminary proficiency predicts downstream success locally, especially when the representation reaches sufficient or complete coverage. However, it explains only a limited proportion of the variation in video-level performance.
-The relationship between preliminary analysis and VSV accuracy is therefore informative precisely because it is neither absent nor deterministic. Relevant visual evidence improves downstream performance, but correct VSV decisions can also emerge when that evidence was not sufficiently represented before question exposure.
+
+The joint analysis identifies a clear distinction between the availability of visual evidence before question exposure and successful downstream task execution.
+
+For Gemma, Gemma-4-12B, and Qwen-30B, reaching the preliminary Pass threshold is associated with a substantial increase in downstream item accuracy. The effect is particularly strong for Qwen-30B, where item accuracy increases from 70.3\% under Not Pass to 87.5\% under Pass.
+
+This confirms that the quality of the question-independent representation contributes to downstream success.
+
+The relationship is nevertheless not deterministic. The relatively weak video-level correlations and the high accuracy observed under Not Pass conditions show that successful VSV execution does not require all relevant information to have already been recovered during the preliminary stage.
+
+The distinction follows from the informational structure of the two experimental settings. In the preliminary condition, visual representation is constructed before the model has access to the question. The model must encode the video without knowing which entities, events, or relations will subsequently become relevant.
+
+In the video-only VSV condition, the question and the minimally contrastive alternatives explicitly identify the semantic distinction that must be resolved. The linguistic input can therefore guide the selection of visual evidence toward task-relevant portions of the video.
+
+The preliminary analysis can consequently be interpreted as a measure of \textit{question-independent evidence availability}, whereas downstream video-only performance reflects a broader process that includes visual perception, question-conditioned evidence selection, semantic comparison, and linguistic reasoning.
+
+Qwen represents the most extreme manifestation of this distinction. None of its preliminary representations reaches the Pass threshold, yet the model achieves 72.5\% item accuracy and 38.3\% Aggregate Accuracy in the video-only condition. Its downstream performance therefore cannot be explained as a direct reflection of the information recovered during the question-independent preliminary stage.
+
+The Qwen result must also be interpreted methodologically. Since almost all of its preliminary observations are concentrated at the lowest proficiency level, correlation-based analyses have limited discriminative power. The absence of significant associations for this model reflects both weak preliminary recovery and restricted score variability.
+
+Across the four models, the statistical evidence therefore supports a distinction between \textit{having already represented the necessary visual evidence} and \textit{being able to recover or exploit sufficient evidence once the task is specified}. Preliminary proficiency increases the probability of downstream success, but it does not constitute a necessary condition for correct VSV performance.\
 \subsection*{Audio--Visual Integration}
 \label{subsec:audio_video}
 Adding raw audio to video improves item-level accuracy for every model.
