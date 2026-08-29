@@ -8,6 +8,14 @@
   doi     = {10.1111/lnc3.12170}
 }
 
+@misc{fbk_website,
+  author       = {{Fondazione Bruno Kessler}},
+  title        = {Fondazione Bruno Kessler Official Website},
+  howpublished = {\url{https://www.fbk.eu/}},
+  year         = {2026},
+  note         = {Accesso effettuato il 29 agosto 2026}
+}
+
 @inproceedings{antol2015vqa,
   author    = {Antol, Stanislaw and Agrawal, Aishwarya and Lu, Jiasen and Mitchell, Margaret and Batra, Dhruv and Zitnick, C. Lawrence and Parikh, Devi},
   title     = {{VQA}: Visual Question Answering},
@@ -320,4 +328,32 @@
   primaryClass = {cs.CL},
   doi          = {10.48550/arXiv.2607.02770},
   url          = {https://arxiv.org/abs/2607.02770}
+}
+
+@misc{zheng2024largelanguagemodelsrobust,
+      title={Large Language Models Are Not Robust Multiple Choice Selectors}, 
+      author={Chujie Zheng and Hao Zhou and Fandong Meng and Jie Zhou and Minlie Huang},
+      year={2024},
+      eprint={2309.03882},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2309.03882}, 
+}
+
+@inproceedings{pezeshkpour-hruschka-2024-large,
+    title = "Large Language Models Sensitivity to The Order of Options in Multiple-Choice Questions",
+    author = "Pezeshkpour, Pouya  and
+      Hruschka, Estevam",
+    editor = "Duh, Kevin  and
+      Gomez, Helena  and
+      Bethard, Steven",
+    booktitle = "Findings of the Association for Computational Linguistics: NAACL 2024",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-naacl.130/",
+    doi = "10.18653/v1/2024.findings-naacl.130",
+    pages = "2006--2017",
+    abstract = "Large Language Models (LLMs) have demonstrated remarkable capabilities in various NLP tasks. However, previous works have shown these models are sensitive towards prompt wording, and few-shot demonstrations and their order, posing challenges to fair assessment of these models. As these models become more powerful, it becomes imperative to understand and address these limitations. In this paper, we focus on LLMs robustness on the task of multiple-choice questions{---}commonly adopted task to study reasoning and fact-retrieving capability of LLMs. Investigating the sensitivity of LLMs towards the order of options in multiple-choice questions, we demonstrate a considerable performance gap of approximately 13{\%} to 85{\%} in LLMs on different benchmarks, when answer options are reordered, even when using demonstrations in a few-shot setting. Through a detailed analysis, we conjecture that this sensitivity arises when LLMs are uncertain about the prediction between the top-2/3 choices, and specific options placements may favor certain prediction between those top choices depending on the question caused by positional bias. We also identify patterns in top-2 choices that amplify or mitigate the model{'}s bias toward option placement. We found that for amplifying bias, the optimal strategy involves positioning the top two choices as the first and last options. Conversely, to mitigate bias, we recommend placing these choices among the adjacent options. To validate our conjecture, we conduct various experiments and adopt two approaches to calibrate LLMs' predictions, leading to up to 8 percentage points improvement across different models and benchmarks."
 }
