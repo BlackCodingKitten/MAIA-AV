@@ -1,12 +1,6 @@
-The directions provided should be viewed as a continuous trajectory rather than four separate extensions. The aim is to progressively refine the diagnosis of multimodal integration. This begins with observing behavioral differences across reasoning categories, advances to analyzing the structure of what each model extracts from the video, then delves into the internal dynamics of attention, and ultimately culminates in causal verification.
+The four given directions can be interpreted as one continuous line segment motion rather than four discrete motions. The goal is to gradually develop a more accurate diagnosis of multimodal integration. Starting from differences in behaviors between reasoning categories, then moving to the structure of what each model retrieves from the video, then into inner dynamics of attention, and eventually concludes in causal verification. 
 \paragraph{Expansion to the Twelve Reasoning Categories}
-The experiments in this thesis treat spatial, temporal, and causal reasoning as the primary axes of analysis, without asking whether modality contribution itself varies across the full set of reasoning phenomena covered by \textit{MAIA}. A natural extension is to apply the same behavioural and modality-contribution metrics separately within each of the twelve categories, rather than only comparing aggregate accuracy across them:
-\begin{equation}
-\text{Model} \times \text{Modality} \times \text{Reasoning Category}.
-\end{equation}
-This decomposition would make it possible to establish whether different reasoning phenomena induce different forms of modality reliance, for instance whether causal or counterfactual questions depend more heavily on audio than purely spatial ones, rather than assuming a single, uniform pattern of integration across the benchmark.
-\paragraph{Richer Preliminary Analysis}
-The existing preliminary analysis divides visual evidence into entities, events, and causal or inferred relationships. To achieve a more detailed representation, it would be beneficial to further segregate the outputs of each model into distinct components: entity attributes, actions, event participants, spatial relations, temporal relations, state changes, and event dependencies. These components should be monitored separately rather than aggregated into a singular event-level description. The main objective of this refinement is diagnostic. It aims to differentiate between a true perceptual failure, in which vital information was not captured at all, and a failure in forming the connections between accurately perceived elements, or even a failure in the ensuing reasoning process. For instance, if a model accurately identifies an entity but erroneously associates it with the wrong event, this should be distinguishable from a scenario where the model entirely fails to perceive the entity.
+The experiments in this thesis treat spatial, temporal, and causal reasoning as the primary axes of analysis, without asking whether modality contribution itself varies across the full set of reasoning phenomena covered by \textit{MAIA}. A natural extension is to apply the same behavioural and modality-contribution metrics separately within each of the twelve categories.
 \paragraph{Joint Analysis of Semantic Availability, Attention, and Behaviour}
 This direction develops directly out of the attention analysis introduced in this thesis. Rather than treating semantic availability, attention allocation, and behavioural contribution as three separate questions, a natural next step is to study their joint relationship:
 \begin{equation}
@@ -17,15 +11,3 @@ This direction develops directly out of the attention analysis introduced in thi
 \text{Behavioural Contribution}.
 \end{equation}
 The question is no longer only \textit {whether the model found a given piece of information, how much it attends to a given modality, or how much accuracy improves when that modality is added}, but \textbf{ how these three quantities relate to one another at the level of individual items}. This connects directly back to the question raised by \textit{Lost in Transcription} \cite{deodati2026lost}: whether a modality that is available is also genuinely exploited, and whether its internal use corresponds to an observable contribution to the final decision, rather than being available, attended, and yet behaviourally inert.
-
-\paragraph{From Attention to Causal Attribution}
-This last direction is deliberately the most methodologically demanding, and is placed last for that reason. The attention analysis presented in this thesis remains descriptive: it shows where the model allocates attention, not whether that allocation determines the prediction. Techniques such as activation patching, representation ablation, attention intervention, or gradient-based attribution would make it possible to test whether specific multimodal representations have a causal effect on the model's answer, moving the question from
-\begin{equation}
-\text{Where does the model attend?}
-\end{equation}
-to
-\begin{equation}
-\text{Which information actually affects the prediction?}
-\end{equation}
-
-Taken together, these four directions trace a coherent path rather than four independent extensions of the current work. Behavioural differences across reasoning categories identify \textit{where} modality reliance varies, a richer preliminary analysis identifies \textit{what} each model can perceive and relate on its own, the joint analysis of semantic availability, attention, and behaviour identifies \textit{whether} available information is actually used, and causal attribution identifies \textit{whether that use actually matters} to the final decision. Pursued together, they would move the evaluation of multimodal integration from behavioural comparison toward a genuinely mechanistic account of how, and whether, audio-visual models integrate the evidence available to them.
